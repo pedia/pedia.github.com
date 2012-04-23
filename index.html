@@ -5,15 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>heartoutside</title>
+  <title>HeartOutside</title>
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="include code, from octopress code
-plain code 1
-rm / -rf python test1
-2
-def f(): pass ">
+  <meta name="description" content="今天发现 Debian 里的 awk 是 mawk，过程是发现一台机器上的 awk 执行报错 1 awk: line 2: function strftime never defined 然后发现此 awk 原来是 mawk Debian 可能有足够的原因： mawk is a very fast &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,13 +18,13 @@ def f(): pass ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.heartoutside.com">
+  <link rel="canonical" href="http://log.heartoutside.com">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="HeartOutside" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -39,7 +35,7 @@ def f(): pass ">
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">heartoutside</a></h1>
+  <h1><a href="/">HeartOutside</a></h1>
   
     <h2>not yet</h2>
   
@@ -53,7 +49,7 @@ def f(): pass ">
   
 <form action="https://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input type="hidden" name="q" value="site:log.heartoutside.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -74,7 +70,7 @@ def f(): pass ">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/03/22/mawk-and-gawk/">Mawk and Gawk</a></h1>
     
     
       <p class="meta">
@@ -90,32 +86,488 @@ def f(): pass ">
   
 
 
-<time datetime="2012-04-19T16:13:00+08:00" pubdate data-updated="true">Apr 19<span>th</span>, 2012</time>
+<time datetime="2012-03-22T15:37:00+08:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>include code, from <a href="http://octopress.org/docs/blogging/code/">octopress code</a>
-plain code</p>
+  <div class="entry-content"><p>今天发现 Debian 里的 awk 是 mawk，过程是发现一台机器上的 awk 执行报错</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rm / -rf</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'> awk: line 2: function strftime never defined</span></code></pre></td></tr></table></div></figure>
 
 
-<p>python</p>
+<p>然后发现此 awk 原来是 mawk</p>
 
-<figure class='code'><figcaption><span>test</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-</span><span class='line'>  <span class="k">pass</span>
+<p>Debian 可能有足够的原因：</p>
+
+<blockquote><p>mawk is a very fast AWK implementation by Mike Brennan based on a byte code interpreter.</p></blockquote>
+
+<p>引入 mawk 代替gawk，但是由于这两个版本的细微差别，肯定会困扰一些人。</p>
+
+<p>还有一个类似的例子是 dash, 无数次以为脚本写错后，才把习惯改为 !/bin/bash。</p>
+
+<p>竞争固然是好，这些批着同一件皮的东西有着这样、那样的差别，会让每个人都经历一次或多次查错的经验。</p>
+
+<p>WTF!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/31/trivial-detail-in-facebook-messenger/">Trivial Detail in Facebook Messenger</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-31T11:23:00+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I download <a href="https://www.facebook.com/help/messenger-for-windows">facebook messenger</a> from <a href="https://fbcdn_dragon-a.akamaihd.net/cfs-ak-ash4/84995/940/FacebookMessengerSetup.exe">here</a>. After install I found something interest.</p>
+
+<p>First it&#8217;s a C++ managed CLR program. I <a href="http://stackoverflow.com/questions/7457371/why-is-winrt-unmanaged">think</a> running on Win8 is their main purpose.</p>
+
+<p>Then I noticed it use a several open source library almost all from Google.</p>
+
+<ul>
+<li>omaha: Google open source for <a href="http://code.google.com/p/omaha">auto update</a>, a complicate weapon.</li>
+<li>breakpad: <a href="http://code.google.com/p/google-breakpad/">crash report and dump analytics tools from Google</a>, I really love it.</li>
+<li>gtest: <a href="http://code.google.com/p/googletest">Google unit test library</a>. Unit test is rarely seen in windows applications, I believe It&#8217;s high quality</li>
+<li>gecko: core of firefox from <a href="http://mozilla.org/">mozilla.org</a>, It&#8217;s a wise choice.</li>
+</ul>
+
+
+<p>about certification signing:</p>
+
+<ul>
+<li>FacebookMessenger.exe not signed.</li>
+<li>FacebookUpdate.exe signed.</li>
+<li>FacebookCrashHandler.exe signed.</li>
+</ul>
+
+
+<p>Sadly, I never saw the interface, because it(verion 2.0.4373.0) keep quit abnormally on my winxp.
+<img src="/pic/facebook-messenger-for-windows-done-716270.png" alt="facebook main window preview" /></p>
+
+<p>Whatever, it&#8217;s absolutely above average in Windows application technology.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/23/csdn-password-leak-under/">密码泄漏事件下的冰山</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-23T12:45:00+08:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>曝光在大众面前的 CSDN 密码泄漏事件只是冰山一角，很小的一角。
+如开始时间，其实攻击从2011年<strong>初</strong>就开始了，下载文件里的日期一般不会做假：
+-    2011-01-31 22:46 100W.txt
+-    2011-03-08 20:49 duowan_user.txt
+-    2011-10-16 01:02 www.csdn.net.sql</p>
+
+<p>至这些密码泄漏开始，利用这些数据获取其他价值的的攻击行为从来就没有停止过，差不多同时就听闻各大网站被攻击。至 CSDN 事件曝光这是很长的一段时间，但是各大公司都选择了沉默应对攻击。</p>
+
+<p>对历次泄漏数据汇总后，共计有 24249858 个合法邮件地址</p>
+
+<blockquote><pre><code>24249858 total
+10874262 qq.com
+ 5811878 163.com
+ 2362741 126.com
+ 1259566 sina.com
+  780195 yahoo.com.cn
+  644629 hotmail.com
+  474650 sohu.com
+  301836 yahoo.cn
+  284507 tom.com
+  195086 21cn.com
+  193720 gmail.com
+  165742 vip.qq.com
+  161241 yahoo.com
+   93434 yeah.net
+   88933 eyou.com
+   79438 sina.com.cn
+   64147 139.com
+   61092 yahoo.com.tw
+   46959 msn.com
+   42924 163.net
+   40649 live.cn
+   26327 263.net
+   26000 foxmail.com
+   24563 yahoo.com.hk
+   18414 vip.sina.com
+   17923 sina.cn
+   16093 sogou.com
+   15333 citiz.net
+   13412 mail.china.com
+   11049 chinaren.com
+    8239 etang.com
+    7201 189.cn
+    6759 live.com
+    5731 vip.163.com
+    5324 china.com
+    3993 msn.cn
+    3480 2008.sina.com
+    2251 371.net
+    1648 yahoo.co.jp
+    1603 netease.com
+    1389 elong.com
+    1132 mail.ustc.edu.cn
+     820 sjtu.edu.cn
+     645 x263.net
+     564 zte.com.cn
+     526 hotmail.com.tw
+     522 neusoft.com
+     453 bjtu.edu.cn
+     406 huawei.com
+     202 bofthew.com
+     149 owlpic.com
+      78 uggsrock.com
+</code></pre></blockquote>
+
+<p>邮件服务提供商似乎没有太多作为，Gmail 提示不要使用相同密码，我使用的国内的邮件服务商(qq,163)没有类似举动。</p>
+
+<p>各个邮件服务提供商都没有表现出应有的社会责任，未及时告知用户安全问题，导致整个中国互联网集体容颜扫地。</p>
+
+<p>在表现上，各邮件服务提供商反应也不尽相同。
+*   QQ 每个登录都有验证码
+*   163 貌似没有采取什么措施，截至12月22日还能用其中信息登录他人账户成功</p>
+
+<p>不管如何，这次事件各互联网公司应对策略都有了长足的进步，验证码等技术得到了提升。</p>
+
+<p>真正的冰山是利用这些信息的非法获利，各大互联网公司都有虚拟货币，甚至支付宝，有什么样的故事呢，我不得而知。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-19T09:21:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ol>
+<li>你得到的投资有多少？按计划能支撑多久？</li>
+<li>技术人员的总股份有多少？</li>
+<li>如果这个项目失败了会怎么样？</li>
+</ol>
+
+
+<p>关键问题是第3个，鲜有第一个项目就成功的，做好失败的准备，整个团队继续努力，成功的机会更大。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/30/digest/">Digest</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-30T20:23:00+08:00" pubdate data-updated="true">Nov 30<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><a href="http://www.gutenberg.org/">Project Gutenberg</a> DVD 里有404本中文书.</li>
+<li>gcc 4.6 support -Ofast optimization level.</li>
+<li>American Reunion 4 will arrive in 2012</li>
+<li>Puppet Labs earn $8.5 million investment. <a href="http://puppetlabs.com/blog/company/vmware-google-and-cisco-invest-in-puppet-labs/">#</a></li>
+<li>百度云 <a href="http://yun.baidu.com/">#</a></li>
+<li><a href="http://www.ultimatepp.org/">Upp</a> 界面技术应该比QQ&#8221;蜂鸟&#8221;(Hummer)的界面技术更强一些</li>
+<li>在公司里揭疮疤，需要非凡的技巧，不然会成为众矢之的抑或埋下祸根;只有圣人能干这事。</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/08/nc-and-tar-play-nice-then/">Nc and Tar Play Nice Then</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-08T09:20:00+08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Convenience transfer file with nc, just like:<br />
+receiver:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> nc -l -p 2000 &gt; filename
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="/pic/1_waterfall.png" title="mobile waterfall" alt="waterfall" /></p>
+<p>sender:</p>
 
-<p><img src="/pic/1_waterfall.png" title="[mobile waterfall]" ></p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> cat filename | nc 192.168.1.1 2000
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It is working fine for single file.</p>
+
+<p>Tar archiving also convenience too. <br />
+pack:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> tar c .
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>extract:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> tar x
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Combine them together, seem not work fine.<br />
+receiver</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> nc -l -p 2000 | tar x
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sender</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> tar c .  | nc 192.168.1.1 2000
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I think the reason is tar result is block by block, and there is
+nothing mean EOF, so tar x never know when to close the pipe.</p>
+
+<p>I also found #1 use cpio, tar - even not work fine.
+I tried rsync -e, either not work.</p>
+
+<p>A geek nearby provide a solution: tar -ix<br />
+in man tar:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='man'><span class='line'>-i, --ignore-zeros
+</span><span class='line'>             ignore blocks of zeros in archive (normally mean EOF)
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It work perfect.<br />
+receiver</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> nc -l -p 2000 | tar -ix
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sender</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> tar c .  | nc 192.168.1.1 2000
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>TODO: read source code of tar, find out what zero blocks really mean.</p>
+
+<p>[1] http://ask.metafilter.com/133905/Why-did-tar-and-nc-not-play-nice</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/01/hao-xi-guan/">好习惯</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-01T16:47:00+08:00" pubdate data-updated="true">Nov 1<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天遇到一个工程师把控制台的快捷键 Ctrl+C 改为了 Copy 功能，固然方便了拷贝，但是导致很多进程没有办法退出，我看到他都采用 Ctrl+Z 对付此类情形。
+结果就是机器上有很多stopped 的进程。最悲悴的是有个长连接被 stopped 后导致远端的进程被 kill 后一直不正常退出。</p>
+
+<p>个性的工程师都有某些独门秘笈，公开交流会有很好的效果，但是一定需要去发现并纠正某些错误习惯。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/08/18/beijing-bus-route/">北京一共有多少条公交线路?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-18T16:04:00+08:00" pubdate data-updated="true">Aug 18<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>北京一共有1032条公交线路，有8419个公交站</p>
+
+<p>数据来源于互联网 crawl，计算统计所得。</p>
+
+<p><img src="/pic/bj-bus-route.jpg" alt="bj bus route" /></p>
 </div>
   
   
@@ -406,1082 +858,6 @@ http://www.programmer.com.cn/6790/</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-13T17:52:13+08:00" pubdate data-updated="true">May 13<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>MongoDB官方网站有一个很大的<a href="http://www.mongodb.org/display/DOCS/Production+Deployments" target="_blank">列表</a>，一共有227家公司在生产环境中使用MongoDB。比较大的有：</p>
-
-
-<p>ign.com<br />
-disqus.com<br />
-foursquare<br />
-where.com<br />
-spike.com 2469<br />
-yodle.com<br />
-bit.ly<br />
-sourceforge.net<br />
-fotopedia.com<br />
-EA<br />
-findthebest.com<br />
-NewYorkTimes<br />
-sharethis.com<br />
-github.com<br />
-Mozilla open-source Ubiquity<br />
-    <br />
-其中不少公司比 foursquare.com 大很多<br />
-    <br />
-中国有：<br />
-taobao.com 貌似很早就开始用了<br />
-chinavisual.com 视觉中国<br />
-dianping.com 大众点评<br />
-    <br />
-</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-11T17:30:33+08:00" pubdate data-updated="true">May 11<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>@牛文文：我承认，这是我做编辑十几年来看到的最酣畅最有力最美丽的文字&mdash;&mdash;律师滕彪为夏俊峰二审所做的辩护词。真惭愧，我从来没有机会编辑或刊发这样的文字；真幸运，我们竟然还有一个地方（法庭）可以公开、大声发表这样的演讲。建议我的财经商业记者编辑同行都来读下这篇文字，它是范文。<br />
-     <br />
-我没有能力抵抗强权，我也不能到大街上贴小广告传播这篇最酣畅最有力最美丽的文字。我救不了弱者夏俊峰，我也没能力让那个解说药家鑫激情杀人的专家为夏俊峰辩护。我只能在我自己成为下一个夏俊峰之前，转载这篇最酣畅最有力最美丽的文字，把它贴到我所能见到的任何角落。</p>
-
-
-<p>&nbsp;</p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 审判长，审判员：</span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 28.5pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 作为夏俊峰的辩护人，我首先向被害者家属表示同情；不管夏俊峰有罪与否，两个公民的死亡总是让人非常遗憾的。我也将向法庭表明，两名城管和夏俊峰一样，都 是城管制度的受害者，今天的法庭注定是一场没有赢家的战争。我们要极力避免的是一个悲剧引发新的悲剧，一个错误伴随着新的错误。</span></p>
-
-
-<p style="text-indent: 28.5pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 法律就是法律，我们不能把法律之外的个人情绪和政治压力等因素放在法律之上。依照诉讼法理以及刑事诉讼法第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">186</span></span><span style="font-size: 12.0pt;">条之规定，第二审程序审理的对象是一审判决是否正确。我要向法庭证明的是，一审判决认定夏俊峰构成故意杀人罪，定性错误、适用法律错误，控方指控的罪名根本不能成立；一审判决判处夏俊峰死刑，则是量刑错误，与相关法律规定相违背。</span></p>
-
-
-<p style="text-indent: 28.5pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt 52.5pt;">    <strong><span style="font-size: 12.0pt;"><span><span style="font-family: Times New Roman;">一、 </span></span></span></strong><strong><span style="font-size: 12.0pt;">一审判决认定夏俊峰构成故意杀人罪，属于定性错误。</span></strong></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">1</span></span></strong><strong><span style="font-size: 12.0pt;">、案发之前夏俊峰并不认识两被害者，无冤无仇，该案的起因是</span></strong><strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">2009</span></span></strong><strong><span style="font-size: 12.0pt;">年</span></strong><strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">5</span></span></strong><strong><span style="font-size: 12.0pt;">月</span></strong><strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">16</span></span></strong><strong><span style="font-size: 12.0pt;">日</span></strong><strong><span style="font-size: 12.0pt;">沈河区城管申凯、张旭东等十几人进行野蛮执法。</span></strong></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 证人史春梅、张杰、贾子强、尚海涛、张忠文证明，&ldquo;</span><span style="font-size: 12.0pt;">城管把人抓住，就抢煤气罐，（香肠竹签等）东西扔了一地。妻子不让扔，十几个城管围着夏某就开始打，夏求别打了也没放过，打得夏某来回倒，站也站不住。</span><span style="font-size: 12.0pt;">&rdquo;夏俊峰的一只鞋底被城管人员踩掉留在现场，在一审时已经作为证据提交并出示（公诉机关开庭也对此也予以认可，但是一审判决书中对如此重要的证据只字未提）。夏俊峰的供述，&ldquo;</span><span style="font-size: 12.0pt;">城管像土匪一样把锅碗瓢盆往地上扔，我们求饶，说今天周六，他们说&lsquo;别废话&rsquo;，一城管打我后脑勺&hellip;&hellip;&rdquo;</span><span style="font-size: 12.0pt;">夏俊峰妻子张晶的证词也证明了夏被十几人推搡殴打，在张晶下跪恳求的情况下城管也仍然没有住手。城管祖明辉的证词也承认，夏俊峰的煤气罐&ldquo;</span><span style="font-size: 12.0pt;">被我们夺下来，放在货车上</span><span style="font-size: 12.0pt;">。&rdquo;（卷三</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">34</span></span><span style="font-size: 12.0pt;">页）。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.1pt;margin: 0.0cm 0.0cm 0.0pt;">    <strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">2</span></span></strong><strong><span style="font-size: 12.0pt;">、在野蛮执法之后，城管强行将夏俊峰拽上车，并带到办公室进行殴打。这样，被害者申凯、张旭东当时的行为就构成了非法拘禁罪。</span></strong></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 证人史春梅、张杰、贾子强、尚海涛、张忠文证明，是城管人员强行将夏俊峰拽上车，而不是夏俊峰主动上车。夏俊峰的供述、妻子张晶的证词也证明了这一点。（</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">2010</span></span><span style="font-size: 12.0pt;">年</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">2</span></span><span style="font-size: 12.0pt;">月</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">25</span></span><span style="font-size: 12.0pt;">日夏俊峰询问笔录：&ldquo;</span><span style="font-size: 12.0pt;">三四个城管拽我到他们车里。我挣扎反抗，不想跟他们去。&rdquo;）</span><span style="font-size: 12.0pt;">张伟的证词是&ldquo;夏俊峰主动上车&rdquo;，这与而张晶、尚海涛等<span>5</span>人的证词相矛盾，一审判决书对此没有任何解释。</span><span style="font-size: 12.0pt;">辩护人注意到，张伟的证言前后矛盾，不足采信。比如</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">5</span></span><span style="font-size: 12.0pt;">月</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">16</span></span><span style="font-size: 12.0pt;">日笔录，张伟提到夏俊峰刺了他一刀后又追他，但没追上。矛盾之处是：夏俊峰怎么可能追不上一个大腿已经受伤的人？又如，</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">5</span></span><span style="font-size: 12.0pt;">月</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">16</span></span><span style="font-size: 12.0pt;">日案发当天的笔录明白无误地说，&ldquo;</span><span style="font-size: 12.0pt;">没看见</span><span style="font-size: 12.0pt;">&rdquo;申凯和张旭东被谁刺伤（卷三</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">17</span></span><span style="font-size: 12.0pt;">页）；但一个多月后的</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">6</span></span><span style="font-size: 12.0pt;">月</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">22</span></span><span style="font-size: 12.0pt;">日笔录却说&ldquo;</span><span style="font-size: 12.0pt;">夏俊峰背对着我，正在用到扎张旭东。</span><span style="font-size: 12.0pt;">&rdquo;（卷三</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">20</span></span><span style="font-size: 12.0pt;">页）</span> <span style="font-size: 12.0pt;"> 这显然不符合记忆规律，是在说谎。考察当时情境：城管野蛮执法，商贩避之唯恐不及，城管人多势众，不愿空手而归；夏俊峰在光天化日、众目睽睽之下仍被殴打，前去虎狼之地将会如何，可想而知。因此</span><span style="font-size: 12.0pt;">&ldquo;主动上车&rdquo;</span><span style="font-size: 12.0pt;">之说，只有城管人员的证词，其实只是城管人员逃避责任的谎言而已。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 非法拘禁罪，是指以拘押、禁闭或者其他强制方法，非法剥夺他人人身自由的行为。行政处罚法第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">19</span></span><span style="font-size: 12.0pt;">条规定，限制人身自由的行政处罚只能有公安机关行使。行政执法沈河分局及城管人员当然无权限制公民人身自由，强行将夏俊峰拽上车并限制在办公室的行为，已经符合非法拘禁罪的全部构成要件。根据夏俊峰的多次陈述，秃头的城管人员先是辱骂他&ldquo;你怎么那么能装</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">B</span></span><span style="font-size: 12.0pt;">呢&rdquo;，继而用拳头打他的头部，两人对夏俊峰拳打脚踢，秃头还拿桌子上的铁茶杯砸他。可见申凯、张旭东当时的行为不但构成非法拘禁罪，而且具有殴打辱骂情节，属于法定的加重处罚情节。《刑法》第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">238</span></span><span style="font-size: 12.0pt;">条：&ldquo;</span><span style="font-size: 12.0pt;">非法拘禁他人或者以其他方法非法剥夺他人人身自由的，处三年以下有期徒刑、拘役、管制或者剥夺政治权利。具有殴打、侮辱情节的，从重处罚。</span><span style="font-size: 12.0pt;">&rdquo;同时规定，国家机关工作人员利用职权犯非法拘禁罪的，从重处罚。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<pre><code>&lt;span style="font-size: small;"&gt;&lt;span style="font-family: 宋体;"&gt;&lt;span&gt;3&lt;/span&gt;、&lt;strong&gt;夏俊峰在被羁押时，就要求警官将其胳膊上被打的伤拍摄下来，这有力地证明了被城管殴打的现实。&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;    &lt;strong&gt;&lt;span&gt;&lt;span style="font-family: 宋体;font-size: small;"&gt; &lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;    &lt;span style="font-size: small;"&gt;&lt;span style="font-family: 宋体;"&gt;夏俊峰在被抓到办公室之前并没有受伤，案发之后数小时后即被抓捕，刺伤只能是在城管办公室被殴打所致。据夏俊峰陈述，当时他的&lt;/span&gt;&lt;span style="font-family: Courier New;"&gt;&lt;span&gt;&amp;ldquo;两个胳膊都有伤，青一块紫一块。大腿根部有很大一块淤青。当时没照相。脖子、后背都有青紫，头上还有包，但都没照相。左耳朵二个月都一直耳鸣。当时只照了胳膊，法庭出示的两张照片就是。&amp;rdquo;&lt;/span&gt;&lt;/span&gt;&lt;span style="font-family: 宋体;"&gt;夏俊峰被殴打至身体多处青紫，事件发生过程又仅有数分钟，说明夏俊峰被城管殴打而被逼自卫。&lt;strong&gt;但一审判决书对案卷中的、法庭出示的这两张照片竟然只字未提。对这么关键的证据避而不谈，说明一审审判机关已经丧失了起码的中立性。&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;"&gt;&amp;nbsp;&lt;/p&gt;
-</code></pre>
-
-<p style="text-indent: 27.1pt;margin: 0.0cm 0.0cm 0.0pt;">    <strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">4</span></span></strong><strong><span style="font-size: 12.0pt;">、从死者的伤口形态分析，当时张、申两人正在俯身对夏俊峰进行持续殴打。</span></strong></p>
-
-
-<p style="text-indent: 27.1pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 27.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 死者申凯左胸和背部刺创，死者张旭东左胸部上方刺创，并且均有左上右下走行或右上左下走行的刺创。</span></p>
-
-
-<p style="text-indent: 27.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 首先，非要害部位的刀刺不符合故意杀人的特点，如果是故意杀人，在极短的时间内，不可能去刺扎无关紧要的部位。</span></p>
-
-
-<p style="text-indent: 27.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 其次，申凯身高</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">1.82</span></span><span style="font-size: 12.0pt;">米，张旭东身高</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">1.80</span></span><span style="font-size: 12.0pt;">米，而夏俊峰才</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">1.65</span></span><span style="font-size: 12.0pt;">米， 如果都是站立姿势，不可能在胸部以上形成左上右下走行或右上左下走行的刺创；当时夏俊峰为半跪姿势，右手持刀，只有向前上方和向左肩后乱捅，才能形成被害 者胸部上方的左上右下走行或右上左下走行的刺创。这也表明夏俊峰被踢成半跪姿势后，申凯和张旭东仍未停止行凶，而是俯身继续对之进行殴打。</span></p>
-
-
-<p style="text-indent: 27.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 最后，夏俊峰身体矮小，张、申二人身材高大，权力、社会地位和经济地位差距悬殊，且在城管办公室被限制人身自由，夏俊峰主动殴打两名执法队员，绝不符合常理；只有突然而紧急的防卫，使张、申不及闪躲，才能解释张、申二人身上刀伤的部位、走向和次数。</span></p>
-
-
-<p style="text-indent: 27.1pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 27.1pt;margin: 0.0cm 0.0cm 0.0pt;">    <strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">5</span></span></strong><strong><span style="font-size: 12.0pt;">、夏俊峰进行防卫时所使用的小刀，并非事先准备；而且当时情境下用刀防卫，完全出于本能。</span></strong></p>
-
-
-<p style="text-indent: 27.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 夏俊峰所用的刀是平时切肠用的，并非有预谋准备。他并非一开始就掏出刀，也不是突然想起身上有刀；他是被城管人员猛踢下身时，用手去捂痛处，才摸到了揣在兜里的小刀。完完全全出于防卫的本能，他才摸出刀来进行反抗。</span></p>
-
-
-<p style="text-indent: 27.1pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 27.1pt;margin: 0.0cm 0.0cm 0.0pt;">    <strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">6</span></span></strong><strong><span style="font-size: 12.0pt;">、夏俊峰的行为符合正当防卫的条件。</span></strong></p>
-
-
-<p style="text-indent: 27.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 《中华人民共和国刑法》第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">20</span></span><span style="font-size: 12.0pt;">条：</span><span style="font-size: 12.0pt;">&ldquo;为了使国家、公共利益、本人或者他人的人身、财产和其他合法权利免受正在进行的不法侵害，而采取的制止不法侵害的行为，对不法侵害人造成损害的，属于正当防卫，不负刑事责任。&rdquo;</span><span style="font-size: 12.0pt;">对正在进行故意伤害、杀人、抢劫、强奸、绑架以及其他严重危及人身安全的暴力犯罪，采取防卫行为，造成不法侵害人伤亡的，不属于防卫过当，不负刑事责任。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p><span style="font-size: small;"><span style="font-family: 宋体;">根据夏俊峰的陈述，</span><span><span style="font-family: Courier New;">&ldquo;到了执法队。陶冶先下车，开门。张旭东问：你农村还是市里的？我说：&ldquo;这还有什么区别啊，摆摊的，都不容易。&rdquo;刚进屋，后来又进来一辆车，下来一个人（后来知道他叫申凯），他进屋就骂我，开始打我，用拳头打在我脑袋和耳朵上，我就想往外跑，和申凯面对面了，马上张旭东就把我脖领子抓住了不让我跑，也打我，用拳头叮咣打，张旭东和申凯就把我夹中间了，张旭东用脚踢我大腿根部，特别痛，我右膝盖被踢跪地下了。我就去捂痛的地方，就摸到刀了。&rdquo;</span></span></span>    <span><span style="font-family: 宋体;font-size: small;"> </span></span><p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <strong><span style="font-size: 12.0pt;"> 当时，夏俊峰被非法拘禁的状态在持续，被野蛮殴打的状态没有停止。在行凶者的非法侵害行为正在进行的过程中，夏俊峰被迫进行防卫，符合正当防卫的全部要件。</span></strong></p></p>
-
-<p style="text-indent: 23.6pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 23.6pt;margin: 0.0cm 0.0cm 0.0pt;">    <strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">7</span></span></strong><strong><span style="font-size: 12.0pt;">、夏俊峰的防卫行为虽然造成两死一伤的后果，但并非防卫过当。</span></strong></p>
-
-
-<p style="text-indent: 23.6pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 防卫过当是指正当防卫明显超过必要限度，给不法侵害人造成重大损害的行为。一般而言，在面临非法侵害时，如果用较缓和的手段能制止侵害时，就不要用激烈的防卫手段；当侵害行为已经被制止时，就不应再继续对侵害者进行伤害。<strong>而对&ldquo;必要限度&rdquo;的把握，必须结合当时的环境、体质、精神状态、可能的反抗手段乃至相关的社会背景等各种因素进行综合考量。</strong>在 当时的情况下，夏俊峰处在被非法拘禁状态，两城管人高马大，除了拳打脚踢之外，还用了铁杯子等工具虐待夏俊峰，使用铁杯子殴打夏俊峰，这足以对夏俊峰的生 命形成了威胁。后面极可能有其他城管队员陆续进来，此时，除了用随身携带的摆摊用的小刀，没有任何其他的办法可以制止正在进行的不法侵害。夏俊峰说，在那 种情况下，&ldquo;</span><span style="font-size: 12.0pt;">任何人都会做出同样的反应</span><span style="font-size: 12.0pt;">&rdquo;，这是最典型的正当防卫的心理状态。</span></p>
-
-
-<p style="text-indent: 18.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 根据夏俊峰当庭回答本辩护人的提问，他根本无法确定，自己被殴打何时结束以及会有何种结果。城管野蛮执法人所共知，城管打人事件几乎天天都有，而城管殴打公民致死的案件也不在少数。在互联网上</span><span style="font-family: Arial;color: black;font-size: 12.0pt;">Google</span><span style="color: black;font-size: 12.0pt;">&ldquo;城管</span> <span style="color: black;font-size: 12.0pt;"> 野蛮执法&rdquo;有</span><span style="font-family: Arial;color: black;font-size: 12.0pt;">261,000</span><span style="font-size: 12.0pt;">条结果，&ldquo;城管</span> <span style="font-size: 12.0pt;"> 打死小贩&rdquo;有</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">602,000</span></span><span style="font-size: 12.0pt;">条结果，&ldquo;城管</span> <span style="font-size: 12.0pt;"> 暴力</span> <span style="font-size: 12.0pt;"> 致死&rdquo;有</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">782,000</span></span> <span style="font-size: 12.0pt;"> 条结果。</span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2000</span><span style="font-size: 12.0pt;">年<span>9</span>月<span>6</span>日</span><span style="font-size: 12.0pt;">，四川眉山县城市管理监察大队管理中队郑光永、吴顺乾、驾驶员张卫东等人上街整治乱摆摊设点将杜某乱拳击伤，唐德明被甩下货车身亡。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2001</span><span style="font-size: 12.0pt;">年<span>5</span>月<span>29</span>日</span><span style="font-size: 12.0pt;">，宁夏灵武市城建局城市监察大队执法人员强行没收锅灶时，将杨文志打死，并打伤杨建荣夫妇等人。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2001</span><span style="font-size: 12.0pt;">年<span>11</span>月<span>12</span>日</span><span style="font-size: 12.0pt;">，因与市容执法人员发生争执，安徽宿州市个体工商户张福才在多名执法人员的推搡与踢打中身亡。 </span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2002</span><span style="font-size: 12.0pt;">年<span>1</span>月<span>18</span>日</span><span style="font-size: 12.0pt;">，重庆市沙区城管人员在检查市容卫生过程中与沙区双碑村陈家连生产队的个体户余波发生争执，开执法车从余波腹部碾过致其死亡。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2002</span><span style="font-size: 12.0pt;">年<span>11</span>月<span>18</span>日</span><span style="font-size: 12.0pt;">，<span>26</span>岁的青年郭战卫在西安被莲湖区数名城管殴打致死，与他同行的一名跟车青年也被打成重伤。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2003</span><span style="font-size: 12.0pt;">年<span>1</span>月<span>2</span>日</span><span style="font-size: 12.0pt;">，广东潮州市庵埠镇一名三轮车夫在与几名城管人员争执中丧命。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2003</span><span style="font-size: 12.0pt;">年<span>2</span>月，西安市雁塔区城管在小寨兴善寺东街清理占道经营时，一工作人员竟将摆摊的孕妇金昌艳推倒在地，并在金的肚子上踩了两脚。后经医院检查，金昌艳腹中的胎儿不幸死亡。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2004</span><span style="font-size: 12.0pt;">年<span>7</span>月<span>20</span>日</span><span style="font-size: 12.0pt;">，广州天河区员村街道办城管人员在野蛮执法过程中将外来商贩李月明打死。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2005</span><span style="font-size: 12.0pt;">年<span>7</span>月<span>20</span>日</span><span style="font-size: 12.0pt;">，经营蔬菜的<span>56</span>岁江苏农妇林红英被城管人员打死。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2005</span><span style="font-size: 12.0pt;">年<span>11</span>月<span>19</span>日</span><span style="font-size: 12.0pt;">，江苏无锡城管打死小贩吴寿清。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2006</span><span style="font-size: 12.0pt;">年<span>2</span>月<span>16</span>日</span><span style="font-size: 12.0pt;">，上海市普陀区城市管理监察大队第九分队将上海市民李秉浩殴打致死。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2006</span><span style="font-size: 12.0pt;">年<span>10</span>月<span>9</span>日</span><span style="font-size: 12.0pt;">，广西来宾市象州县的一名流浪汉被喝醉酒的城管队队长覃宗权殴打致死。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2007</span><span style="font-size: 12.0pt;">年<span>1</span>月<span>8</span>日</span><span style="font-size: 12.0pt;">下午<span>15</span>时<span>40</span>分左右，山东济阳县经一路宏伟酒业经营部老板李光春被<span>11</span>名城管打死。 </span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2008</span><span style="font-size: 12.0pt;">年<span>1</span>月<span>7</span>日</span><span style="font-size: 12.0pt;">，湖北天门竟陵镇湾坝村魏文华路过该市竟陵镇湾坝村时，发现城管执法人员与村民发生激烈冲突。他掏出手机录像时，被城管人员当场打死。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2008</span><span style="font-size: 12.0pt;">年<span>7</span>月<span>30</span>日</span><span style="font-size: 12.0pt;">，重庆市渝中区两路口综合执法大队的周某等<span>4</span>名执法人员在大田湾体育场附近将正经营的摊贩刘建平殴打致死。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2009</span><span style="font-size: 12.0pt;">年<span>3</span>月<span>30</span>日</span><span style="font-size: 12.0pt;">，江西萍乡市开发区横板村<span>16</span>组村民陈某被该区城管人员一、二十人群殴致死，事后家属抬着尸体封堵了境内<span>320</span>国道路段，抗议城管暴行，引发近万名群众围观。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2009</span><span style="font-size: 12.0pt;">年<span>10</span>月<span>27</span>日</span><span style="font-size: 12.0pt;">，昆明市福发社区城管分队在野蛮执法时与一三轮车夫潘怀发生冲突，并将其打死。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">2010</span><span style="font-size: 12.0pt;">年<span>6</span>月<span>1</span>日</span><span style="font-size: 12.0pt;">,</span><span style="font-size: 12.0pt;">深圳城管与老太发生争执活活碾死老太<span>.</span></span></p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 与本案不无关系的是，死者之一申凯经常殴打商贩，在滨河派出所应有报案记录，比如，</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">2008</span></span><span style="font-size: 12.0pt;">年</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">7</span></span><span style="font-size: 12.0pt;">月 份，一卖雨伞女商贩的胳膊被打骨折了。我们在庭前已经申请法院调查取证。但法院调查取证的范围小于辩护人申请取证的范围；而且即使没有查到报案记录，并不 等于报案记录不存在；报案记录不存在，也不等于没有伤害商贩的事实。而沈河城管经常性的野蛮执法，即使没有本案商贩的证词，也是本地民众众所周知的事实。</span></p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 不要以为这些和本案没有直接关系的事实真的与本案无关。这些事实（不管夏俊峰本人有没有清楚地了解全部城管暴行），在一个具体的案件里已经成为相关参与者 的常识，或不言自明的社会认知或潜意识。这些社会事实已经深深嵌入行动者，成为行动者做出反应的理所当然的、无需思索的条件。从另一个方面说，城管把公民 打残打死却受不到相应的刑罚制裁甚至完全没有任何制裁，这也是城管和商贩共知共享的&ldquo;社会事实&rdquo;。城管打人成本极低、具有殴打的动力，而夏俊峰则当时对伤 害后果无法预期：被打死是完全可能的。</span></p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 夏俊峰当时完全被打懵了，以至于他在防卫时失去了右手食指；以至于他完全不记得是否用刀捅了张伟，以至于发生了他完全没有料想到、也根本不希望发生的两死 一伤的后果。在夏俊峰极为紧张的情形下，在极其短暂的时间内，要求他清晰地估计对自己的伤害后果、清楚地计算防卫行为的后果、明确地掌握防卫的分寸和尺 度，这无疑是一种过分的苛求。我国新刑法将</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">1979</span></span><span style="font-size: 12.0pt;">年刑法规定的&ldquo;正当防卫超过必要限度&rdquo;修改为&ldquo;正当防卫<strong>明显</strong>超过必要限度&rdquo;，&ldquo;造成不应有的危害&rdquo;改为&ldquo;造成重大损害&rdquo;，增加了无限防卫权的条款，从而降低了界定防卫过当的标准，扩大了正当防卫的范围。其立法主旨显然是为了鼓励公民勇于同不法侵害者作斗争，提高公民抵抗暴力犯罪的积极性。</span></p>
-
-
-<p style="text-indent: 23.6pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 23.6pt;margin: 0.0cm 0.0cm 0.0pt;">    <strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">8</span></span></strong><strong><span style="font-size: 12.0pt;">、判决认定夏俊峰具有杀人的主观故意和动机，缺乏证据支持，与事实不符。</span></strong></p>
-
-
-<p style="text-indent: 23.6pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 23.5pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 前已表明，夏俊峰的主观心态是自卫，是在被非法拘禁、遭到非法侵害时想要制止暴力并尽快逃脱的心理。张、申两人被捅了几刀之后没有立刻死去、还能站立起来并说话，说明夏俊峰根本不想杀死他们。而耽误治疗造成死亡的可能原因之一。一审提交的证据表明，从出事到送医院抢救用了</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">19</span></span><span style="font-size: 12.0pt;">分钟，但从出事地点打车到</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">463</span></span><span style="font-size: 12.0pt;">医院只需要</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">5</span></span><span style="font-size: 12.0pt;">分钟，其中还等了一个红灯。根据城管祖明辉</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">5</span></span><span style="font-size: 12.0pt;">月</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">16</span></span><span style="font-size: 12.0pt;">日的证词，</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">120</span></span><span style="font-size: 12.0pt;">迟迟未到，这耽误了最宝贵的抢救时间。依鉴定结论，被害人系失血性休克死亡，这不同于&ldquo;急性失血性休克死亡&rdquo;，后者是主动脉出血，失血快，休克快，死亡快。而失血性休克死亡则是次动脉或静脉出血，抢救及时不至于死亡。这也说明夏俊峰了没有杀人的故意。</span></p>
-
-
-<p style="text-indent: 23.6pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 23.5pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 本案证人城管队员曹阳称：</span><span style="font-size: 12.0pt;">&ldquo;我出来看见申凯向勤务区的后门走，走到我身边就倒在我怀里说：&lsquo;我被炸串那小子扎了&rsquo;之后就倒下了。这时我又看见张旭东用手捂着腹部站在办公室里，能有两秒钟左右，没说话就倒地了。&rdquo;</span><span style="font-size: 12.0pt;">可见，夏俊峰刀刺自卫完毕后，张、申两人仍可以勉强步行或站立。也就是说，夏俊峰在两名城管仍可站立说话时已经逃离，并没有采取进一步伤害手段以确保剥夺其生命。因此，曹阳的证词也可以证明夏俊峰并无杀人之故意。</span></p>
-
-
-<p style="text-indent: 23.5pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 23.5pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 沈河城管人员在大庭广众之下，毫无顾忌地殴打夏俊峰，强抢其维持基本生存的用具，在夏俊峰爱人下跪求饶的情况下仍然毫无怜悯，谁能相信他们把夏俊峰强行带 回城管办公室却能耐心而温柔地对他说服教育？夏俊峰在闹市区被打不还手、东西被抢不还手、在自己爱人苦苦求饶时不还手、在被拽上车时不动手、在下车后进办 公室之前也不动手，却在进了办公室、失去了逃跑机会的时候，主动用刀伤害申凯和张旭东？一审判决认定夏俊峰具有杀人的故意，完全违反逻辑，不合情理。综合 夏俊峰被抓、被打、被迫防卫的整个过程来看，根本不具有积极追求或放任被害者死亡的主观心态，其行为模式也与故意杀人的行为方式完全不同。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.1pt;margin: 0.0cm 0.0cm 0.0pt;">    <strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">9</span></span></strong><strong><span style="font-size: 12.0pt;">、一审和二审庭审中，全部证人均未出庭，证人证言未经过当庭质证。</span></strong></p>
-
-
-<p style="text-indent: 28.5pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 23.5pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 刑事诉讼法第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">47</span></span><span style="font-size: 12.0pt;">条规定，</span><span style="font-size: 12.0pt;">&ldquo;证人证言必须在法庭上经过公诉人、被害人和被告人、辩护人双方讯问、质证，听取各方证人的证言并且经过查实以后，才能作为定案的根据。&rdquo;</span><span style="font-size: 12.0pt;">刑事诉讼法司法解释第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">58</span></span><span style="font-size: 12.0pt;">条规定：</span><span style="font-size: 12.0pt;">&ldquo;证 据必须经过当庭出示、辨认、质证等法庭调查程序查证属实，否则不能作为定案的根据。&rdquo;&ldquo;对于出庭作证的证人，必须在法庭上经过公诉人、被害人和被告人、辩 护人等双方询问、质证，其证言经过审查确实的，才能作为定案的根据；未出庭证人的证言宣读后经当庭查证属实的，可以作为定案的根据。&rdquo;</span><span style="font-size: 12.0pt;">第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">141</span></span><span style="font-size: 12.0pt;">条：</span><span style="font-size: 12.0pt;">&ldquo;证人应当出庭作证。符合下列情形，经人民法院准许的，证人可以不出庭作证：（一）未成年人；（二）庭审期间身患严重疾病或者行动极为不便的；（三）其证言对案件的审判不起直接决定作用的；（四）有其他原因的。&rdquo;</span><span style="font-size: 12.0pt;">而陶冶、曹阳等关键证人不属于上述任何一种情况。</span></p>
-
-
-<p style="text-indent: 23.5pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 23.5pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 自二</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">O</span></span><span style="font-size: 12.0pt;">一</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">O</span></span><span style="font-size: 12.0pt;">年七月一日起施行的《关于办理死刑案件审查判断证据若干问题的规定》第四条：</span><span style="font-size: 12.0pt;">&ldquo;经过当庭出示、辨认、质证等法庭调查程序查证属实的证据，才能作为定罪量刑的根据。&rdquo;</span><span style="font-size: 12.0pt;">第十五条：</span><span style="font-size: 12.0pt;">&ldquo;未出庭作证证人的书面证言出现矛盾，不能排除矛盾且无证据印证的，不能作为定案的根据。&rdquo;</span><span style="font-size: 12.0pt;">而本案证人张伟、陶冶、曹阳的书面证言均出现多处重大矛盾。</span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 作为有重大影响的涉及公民生死的夏俊峰案，竟然没有任何证人、鉴定人出庭接受质证，这不仅反映出公诉人、合议庭的轻率，而且直接关系到本案的定性是否正 确。张伟的证词前后矛盾，陶冶、曹阳的证词和张晶、史春梅、张杰、贾子强、尚海涛、张忠文的证词相矛盾。谁说真话谁说假话，经双方质证后自然可见分晓。<strong>证人不去面临挑战性的问题、不去回答合理的质疑、不让法庭观其颜色、听其气息、辨其言辞，如何能够排除人们心中的怀疑？如何让旁观者信服判决的公正性？</strong></span></p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt 52.5pt;">    <strong><span style="font-size: 12.0pt;"><span><span style="font-family: Times New Roman;">二、 </span></span></span></strong><strong><span style="font-size: 12.0pt;">一审判决夏俊峰死刑，属于量刑错误。</span></strong></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt 28.5pt;">&nbsp;</p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt 28.5pt;">    <strong><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">1</span></span></strong><span style="font-size: 12.0pt;">、<strong>被害人有重大过错，不应该判死刑。</strong></span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt 28.5pt;">&nbsp;</p>
-
-
-<p style="text-indent: 23.5pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 根据《中华人民共和国行政处罚法》第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">10</span></span><span style="font-size: 12.0pt;">条之规定，行政法规需要对法律已规定得行政处罚作出具体规定的，必须在法律规定的给予行政处罚的行为、种类和幅度的范围内规定。《行政处罚法》第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">8</span></span><span style="font-size: 12.0pt;">条，行政处罚种类只有警告、罚款、没收违法所得、没收非法财物；责令停产停业、暂扣或者吊销许可证、暂扣或者吊销执照、行政拘留。并没有所谓扣押和暂扣工具一类。沈河城管扣押夏俊峰的经营工具于法无据。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 城管执法人员对夏俊峰进行行政处罚的原因是被告无照经营，可是城管事先并没有确认其身份，也就无法在行政处罚前得到其进行过工商登记的相关证据。城管人员 当日也未询问夏俊峰是否进行过工商登记。根据行政处罚法，执法人员应首先向被告出示证件，告知给予行政处罚的事实、理由和依据，听取当事人的陈述、申辩， 填写预定格式、编有号码的行政处罚决定书。因此当日城管执法程序存在严重瑕疵。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 被害者先是野蛮执法，后是野蛮犯罪；非法拘禁于前，暴力伤害于后；滥权悖德在先，践踏法律在后。沈河区城管尤其是张、申二人的违法犯罪行为是本案的最重大 的起因，被害人对其自身的死亡不仅有过错，而且有重大明显过错。被害人的过错或犯罪行为直接引起了矛盾的激化和夏俊峰的防卫反应。《全国法院维护农村稳定 刑事审判工作座谈纪要》规定：<strong>&ldquo;</strong></span><strong><span style="font-size: 12.0pt;">对于被害人一方有明显过错或对矛盾激化负有直接责任，或者被告人有法定从轻处罚情节的，一般不应判处死刑立即执行。&rdquo;</span></strong></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt 28.5pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">2</span></span><span style="font-size: 12.0pt;">、夏俊峰有自首情节并如实坦白全部事实。</span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">3</span></span><span style="font-size: 12.0pt;">、夏俊峰平时表现良好，没有犯罪记录。其邻居朋友的联保信已向法庭提交。已经生效的《关于办理死刑案件审查判断证据若干问题的规定》</span><span style="font-size: 12.0pt;">第三十六条：</span><strong><span style="font-size: 12.0pt;">&ldquo;人民法院认定被告人的量刑事实，除审查法定情节外，还应审查以下影响量刑的情节<span>: (</span>一<span>)</span>案件起因<span>; (</span>二<span>)</span>被害人有无过错及过错程度，是否对矛盾激化负有责任及责任大小<span>; (</span>四<span>)</span>被告人平时表现及有无悔罪态度<span>;</span> &hellip;&hellip;不能排除被告人具有从轻、减轻处罚等量刑情节的，判处死刑应当特别慎重。&rdquo;</span></strong></p>
-
-
-<p style="text-indent: 18.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">4</span></span><span style="font-size: 12.0pt;">、夏俊峰真诚悔过，向被害者家属表示道歉，并愿意积极承担民事赔偿责任。</span></p>
-
-
-<p style="text-indent: 6.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">5</span></span><span style="font-size: 12.0pt;">、由于属正当防卫，虽然造成两死一伤的后果，但夏俊峰的行为几乎没有社会危害性。相反，正当防卫应当受到法律的肯定和社会的表彰。</span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt 28.5pt;">&nbsp;</p>
-
-
-<p style="text-indent: 27.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">6</span></span><span style="font-size: 12.0pt;">、<strong>退一万步说，即使防卫过当，也应该免除或减轻处罚，处以缓刑或短期徒刑，这才符合刑法的规定。</strong></span></p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 21.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 《中华人民共和国刑法》第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">20</span></span><span style="font-size: 12.0pt;">条第</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">2</span></span><span style="font-size: 12.0pt;">款：</span><strong><span style="font-size: 12.0pt;">&ldquo;正当防卫明显超过必要限度造成重大损害的，应当负刑事责任，但是应当减轻或者免除处罚。&rdquo;</span></strong><span style="font-size: 12.0pt;">防卫过当的情况下，防卫人主观恶性极小，社会危害性非常轻微。防卫过当由最初的正当防卫转化而来，而正当防卫的本质是社会的有益性，犯罪的本质是社会危害性。因防卫过当而构成犯罪，是非常轻微的犯罪。按照刑法，&ldquo;<strong>应该&rdquo;也就是&ldquo;必须&rdquo;而不是&ldquo;可以&rdquo;免除或减轻处罚；而且首先考虑&ldquo;免除处罚&rdquo;，实在不能&ldquo;免除处罚&rdquo;的，也必须&ldquo;减轻处罚&rdquo;。</strong></span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt 28.5pt;">&nbsp;</p>
-
-
-<p style="text-indent: 23.5pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 即使夏俊峰因防卫过当而犯罪，那也绝非故意杀人罪。至于他因为防卫过当构成何种罪名，则不是辩方的事情，辩护人不能指控委托人。本辩护人今天要做的事情是证明控方指控的罪名不能成立。</span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt 52.5pt;">    <strong><span style="font-size: 12.0pt;"><span><span style="font-family: Times New Roman;">三、 </span></span></span></strong><strong><span style="font-size: 12.0pt;">结辩：维护司法尊严，避免司法专横；慎重适用死刑，避免滥杀错杀。</span></strong></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 30.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 本案的一审判决简单而蛮横，对控方证据照单全收，对辩方证据视而不见；对证据之矛盾未加解释，对无法解释的证据干脆不提；不但无法排除重大怀疑，而且把全 部疑点之利益均归于控方。在这份死刑判决书的字里行间，可以看到法官比控方更积极；法官意图成为迫不及待的行刑者。不难看出，这份判决书是先有了结论，然 后加以勉强的论证企图掩耳盗铃、瞒天过海。为了得出夏俊峰故意杀人的结论，竟超出检察院的指控：控方称</span><span style="font-size: 12.0pt;">&ldquo;夏俊峰因故与被害人申凯、张旭东等人发生争执，遂持随身携带的尖刀先后猛刺被害人&hellip;&hellip;&rdquo;，</span><span style="font-size: 12.0pt;">而判决书认定</span><span style="font-size: 12.0pt;">&ldquo;事态已经平息后被告人持刀行凶&rdquo;。</span><span style="font-size: 12.0pt;">显然，&ldquo;发生争执&rdquo;不是&ldquo;事态已经平息&rdquo;，夏俊峰是因为&ldquo;争执&rdquo;而拔刀刺人的。法院没有也无法解释&ldquo;事态已经平息&rdquo;与检察院指控的&ldquo;发生争执&rdquo;的矛盾。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 这份</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">6500</span></span><span style="font-size: 12.0pt;">多字的判决书，&ldquo;说理&rdquo;</span> <span style="font-size: 12.0pt;"> 的部分只有</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">400</span></span><span style="font-size: 12.0pt;">字，主要有如下两段：</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">&ldquo;本案定性问题。经查<span>,</span>被告人夏俊峰持刀连刺被害人身体要害部位数刀<span>,</span>从凶器类型、刺击部位、力度、刺击次数均反映出被告人主观上具有故意杀人的主观故意<span>,</span>客观上造成被害人死亡结果的发生<span>,</span>其行为应以故意杀人罪定罪处罚。故对控方的意见予以支持<span>,</span>对辩方的意见不予采纳。&rdquo;</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;">&ldquo;凶器类型&rdquo;如何能反映出被告人有杀人的主观故意？欲置人死地者用切肠用的小短刀？&ldquo;刺击部 位、力度、刺击次数&rdquo;如何能反映出被告人有杀人的主观故意？如何解释创口的方向？如何解释背部创口？如何解释夏俊峰离开时两城管并未当场死亡？刺击瞬间， 三个人是何种姿势？为何是这种姿势？被刺第一刀时如何反应？为何有这种反应？被刺者人数、身高、心理、社会地位均占优势，为何能让夏俊峰得手？被害人死亡 结果有无其他因素，比如耽误救治？</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 再如，判决书称，</span><span style="font-size: 12.0pt;">&ldquo;辩护人所提被告人系遭殴打而进行防卫一节，经查，证人陶冶 始终距案发地点仅数米，其证言未能证实存在殴打一节，此节只有被告人陈述，无其他证据证明，认定此节证据不足。故本案不具有防卫情节，被害人在案件起因上 不存在重大过错。此争议问题对控方意见予以支持，对辩方意见不予采纳。&rdquo;</span><span style="font-size: 12.0pt;">稍一分析，就可见其荒谬之处。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">1</span></span><span style="font-size: 12.0pt;">、判决书对辩方有哪些证据支持夏俊峰遭城管殴打几乎不提，也完全没有引用其论争过程。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">2</span></span><span style="font-size: 12.0pt;">、陶冶虽然距现场仅数米，但由于陶冶&ldquo;把门关上，没听见什么声音&rdquo;（卷三</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">24</span></span><span style="font-size: 12.0pt;">页），他既没有看到夏俊峰扎人，也没有看到被害人打夏俊峰，这是很正常的，并不能因此否认被害人殴打了夏俊峰。按照判决书的逻辑，陶冶没看到夏俊峰用刀扎人，难道就否认了夏俊峰用刀扎人？</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">3</span></span><span style="font-size: 12.0pt;">、 夏俊峰遭城管殴打并非&ldquo;只有被告人陈述&rdquo;，此节除夏俊峰本人的没有漏洞的完整陈述外，还有夏俊峰手臂受伤照片、被害人刀伤部位及方向、被踩掉的鞋底、张 晶、史春梅、张杰、贾子强、尚海涛、张忠文等证人的证言等等，这些证据并非单独存在，而是能够互相印证夏俊峰被殴打的事实。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">4</span></span><span style="font-size: 12.0pt;">、判决书认定&ldquo;本案不具有防卫情节&rdquo;，却没有解释杀人动机，更没有解释矮小的夏俊峰何以有能力以一对三，极短的时间内用小刀造成高大凶狠的城管队员两死一伤。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">5</span></span><span style="font-size: 12.0pt;">、判决书认定&ldquo;被害人在案件起因上不存在重大过错&rdquo;，</span> <span style="font-size: 12.0pt;"> 不存在&ldquo;重大&rdquo;过错，就肯定不是&ldquo;不存在任何过错&rdquo;了，那么是什么样的&ldquo;过错&rdquo;？被害人何以有过错？这种过错和夏俊峰的刀刺行为有何关联？这种过错何以完全没有考虑在量刑当中，何以执意要判处夏俊峰死刑？一审判决书之专横粗暴可见一斑。</span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt 28.5pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 审判长、审判员：</span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">1997</span></span><span style="font-size: 12.0pt;">年 城管出现以来，弊端早已显现，所犯罪行累累，可谓民怨沸腾。迄今未有一部全国性的《城市管理法》或者行政法规，城管&ldquo;执法&rdquo;从来于法无据；执法缺乏统一性 和规范性，领导机构缺失；法律监督缺位，僭越公安权力；城管队员法律身份不明，素质参差不齐，打手流氓混迹其中，借执法之名、行夺财谋私扰民害民之实，所 在多有。在法律地位不清、权力制约不力的制度之下，城管人员的暴力习惯，也就成为城管制度的需要，成为这种制度的一部分。法外暴力用于补充规则之不足，用 于弥补身份威信和法律威慑之不足，因此也就不再是个人化的；法外暴力既是变态的&ldquo;城市管理&rdquo;&ldquo;城市形象&rdquo;需要，也就必然是普遍存在的，得到居庙堂者的默 许；法外暴力得不到民众和媒体的有效监督和法律的严肃制裁，也必然会滋长城管人员使用暴力的积极性。运用暴力而极少受到处分，这滋长了城管队员的阴暗心 理，这被城管的作为&ldquo;特权&rdquo;和有身份、有面子的标志。法律和政治地位暧昧不清，势必用谋财、泄愤、与民争利来弥补。暴力一旦开始，就具有自身的惯性，在具 体制度的纵容之下，在群体心理的传染之下，就会成瘾、成为习惯。我相信张旭东申凯在妻子或孩子面前，绝不会表现其人性的残忍和暴力的轻率，他们在家庭的场 域之下遵循爱和良善的原则，而在城管集体执法的场域之下，则被施暴的欲望和激情所吞没。&mdash;&mdash;尽管本辩护人为了夏俊峰的利益和本案的正确定性，必须指出申凯 和张旭东当时行为的违法犯罪性质，但我对他们绝不仅仅是谴责。他们，是我的同胞，与我们一样生活在这个不完善的世界之中；他们，毫无疑问，是城管制度的受 害者。我对他们抱有深切的同情；我能真切感受到他们家属失去亲人的哀痛；他们自身的和家庭的不幸，也是整个社会的不幸。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 城管制度已经让两个家庭破碎了，我们难道非得让第三个家庭破碎吗？我们已经失去了申凯和张旭东两个公民，我们已经有几十个公民被城管打死，我们已经为野蛮 的城管制度付出了沉痛的代价，难道我们非得用司法的公正性为城管体制的弊端和城管队员的野蛮背书？难道我们非得把司法当做城管的复仇之手，置夏俊峰于必死 之地，让父母失去儿子、让妻子失去丈夫、让</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">9</span></span><span style="font-size: 12.0pt;">岁的孩子永远失去父亲</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">?</span></span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 审判长、审判员：</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 在全球反对死刑的潮流之下，绝大多数国家已经立法或事实上废除了死刑，保留死刑的国家一般也只针对谋杀等最为严重的暴力犯罪。难道我们不但要把死刑适用于 经济或非暴力犯罪，而且还要适用于防卫过当或者正当防卫的案件吗？因正当防卫被执行死刑，曹海鑫的悲剧成为河南司法史上洗刷不掉的耻辱，我们难道在</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">21</span></span><span style="font-size: 12.0pt;">世纪的今天在辽宁重新上演这一悲剧吗？</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 两个公民的死亡是社会悲剧，但如果判处夏俊峰死刑，则是一个明显的巨大错误，是社会难以承受和接受的悲剧，中国司法也将长期笼罩在夏俊峰案的阴影之下。如 果夏俊峰被判死刑，必将有更多无辜、无助的商贩死在城管手下；如果正当防卫而被判死刑，那么一个人在正当防卫之后，可以继续疯狂地杀人而不必承担更多的责 任，因为一个人只能死一次；如果正当防卫而被判死刑，那将不再有罪与非罪、善与恶、生与死的界限，我们社会中本已非常可怜的规则的力量，也必将被邪恶、混 乱和野蛮所摧毁。</span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 不夸张地说，正当防卫的公民被判死刑，对整个社会的影响将是灾难性的&mdash;&mdash;暴徒将更加气焰嚣张，公民面对非法暴力时的反抗必将畏首畏尾；邪恶将得到支持，受害者被暴力犯罪侵害之后，又再次受到法庭的侵害。<strong>面对非法侵害时的防卫行为不仅是美德而且是本能，但反抗行为非但不受到保护赞扬反而受到谴责甚至要被定为死罪，那么我们今天的判决所要伤害的，就不仅仅是夏俊峰的法定权利，而且将是整个法律的尊严、社会的伦理和民众的是非判断。</strong></span></p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 24.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 我希望今天法庭的判决，能够说明我们的司法体制还有起码的是非观和独立性；我们希望夏俊峰案的司法过程，能够让人们看到我们这个多难的民族，还能够从苦难中反思，并坚定地站在法治和人道主义这一边。</span></p>
-
-
-<p style="text-indent: 28.5pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 114.0pt;margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 174.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span> <span style="font-size: small;">此致</span></span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 36.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span> <span style="font-size: small;">辽宁省高级人民法院</span></span></p>
-
-
-<p style="margin: 0.0cm 0.0cm 0.0pt;">&nbsp;</p>
-
-
-<p style="text-indent: 216.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"> 辩护人：中国政法大学法学院</span> <span style="font-size: 12.0pt;"> 滕彪</span></p>
-
-
-<p style="text-indent: 306.0pt;margin: 0.0cm 0.0cm 0.0pt;">    <span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">2010</span></span><span style="font-size: 12.0pt;">年</span><span style="font-size: 12.0pt;"><span style="font-family: Times New Roman;">7</span></span><span style="font-size: 12.0pt;">月</span></p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/10/mobile-phone-website-ultimate-optimization/">手机网站的终极优化</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-10T11:34:00+08:00" pubdate data-updated="true">May 10<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在中国特殊国情下，手机网络速度低下，大部分还是GPRS，每个请求几乎都要2s :-(。<br />
-并且手机浏览器能同时建立的连接数也低一些</p>
-
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
-<tr><td></td><td>Connections Per Hostname</td><td>Max Connections</td></tr>
-<tr><td>Android 2</td><td>4</td><td>4</td></tr>
-<tr><td>Android 3</td><td>6</td><td>35</td></tr>
-<tr><td>iPhone 3</td><td>6</td><td>55</td></tr>
-<tr><td>iPhone 4</td><td>4</td><td>30</td></tr>
-<tr><td>Nokia 97</td><td>7</td><td>7</td></tr>
-<tr><td>Opera Mobile 10</td><td>2</td><td>4</td></tr>
-<tr><td>Opera Mobile 11</td><td>2</td><td>5</td></tr>
-</tbody></table>
-
-
-<p>下图是一个典型的手机访问的 waterfall<br />
-<img src="/pic/1_waterfall.png" title="mobile waterfall" alt="waterfall" /></p>
-
-<p>还有手机对cache的支持也比较有限<br />
-<img border="0" height="220" src="/pic/mobile-cache.png" width="400" /></p>
-
-<p>显然减少每个页面连接数是非常非常有价值的。
-<a href="http://en.wikipedia.org/wiki/Data_URI_scheme">Data URI</a>技术非常适合用在这个地方，支持的浏览器也还是不少的。<br /></p>
-
-<ul><li>&nbsp; &nbsp; Firefox 2+</li>
-<li>&nbsp; &nbsp; Opera 7.2+ &nbsp;data URIs must not be longer than 4100 characters</li>
-<li>&nbsp; &nbsp; Chrome (all versions)</li>
-<li>&nbsp; &nbsp; Safari (all versions)</li>
-<li>&nbsp; &nbsp; Internet Explorer 8+ data URIs must be smaller than 32k</li>
-<li>&nbsp; &nbsp; Internet Explorer 9 does not have 32KiB limitation and allowed in broader elements</li>
-</ul>
-
-
-<p>手机浏览器<b>可能</b>不支持的有</p>
-
-<ul><li>IE Mobile all 6.12-8.12</li>
-<li>Nokia 51/66/71/82/95</li>
-<li>PlayStation Portable 2.00</li>
-<li>Samsung SGHI560</li>
-<li>WebPilot 8.7</li>
-<li>Obigo 7</li>
-<li>Opera 5/6/7 不支持</li>
-<li>Blackberry 6/8330/8520/9300/9700</li>
-</ul>
-
-
-<p></p>
-
-<p>以上未列出的系统应该都支持，如：Nokia 后期的系统，IE 8/9，Android，iPhone。</p>
-
-<p>3g.renren.com 上的Logo的HTML代码为</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;img alt="renren" src="http://a.xnimg.cn/wap/logo.gif" /&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>用Data URI代码如下：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;img alt="renren" src="data:image/gif;base64,R0lGODlhTAAWANUAAJXA4ou63ht1u9nq+L3Y7VGXzKBSZeTx+8z
-</span><span class='line'>i83Os1u5ANuPu+Pr8/mun1TeHxMfe8ACGytzr93uw2NLm9v3+//7+/63O6ff7/i6BwcdGS+v0+wB8xefy+gBptUCMxu72/Pz
-</span><span class='line'>9/vT5/Q9vuNbp+PH4/KDH5d3s+Ch/wA9ttfH3/Pr7/gBerNzr+bDR6+/1+gB0vh94vF2f0PT6/UyTymCf0Nbn9jxdlKnM5gB
-</span><span class='line'>jsABuuwBhr1pYhNfq+Nfp+ABms////yH5BAAAAAAALAAAAABMABYAAAb/wJ9wSCwaj8ikcnlkQCAVCqXCrFqv1UrlsoGAvlr
-</span><span class='line'>KbxotT6Vnshl91pbDb3SYLIXLo3cQF8JQMb5fGgEYHkI+BSWAICWEQh4YiYqSID4SihSSHh6SEj6en54iloAhLxAXF35+DzC
-</span><span class='line'>ehT+fHhoPGK6OnhgPDLu7Kn4Elby9wyIevrydEsrLEiI+wiQ5EDIhqBcPzrawnw4CsbehD9bjwBLj5xc+HuedMxwNHjcXMbX
-</span><span class='line'>jHx0QKSQhIQet39s8ZTAA0AMoDNT4KQTgowG/hApD1PABI2KITj5mZLvxKQQ1GRrwffhAIgVGgJ92KFBgQ5tBUABK6tMXw4c
-</span><span class='line'>ImSRK5iTB0AcB/30lO9Ws9KnmTBIcfEDQoGHkP5SeDKwkqA4ct5FYTVD0AQCr1w8YWsXw2mmCpw/tOrlwMfIADggcOGiIAMp
-</span><span class='line'>TAiG1fKxUkEFbgbo+mApu4MOCCBERBAsu4SOBAx8tBCdobPexCMKKF+iAcOAABwuASwih4WmvArtCAgCOGxe0u8kOWMcdIAL
-</span><span class='line'>GANAiBsSd7COss1rOZC9YAWHBggOg65oQwljvXk8IhGit2xn54RqdaznAfqBGLQudCcMgcGCyCAsWHIio8a/6ARPEF5gwwaI
-</span><span class='line'>ujR8uhLTa2/dV/pefmIAAYSK0wAILJhDgjAAtBOBMAPMheIJNARCGIH0ESBDAYxGyMP8AcfMNMMCEoeQXQHTASKWAASJEZ4F
-</span><span class='line'>oJmSjzgAInMCgiDgScMIJCPwVAI4i9lggYUCOGAqQPaywAY48qGZTdC7AUABzNqyEgmg/eACDEMn5UAIPPCCAgIg8DABmkCI
-</span><span class='line'>SUOSZYxJQAplmtlBCCWOWOUANSpI5wggnYBDdD6R5yaUBBjyQmicSCIEADA6MwEMPPjjgQE0OEHZIA4dJIIAIPYnwJQKPVRp
-</span><span class='line'>pT5440MOjPUyg5KmoInDBoaEQIIQLDDAHCpYXINDDrod0YpADBXSCKQDdnPBYCZX2UAKPkLYgqQMMteDDrruqugGrp/YwQAh
-</span><span class='line'>/1RXAB9qiBVgCJAxALaQIMBaVQwMFNMBYA6Y6cEIDqvXQgLslCMCrs5IyNsK01Kr6gqOoUltCAd74cEIMBJxLQAwknoDIubz
-</span><span class='line'>u+lhD7jZkKgDeEGYvpshGSimxjEF6rsCs8jACxSsXTPGuj7r8cg+OZjuzzDRTjPPJOLyQcswzU7ty0DivPHTNRAet884TdOA
-</span><span class='line'>ztUArPfTNLxu9K9JUKw21zCpPkMMGQQAAOw==" /&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>是有点长，效果为<img alt="renren" src="data:image/gif;base64,R0lGODlhTAAWANUAAJXA4ou63ht1u9nq+L3Y7VGXzKBSZeTx+8zi83Os1u5ANuPu+Pr8/mun1TeHxMfe8ACGytzr93uw2NLm9v3+//7+/63O6ff7/i6BwcdGS+v0+wB8xefy+gBptUCMxu72/Pz9/vT5/Q9vuNbp+PH4/KDH5d3s+Ch/wA9ttfH3/Pr7/gBerNzr+bDR6+/1+gB0vh94vF2f0PT6/UyTymCf0Nbn9jxdlKnM5gBjsABuuwBhr1pYhNfq+Nfp+ABms////yH5BAAAAAAALAAAAABMABYAAAb/wJ9wSCwaj8ikcnlkQCAVCqXCrFqv1UrlsoGAvlrKbxotT6Vnshl91pbDb3SYLIXLo3cQF8JQMb5fGgEYHkI+BSWAICWEQh4YiYqSID4SihSSHh6SEj6en54iloAhLxAXF35+DzCehT+fHhoPGK6OnhgPDLu7Kn4Elby9wyIevrydEsrLEiI+wiQ5EDIhqBcPzrawnw4CsbehD9bjwBLj5xc+HuedMxwNHjcXMbXjHx0QKSQhIQet39s8ZTAA0AMoDNT4KQTgowG/hApD1PABI2KITj5mZLvxKQQ1GRrwffhAIgVGgJ92KFBgQ5tBUABK6tMXw4cImSRK5iTB0AcB/30lO9Ws9KnmTBIcfEDQoGHkP5SeDKwkqA4ct5FYTVD0AQCr1w8YWsXw2mmCpw/tOrlwMfIADggcOGiIAMpTAiG1fKxUkEFbgbo+mApu4MOCCBERBAsu4SOBAx8tBCdobPexCMKKF+iAcOAABwuASwih4WmvArtCAgCOGxe0u8kOWMcdIALGANAiBsSd7COss1rOZC9YAWHBggOg65oQwljvXk8IhGit2xn54RqdaznAfqBGLQudCcMgcGCyCAsWHIio8a/6ARPEF5gwwaIujR8uhLTa2/dV/pefmIAAYSK0wAILJhDgjAAtBOBMAPMheIJNARCGIH0ESBDAYxGyMP8AcfMNMMCEoeQXQHTASKWAASJEZ4FoJmSjzgAInMCgiDgScMIJCPwVAI4i9lggYUCOGAqQPaywAY48qGZTdC7AUABzNqyEgmg/eACDEMn5UAIPPCCAgIg8DABmkCISUOSZYxJQAplmtlBCCWOWOUANSpI5wggnYBDdD6R5yaUBBjyQmicSCIEADA6MwEMPPjjgQE0OEHZIA4dJIIAIPYnwJQKPVRppT5440MOjPUyg5KmoInDBoaEQIIQLDDAHCpYXINDDrod0YpADBXSCKQDdnPBYCZX2UAKPkLYgqQMMteDDrruqugGrp/YwQAh/1RXAB9qiBVgCJAxALaQIMBaVQwMFNMBYA6Y6cEIDqvXQgLslCMCrs5IyNsK01Kr6gqOoUltCAd74cEIMBJxLQAwknoDIubzu+lhD7jZkKgDeEGYvpshGSimxjEF6rsCs8jACxSsXTPGuj7r8cg+OZjuzzDRTjPPJOLyQcswzU7ty0DivPHTNRAet884TdOAztUArPfTNLxu9K9JUKw21zCpPkMMGQQAAOw==" /></p>
-
-<p>花了点时间用 Python 120 行代码实现了个代理，没有一个img请求。</p>
-
-<p>附上BrowserScope的关于浏览器的特性
-<img border="0" height="400" src="/pic/browser-scope-data-uri.png" width="186" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/22/lbs-in-two/">LBS的两种实现</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-22T15:26:00+08:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://en.wikipedia.org/wiki/Location-based_service">LBS</a>的核心是地理位置信息的索引和检索。位置信息一般采用经纬度表示，不支持通用的比较、排序，所以导致系统实现难度很大。<br /></p>
-
-<br />
-
-
-<p>地理位置信息计算需要解决的问题有<br /></p>
-
-<h2>精度</h2>
-
-<p>一般表示为<br /></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>40:26:46N,79:56:55W
-</span><span class='line'>40:26:46.302N 79:56:55.903W
-</span><span class='line'>40°26′47″N 79°58′36″W
-</span><span class='line'>40d 26′ 47″ N 79d 58′ 36″ W
-</span><span class='line'>40.446195N 79.948862W
-</span><span class='line'>40.446195, -79.948862
-</span><span class='line'>40° 26.7717, -79° 56.93172</span></code></pre></td></tr></table></div></figure>
-
-
-<p>用度分秒表示时，1度可能是41km，很大的一个单位。</p>
-
-<h2>距离</h2>
-
-<p>由于地球半径的影响，两个经纬度之间的距离计算非常的<a href="http://en.wikipedia.org/wiki/Geographical_distance">麻烦</a><br />
-PostGis</p>
-
-<blockquote><p>PostGIS adds support for geographic objects to the <a href="http://www.postgresql.org/">PostgreSQL</a> object-relational database.是一个非常专业的实现。支持众多的系统和数据格式，据称现在版本已经支持3D。</p></blockquote>
-
-<p>实现一个位置查询：With the population of the people in New York within 500 meters of a subway station:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; SELECT Sum(popn_total) FROM nyc_census_blocks census 
-</span><span class='line'>  JOIN nyc_subway_stations subway ON ST_DWithin(census.the_geom, subway.the_geom, 500);
-</span><span class='line'>10556898</span></code></pre></td></tr></table></div></figure>
-
-
-<p>其数据表示很是有意思</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>360610001009000 = 36 061 00100 9000
-</span><span class='line'>36     = State of New York
-</span><span class='line'>061    = New York County (Manhattan)
-</span><span class='line'>000100 = Census Tract
-</span><span class='line'>9      = Census Block Group
-</span><span class='line'>000    = Census Block</span></code></pre></td></tr></table></div></figure>
-
-
-<p>也可以做简单地理性质的计算</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; SELECT ST_Distance(ST_GeographyFromText('POINT(-118.4079 33.9434)'), 
-</span><span class='line'>-- Los Angeles (LAX)ST_GeographyFromText('POINT(2.5559 49.0083)')     
-</span><span class='line'>-- Paris (CDG));&nbsp;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>由于对 PostgreSQL 生态系统知之甚少，不太敢于使用。</p>
-
-<p>MongoDB</p>
-
-<p>相比PostgreSQL的实现简单、易懂很多。
-其位置表示为：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{ loc : { long : 40.739037, lat: 73.992964 } }</span></code></pre></td></tr></table></div></figure>
-
-
-<p>创建索引</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>db.places.ensureIndex( { loc : "2d" } )</span></code></pre></td></tr></table></div></figure>
-
-
-<p>按矩形区域查找</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; box = [[40.73083, -73.99756], [40.741404,  -73.988135]]
-</span><span class='line'>&gt; db.places.find({"loc" : {"$within" : {"$box" : box}}})</span></code></pre></td></tr></table></div></figure>
-
-
-<p>按半径查找</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; center = [50, 50]
-</span><span class='line'>&gt; radius = 10
-</span><span class='line'>&gt; db.places.find({"loc" : {"$within" : {"$center" : [center, radius]}}})</span></code></pre></td></tr></table></div></figure>
-
-
-<p>作为新兴的数据库系统，在使用过程中被爆了很多问题</p>
-
-<ul>
-<li><a href="https://foursquare.com/">FourSquare</a>使用过程中散列不够均匀</li></li>
-<li>存储较为浪费</li></li>
-<li>使用了 mmap 可能导致数据丢失</li></li>
-</ul>
-
-
-<p>我去年测试其集群功能时，在数据量达到1亿左右时也出现了问题，但是MongoDB绝对是最快、最合适的解决方案，当然要避免、解决很多问题。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/08/patriotic-heart-often-to-express-patriotic-feelings/">常怀爱国之心，常抒爱国之情</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-08T22:18:40+08:00" pubdate data-updated="true">Apr 8<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>常怀爱国之心，常抒爱国之情<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ──方滨兴校长在2011届研究生毕业典礼上的讲话<br />
-&nbsp;<br />
-同学们，大家早上好！<br />
-&nbsp;<br />
- 今天，我们如期所至地迎来了一年一度的庆贺研究生毕业盛典。当然，对你们来说这是人生中一个很重要的场景：这是一个独特的分别仪式，师生及同学间相互道别，校园里充满着惆怅与不舍；这是一个庄严的宣告仪式，被知识武装起来的你们即将踏入社会，每一个人都在憧憬着美好的未来！<br />
-&nbsp;<br />
- 刚才，在校同学与老师分别向你们表达了祝福之情，你们也向学校表达了感激之意。现在，请允许我代表学校，向顺利完成学业的2011届近四百名博士生及两千一百名硕士生表示热烈的祝贺！向为你们的成长成才倾注心血和汗水的各位研究生导师、教职员工表示诚挚的感谢！向全力支持同学们完成学业的各位家长和亲友们表示真诚的谢意！（掌声）<br />
-&nbsp;<br />
- 在你们离校前的最后一次校长演讲中，我感到有非常多的话要说。我想再一次赞美你们在历次大型活动中的出色表现，尤其是在长达数月的北京奥运会和残运会的志愿者经历中，你们为国家赢得了尊严，为北京赢得了微笑，为北邮赢得了声誉，为自己赢得了信赖。我也想借此盘点一下你们留给母校的记忆：例如信通院夏璐等14名同学在研期间申请了16项发明专利；网研院郭少勇、杨新星等19名同学先后21次在全国研究生数学建模竞赛上为北邮赢得了名次。我还想嘱咐你们在今后的道路上，要继续树立远大的理想和高远的境界，修身，齐家，治国，平天下，把自己的成长成才，融入到国家的进步和民族的振兴之中，实现人生更大的价值。（掌声）<br />
-&nbsp;<br />
- 但是，此时此刻我最想跟你们讲的主题是&ldquo;爱国&rdquo;，一是爱国之心，就是要用你们的聪明才智让国家更加强大；二是爱国之情，就是要像爱护眼球一样，维护社会的稳定。<br />
-&nbsp;<br />
- 首先说一下爱国之心。这两、三个月，世界上发生了一连串的大事。且不说突尼斯、埃及的政体变革，这毕竟是人家的内政；也不说日本的海啸灾害引发的核灾难，毕竟这几年我国也自然灾害频发。我要说的是利比亚，一个小小的国家发生着吸引世界眼球的大事。利比亚反对派发起了一个结果夹生了的反政府运动，面对晕头之后又强势起来的利比亚政府力量，世界列强终于露出了狰狞的嘴脸，他们派出了强大的武装力量，对最高统帅仅仅是上校的弱小军队实施了无情的打击（议论声）。当然，设立禁飞区是联合国授权了的，就是不准有未经联合国授权的飞机在空中飞行。但是，承担禁飞区任务的美法英联军并不这样理解禁飞区的概念，而是借用联合国的授权大肆轰炸利比亚的政府武装力量和军事设施。既然狂轰滥炸不是联合国的授权，我就不再称他们为联合国部队，而是根据出动飞机的情况姑且称之为美法英八国[1]联军，这不由地让我想起一百多年前中国就曾被英法八国联军践踏过；十年内阿富汗、伊拉克也被美英多国联军给祸害的远不如之前宁静。他们具有砸烂一个国家的强大力量，却没有表现出建设好这些国家的责任心。（议论声）<br />
-&nbsp;<br />
- 我们大家都能看到，利比亚已经陷入到内战状态，美法英八国联军以保护平民不受伤害的名义协助一方去攻打另一方，反而让战火不断延续下去，恐怕得一直打到让一个合法政府彻底倒台为止，也可能会导致利比亚分裂成两个国家，或长期内战，总之都会遭致更多的生灵涂炭。这将是以保护平民之名开头，以更多平民死于战争之实结尾的又一典范。前南斯拉夫不也是在美英多国联军的连续78天的轰炸中解体了吗？<br />
-&nbsp;<br />
- 网上有人评价说，现在的世界，列强们先是鼓动别的国家内部自相残杀，然后再帮助这一方去杀另一方，最后可能再把不听话的这一方给除掉。不管怎么说，我们看到的是这样的结果：列强们的逻辑就是世界的逻辑，列强们的道理就是世界的道理。从媒体可以看到俄罗斯总理普京是这样评价这次战争的：&ldquo;所有这一切都处在保护爱好和平的平民的伪装下。逻辑在哪里？良心在哪里？两样都没有！&rdquo;&ldquo;利比亚的情况表明，俄罗斯做出加强自己军力的决定是正确的。&rdquo;我十分赞同这一观点。一个国家要是不想沦落成利比亚、伊拉克，就必须有强大的自卫实力。国家不强大，就会受欺辱。我们不称霸，但也决不能落到别人想怎么打你就怎么打你的地步！（长时间掌声、欢呼声）强大是需要实力的，这种实力集中体现在科技水平上。因此，报效祖国应该是你们各位的首选。希望你们既要拥有爱国的实力，又能用自己的实力托举起祖国的尊严与强盛！（掌声）<br />
-&nbsp;<br />
- 其次说一下爱国之情。北非与中东的政局动乱，勾引出反华势力的极大期待。希拉里高调要向中国输出民主；美国驻华大使亲自到网络煽动集会的现场去&ldquo;打酱油&rdquo;（掌声笑声），恐怕是指望看见突尼斯场景的再现。境外民运分子更是不断利用互联网来煽动网民采取有计划、有步骤的行动以谋求中国政局的混乱，从而火中取栗。现在的问题是，到底是谁希望中国政局动荡，到底是谁希望中国陷入混乱的泥潭之中？<br />
-&nbsp;<br />
- 中国现在已经成为世界上第二大经济体了，这难道不算是成功吗？中国经济长期以来以世界上最快的速度增长，西方国家又是在以什么速度发展呢？大经济学家林毅夫教授预言中国的经济在2030年将赶上美国，这难道不是中国政策正确的标志吗？是谁希望我们停止经济发动机而陷入混乱之中？恐怕就是在经济上被我们追赶上或要追赶上的国家吧？假设两个人比武，一方如果完全效仿对方的招术，在战略上怎么可能超越对方？这就是中国在科技上难以超越西方国家的根本原因，因为我们总是亦步亦趋地在科技大国的后面进行研究，缺乏战略创新、行业引领的动力。因此，在相互对抗中，弱方只有运用与对方不同的战法才有机会超越对手。中国的经济状况已经表明中国的制度是成功的，是有利于经济发展的，凭什么我们一定要改换成西方的方式呢？（掌声）<br />
-&nbsp;<br />
- 再说说境外的民运分子。他们轻松地坐在家里，一心想的就是如何仅凭手指敲着键盘，就利用互联网的放大效应来搞乱中国。这就如同网络攻击中的反射式拒绝服务攻击一样，凭借的是网络的倍增效应来攻击目标（议论声）。他们所煽动的集会是要达到什么目的？真的是要诉求个人利益吗？显然不是，因为没有这么多人的个人情况是相同的。我支持个人利益诉求，这也是我公开我的邮箱的原因。我欢迎所有师生直接向我反映问题，因为有问题就应该谋求解决，至少我可以答复什么原因解决不了什么样的问题。但是，不同利益诉求的人聚集在一起会有什么样的共同语言？唯一的共同点就是将个人利益诉求演变成政治利益的诉求。问题是这样就能解决个人利益的诉求吗？最后还不是沦落成境外这些职业政客们的工具？他们不就是指望着享受国外的生活、让公众成为傀儡、然后坐收渔利吗？难道他们回国来主政就能够把中国的经济搞得更好吗？事实上，中国被西方世界所敌视绝不仅仅是意识形态的问题，而是中国在世界上地位日益上升所引发的问题。俄罗斯的政体倒是转换到西方的模式上去了，不是照样被西方世界所敌视吗？<br />
-&nbsp;<br />
- 一个国家的政体就如同一座大厦，难道仅仅因为水龙头修不好就要把整幢楼拆除吗？要知道拆掉一幢楼而去重新建设新楼其代价是极其高昂和惨烈的（议论声）。利比亚正在给我们示范着这样的结局，已经有三十余万人逃离了这个国家。既然我们要继续住在这个大厦里，我们就决不能允许任何人对这座大厦进行破坏！因此，爱国就是要爱护我们赖以生存的家园，抵制造谣蛊惑者让中国社会动乱的任何企图。抢盐事件已经给我们以这样的启示：如果大家都能抵制那些谣言与煽动、看透这些蛊惑背后的阴谋与险恶的嘴脸，社会才能够保持稳定。因此，真正的爱国之情就是要像保护自己眼球一样来维护社会的稳定。（掌声）<br />
-&nbsp;<br />
- 同学们，无论你们今后走到哪里、工作在什么岗位，都要一如既往地秉承&ldquo;厚德、博学，敬业、乐群&rdquo;的校训，弘扬&ldquo;团结、勤奋、严谨、创新&rdquo;的校风，你们所取得的每一项成绩，都是对祖国、对母校最好的支持与回报！我衷心祝愿每一位同学：常怀爱国之心，常抒爱国之情！健康快乐，前程似锦，鹏程万里！<br />
- 谢谢大家！（长时间掌声）</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/03/28/why-myspace-will-fail/">MySpace 为什么会失败？</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-28T10:02:00+08:00" pubdate data-updated="true">Mar 28<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前些年 <a href="http://www.myspace.com">Myspace</a> 是社会网络的王者，在2005年7月由News Corp以 $580 million 收购。但从此之后，MySpace 停止了增长，用户流失飞快，在2010年5月时只有109 million用户了，比去年下降13%。<br /></p>
-
-<br />
-
-
-<p><a href="http://www.ustream.tv/leweb">LeWeb</a>采访了MySpace CEO Mike Jones，开场白：<br />
-主持人：MySpace最近有一些前途问题，我听说the MySpace “plane” that’s in a death spiral has increased its velocity，你在reburn the engine,&#8230; try to save the plane from hit ground. <br />
-&#8230; <br />
-What&#8217;s like you trying to make change the company signification the world from hit the ground?<br /></p>
-
-<br />
-
-
-<p>在<a href="http://scobleizer.com/2011/03/24/myspaces-death-spiral-due-to-bets-on-los-angeles-and-microsoft/">这儿</a>说到：<br />
-Workers inside MySpace tell me that this infrastructure, which they say has “hundreds of hacks to make it scale that no one wants to touch” is hamstringing their ability to really compete.<br /></p>
-
-<br />
-
-
-<p>They answered with the cameras off: <b>they can’t change their technology to really make new features work or make dramatically new experiences like the one that Aweditorium brought to the iPad.</b> And now that they have laid off a lot of people morale is down and hiring is very tough for them, they tell me.<br /></p>
-
-<br />
-
-
-<p>This bet on Los Angeles doomed MySpace when Facebook came along. Facebook has hired tons of talent from Google and other companies. This expertise helped Facebook not only keep up with scale, but add new features. Just today the QA team at Facebook <a href="http://www.techmeme.com/110324/p43#a110324p43">shipped a cool new feature</a>.<br /></p>
-
-<br />
-
-
-<p>n Silicon Valley company managers, investors, and others have noticed these two things and are actively betting against both. This will make it tough for Microsoft to get its cloud computing strategy to work and will be tough for tech companies (and money) to locate in Los Angeles. It wasn’t lost on me that yesterday when I was at Y Combinator several of the folks involved there bragged that Ashton Kutcher visited the headquarters a few weeks ago.<br />
-I remember back when I worked at Microsoft that folks in the evangelism department bragged that they got MySpace to switch to Microsoft technologies like ASP.NET (MySpace used to be on ColdFusion which was an even worse technology bet and was creaking all over the place). Facebook, meanwhile, had made bets on LAMP (Linux, Apache, MySQL, PHP) and that let them hire quicker and find people who knew how to scale that stuff up big time.<br />
-Interesting lessons to watch. What decisions has your company made to accelerate innovation or doom it?<br /></p>
-
-<br />
-
-
-<p>这么对比，答案已经很清楚了。成功的技术和架构固然有价值，我以为失败的教训更有意义一些。<br />
-还有 MySpace CEO Mike 的坦诚令的我震惊无以复加。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/02/22/crazy-groupon/">疯狂的Groupon</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-22T22:44:26+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>    <span>from <a href="https://www.google.com/reader/view/feed/http%3A%2F%2Fcbn.weekly.blog.163.com%2Frss%2F" target="_blank">第一财经周刊官方博客</a></span> <span>by <span>第一财经周刊</span></span></p>
-
-
-<p>    <p>        <p>            <p>                <p>                    <p>                        <img src="http://img616.ph.126.net/OGN2DTaRxtj30og-iIWKCw==/1985524485718749297.jpg" alt="疯狂的Groupon - 第一财经周刊 - 第一财经周刊官方博客"></p>
-                    <p>&nbsp;</p>
-                    <p>&ldquo;史上最快的公司&rdquo;Groupon正以少见的激进姿态进入中国，并且拉上了强横的腾讯。&nbsp;</p>
-                    <p>文｜CBN 记者 郭颖哲 龚鸿燕 杨轩&nbsp; <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 实习记者 孙天<br />
-制图｜陈杨</p>
-                    <p>&nbsp;</p>
-                    <p>2011年1月的一天下午，一通陌生电话打到&ldquo;满座网&rdquo;的前台，带去了令人开心的消息&mdash;这家&ldquo;新开张的礼品公司&rdquo;希望让满座网的全体员工试吃它的巧克力产品。但是，免费巧克力需要凭一条内含电子券的手机短信获取，因此它需要得到满座网的通讯录。<br />
- 前台小姐表示很乐意帮这个忙。几分钟后，拨打这通电话的人便轻松得到了这家在中国销售规模位列前五名的团购网站所有员工的联系方式。后来，感到事有蹊跷 的满座网COO王珂回拨了该号码，结果令他很震惊&mdash;这并不是什么礼品公司，而是国际知名人力资源公司万宝盛华的中国总?部。<br />
- &ldquo;谁都知道，万宝盛华是受雇于Groupon的。&rdquo;王珂说，他感到原本还有些像是隔空喊话的Groupon入华之事，一下子逼到了眼前。<br />
- 没错，史上成长最快的公司Groupon的确已经来了，而且有一个让中国互联网创业公司心惊胆战的合作伙伴&mdash;腾讯。2月1日，域名 &ldquo;gaopeng.com&rdquo;的注册信息显示，这个域名已经被转至腾讯名下，注册人是欧阳云。这位腾讯公司的高管如今已是Groupon和腾讯合资公司的 CEO。此前，Groupon.cn已经被国内团购网站团宝网抢注。一月中旬，《第一财经周刊》记者曾在Groupon位于北京乐城中心B座的办公室与其 沟通，欧阳云以不方便为由拒绝了采访。一同在场的Groupon中国区副总裁Mads  Faurholt则简单表示&ldquo;目前（1月中），我们已经招了大概五六十人，事情进行得很顺利，网站很快就能看到了。我们的确是跟腾讯集团在合作，股权比例 是50：50。&rdquo;Groupon从负责海外业务的原City  Deal的团队里抽调了五六名欧洲人过来，他们非常年轻，德国人Faurholt身居要职，也不过二十六七岁。<br />
- 1月24日，Groupon宣 布新一轮融资完成，其创始人Andrew  Mason意气风发地出现在各大媒体上，宣布其刚刚融到的9.5亿美金中&ldquo;将有大部分花在亚洲，尤其是中国&rdquo;。算上前两轮融资，这家成立两年多的团购网站 已经融资11.15亿美元，估值更是高达47.5亿美元。<br />
- 美元不会给中国团购网站带来太多压力，真正让它们担忧的是Groupon接下来可能 的疯狂攻势。1月26日，在德国慕尼黑参加DLD大会的李开复发微博称：&ldquo;Groupon用超过10%的股份收购了德国 Citydeal；Citydeal侵略性很强，在欧洲曾经双倍薪水从对手抢人，打赢后又大批解雇；Citydeal  团队国际扩展执行力很强，所以在Groupon内部他们已经成为国际扩展的负责人，因此德国人在主导Groupon在华发?展。&rdquo;<br />
- Citydeal创始人便是德国人Oliver  Samwer，他的另一个身份是Groupon国际事务总裁。Citydeal创办于去年1月份，5月份便被Groupon收购。正是凭借上述侵略性很强 的策略，Citydeal短短几个月内便把业务扩张到欧洲18个国家的140多个城市。<br />
- 按照Mason的说法，在考虑以什么样的方式进入中国上面，他们的确纠结过好一段时间。原本，Groupon打算像进入其他国际市场那样，通过控股当地规模较大团购网站的方式进入中国。2010年10月，他们曾经投石探路，却发现中国的团购网站们并不领情。<br />
- 几乎未带任何商量口吻地，它群发Email给国内团购网站的CEO，告诉他们被期望于10月的某个具体的日期和时间，集体出现在香港国际机场的一家咖啡厅同Groupon的代表见面。<br />
- 作为唯一到场的国内团购网站CEO，拉手网创始人吴波从30几岁的德国人Oliver Samwer嘴里听到了十足的狠话：&ldquo;如果你不跟着我们干，那就等着被活埋吧。&rdquo;<br />
- 彼时，几乎每家身后都站着为了将来上市时赚取几十倍利润而不惜砸出重金的VC大佬，&ldquo;弹药&rdquo;充足的国内团购网站没有谁能够接受Groupon的控股要求。<br />
- Groupon不愿意就此铩羽而归，谈判破裂后立即买下了香港、新加坡和菲律宾三地最大的地方团购网站。到了12月，拉手、美团分别获得了金沙江创投和红杉资本数千万美元的投资。不久后，国内规模前十的团购网站纷纷完成第二轮融资，团队规模和落地城市都在成倍增加。<br />
- 拉手网的团队在两个月内扩张到1500人，并在100多个城市落地。但吴波在忙碌之中依然没有忘记Groupon对中国市场虎视眈眈这件事。而恰巧由于 拉手网的股东之一泰山投资也是欧洲一家团购网站DailyDeal的战略投资人，经介绍，Daily  Deal的高管给吴波写了邮件详细介绍了Groupon德国团队的&ldquo;焦土政策&rdquo;&mdash;&ldquo;你们的员工会先被两三倍于现在的薪水挖走，但接下来他们便会失望，因为 对方会强制他们同意更改合同上的数额，不行就把他们开掉，这些人就彻底被这个行业抛弃了。&rdquo;这与李开复的微博传递了同样的信息。<br />
- 1月11日前 后，一份Mads  Faurholt写给某私立大学学生就业中心的邮件在网上被不停地转载，里面表示Groupon&ldquo;融到了许多钱，愿意给员工有竞争力的薪水&rdquo;。几天后，更 有进一步的消息称，Groupon已经来了，临时办公室就设在北京国贸附近，并且初步建起了一支几十人的团队，而他们中的大部分人，Faurholt说， 就像Groupon中国的十人核心成员一样曾有知名投资银行或咨询公司的从业经历。<br />
- 在离2011年春节还剩不到半个月的时候，战火一下子烧到了中国团购网站的家门口。终极Boss降临，就像电影里演的那样，个头是英雄们的好几倍，并且全副武装、气势汹?汹。<br />
- 事实上，早在招聘邮件泄露之前的1月初，Groupon在中国的疯狂招聘便已开始。欧阳云为合资公司找来了一家长期合作的猎头，希望帮助Groupon 中国在三个月内招聘到1500人。当时，大家曾有一个礼拜始终在商量招人的方案，甚至到了谈价格准备签合同的地步，尽管猎头公司的高管也觉得&ldquo;欧洲来的那 帮小伙子都是坐在地上跟人谈事&rdquo;挺不靠谱，但工作总归是不断在推进当中。<br />
- 然而事情很快有了变化。1月8日，John.Ho将自己的 Linkedin页面介绍改为&ldquo;Groupon中国的第一个员工&rdquo;。这个年近五十的香港人曾任亚信科技的技术总监，并且主导了这家公司&ldquo;在2000年那场 纳斯达克在亚洲最为成功的IPO&rdquo;，长期生活在北京。他到任Groupon中国的COO不到20个小时后，原来的方案就被推翻，Groupon方面提出要 大规模地接触猎头。<br />
- 到1月中旬，国内有几十家大大小小的猎头都已经接到了来自Groupon的&ldquo;不可能的任务&rdquo;&mdash;不仅时间非常短、所需的人员 数非常多，而且由于合资公司还没注册下来，其工作合同是不具备法律效力的。万宝盛华的加入还算让事情有了个过渡之法，这家全球最大的派遣公司可能跟 Groupon全球签订了协议，让新招进来的人得以暂时用&ldquo;派遣员&rdquo;的身份为Groupon中国工作。<br />
- 即便如此，猎头公司们还是发现很难安下 心来给Groupon中国招人。&ldquo;我们希望引导客户做一个清晰思路，首先对组织构架进行确认，再弄清楚自己对每一个职位的要求，这样才能布局整个招聘。&rdquo; 其中一家不愿意透露名字的猎头公司告诉《第一财经周刊》，&ldquo;但客户连个JD（Jobs  Description，即职位描述）都没给，简单来说，他们就是什么人都要。&rdquo;<br />
- Groupon只是简单告诉这些猎头，他们需在3月份之前为 北京、上海、广州、深圳四个一线城市的站点分别招纳50到80人，兼覆盖成都、杭州、济南等7个二线城市，&ldquo;但就连他们的地方办事处组织架构、分工是什 么，我们都不知道。&rdquo;该猎头说，&ldquo;或许连他们自己也没有想好。&rdquo;<br />
- 猎头们虽然有些找不到北，但广撒网还是起到了一定的效果。Groupon招人 的消息很快在微博、豆瓣等SNS社区以及各个科技博客、招聘圈子网站里传播开来。在发布招聘消息后，跟帖数量以每天几十个增加着，感兴趣者不乏来自雅虎、 微软等IT巨擘的工程师以及一些小型本土团购网站的BD。<br />
- 陈忱不同于这些有互联网或者销售经历的人，事实上，从2010年7月本科毕业以后， 她一直是以翻译文书为生的自由职业者。但是，为了将来能进一所有名气的美国商学院上学，她必须想办法进入一家&ldquo;美国人一听就知道&rdquo;的公司。&ldquo;觉得 Groupon跟我的需求挺匹配的，经历一下也不错。&rdquo;但是，在投了简历几天没有回音之后，她主动来到Groupon设在北京乐城中心B座的办公室。<br />
- 陈忱并没有看到想象中的热闹景象，Groupon的办公室还没完全装修好，&ldquo;右手边的大房间好像还是空的，没有开灯&rdquo;，不时有神色匆忙的外国人或者中国 人走来走去，只有绿底的公司Logo和立在地上的招聘广告告诉她，她找对地方了。这并不容易，因为Groupon并没有公开他们的办公地址，&ldquo;甚至大楼的 前台都还不知道有这样一家新搬进来的公司&rdquo;。<br />
- 这一次&ldquo;霸面&rdquo;经历居然非常顺利。&ldquo;我就跟一高一矮两个老外站在他们前台聊了会儿。我刚递上简 历，还没怎么介绍自己，他们就特别热情地表示&lsquo;我们需要大量的销售，你敢于这样自己过来推销自己，就很有做好销售的潜质&rsquo;。&rdquo;陈忱觉得这种态度很轻率， &ldquo;好像恨不得马上要你来上班似?的。&rdquo;<br />
- 接下来，面试她的人开始主动推销自己，试图让她对Groupon的光明前景深信不疑。他告诉陈忱，Groupon在世界很多地方都有分公司，都是从零开始，都很成功，中国可能跟这些市场不一样，但是中国的很多特点在别的市场里也有，他们会把这些经验拿到中国来用。<br />
- &ldquo;他们还说会建立本地化的团队，跟中国的大公司合作，就是QQ。&rdquo;陈忱回忆道，&ldquo;那个矮一点的最后还强调说，Groupon有用不尽的钱，到今年5月，它一定会做成中国第?一。&rdquo;<br />
- 聊了不到十分钟，对方便问陈忱能否马上来上班，哪怕是先做兼职也可以。&ldquo;他们太缺人了，我甚至怀疑他们根本就不进行筛选。&rdquo;陈忱最终决定放弃，继续等待另外几家大公司的笔试通知。<br />
- 随着招聘的深入，猎头接到越来越多候选人的投诉。&ldquo;他们抱怨Groupon不靠谱，&rdquo;前文提到的猎头公司高管说，&ldquo;按照指定的面试时间和地点去到那里， 却见不着约定的面试官，要么就是整个过程中面试官不停地换人，毫无章法可言。&rdquo;更让人感到不安的是Groupon虽然急着把人招进来，但对大部分应聘者都 没有给出具体的职位，此前传说中给BD的高达8000元起薪，在3到6个月不等的试用期内也要减半。<br />
- &ldquo;别说是那些候选人，这样的混乱我们也深 有体会。&rdquo;猎头方面对《第一财经周刊》表示，跟Groupon接洽的两周以来，对它的对外途径和内部分工仍无从知晓。&ldquo;我们公司各个级别的人都可能被他们 接触，而且他们一个公司各个级别的人也都来和我接触，前前后后一共有5个人之多，并且那些主管每个人分工都一直在变，今天管这茬明天管那茬，毫无章法可 言。&rdquo;<br />
- 对此，Groupon方面一直坚持告诉猎头&ldquo;你们只管找人，把每天面试安排得满满当当就好，至于其他事，我们会自己决定&rdquo;。<br />
- 猎头方面感到非常为难，如果对候选人不负责任，太多的投诉将影响他们的商誉。但是，那几个欧洲人小伙子显得那么干劲十足，他们穿着方便的休闲T恤和牛仔 裤每天忙上忙下，无论是面试还是商量把点铺到什么城市、谈下什么商户，都是一脸热切的表情，&ldquo;那感觉就像是一群刚刚创业的大学毕业生，全然没有大公司的样 子。&rdquo;<br />
- &ldquo;诚意倒是毋庸置疑，但他们根本不知道该如何跟猎头合作。&rdquo;接受《第一财经周刊》采访的两家猎头，为Groupon服务了不到一个月，便先后放弃了这个单子。据悉，目前仍然坚持的猎头只剩下七八家。<br />
- 招聘方越来越迫切，一些有互联网从业经历的面试者像传销一样被要求发展数十人进入Groupon。而采取各种途径获取本土竞争对手销售人员联系方式的，也不只万宝盛华一家。<br />
- 吴波春节前告诉《第一财经周刊》，当时拉手网的BD已有六成被Groupon请来的猎头电话垂询过了。&ldquo;但是目前还没有谁离开。&rdquo;这家号称国内规模最大 的团购网站，有1000多人的庞大销售团队，被认为是Groupon挖角最大的一座人力资源&ldquo;金矿&rdquo;。&ldquo;如果有人要走，也得等年后吧。&rdquo;吴波坦言自己也不 是完全有把握。<br />
- 针对疯狂招人的Groupon，吴波的拉手网和满座网、F团等几家较大的团购网站共同建立了一个概念上的联盟以期抵制&ldquo;被挖 角&rdquo;。&ldquo;过去我们都在互相挖角，现在拉手网号召大家都停下来，我们把来自DailyDeal的邮件翻译成中文给员工们看，让他们了解Groupon的做 法，并且以提高福利的形式提升忠诚度。&rdquo;而更重要的一个杀手锏是&mdash;联盟中的十几家团购网站将永不录用跳槽到Groupon的员工。<br />
- &ldquo;可别像美 国的投资人那样被Groupon忽悠了。&rdquo;摩根大通的一位VP表示，如果Groupon春季IPO的消息确切，那么在这个时候是否进入了中国市场会在很大 程度上影响它的估值。&ldquo;从零开始，不考虑盈利，短时间内快速拿出好看的数字，他们不急才怪。这样的做法你们不觉得似曾相识?么？&rdquo;<br />
- 1月26 日，加入未满1个月的Groupon中国区市场部副总裁任鑫离职，这位曾在新蛋网中国负责过网络营销并在其全球总部工作过的公司人被认为是电子商务营销方 面的专家，他在艾瑞网开有专栏，其撰写的Mars  Opinion电子商务博客也颇具影响力。&ldquo;回到酒店，继续干活。如果一家公司能让快要辞职的员工还愿意投入大量时间精力为它工作，这本身也说明了这家公 司工作的吸引力，也说明了这个员工对于公司和团队的正面态度。&rdquo;在当天稍晚一些的一篇微博中，任鑫如此写道。<br />
- Groupon在中国的未来表 现，或许还要看合作方腾讯对合资公司有多大投入。除了域名和指派一名CEO以外，腾讯目前并未将已有的团购业务并入合资公司。对此，John.Ho在回复 给《第一财经周刊》的邮件中表示，&ldquo;我希望大家能够从初期招聘的乱象、竞争对手的紧张和害怕情绪等一大堆影响因素中分辨出事实真相。对于一家刚刚进入中国 市场两周的公司而言，我觉得Groupon已经做得很好了。&rdquo;</p>
-                    <p>&nbsp;</p>
-                    <p>Groupon的疯狂涨势</p>
-                    <p>2008年11月<br />
-安德里&middot;梅森创建Groupon，总部位于芝加哥</p>
-                    <p>2009年<br />
-用户总数200万<br />
-业务覆盖美国本土<br />
-收入8500万美元</p>
-                    <p>2009年6月<br />
-网站实现盈亏平衡，利润率高达30%</p>
-                    <p>2009年12月<br />
-融资3000万美元</p>
-                    <p>2010年5月<br />
-收购德国团购网站Citydeal，其创始人Oliver Samwer成为Groupon国际事务总裁。</p>
-                    <p>2010年<br />
-用户总数5000万<br />
-业务覆盖35个国家<br />
-收入6亿美元</p>
-                    <p>2010年4月<br />
-融资1.35亿美元<br />
-估值13.5亿美元</p>
-                    <p>2011年1月<br />
-融资9.5亿美元<br />
-估值47.5亿美元<br />
-进入中国市场</p>
-                    <p>更多精彩请关注：http://www.cbnweek.com/</p>
-                </p>
-            </p>
-        </p>
-    </p>
-</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1497,23 +873,31 @@ Interesting lessons to watch. What decisions has your company made to accelerate
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+        <a href="/blog/2012/03/22/mawk-and-gawk/">mawk and gawk</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+        <a href="/blog/2011/12/31/trivial-detail-in-facebook-messenger/">trivial detail in facebook messenger</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+        <a href="/blog/2011/12/23/csdn-password-leak-under/">密码泄漏事件下的冰山</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+        <a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+        <a href="/blog/2011/11/30/digest/">Digest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/nc-and-tar-play-nice-then/">nc and tar play nice then</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/01/hao-xi-guan/">好习惯</a>
       </li>
     
   </ul>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: mobile | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/mobile/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: mobile | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/mobile/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[手机网站的终极优化]]></title>
-    <link href="http://blog.heartoutside.com/blog/2011/05/10/mobile-phone-website-ultimate-optimization/"/>
+    <link href="http://log.heartoutside.com/blog/2011/05/10/mobile-phone-website-ultimate-optimization/"/>
     <updated>2011-05-10T11:34:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2011/05/10/mobile-phone-website-ultimate-optimization</id>
+    <id>http://log.heartoutside.com/blog/2011/05/10/mobile-phone-website-ultimate-optimization</id>
     <content type="html"><![CDATA[<p>在中国特殊国情下，手机网络速度低下，大部分还是GPRS，每个请求几乎都要2s :-(。<br />
 并且手机浏览器能同时建立的连接数也低一些</p>
 
@@ -37,7 +37,7 @@
 <img src="/pic/1_waterfall.png" title="mobile waterfall" alt="waterfall" /></p>
 
 <p>还有手机对cache的支持也比较有限<br />
-<img border="0" height="220" src="http://blog.heartoutside.com/pic/mobile-cache.png" width="400" /></p>
+<img border="0" height="220" src="http://log.heartoutside.com/pic/mobile-cache.png" width="400" /></p>
 
 <p>显然减少每个页面连接数是非常非常有价值的。
 <a href="http://en.wikipedia.org/wiki/Data_URI_scheme">Data URI</a>技术非常适合用在这个地方，支持的浏览器也还是不少的。<br /></p>
@@ -99,7 +99,7 @@ ztUArPfTNLxu9K9JUKw21zCpPkMMGQQAAOw==" /&gt;
 <p>花了点时间用 Python 120 行代码实现了个代理，没有一个img请求。</p>
 
 <p>附上BrowserScope的关于浏览器的特性
-<img border="0" height="400" src="http://blog.heartoutside.com/pic/browser-scope-data-uri.png" width="186" /></p>
+<img border="0" height="400" src="http://log.heartoutside.com/pic/browser-scope-data-uri.png" width="186" /></p>
 ]]></content>
   </entry>
   

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: ocr | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/ocr/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: ocr | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/ocr/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[使用 OCR 识别验证码]]></title>
-    <link href="http://blog.heartoutside.com/blog/2011/01/07/use-ocr-identify-verification-code/"/>
+    <link href="http://log.heartoutside.com/blog/2011/01/07/use-ocr-identify-verification-code/"/>
     <updated>2011-01-07T10:18:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2011/01/07/use-ocr-identify-verification-code</id>
+    <id>http://log.heartoutside.com/blog/2011/01/07/use-ocr-identify-verification-code</id>
     <content type="html"><![CDATA[<p>tesseract-ocr 是一个历史悠久的 OCR 引擎，代码位于 http://code.google.com/p/tesseract-ocr/。现在由 Google 开发。几年间代码有了很多 Google 的风格，也相对成熟稳定了一些。对于简单英文字符有很高的识别率。<br /></p>
 
 <br />

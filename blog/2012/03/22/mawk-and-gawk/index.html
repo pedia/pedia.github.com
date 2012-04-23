@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: IDL - heartoutside</title>
+  <title>mawk and gawk - HeartOutside</title>
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="Category: IDL">
+  <meta name="description" content="今天发现 Debian 里的 awk 是 mawk，过程是发现一台机器上的 awk 执行报错 1 awk: line 2: function strftime never defined 然后发现此 awk 原来是 mawk Debian 可能有足够的原因： mawk is a very fast &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,13 +18,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.heartoutside.comblog/categories/idl">
+  <link rel="canonical" href="http://log.heartoutside.com/blog/2012/03/22/mawk-and-gawk">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="HeartOutside" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -35,7 +35,7 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">heartoutside</a></h1>
+  <h1><a href="/">HeartOutside</a></h1>
   
     <h2>not yet</h2>
   
@@ -49,7 +49,7 @@
   
 <form action="https://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input type="hidden" name="q" value="site:log.heartoutside.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -63,36 +63,105 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: IDL</h1>
+    
+      <h1 class="entry-title">Mawk and Gawk</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-22T15:37:00+08:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>今天发现 Debian 里的 awk 是 mawk，过程是发现一台机器上的 awk 执行报错</p>
 
-  
-  <h2>2007</h2>
-
-<article>
-  
-<h1><a href="/blog/2007/06/01/why-com/">WHY COM?</a></h1>
-<time datetime="2007-06-01T13:03:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>01</span> <span class='year'>2007</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/com/'>COM</a>, <a class='category' href='/blog/categories/google/'>Google</a>, <a class='category' href='/blog/categories/idl/'>IDL</a>, <a class='category' href='/blog/categories/xpcom/'>XPCOM</a>, <a class='category' href='/blog/categories/架构/'>架构</a>, <a class='category' href='/blog/categories/程序/'>程序</a></span>
-</footer>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> awk: line 2: function strftime never defined</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>然后发现此 awk 原来是 mawk</p>
 
+<p>Debian 可能有足够的原因：</p>
+
+<blockquote><p>mawk is a very fast AWK implementation by Mike Brennan based on a byte code interpreter.</p></blockquote>
+
+<p>引入 mawk 代替gawk，但是由于这两个版本的细微差别，肯定会困扰一些人。</p>
+
+<p>还有一个类似的例子是 dash, 无数次以为脚本写错后，才把习惯改为 !/bin/bash。</p>
+
+<p>竞争固然是好，这些批着同一件皮的东西有着这样、那样的差别，会让每个人都经历一次或多次查错的经验。</p>
+
+<p>WTF!</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Ken</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-22T15:37:00+08:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://log.heartoutside.com/blog/2012/03/22/mawk-and-gawk/" data-via="boostguy" data-counturl="http://log.heartoutside.com/blog/2012/03/22/mawk-and-gawk/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/12/31/trivial-detail-in-facebook-messenger/" title="Previous Post: trivial detail in facebook messenger">&laquo; trivial detail in facebook messenger</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -103,23 +172,31 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+        <a href="/blog/2012/03/22/mawk-and-gawk/">mawk and gawk</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+        <a href="/blog/2011/12/31/trivial-detail-in-facebook-messenger/">trivial detail in facebook messenger</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+        <a href="/blog/2011/12/23/csdn-password-leak-under/">密码泄漏事件下的冰山</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+        <a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+        <a href="/blog/2011/11/30/digest/">Digest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/nc-and-tar-play-nice-then/">nc and tar play nice then</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/01/hao-xi-guan/">好习惯</a>
       </li>
     
   </ul>
@@ -164,7 +241,10 @@
       var disqus_shortname = 'kenshao';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://log.heartoutside.com/blog/2012/03/22/mawk-and-gawk/';
+        var disqus_url = 'http://log.heartoutside.com/blog/2012/03/22/mawk-and-gawk/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: stl | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/stl/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: stl | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/stl/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How suck your STL implemented?]]></title>
-    <link href="http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented/"/>
+    <link href="http://log.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented/"/>
     <updated>2007-02-13T12:53:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented</id>
+    <id>http://log.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented</id>
     <content type="html"><![CDATA[<p>我在vc7中做了一个测试，插入50万条随机生成的记录到hash_map中，结果令我大吃一惊。</p>
 
 <p>随机字符串生成：字符串长度为1-12个小写字母(50万个字符串中大概只有34万个不重复)</p>

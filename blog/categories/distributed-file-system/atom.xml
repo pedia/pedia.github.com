@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Distributed file system | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/distributed-file-system/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: Distributed file system | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/distributed-file-system/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[分布式文件系统 GlusterFS]]></title>
-    <link href="http://blog.heartoutside.com/blog/2010/06/12/distributed-file-system-glusterfs/"/>
+    <link href="http://log.heartoutside.com/blog/2010/06/12/distributed-file-system-glusterfs/"/>
     <updated>2010-06-12T10:04:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2010/06/12/distributed-file-system-glusterfs</id>
+    <id>http://log.heartoutside.com/blog/2010/06/12/distributed-file-system-glusterfs</id>
     <content type="html"><![CDATA[<h2>文档</h2>
 
 <p>http://gluster.com/community/documentation/index.php/Gluster_Storage_Platform<br />
@@ -72,9 +72,9 @@ fusermount         : no
   
   <entry>
     <title type="html"><![CDATA[分布式文件系统 Ceph]]></title>
-    <link href="http://blog.heartoutside.com/blog/2010/06/11/distributed-file-system-ceph/"/>
+    <link href="http://log.heartoutside.com/blog/2010/06/11/distributed-file-system-ceph/"/>
     <updated>2010-06-11T09:46:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2010/06/11/distributed-file-system-ceph</id>
+    <id>http://log.heartoutside.com/blog/2010/06/11/distributed-file-system-ceph</id>
     <content type="html"><![CDATA[<p>Ceph 的<a href="http://ceph.newdream.net/about/">优点</a>写 得很突出
 * Striping
 * dynamic Meta Server
@@ -98,9 +98,9 @@ fusermount         : no
   
   <entry>
     <title type="html"><![CDATA[Sector/Sphere Review]]></title>
-    <link href="http://blog.heartoutside.com/blog/2010/06/09/sector-sphere-review/"/>
+    <link href="http://log.heartoutside.com/blog/2010/06/09/sector-sphere-review/"/>
     <updated>2010-06-09T09:36:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2010/06/09/sector-sphere-review</id>
+    <id>http://log.heartoutside.com/blog/2010/06/09/sector-sphere-review</id>
     <content type="html"><![CDATA[<p>Sector/Sphere 是一个分布并行计算系统，用来存储、计算天文信息。Sector 是文件系统，Sphere 是并行计算平台。<br />
 其<a href="http://sector.sourceforge.net/benchmark.html">性能</a>超过了 Hadoop 一倍多。性能评测结果 <br />
 其分布指分布在几个州的 rack，使用 udt 通讯。<br /></p>

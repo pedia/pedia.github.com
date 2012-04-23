@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: boost | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/boost/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: boost | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/boost/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Googler use c++?]]></title>
-    <link href="http://blog.heartoutside.com/blog/2007/02/27/googler-use-cplusplus/"/>
+    <link href="http://log.heartoutside.com/blog/2007/02/27/googler-use-cplusplus/"/>
     <updated>2007-02-27T21:41:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2007/02/27/googler-use-cplusplus</id>
+    <id>http://log.heartoutside.com/blog/2007/02/27/googler-use-cplusplus</id>
     <content type="html"><![CDATA[<p>最近发现<a href="http://code.google.com/hosting/">Google code</a>上多了<a href="http://code.google.com/hosting/search?q=label%3AGoogle+&amp;btn=Search+Projects">好多</a>Google的开源项目，比较有意思的项目有：</p>
 
 <p><a href="http://code.google.com/p/airbag/">airbag - Crash reporting</a></p>

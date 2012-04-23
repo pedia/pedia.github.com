@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Book | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/book/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: Book | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/book/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[《软件随想录》 摘录]]></title>
-    <link href="http://blog.heartoutside.com/blog/2010/02/05/an-extract-of-the-software-were-recorded-in-the-caprice/"/>
+    <link href="http://log.heartoutside.com/blog/2010/02/05/an-extract-of-the-software-were-recorded-in-the-caprice/"/>
     <updated>2010-02-05T12:13:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2010/02/05/an-extract-of-the-software-were-recorded-in-the-caprice</id>
+    <id>http://log.heartoutside.com/blog/2010/02/05/an-extract-of-the-software-were-recorded-in-the-caprice</id>
     <content type="html"><![CDATA[<p><a href="http://www.douban.com/subject/4163938/">More Joe on Software</a><br />      - Joel Spolsky<br /></p>
 
 <h2>寻找优秀的程序员</h2>
@@ -104,9 +104,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Long Tail and Music]]></title>
-    <link href="http://blog.heartoutside.com/blog/2007/02/14/the-long-tail-and-music/"/>
+    <link href="http://log.heartoutside.com/blog/2007/02/14/the-long-tail-and-music/"/>
     <updated>2007-02-14T11:12:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2007/02/14/the-long-tail-and-music</id>
+    <id>http://log.heartoutside.com/blog/2007/02/14/the-long-tail-and-music</id>
     <content type="html"><![CDATA[<p>最近开始阅读<span style="font-style: italic;"><a href="http://book.sina.com.cn/nzt/live/fin/changwelilun/index.shtml">长尾理论</a></span>(<span style="font-style: italic;">The Long Tail</span>)，很不错的一本书，翻译质量也是上上之作(如果技术性书籍翻译水准能达到这个水平就好了)。<br /></p>
 
 <br />

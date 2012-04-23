@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: speed | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/speed/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: speed | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/speed/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[vc7 compile optimization]]></title>
-    <link href="http://blog.heartoutside.com/blog/2007/02/13/vc7-compile-optimization/"/>
+    <link href="http://log.heartoutside.com/blog/2007/02/13/vc7-compile-optimization/"/>
     <updated>2007-02-13T18:12:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2007/02/13/vc7-compile-optimization</id>
+    <id>http://log.heartoutside.com/blog/2007/02/13/vc7-compile-optimization</id>
     <content type="html"><![CDATA[<p>我写Windows程序的编译器一直都是vc7,并且短时间内也不打算迁移到其他版本。</p>
 
 <p>最近开始写一个低内存消耗的程序(对比：<a href="http://www.ttplayer.com" target="_blank">千千静听</a>)，所以测试了一下针对内存的优化效果。</p>

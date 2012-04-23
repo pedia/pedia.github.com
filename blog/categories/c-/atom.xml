@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: c++ | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/c-/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: c++ | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/c-/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[about DSEL]]></title>
-    <link href="http://blog.heartoutside.com/blog/2010/02/08/about-dsel/"/>
+    <link href="http://log.heartoutside.com/blog/2010/02/08/about-dsel/"/>
     <updated>2010-02-08T15:06:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2010/02/08/about-dsel</id>
+    <id>http://log.heartoutside.com/blog/2010/02/08/about-dsel</id>
     <content type="html"><![CDATA[<p>最近开始看一本老书(2004年版的): <strong>C++ Template Metaprogramming: Concepts, Tools, and Techniques from Boost and Beyond</strong>,
 <a href="http://www.amazon.com/Template-Metaprogramming-Concepts-Techniques-Beyond/dp/0321227255/ref=sr_1_1?ie=UTF8&amp;amp;s=books&amp;amp;qid=1265611847&amp;amp;sr=1-1">in amazon</a>
 我看的是中文版 <strong>C++模板元编程</strong>(2010年版), in <a href="http://www.amazon.cn/gp/product/B002WB1J0U/ref=ox_ya_os_product"> amazon.cn</a><br /></p>
@@ -51,9 +51,9 @@ main.o: main.cpp defs.h</p>
   
   <entry>
     <title type="html"><![CDATA[不要做客户端软件开发]]></title>
-    <link href="http://blog.heartoutside.com/blog/2009/10/17/not-to-do-client-side-software-development/"/>
+    <link href="http://log.heartoutside.com/blog/2009/10/17/not-to-do-client-side-software-development/"/>
     <updated>2009-10-17T15:13:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2009/10/17/not-to-do-client-side-software-development</id>
+    <id>http://log.heartoutside.com/blog/2009/10/17/not-to-do-client-side-software-development</id>
     <content type="html"><![CDATA[<p>几乎在所有的互联网公司里，客户端部门，如果有，都不会受到重视。因为有QQ，<a href="http://digi.tech.qq.com/a/20091012/000059.htm">一家独大</a>，好像其他客户端都没有太多意义了。<br />
 可怜的我一直都在做客户端，深刻的体会到了意义的重要性。不管情形如何，也积累了不少经验和体会，得出的结论就是不要做客户端。<br />
 客户端开发相比于网站开发有其独特的特性。<br /></p>
@@ -84,10 +84,70 @@ main.o: main.cpp defs.h</p>
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[WHY COM?]]></title>
+    <link href="http://log.heartoutside.com/blog/2007/06/01/why-com/"/>
+    <updated>2007-06-01T13:03:00+08:00</updated>
+    <id>http://log.heartoutside.com/blog/2007/06/01/why-com</id>
+    <content type="html"><![CDATA[<p>为何很多大型程序都使用了COM?</p>
+
+<p>COM 对程序有什么价值?</p>
+
+<p>使用了COM作为框架的程序:</p>
+
+<ul>
+<li>Firefox, <a href="http://lxr.mozilla.org/seamonkey/find?string=idl">搜索idl</a>能找到很多文件，并且实现了跨平台的<a href="http://www.mozilla.org/projects/xpcom/">XPCOM</a>,非常优秀的程序。</li>
+<li>IE, 自然使用了Window平台内置的COM</li>
+</ul>
+
+
+<p>我的机器上安装了一些Google的程序，我查看了一下：</p>
+
+<ul>
+<li><p>common/update/:<br />
+<a href="http://boostguy.googlepages.com/goopdate.idl">goopdate.idl</a> <br />
+<a href="http://boostguy.googlepages.com/UpdaterService.idl">UpdaterService.idl</a></p></li>
+<li><p>Google Desktop Search/:<br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopActions.idl"></a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopActions.idl"></a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopActions.idl">GoogleDesktopActions.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDeskband.idl">GoogleDeskband.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopAPI2.idl">GoogleDesktopAPI2.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopDisplay.idl">GoogleDesktopDisplay.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopIndex.idl">GoogleDesktopIndex.IDL</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopSSD.idl">GoogleDesktopSSD.IDL</a><br />
+<a href="http://boostguy.googlepages.com/GoogleUIEngine.idl">GoogleUIEngine.IDL</a><br /></p></li>
+<li><p>Google Earth<br />
+<a href="http://boostguy.googlepages.com/googleearth.idl">googleearth.IDL</a></p></li>
+<li><p>Google Talk<br />
+<a href="http://boostguy.googlepages.com/googletalk.idl">googletalk.IDL</a><br />
+<a href="http://boostguy.googlepages.com/swg.idl">swg.IDL</a></p></li>
+<li>Google Toolbar<br />
+<a href="http://boostguy.googlepages.com/googletoolbar3.idl">googletoolbar3.IDL</a></li>
+<li>RealPlayer SDK<br />
+<a href="http://www.google.com/codesearch?hl=en&amp;lr=&amp;q=IRMAPlayer&amp;btnG=Search">IRMAPlayer</a></li>
+</ul>
+
+
+<p>有必要说明的是很多程序为了和IE，Shell交互必须使用COM实现一些接口，如 Google Toolbar，但是有些程序为了暴露API給开发者也使用了COM,如GoolgeTalk, RealPlayerSDK,MSN等。</p>
+
+<p>编写小程序的确不应该用COM，依赖注册表，还有TypeLibrary等问题，的确不划算。但是有复杂进程通讯，复杂界面和逻辑交互的程序使用COM的确有不少好处：</p>
+
+<ul>
+<li>几乎能在任何需要的地方方便的得到任何需要的对象。避免使用可耻的全局变量。</li>
+<li>不用担心对象生存期和泄露问题，COM内置的引用计数解决了这个问题，当然接口泄露也会开始折磨程序员。</li>
+<li>接口定义是强制性的了。</li>
+</ul>
+
+
+<p>我个人倾向于使用COM，但是应该避免使用注册表，复杂的ConnectionPoint等技术。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Googler use c++?]]></title>
-    <link href="http://blog.heartoutside.com/blog/2007/02/27/googler-use-cplusplus/"/>
+    <link href="http://log.heartoutside.com/blog/2007/02/27/googler-use-cplusplus/"/>
     <updated>2007-02-27T21:41:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2007/02/27/googler-use-cplusplus</id>
+    <id>http://log.heartoutside.com/blog/2007/02/27/googler-use-cplusplus</id>
     <content type="html"><![CDATA[<p>最近发现<a href="http://code.google.com/hosting/">Google code</a>上多了<a href="http://code.google.com/hosting/search?q=label%3AGoogle+&amp;btn=Search+Projects">好多</a>Google的开源项目，比较有意思的项目有：</p>
 
 <p><a href="http://code.google.com/p/airbag/">airbag - Crash reporting</a></p>
@@ -175,9 +235,9 @@ Crash reason:  EXCEPTION_ACCESS_VIOLATION</p>
   
   <entry>
     <title type="html"><![CDATA[vc7 compile optimization]]></title>
-    <link href="http://blog.heartoutside.com/blog/2007/02/13/vc7-compile-optimization/"/>
+    <link href="http://log.heartoutside.com/blog/2007/02/13/vc7-compile-optimization/"/>
     <updated>2007-02-13T18:12:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2007/02/13/vc7-compile-optimization</id>
+    <id>http://log.heartoutside.com/blog/2007/02/13/vc7-compile-optimization</id>
     <content type="html"><![CDATA[<p>我写Windows程序的编译器一直都是vc7,并且短时间内也不打算迁移到其他版本。</p>
 
 <p>最近开始写一个低内存消耗的程序(对比：<a href="http://www.ttplayer.com" target="_blank">千千静听</a>)，所以测试了一下针对内存的优化效果。</p>
@@ -198,31 +258,6 @@ Crash reason:  EXCEPTION_ACCESS_VIOLATION</p>
 <p>优化最大化大小比最大化速度的 Working Set 低了 6%。</p>
 
 <p>ps: 这篇文章使用gmail<a href="http://help.blogger.com/bin/answer.py?answer=41452&amp;topic=8929">邮件</a>发送.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How suck your STL implemented?]]></title>
-    <link href="http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented/"/>
-    <updated>2007-02-13T12:53:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented</id>
-    <content type="html"><![CDATA[<p>我在vc7中做了一个测试，插入50万条随机生成的记录到hash_map中，结果令我大吃一惊。</p>
-
-<p>随机字符串生成：字符串长度为1-12个小写字母(50万个字符串中大概只有34万个不重复)</p>
-
-<p>插入的速度</p>
-
-<table border="1" cellpadding="10" cellspacing="10"><tbody><tr><td></td><td>vc7 STL</td><td>stlport 4.62</td></tr>
-<tr><td>前25万条</td><td>350ms/万条</td><td>200ms/万条</td></tr>
-<tr><td>后25万条</td><td>进程没有反应</td><td>200ms/万条</td></tr>
-</tbody></table>
-
-
-<p>查询速度也有较大的差异，VC7 STL最差的命中查询在10ms。</p>
-
-<p>VC7自带的stl的效率差得让人吃惊。</p>
-
-<p>并且hash_map::resize等方法也没有提供(在bucket容量超过75%时hash表的效率一般会降低，不能调用resize扩充bucket容量了)。</p>
 ]]></content>
   </entry>
   

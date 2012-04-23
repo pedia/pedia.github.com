@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: LBS，MongoDB | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/lbs-mongodb/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: LBS，MongoDB | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/lbs-mongodb/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[LBS的两种实现]]></title>
-    <link href="http://blog.heartoutside.com/blog/2011/04/22/lbs-in-two/"/>
+    <link href="http://log.heartoutside.com/blog/2011/04/22/lbs-in-two/"/>
     <updated>2011-04-22T15:26:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2011/04/22/lbs-in-two</id>
+    <id>http://log.heartoutside.com/blog/2011/04/22/lbs-in-two</id>
     <content type="html"><![CDATA[<p><a href="http://en.wikipedia.org/wiki/Location-based_service">LBS</a>的核心是地理位置信息的索引和检索。位置信息一般采用经纬度表示，不支持通用的比较、排序，所以导致系统实现难度很大。<br /></p>
 
 <br />

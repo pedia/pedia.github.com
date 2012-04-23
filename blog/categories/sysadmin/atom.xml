@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: sysadmin | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/sysadmin/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: sysadmin | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/sysadmin/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,15 +15,15 @@
   
   <entry>
     <title type="html"><![CDATA[系统监控 Munin]]></title>
-    <link href="http://blog.heartoutside.com/blog/2010/06/10/system-monitoring-munin/"/>
+    <link href="http://log.heartoutside.com/blog/2010/06/10/system-monitoring-munin/"/>
     <updated>2010-06-10T09:44:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2010/06/10/system-monitoring-munin</id>
+    <id>http://log.heartoutside.com/blog/2010/06/10/system-monitoring-munin</id>
     <content type="html"><![CDATA[<p>在系统监控方面，有很多选择，如 ganglia, nagios, cacti, monit等等，各有所长。<br />
 ganglia 在集群监控上优势很大，对系统管理员非常有价值，但是对于服务开发者－程序员来说远远不够，监控项目太少了，二次开发，定制比较困难。</p>
 
 <p>munin 对内存的监控项目如下<br /></p>
 
-<p><img border="0" height="335" src="http://blog.heartoutside.com/pic/munin-memory-day.png" width="400" /><br /></p>
+<p><img border="0" height="335" src="http://log.heartoutside.com/pic/munin-memory-day.png" width="400" /><br /></p>
 
 <p>应该是非常详尽了的。<br /></p>
 

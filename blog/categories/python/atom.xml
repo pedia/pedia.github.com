@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: python | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/python/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: python | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[终结技术架构争论]]></title>
-    <link href="http://blog.heartoutside.com/blog/2011/02/16/end-technology-architecture-debate/"/>
+    <link href="http://log.heartoutside.com/blog/2011/02/16/end-technology-architecture-debate/"/>
     <updated>2011-02-16T18:17:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2011/02/16/end-technology-architecture-debate</id>
+    <id>http://log.heartoutside.com/blog/2011/02/16/end-technology-architecture-debate</id>
     <content type="html"><![CDATA[<p>Quora.com 是facebook CTO离开后的创业项目，现在已经有不小成就，在美国流量排名已经达到634名<br />
 <img border="0" src="http://traffic.alexa.com/graph?&amp;w=400&amp;h=220&amp;o=f&amp;c=1&amp;y=r&amp;b=ffffff&amp;n=666666&amp;r=2y&amp;u=quora.com&amp;" />&nbsp;作为成就了Facebook技术体系的人，又有机会从头构建技术体系，其选择必然有所参考价值。<br /></p>
 
@@ -71,9 +71,9 @@ Nginx as reverse-proxy server<br /></p>
   
   <entry>
     <title type="html"><![CDATA[ip库查询]]></title>
-    <link href="http://blog.heartoutside.com/blog/2010/06/09/ip-query/"/>
+    <link href="http://log.heartoutside.com/blog/2010/06/09/ip-query/"/>
     <updated>2010-06-09T09:51:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2010/06/09/ip-query</id>
+    <id>http://log.heartoutside.com/blog/2010/06/09/ip-query</id>
     <content type="html"><![CDATA[<p>现在网上流传的ip库，稍微处理了一下，一共 373691条记录，压缩后是 3.5M<br />
 记录格式如<br /></p>
 

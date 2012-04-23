@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: facebook | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/facebook/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: facebook | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/facebook/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A Day in the Life of Facebook Operations]]></title>
-    <link href="http://blog.heartoutside.com/blog/2010/06/29/a-day-in-the-life-of-facebook-operations/"/>
+    <link href="http://log.heartoutside.com/blog/2010/06/29/a-day-in-the-life-of-facebook-operations/"/>
     <updated>2010-06-29T11:14:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2010/06/29/a-day-in-the-life-of-facebook-operations</id>
+    <id>http://log.heartoutside.com/blog/2010/06/29/a-day-in-the-life-of-facebook-operations</id>
     <content type="html"><![CDATA[<h2>How big Facebook is?</h2>
 
 <p><img border="0" src="http://2.bp.blogspot.com/_CZ0niZQI8-o/TClZ1kgIbBI/AAAAAAAAFWs/IjkL-G9uAF8/s320/fb_1.png" /></p>

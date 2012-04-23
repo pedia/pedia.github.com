@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>heartoutside</title>
+  <title>HeartOutside</title>
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="文化差异from 中国特色。NET by [BLT]FQX 最近我一直在思考这个问题，为什么被称为普世价值的“民主自由”并没有得到中国广大网民的认同。&nbsp;
-中美之间巨大意识形态的差异，从1980s到2000s，搞不好是越来越大，而不是逐渐靠拢。 我试图将之归结为“文化差异”， &hellip;">
+  <meta name="description" content="很多刚参加工作和学生立志成为让人羡慕的技术黑客、顶级程序员，但是往往不得门道，走很多弯路，花很多时间学习一些花哨没有实用价值或者是不切实际的技术。譬如，很多学生热衷于讨论异步IO、多线程和高并发程序的开发。没有数年的编程经验，对多线程、并发根本驾驭不了，很难写出具有商业使用价值的程序。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,13 +18,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.heartoutside.com/blog/page/9">
+  <link rel="canonical" href="http://log.heartoutside.com/blog/page/9">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="HeartOutside" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -36,7 +35,7 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">heartoutside</a></h1>
+  <h1><a href="/">HeartOutside</a></h1>
   
     <h2>not yet</h2>
   
@@ -50,7 +49,7 @@
   
 <form action="https://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input type="hidden" name="q" value="site:log.heartoutside.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -65,6 +64,629 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/09/10/how-to-become-a-professional-programmer/">如何成为专业程序员</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-10T20:23:41+08:00" pubdate data-updated="true">Sep 10<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>很多刚参加工作和学生立志成为让人羡慕的技术黑客、顶级程序员，但是往往不得门道，走很多弯路，花很多时间学习一些花哨没有实用价值或者是不切实际的技术。譬如，很多学生热衷于讨论异步IO、多线程和高并发程序的开发。没有数年的编程经验，对多线程、并发根本驾驭不了，很难写出具有商业使用价值的程序。当然我说的得排除天才。<br /></p>
+
+<br />
+
+
+<p>对于如何成为顶级程序员，我觉得需要循序渐进，先掌握好以下基本技能才能达到目的。<br /></p>
+
+<br />
+
+
+<p>1 <span style="font-weight: bold;">语言</span><br />
+虽然有很多人对c++的理解不是那么充分，但是也能用c的结构和c++的语法写出很NB的程序。不能鄙视人家，但是我相信如果他能对c++理解得更充分一些，写出来的程序会更NB。<br />
+完全掌握了语言，应用自如后，写出的代码应该更健壮，除错的速度也会稍微快一些的。很多技术出身的飞快成为管理人员的似乎都是语言上稍微欠缺的高手。<br />
+曾今听某个汇编超级NB的人指着<br />
+&nbsp;<span style="color: rgb(0, 0, 255); font-weight: bold;">delete this;</span><br />
+说：我闻到了坏味道了，这个代码肯定有问题。而实际这是一个很常用的惯用法。<br /></p>
+
+<br />
+
+
+<p>2 <span style="font-weight: bold;">编译器</span><br />
+不能把程序编译成需要的形式，如几个static library怎么都链接不成可执行程序。如程序为何拷贝到其他计算机上就不能运行了呢？可能很多程序员都遇到过。<br />
+能立即知道编译错误、警告产生的根源也能提高一些工作效率：更快的调试除错，把精力集中到逻辑应用上来。<br />
+我们曾经碰到一些程序产生 EXCEPTION_IN_PAGE_ERROR 异常，打开编译优化 Swap Run from Network 即可解决。<br /></p>
+
+<br />
+
+
+<p>3 <span style="font-weight: bold;">编辑器</span><br />
+见过用鼠标写程序的吗？说不定你就是。不管用什么编辑器都能写出程序来就太好了，但是似乎不现实，编辑器使用过程中能严重影响编码的心情。我喜欢用我熟悉的编辑器，并且还会定制很多快捷键来提高效率。<br />
+我喜欢用vc8的编辑器来写：c,js,html代码。emacs也不错，但是有些功能设置一直都没有找到。下图是我日常编辑器的一个截图，没有一个toolbar.<br />
+<img src="http://fm291.img.xiaonei.com/blog/20071223/14/44/A228948973091PEP.png" alt="edit.png"></a><br /></p>
+
+<br />
+
+
+<p>4 <span style="font-weight: bold;">操作系统<br />
+</span>系统调用!不调用系统API的程序的程序可能只能用来研究一些算法等，应该没有太大实用价值。之前我在写Windows程序时，总会开一个MSDN来查阅 WindowsAPI 及 TechNet。写 Windows程序没有什么难的，抱着 MSDN 啃几乎所有的答案都能找到，甚至比从网上搜索出来的解决方案更正确。实在找不到推荐去看微软泄露的203M的源代码包，如果还找不到，可以试试Google。对于 Linux 程序，APUE2 应该是一个不错的选择。微软对开发人员的禁锢是另外一个话题。<br /></p>
+
+<br />
+
+
+<p>当然这只是成为能撰写商业程序的程序员应该掌握的基础部分，想成为高手还需要很多特质和磨练。<br /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/09/09/interview-with-google-vice-president-of-beauty-looking-to-the-future-10-year-development/">Google 美女副总裁专访:更看好未来10年发展</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-09T20:12:02+08:00" pubdate data-updated="true">Sep 9<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 class="entry-title">Google 美女副总裁专访:更看好未来10年发展<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" width="18" height="18"></h2>
+
+
+<div class="entry-author"><span class="entry-source-title-parent">from 1986 To Present</span> by <span class="entry-author-name">adamzhu1986</span></div>
+
+
+<p>在 Google 迎来其10周年生日之际,美国知名报纸《洛杉矶时报》网站今天刊登了对该公司搜索产品和用户体验美女副总裁玛丽莎·梅耶尔(Marissa Mayer)的采访记录.在这次于近日进行的采访中,梅耶尔谈到 Google 成立10周年以来所取得的巨大成就,同时还展望了 Google 未来10年的发展蓝图.</p>
+
+
+<p><img alt="Photobucket" src="http://i72.photobucket.com/albums/i173/adamzhu1986/1986tp/12765191.jpg" border="0"></p>
+
+
+<p>以下为这次采访的精彩摘要(来自腾讯科技):</p>
+
+
+<p>说起梅耶尔，或许她的名声不如 Google 两位创始人拉里·佩奇(Larry Page)和塞吉·布林(SergeyBrin)；但在很多情况下，素有“美女副总裁”之称的梅耶尔已成为 Google 公关代言人。梅耶尔是 Google第一名女性技术开发人员，同时也是公司第20名员工。目前梅耶尔管理着150名项目经理，而这些项目经理直接管理着近2000名开发者。</p>
+
+
+<p><br />
+</p>
+
+
+<p><strong>问：过去10年当中， Google 都发生了哪些改变？而 Google 又导致全球发生了何种变化？</strong></p>
+
+
+<p>答： Google 最显著的特征之一，就是它多年来并没有发生多少变化。我们不妨看看 Google 的新老员工，他们都有着共同特点：愿意努力工作以解决各类技术难题；他们愿意改变人们的生活，为人们日常生活带来更多便利。 </p>
+
+
+<p>说到 Google 对世界的影响，我们引以自豪的是： Google 使全球网民能够轻松、快捷地查找到各类信息。我们时时告诫自己，不能骄傲自满， Google 的技术开发还刚刚开始。我们可以做得更好， Google 正朝着该方向前进。 <br />
+</p>
+
+
+<p><br />
+</p>
+
+
+<p><strong>问： Google 在多大程度上改变了你的生活？</strong></p>
+
+
+<p>答：就我个人而言，在过去9年多中， Google 实际上就是我本人的生活。我心甘情愿为 Google工作，我和工作同事取得了一些成绩，我们对此感到无比自豪。我已把自己大部分时间贡献给了 Google 。 Google工作对我个人来说有着异常重要的意义，这点外界或许无法想像和理解。 </p>
+
+
+<p><strong><br />
+</strong></p>
+
+
+<p><strong>问：你觉得 Google 目前真正面临着哪些挑战？</strong></p>
+
+
+<p>答： Google 目前确实面临着很多挑战，而其中最关键的挑战应该是如何保持创新性，如何保持市场反应灵敏性。我们一直在注意解决好这方面的问题。在科技产业领域，最关键的因素就是如何发现人才、挽留人才、提供良好开发环境并激发技术人员的创造灵感。 </p>
+
+
+<p><strong><br />
+</strong></p>
+
+
+<p><strong>问： Google 还面临着何种其他挑战？</strong></p>
+
+
+<p>答：就市场运营而言， Google 面临着市场竞争、规模化发展诸如此类的挑战。就目前而言，我觉得 Google 这方面还做得不错，但我们不能掉以轻心，而必须认真执行各种市场战略。 </p>
+
+
+<p><strong><br />
+</strong></p>
+
+
+<p><strong>问：你认为过去10年中， Google 取得的最大成就是什么？</strong></p>
+
+
+<p>答：最大成就之一当然是我们的搜索引擎。如今全球各大搜索引擎实力已大幅提高，所有网民都离不开它们。搜索引擎性能的提高，是 Google及其他竞争对手共同努力的结果，而普通用户已从中受益。此外， Google 也改变了网络广告的发布格局，并通过AdSense网络广告系统找到了相应盈利方式。值得注意的是，通过 Google 网络广告系统，其他小型创业公司也从中受益。 </p>
+
+
+<p><strong><br />
+</strong></p>
+
+
+<p><strong>问：今后10年内， Google 将实施哪些重大市场战略？</strong></p>
+
+
+<p>答：我想公司将继续专注于技术创新，尤其是专注于搜索技术创新。在互联网搜索领域，还有很多需要解决的难题。我们已经解决了搜索产业中90%~95%难题，但其余10%的问题解决起来难度更大。在网络视频、在线地图和书籍服务业务领域，我们还面临着如何找到有效盈利模式的挑战。我们还必须帮助内容提供商实现业务转型，使他们找到适合自己发展的市场模式。 </p>
+
+
+<p>此外，如果放眼“云计算”(cloud computing)业务领域，我们认为该产业具备巨大增长潜力。对于 GoogleGmail电子邮件、 Google在线办公软件及近日刚刚发布的Chrome浏览器而言，它们意在向网民提供更为方便快捷的在线工具，这也为互联网今后的应用指明了方向。我们仍将继续开发出更多互联网新产品。总而言之，今后 Google 将努力做到：大力提高互联网的易用性。 </p>
+
+
+<p><strong><br />
+</strong></p>
+
+
+<p><strong>问： Google 在搜索及文本搜索广告业务领域取得了巨大成功。今后 Google 最有可能在其他哪项业务上实现大规模盈利？</strong></p>
+
+
+<p>答：我们必须意识到，就搜索和文本搜索广告而言，它们本身就呈多样化特点。不同类型广告主会选择在不同内容中投放广告。我们的收入来源主要依赖网络广告，但该产业内部具有多样性和稳定性并存的特点。 </p>
+
+
+<p>对于网络广告的市场前景，我们自然也有顾虑，并希望开拓网络广告的新型发行方式，如在网络视频、在线书籍服务当中投放广告。此外，我们还在推出各种付费服务，如Picasa和Gmail的相应在线存储业务。我们这类业务还处于初生期，尽管收入额并不高，但我们愿意在这方面进行有益探索。 </p>
+
+
+<p><strong><br />
+</strong></p>
+
+
+<p><strong>问：你们收购网络广告公司DoubleClick有何重大意义？</strong></p>
+
+
+<p>答：收购 DoubleClick 后，有利于我们进入媒体业务并发展富媒体广告业务。就 YouTube 视频和 Google图片搜索业务而言，DoubleClick 能发挥出重要作用。收购DoubleClick，其实也是为了进一步满足广告主和合作伙伴商的具体要求，我们希望使广告主的广告采购和投放活动更为便捷。 </p>
+
+
+<p><strong><br />
+</strong></p>
+
+
+<p><strong>问：通常情况下，任何一家公司规模增长后，其原来企业文化就会发生变化。那么 Google 都发生了哪些变化？</strong></p>
+
+
+<p>答：我觉得过去10年中， Google 一直延续了其固有企业文化。我希望 Google 今后仍能保持这一传统。多年来 Google 企业文化保持了其稳定性，使我有理由相信，这一传统还持续下去。 </p>
+
+
+<p><strong><br />
+</strong></p>
+
+
+<p><strong>问：此前有报道称， Google 将不再向员工提供免费晚餐，能谈谈这方面的情况吗？</strong></p>
+
+
+<p>答：我没有听说过这件事。值得指出的是， Google是一家很节俭的企业，我们会把钱投入到值得投入的地方。我们之所以向员工提供食品，目的是使他们与公司的关系更为密切。在 Google创建之初，所有员工每周上班时间长达120~130小时。向员工提供免费餐饮，不但能够节省员工家务活动时间，而且也有利于员工们在就餐时进行工作交流。在外界看来，我们这样做似乎有点铺张浪费，但 Google 内部员工都认为，这样做很值得。其实，我们一直都信奉“少花钱、多办事”的理念。 </p>
+
+
+<p><strong><br />
+</strong></p>
+
+
+<p><strong>问：到 Google 成立20年之时，你觉得届时公司将会是什么样子？</strong></p>
+
+
+<p>答：说实话，我不知道。在 Google 创建之初，我并没有预测 Google 成立10周年时将会是什么样子。应该说， Google始终将是一家互联网企业。如果让我猜测， Google 今后仍将大力发展搜索技术，因为搜索一直是 Google的核心业务，而且们在网络广告业务领域业绩不错，我想今后 Google仍将在该业务领域扮演重要角色。我衷心祝愿普通网民今后的电脑使用方式将出现变革，他们能够充分利用 Google提供的云计算、数据中心和存储服务。 </p>
+
+
+<p><strong><br />
+</strong></p>
+
+
+<p><strong>问：到 Google 成立20年之时，你是否还会在 Google 工作？</strong></p>
+
+
+<p>答：我希望如此。就我个人而言，我今后的工作责任将更为重大，只要我还面临着工作挑战，我就仍然还会在 Google 工作。无论从Google 企业文化还是每位员工工作态度看，我们都能做到放眼未来。过去10年已成为历史，我们更看重今后10年 Google将取得的成就。(编译/中涛) </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/09/06/experience-of-picasa-for-face-recognition/">体验Picasa的人脸识别</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-06T07:55:06+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在<a target=_blank href="http://picasaweb.google.com/lh/settings">配置</a>中选择开始识别后，花了大概不到30分钟，总共识别出780张人脸。<br /></p>
+
+<br />
+
+
+<p>其中大部分比较准确，并能给出相似度匹配的结果<br />
+<img src="http://fmn015.xnimg.cn/fmn015/pic001/20080905/23/42/large_VOyM_5976f198172.jpg" alt=""><br /></p>
+
+<br />
+
+
+<p>识别出后可以添加tag(Name),遗憾的是未能给出批量tag功能，我没有耐心点780下！<br /></p>
+
+<br />
+
+
+<p>少部分不确定的用?标识出来<br />
+<img src="http://fmn011.xnimg.cn/fmn011/pic001/20080905/23/42/large_6o7L_5794d198172.jpg" alt=""><br /></p>
+
+<br />
+
+
+<p>识别区域<br />
+<img src="http://fmn014.xnimg.cn/fmn014/pic001/20080905/23/42/large_5f72_5880h198172.jpg" alt=""><br /></p>
+
+<br />
+
+
+<p><img src="http://fmn012.xnimg.cn/fmn012/pic001/20080905/23/42/large_UoO4_5844o198172.jpg" alt=""><br /></p>
+
+<br />
+
+
+<p>最后单张照片的显示界面为下图，鼠标悬停后能显示出识别范围，右边有加入的 tag<br />
+<img src="http://fmn014.xnimg.cn/fmn014/pic001/20080905/23/42/large_Mpqt_5930a198172.jpg" alt=""><br /></p>
+
+<br />
+
+
+<p>评论：<br />
+强大<br /></p>
+
+<br />
+
+
+<p>ps: 我不是盲崇Google，人家的东西确实做得好。谁能做到如此地步，也就NB了<br /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/09/04/chrome-code-has-been-available-for-download-but-it-must-be-with-tor-to-access/">Chrome代码已经可以下载,但是必须带Tor才能访问</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-04T21:47:46+08:00" pubdate data-updated="true">Sep 4<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>http://dev.chromium.org<br />
+http://blog.chromium.org<br /></p>
+
+<br />
+
+
+<p>fuck GFW! <br />
+fuck fuck fuck fuck fuck!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/09/04/the-story-behind-google-chrome/">The Story Behind Google Chrome</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-04T21:14:40+08:00" pubdate data-updated="true">Sep 4<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 class="entry-title">Google 05年已经开始了Chrome的开发<br />
+</h2>
+
+
+<h2 class="entry-title"><br />
+</h2>
+
+
+<h2 class="entry-title"><a target=_blank class="entry-title-link" target="_blank" href="http://www.niallkennedy.com/blog/2008/09/google-chrome.html">The story behind Google Chrome<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" width="18" height="18"></a></h2>
+
+
+<div class="entry-author"><span class="entry-source-title-parent">from <a target=_blank href="http://www.google.com/reader/view/feed/http%3A%2F%2Fwww.niallkennedy.com%2Fblog%2Findex.atom" class="entry-source-title" target="_blank">Niall Kennedy&#8217;s Weblog</a></span> </div>
+
+
+<div class="entry-body"><div><div class="item-body"><div><div style="text-align: center;"><a target=_blank target="_blank" href="http://flickr.com/photos/niallkennedy/2822210793/"><img alt="Ben Goodger and Google Chrome" src="http://farm4.static.flickr.com/3017/2822210793_7270a7d96b.jpg" width="430" height="238"></a></div><p>Google released its second web browser yesterday afternoon, addingadditional headroom for web applications stretching the limits of whatit&#8217;s possible to accomplish within a web browser. The <a target=_blank target="_blank" href="http://www.google.com/chrome">Google Chrome</a>team assembled domain experts in various fields over the past sixyears, both through direct hires and acquisitions, to create a newbrowser and its critical components from scratch. GMail and Google Mapspushed the Web to its limits, taking advantage of browser technologiesinvented in Redmond but left dormant for far too long. Contributing toFirefox&#8217;s core, writing browser extensions, and championing <abbr title="Hypertext Markup Language">HTML</abbr>could only take the $150 billion company so far: they needed to own thefull browser to push their Web efforts forward at full speed.</p>
+<ol><li><a target=_blank target="_blank" href="http://www.niallkennedy.com/blog/#frustrations">Growing Frustrations</a></li><li><a target=_blank target="_blank" href="http://www.niallkennedy.com/blog/#acquisitions">Acquisition Boost</a></li><li><a target=_blank target="_blank" href="http://www.niallkennedy.com/blog/#scratch">A New Browser from Scratch</a></li><li><a target=_blank target="_blank" href="http://www.niallkennedy.com/blog/#v8">Rev your  Engines</a></li><li><a target=_blank target="_blank" href="http://www.niallkennedy.com/blog/#team">Meet the Team</a></li><li><a target=_blank target="_blank" href="http://www.niallkennedy.com/blog/#chrome-summary">Summary</a></li></ol><h3>Growing Frustrations</h3><p>Brian Rakowski joined Google in July 2002 as the company&#8217;s firstassociate product manager. His first assignment? Launch GMail withfeatures and responsiveness to rival desktop mail clients. Gmail tappedinto relatively dormant browser features such as XMLHttpRequest,sockets, prefetch, and more to create a web applications stretching thelimits of what was possible inside web browsers of 2004. Today&#8217;s Gmailcontinues to run into a browser&#8217;s limits, setting <a target=_blank target="_blank" href="http://gmailblog.blogspot.com/2007/10/code-changes-to-prepare-gmail-for.html" title="Gmail 2.0 browsers">minimum requirements of Internet Explorer 7+ and Firefox 2+</a>. Google web <abbr title="applications">apps</abbr>teams such as Maps and Mail continually bump their heads against thelatest capabilities of web browsers and in some cases invent their ownruntimes.</p>
+<p><a target=_blank target="_blank" href="http://ian.hixie.ch/">Ian Hickson</a> firstlearned the inner workings of web browsers while an intern at Netscape.After working on Opera for a few years and creating tests for FirefoxIan joined Google to continue his work on new browser features. <a target=_blank target="_blank" href="http://www.w3.org/html/wg/html5/">HTML5</a> and <a target=_blank target="_blank" href="http://www.acidtests.org/">browser compliance &#8220;acid&#8221; tests</a> are significant attempts by Ian and others to redefine Web browsers through <abbr title="specifications">specs</abbr>,test, and implementations but until now Google could only offerdevelopment help and browser extensions such as Gears to acceleratebrowser capabilities.</p>
+<p>Google extended what it could not immediately add to the browser core. <a target=_blank target="_blank" href="http://gears.google.com/">Gears</a> for new application functionality on multiple browsers. <a target=_blank target="_blank" href="http://www.google.com/tools/firefox/browsersync/">Browser Sync</a> to synchronize browser settings and data across multiple computers. <a target=_blank target="_blank" href="http://www.google.com/tools/firefox/safebrowsing/">Safe Browsing</a> to create more web trust. Teams from each of these extensions are now working on Google Chrome.</p>
+<h3>Acquisition Boost</h3><p>Google released its first official Web browser on August 18, 2008 with <a target=_blank target="_blank" href="http://android-developers.blogspot.com/2008/08/announcing-beta-release-of-android-sdk.html">the beta release of the Android mobile operating system</a>.Google acquired Android in August 2005 to establish a foot-hold on thefastest growing computer (and Web) market: mobile handsets. Androidhighlights Google&#8217;s web properties through its <a target=_blank target="_blank" href="http://webkit.org/">WebKit</a>-based browser and dependent applications. <a target=_blank target="_blank" href="http://www.financialpost.com/story.html?id=c4f6f084-d72f-43ea-8a82-affe38df3830&amp;k=58579">Google acquired Ottawa-based Reqwireless</a>and its mobile web browser in the summer of 2005 to team up with theAndroid team on its web interface. Web views are an integral part ofAndroid and Google Chrome shares much of Android&#8217;s code, including itsgraphics engine.</p>
+<p>Google Chrome and Android both take advantage of the Skia vectorgraphics library developed by a small company in North Carolina <a target=_blank target="_blank" href="http://localtechwire.com/business/local_tech_wire/news/story/1126258/" title="Google Skia acquisition">Google acquired in 2005</a>. The Skia team formerly worked on Openwave&#8217;s popular mobile browser&#8217;s graphics engine. <a target=_blank target="_blank" href="http://src.chromium.org/viewvc/chrome/trunk/src/skia/">Google Chrome browser includes Skia</a> graphics engine ports for Windows, Mac, and Linux.</p>
+<p>Google acquired application security company <a target=_blank target="_blank" href="http://www.greenborder.com/">GreenBorder</a>in May 2007. GreenBorder technology automatically sandboxes web codeand network traffic by creating a bridge between applications. TheGreenBorder technology isolated Internet Explorer or Firefox instancesinto a &#8220;sandbox&#8221; inside virtual machine instances. These sandboxes formthe code isolation layers of Google Chrome, protecting other tabs andthe parent operating system from the code executing on each web page.</p>
+<h3>A New Browser from Scratch</h3><p>Ben Goodger, Google Chrome&#8217;s <abbr title="technology">tech</abbr> lead, is best known for assembling the <a target=_blank target="_blank" href="http://www.mozilla.com/firefox/">Firefox web browser</a> out of <a target=_blank target="_blank" href="http://www.seamonkey-project.org/">Mozilla&#8217;s SeaMonkey application suite</a>. <a target=_blank target="_blank" href="http://bengoodger.com/work-resources/secretprojects/manticore/">Manticore</a>, <a target=_blank target="_blank" href="http://www.caminobrowser.org/">Camino</a>, and later Firefox were all <a target=_blank target="_blank" href="http://weblogs.mozillazine.org/ben/archives/009698.html">attempts in 2001 to rethink the Web browser for the modern age</a>.Browsing took center stage away from a communications suite, userinterfaces reimagined for Web efficiency, and (some) legacy crufttossed to the side. Google hired Ben in 2005 to strengthen its ownbrowser contributions and eventually fully rearchitect a web browserfor the modern Web.</p>
+<p>Google hired top Firefox developers in 2005 and 2006 such as DarinFisher, Pam Greene, and Brian Ryner. In Spring 2006 the team began workon a new browser prototype built on top of WebKit designed forbroadband-connected, always-on, web applications such as Gmail orGoogle Maps. Could the browser experts give web apps some breathingroom?</p>
+<p>Modern computers feature multi-core multi-gigahertz <acronym title="Central Processing Unit">CPU</acronym>s,gigabytes of memory, megabits of bandwidth, and bulky hard drives. Ourweb browsers should separate browser tabs into their own processes,multi-thread all communications with the operating system, boost cachesizes, and not be afraid to command more bandwidth when available.Internet Explorer 8, Firefox 3.1, and Apple Safari are taking freshapproaches to web browsers for modern machines but Google Chrome hasthe advantage of a fresh start to achieve some features not currentlypossible in other browser architectures.</p>
+<p>Features such as tab-isolation and task monitoring are difficulttasks to add inside an existing browser architecture of sharedrun-times and window models (<a target=_blank target="_blank" href="http://ejohn.org/blog/google-chrome-process-manager/">as John Resig mentioned</a>). Internet Explorer 8&#8217;s Loosely Coupled <acronym title="Internet Explorer">IE</acronym> partially abstracts browser tab instances and the industry is generally headed in this direction.</p>
+<p>Web application-specific resource monitoring should motivate morewebsites to reduce their browser bloat now that they&#8217;ve beenidentified. Individual users can also compare web application resourceusage directly with their desktop counterparts.</p>
+<h3>Rev your  Engines</h3><p>Lars Bak and his team in Århus, Denmark have spent many yearswriting virtual machines: the run-times that translate programming codeinto machine code. Lars wrote Sun&#8217;s Java <acronym title="Virtual Machine">VM</acronym>, HotSpot, and later slimmed down the <acronym>VM</acronym> for <abbr title="Java 2 Micro Edition">J2ME</abbr> (<acronym title="Connected Limited Device Configuration">CLDC</acronym> <acronym title="HotSpot Implementation">HI</acronym> <a target=_blank target="_blank" href="http://java.sun.com/products/cldc/wp/ProjectMontyWhitePaper.pdf" title="Sun CLDC HI project Monty">project Monty</a>).A few years ago Lars and his team in Denmark began work on a newinterpreted  engine optimized for x86 and ARM architectures.</p>
+<p><a target=_blank target="_blank" href="http://code.google.com/apis/v8/design.html">The V8 engine</a>is specifically tuned for recursive  tasks, optimizingcommonly used components of your application. V8 is multi-threaded,opening up new parallel processing on multiple computing cores. V8guesses how you might use your  code, and backtracks over anyfaulty assumptions. It&#8217;s just one of the new engines we&#8217;ll see insideour web browsers by the end of 2008.</p>
+<p>Google Chrome could have used the same  interpreter as its WebKit rendering engine (<a target=_blank target="_blank" href="http://webkit.org/projects//">JavaScriptCore</a>, <a target=_blank target="_blank" href="http://webkit.org/blog/189/announcing-squirrelfish/">SquirrelFish</a>) but the team had an opportunity, and the funding, to rewrite an interpreter from scratch for desktop and mobile runtimes.</p>
+<p>The V8 engine enables new feature sets for Google&#8217;s web applicationssuch as Gmail and Google Maps. Web application developers avoid addingfeatures that visibly slow down browsers or cause processing pauses inyour application experience. New speed in new areas adds functionalityto existing <abbr>apps</abbr>. Google programmers should create moreefficient code, tested against multiple interpreters, and optimized formodern computers as a result of V8. Even if Google Chrome gains nosignificant browser market share I still expect it will be the bestsingle-site browser for Google web applications.</p>
+<p>Google Chrome adds additional  functionality through <a target=_blank target="_blank" href="http://gears.google.com/" title="Gears project">Gears</a>.Gears is bundled with every Chrome install, adding new features to theweb browser faster than previous plugins. The Gears libraries includesupport for new local cache structures, local databases, location data,background tasks, and file handling. Chrome boosts the available Gearsfootprint for web developers, including Google&#8217;s own <abbr>apps</abbr>such as Google Reader and Google Docs (and my blog). The current Gearscode included in Chrome replicates V8 and sqlite code already presentin the browser, a bolt-on that will hopefully be integrated in the nearfuture.</p>
+<p>Chrome, V8, and Gears will be a new testing ground for Google&#8217;s <abbr>HTML</abbr>5 efforts, winning a new seat at the table as an implementor with upstream standards groups such as <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
+<h3>Meet the Team</h3><div style="text-align: center;"><a target=_blank target="_blank" href="http://flickr.com/photos/niallkennedy/2823089966/"><img alt="Google Chrome team leads" src="http://farm4.static.flickr.com/3067/2823089966_94be776a92.jpg" width="430" height="156"></a></div><p>I am tracking at least 20 people involved in the Google Chrome project across Google. I&#8217;m sure <a target=_blank target="_blank" href="http://code.google.com/chromium/">Chromium</a> commit logs will reveal even more, but below is a quick summary of Chrome staff.</p>
+<dl><dt><span>Brian Rakowski</span>, <span>Lead Product Manager</span></dt><dd>Brian was Google&#8217;s first associate product manager in 2002, assigned to Gmail. He later worked on the <a target=_blank target="_blank" href="http://www.google.com/tools/firefox/browsersync/">Google Browser Sync</a> Firefox plugin.</dd><dt><span>Ben Goodger</span>, <span>Software Engineer</span></dt><dd>Ben is the former Firefox 1.0 project lead. He also authored the Firefox extensions system. He joined Google as 2005.</dd><dt><span>Mike Pinkerton</span>, <span>Technical Lead</span></dt><dd>Mike is one of the Google team members responsible for bringingChrome to the Mac. Mike worked at Netscape before co-founding theCamino project. He formerly worked at Apple computer on the WebKitteam. Mike joined Google in September 2005 and continues to lead Caminodevelopment.</dd><dt><span>Darin Fisher</span>, <span>Software Engineer</span></dt><dd>Darin was a frequent contributor to the Firefox codebase. He specialized in network libraries, cookies and permissions, and the <a target=_blank target="_blank" href="http://www.mozilla.org/projects/nspr/">Netscape Portable Runtime</a>. Darin joined Google in 2005.</dd><dt><span>Lars Bak</span>, <span>Software Engineer</span>, <span>V8</span></dt><dd>Lars was the core developer on Java HotSpot <acronym>VM</acronym> and Monty <acronym>VM</acronym> in <abbr>J2ME</abbr>for Sun. He co-founded object-oriented VM companies for embeddeddevices before joining Google. Lars worked on V8 from a farm in Århus,Denmark before moving the team to university offices.</dd><dt><span>Kasper Lund</span>, <span>Software Engineer</span>, <span>V8</span></dt><dd>Kasper shares a long history with Lars Bak working on virtual machines.</dd><dt><span>Brian Ryner</span>, <span>Software Engineer</span></dt><dd>Brian is a former contributor to Firefox where he added mousewheelsupport, tweaked the Gecko rendering engine core, password management,and Linux installers.</dd><dt><span>Pam Greene</span>, <span>Software Engineer</span></dt><dd>Pam is a long time Firefox contributor. She added OpenSearch to thebrowser and contributed to full-text search in Places/AwesomeBar.</dd><dt><span>Ian Fette</span>, <span>Product Manager</span></dt><dd>Ian is a former Firefox contributor who worked on anti-phishing, anti-malware, spelling correction, and the <a target=_blank target="_blank" href="http://code.google.com/apis/safebrowsing/">Safe Browsing <acronym>API</acronym></a>.</dd><dt><span>Arnaud Weber</span>, <span>Software Engineer</span></dt><dd>Arnaud is a former Director of Research and Development at Netscapeand Borland before joining Google to work on a &#8220;secret project&#8221; inSeptember 2006.</dd><dt><span>Brett Wilson</span>, <span>Software Engineer</span></dt><dd>Brett formerly worked on the Google Toolbar. He contributed to Firefox history and bookmarks functionality.</dd><dt><span>Mike Beishe</span>, <span>Software Engineer</span></dt><dt><span>Huan Ren</span>, <span>Software Engineer</span></dt><dd>Huan works on network flow control, negotiating browser interactions with network resources. Huan formerly worked at Microsoft.</dd><dt><span>Erik Kay</span>, <span>Software Engineer</span></dt><dd>Erik formerly worked on the <a target=_blank target="_blank" href="http://avantgo.com/">AvantGo</a> browser, <a target=_blank target="_blank" href="http://qurb.com/products/antispam.php">Qurb anti-spam software</a> for Outlook and Outlook Express.</dd><dt><span>Glen Murphy</span>, <span>Software Engineer</span></dt><dd>Glen specializes in user interface design. He previously worked onuser interface. Firefox extensions. Google Browser Sync, Google BlogSearch</dd><dt><span>Evan Martin</span>, <span>Software Engineer</span></dt><dd>Evan writes automated testing tools for Chrome and the Web.</dd><dt><span>John Abd-El-Malek</span>, <span>Software Engineer</span></dt><dd>John is part of the Windows specialist team at Google bringing Google Desktop, Google Talk , and <a target=_blank target="_blank" href="http://code.google.com/p/google-breakpad/">Breakpad</a> onto Windows XP and Windows Vista.</dd><dt><span>Amanda Walker</span>, <span>Software Engineer</span></dt><dd>Amanda is one of the people responsible for Chrome&#8217;s upcoming Mac version.</dd><dt><span>Mark Mentovai</span>, <span>Software Engineer</span></dt><dd>Mark was heavily involved in moving Firefox for Mac to its currentIntel-based architecture. He has worked on the Breakpad project andmany levels of Chrome&#8217;s code.</dd><dt><span>Carlos Pizano</span>, <span>Software Engineer</span></dt><dd>Carlos formerly worked on GreenBorder and continues to work on Chrome sandboxing.</dd><dt><span>Mark Larson</span>, <span>Program Manager</span></dt><dd>Mark is also formerly of GreenBorder and its sandboxing specialties.</dd><dt><span>Aaron Boodman</span>, <span>Software Engineer</span>, <span>Gears</span></dt><dd>Aaron improves user experience with . He&#8217;s best known for his work on Gmail, <a target=_blank target="_blank" href="https://addons.mozilla.org/firefox/addon/748">Greasemonkey</a>, and <a target=_blank target="_blank" href="http://gears.google.com/">Gears</a>.</dd></dl><h3>Summary</h3><p><img alt="Google Chrome logo" src="http://static.niallkennedy.com/blog/img/google-chrome.png" width="128" height="128">Google&#8217;s business depends on the speed and availability of Web accessto search, advertising, and applications. Chrome is Google&#8217;s secondattempt to better control the front-door to its content with fullapplications optimized for its heavy <abbr>apps</abbr>. Google Chromebuilds on top of the work of Android by adding individual applicationsto already popular operating systems. Google has flirted with the ideaof its own web browser for many years but has only recently releasedworking implementations of its own full browser applications.</p>
+<p>Android, Chrome, and Gears will continue to grow in unison andextend individual pieces into established operating systems. Google isbuilding a new suite of application extraction layers that should havestrong leverage across Windows, Mac, and Linux to directly control thecompany&#8217;s destiny on these platforms.</p>
+<p>It&#8217;s an exiting time for new browser technologies as InternetExplorer, Firefox, and WebKit each compete over standardsimplementations and performance. Officially adding Google Chrome to thebrowser space only strengthens Google&#8217;s position strengthening thefuture web and delivers strong single site browsing experiences fortheir core web applications.</p>
+</div></div></div></div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/27/gold-country-sports-power/">金牌大国≠体育大国</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-27T21:27:40+08:00" pubdate data-updated="true">Aug 27<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 class="entry-title"><a target=_blank class="entry-title-link" target="_blank" href="http://www.wangxiaofeng.net/?p=2208">金牌大国≠体育大国<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" width="18" height="18"></a></h2>
+
+
+<div class="entry-author"><span class="entry-source-title-parent">from <a target=_blank href="http://www.google.com/reader/view/feed/http%3A%2F%2Ffeeds.feedburner.com%2Fwangxiaofeng" class="entry-source-title" target="_blank">不许联想</a></span> by <span class="entry-author-name">带三个表</span></div>
+
+
+<p>今天，我看到一篇人民日报特约评论员丁刚老师的文章<a target=_blank target="_blank" href="http://2008.people.com.cn/GB/128225/128442/7711339.html">《谁说中国不是体育大国》</a>，作者用事实告诉我们，中国体育代表团拿100枚奖牌是跟我们这个体育强国相称的。看完这篇评论员文章后，我想起了两本书：《你不能不懂的统计常识》《统计数字：是事实，还是谎言？》。有文化的人都这样，看到什么都会想到几本书，以显得自己特有文化，然后可以到处蒙人。</p>
+
+
+<p>这两本书都没有在内地出版，写的内容大同小异，讲的就是我们平时在报纸杂志上看到的很多数字统计，其实都带有欺骗性，专门欺负数学不好的人。而枯燥的数据往往有非常带有说服力，让你不信都不行。丁刚老师是谁我不清楚，反正他说他去过二十多个国家，我就去过中国二十多个省，跟他没法比，绝对是井底之蛙。但我去过这二十多个省，除了在成都、上海、广州看到有群众在进行体育锻炼，在其他地方既没有看到群众在锻炼，也没有看到像样的体育设施。</p>
+
+
+<p>统计总是带有欺骗性的。但有些是事实不可争辩的，比如这100枚奖牌，是大家看着一步步拿到手的。丁刚老师这片宏文试图在告诉我们的东西很明显，我们的群众体育的普及度相当的高，所以我们有理由拿这么多奖牌。干嘛要写篇评论文章证明呢？你的金牌既不靠裁判作弊巧取的，也不是靠霸道豪夺的，但一定要把自己当成体育大国，看上去有些牵强，实际上醉翁之意不在酒。</p>
+
+
+<p>这类文章都有一叶障目的效果，它想障什么呢？想障掉的恰恰是中国不是一个体育大国。就这次大Party来说，100枚奖牌能证明什么呢？我想了半天，它证明如下：</p>
+
+
+<p>一、证明张艺谋的确是个拍电影的；<br />
+二、证明我们在搞大型团体操是世界一流的；<br />
+三、证明我们老百姓还是很喜欢看热闹；<br />
+四、证明只要肯花钱什么事情都能做到最好；<br />
+五、证明中国体育依旧只在某些项目上有绝对优势，比如跳水和乒乓球；<br />
+六、证明春节晚会模式可以普及到全世界。</p>
+
+
+<p>但是这些恰恰不能证明中国是一个体育大国。衡量一个国家是不是体育大国，不是看它在大型国际比赛中拿几个冠军，而是看人均拥有的体育设施的多少，以及该国家人均寿命、健康程度等综合指标来衡量。没错，丁先生在文中也提到了：“根据世界卫生组织2006年公布的数据，中国人均寿命从1990年的68.4岁迅速增加到了72岁，已达到中等发达国家水平。这表明中国人的生活、医疗和健康水平进步很快，其中，体育健身发挥了重要作用。”最后一句“体育健身发挥了重要作用”我实在不敢苟同。我想，如果是卫生部作一个总结报告，提到这句话一定会说是医疗水平的进步，健身在里面能起到一些作用，但不至于是“重要作用”。</p>
+
+
+<p>再退一步讲，如果中国是体育大国，那么很早就该有些统计数据公布出来，比如卫生部与体育总局在一两年前公布一个白皮书之类的报告，用这份报告证明中国是一个体育大国，那我可能会相信。但是偏偏在大Party结束后弄出这么一篇慷慨激昂的应景文章，这不得不让我起疑心，丁先生想说什么？</p>
+
+
+<p>我觉得这篇文章的意思很明显，试图用一些含糊的、片面的数据证明中国能拿这么夺金牌其实跟举国体制无关。这次中国争金夺银，爱国主义的东西弱化了很多，现在只有傻逼才会去想通过体育的胜利证明中国在世界上的地位，但是中国这次的的确确胜利了，再拿什么扬我国威、振奋民族精神之类的套话来总结的话，显得没力量了。况且，今年跟四年前不一样了，跟八年前不一样了，这次开Party，中国遭受到不少西方媒体的攻击和责难，甚至有些国家的领导人也说三道四，先是跟人权政治联系在一起，但是一个全球性开心的盛会，您老是说这种不着调的话，外国人也不相信。Party确实让世界了解了中国很多，至少没有功劳还有苦劳，弄那么多人过来，好吃好喝好招待容易吗？</p>
+
+
+<p>其实举国体制可能是这次辉煌背后的最大隐痛，也可能是西方媒体最可能置疑的一个点，你拿那么夺金牌，可你们的运动员都是花国家的钱培养出来的，用淘汰无数的人换来一个体育精英，你可以证明你是个金牌大国，但拿的金牌再多也无法证明你是个体育大国。如果西方媒体这么去评判中国体育，大概我们就不好应付了。所以才有了丁老师这篇文章。</p>
+
+
+<p>今天的中国体育一直延续50年代以来苏联和东欧某些国家的做法，国家倾全力培养一个体育尖子，用来在国际比赛中把西方国家运动员比下去，以此来证明某些部位的强大，东德把这种事情做到了极致，这种做法往往是以运动员的身心健康作代价。有兴趣的人可以到网上找找，这方面的东西很多。</p>
+
+
+<p>我觉得，通过体育竞技战胜对手，只能说明身体和智商问题，不能说明别的，如果借助体育的胜利证明其他方面的强大，那是冷战时期的思维方式。好在西方人并不太注重体育背后的政治含义，整个国民的强大，那才是最高的体育政治。只靠几块金牌意淫强大，那是老大哥当年留给我们的观念，现在俄罗斯都不太关注这些了，他们的体育在逐步市场化。但我们的确在这方面尝到了甜头，割舍不下，这次真是甜蜜蜜啊。</p>
+
+
+<p>中国取得的100枚奖牌主要集中在这样几个项目上：举重、体操、乒乓球、羽毛球、跳水、射击。这几个项目，只有乒乓球和羽毛球相对比较普及，因为它所需要的场地条件不高，其他项目很少有在群众中普及的，你看哪个小区楼下挖一个水池，然后让大家从不同的楼层往下跳水玩啊？你也没见过大家没事都拿一支气步枪在大街上射击玩吧？警察早把你抓起来了。这些都不是群众性普及体育项目，是纯粹的竞技项目。而且，中国人有优势的都是没有身体接触的靠技巧获胜的项目，而群众性普及的项目、靠身体力量获胜的项目，这次一块奖牌都没拿到。而需要大投入的体育设施、在群众中普及的项目、靠身体力量获胜的项目从来就不是中国体育的优势，这意味着什么？意味中国在这方面的基础很差，投入不够，比如篮球、足球。而反映一个国民最基本身体素质的，体育最基本的项目——田径，从来就不是中国的优势。谢天谢地，刘翔转身了，不然指不定怎么吹呢。</p>
+
+
+<p>这些奖牌给我们制造了很多假象，貌似中国变成了一个体育大国，其实不然。当殷剑获得女子帆船赛金牌后，她告诉媒体，她之所以参加帆船比赛就是为了农转非，让家里人过上好日子。这是我多年来听到的唯一一个拿了金牌不是“为国争光”而是“为家争光”的人。我相信大多数运动员流血流汗甚至冒着终生残疾的危险不是为国争光，而是为了改变自己的命运，但在一个举国体制下，真正靠体育改变自己命运的人，永远是极少数，甚至你拿了银牌都没用。不是有个退役的运动员为了糊口不得不变卖自己的奖牌吗，而且，她为了生存，不得不到洗浴中心给人搓澡，拿了金牌的人尚且如此，没有拿到奖牌的人呢？</p>
+
+
+<p>很多运动项目由于缺乏普及，群众兴趣不大，选拔运动员的空间很小，比如举重、中长跑等靠力气出活的项目，运动员大都来自农村，他们可能跟殷剑一样，用这个机会农转非。他们朴实、能吃苦、练残了练死了都无怨无悔，当他们拿了金牌，能证明的就是他们有把子力气而已。选材的危机告诉我们，正是因为很多基础项目不普及，才会有这样的结果。所以，当丁老师像写分镜头剧本一样在《谁说中国不是体育大国》里不停地“场景一”“场景二”时，我觉得他就是在写剧本。</p>
+
+
+<p>中国这次拿了这么夺金牌，以后永远不会再有这样的好事了，既然事已至此，也该改变一下对体育的理解了，害人的举国体制该寿终正寝了，让体育全面推向市场，如果在某届大Party上我们像在汉城那次拿了5枚金牌，我们都会很镇定，我们要真成了体育大国，还用那几枚奖牌来证明自己吗？</p>
+
+
+<p>应该慢慢还体育于娱乐，让更多的国民参与进来，让体育慢慢商业化、市场化，这样才正常。最关键的一点就是取消全运会这种无聊的小Party，这种举国体制的结果至今还在延续，事实证明它对我们今天普及体育没有任何帮助。</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/27/top-ten-reasons-to-choose-gmail/">十大理由选择Gmail</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-27T21:13:10+08:00" pubdate data-updated="true">Aug 27<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>十大理由选择Gmail</h1>
+
+
+<p>    <p class="itemfrom"><b class="red">626个读者</b>    <img src="http://www.yeeyan.com/img/div.gif">    翻译: <a target=_blank href="http://www.yeeyan.com/space/show/31132">青菜</a>&nbsp;5天前13:53    <img src="http://www.yeeyan.com/img/div.gif">原文</a>    <img src="http://www.yeeyan.com/img/div.gif"><a target=_blank xx=showReferral('%E5%8D%81%E5%A4%A7%E7%90%86%E7%94%B1%E9%80%89%E6%8B%A9Gmail')">引用</a>    <img src="http://www.yeeyan.com/img/div.gif"><a target=_blank class="red" href="http://www.yeeyan.com/articles/view/31132/12709/dz">双语对照及眉批</a>  </p></p>
+
+<div style="margin: 8px 15px 15px; padding: 12px 15px 5px;" class="dborder"><p class="bold">简介</p>
+<p class="inner"> 史上最好的免费邮箱&#8212;来自google的Gmail！</p>
+</div>
+
+
+<div id="articlebody" class="itembody" style="padding: 0px;"><div id="article_body"><p><img style="vertical-align: middle;" src="http://justcreativedesign.com/wp-content/uploads/2008/08/gmail.gif" alt="" width="500" height="134"></p>
+<p>你还在用Outlook、Eudora或其他的邮箱收发电子邮件吗？如果你还使用这些古董，那你可能就不会体验到这个前所未有、高效人性的工具。</p>
+<p>&nbsp;</p>
+<p>一个月前我收发邮件还都用着Outlook,但自从我知道了<em>Gmail</em></a>（google的免费邮箱服务），我就试用了两周这个工具，现在我已经离不开它了… 它身上的众多特质使得Outlook相形见绌。甚至职业博客上的Darren Rowse将其邮箱也换成了Gmail。</p>
+<p>&nbsp;</p>
+<p>尽管你可能会用一到两周的时间去熟悉<em>Gmail</em></a>，但在今后的日子里，他会真正的为你节省好多时间。我强烈的推荐Gmail，为此我给出十个理由。</p>
+<p>&nbsp;</p>
+<p>1. <em>Gmail</em></a>的垃圾邮件过滤器会将你收件箱的<strong>99%的垃圾邮件</strong>过滤掉。尽管Outlook2007也有个类似的过滤器，但每周还是有2到3份垃圾邮件溜进我的收件箱…这一点不如Gmail。</p>
+<p>&nbsp;</p>
+<p>2. 同时，你可以将<strong>以前的邮箱帐户</strong>留在Gmail上，这样发给所有旧邮箱的新邮件都会被转到你的Gmail上。同时，你在Gmail发出的新邮件也会出现在你旧邮箱的起始区域。</p>
+<p>&nbsp;</p>
+<p>3. 你可以通过使用<a target=_blank title="Google Docs" href="http://docs.google.com/"><span style="color: rgb(237, 20, 90);">GoogleDocs</span></a>创建<strong>Word格式、PDF格式和其他扩展格式</strong>文件。</p>
+<p>&nbsp;</p>
+<p>4. <em>Gmail</em></a>还提供<strong>日程安排</strong>服务，你可以通过google日程表发送邮件提醒你约会或会议。它还可以为你要会晤的人发送提醒信息。</p>
+<p>&nbsp;</p>
+<p>5. <em>Gmail</em></a>还有“划星(Stars)”服务，你可以用它<strong>将重要邮件标记</strong>出来。你在搜索栏里输入“星级邮件(Starred)”，所有打星的邮件就会弹出来，其速度如google搜索一样快。</p>
+<p>&nbsp;</p>
+<p>6.&nbsp;你的邮件会<strong>被记录在一条线上</strong>，这意味着你可以不必再去看以前的邮件…它基本上就是一个对话窗。</p>
+<p>&nbsp;</p>
+<p>7.&nbsp;你可以将旧的邮件或整个对话<strong>内容归类</strong>，这样你的收件箱总是清空的。</p>
+<p>&nbsp;</p>
+<p>8.&nbsp;你可以设置邮箱的过滤器和标签来让你的<strong>收件箱组织协调、免于混乱</strong>。</p>
+<p>&nbsp;</p>
+<p>9. 它还具备<strong>快捷、简便的搜索功能，</strong>这样你就不会再丢掉邮件。其搜索速度如同google的金牌搜索。</p>
+<p>&nbsp;</p>
+<p>10.&nbsp;所有的<strong>邮件都在线上</strong>，这就意味着你在任何地方都可以登录你的邮箱，并非局限在一台电脑上。</p>
+</div></div>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -465,528 +1087,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/25/to-flameout-conjecture/">[转]熄火猜想</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-25T22:03:39+08:00" pubdate data-updated="true">Aug 25<span>th</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 class="entry-title">熄火猜想<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" width="18" height="18"></a></h2>
-
-
-<div class="entry-author"><span class="entry-source-title-parent">from 韩寒</a></span> by <span class="entry-author-name">韩寒</span></div>
-
-
-<p>&nbsp;&nbsp;&nbsp;<p>奥运会终于成功闭幕，关于如何熄火，我觉得也应该做一下猜想。</p></p>
-
-<p>&nbsp;</p>
-
-
-<p>1：李宁还是被钢丝钓着，绕场一周，然后冲着圣火吹口气，熄灭。代表我们中国人始终如一。</p>
-
-
-<p>2：两大国有企业中石油和中石化的标志冉冉升起，圣火自然熄灭。代表用了中国的汽油，熄火是常有的事情。</p>
-
-
-<p>3：刘翔出现在主火炬台的上方，火炬自然被国人的口水淹灭。</p>
-
-
-<p>4：中国男足一脚将足球打向主火炬台，圣火熄灭。但这样整个闭幕式很有可能无法按时结束。</p>
-
-
-<p>5：自然熄灭，越表演火越小，但这样的缺点是观众容易火越来越大。</p>
-
-
-<p>6：由国内的很多“国际巨星”登场，他们都是最近最火的，他们把圣火比了下去。</p>
-
-
-<p>7：由国内的很多“国际巨星”登场，他们同样也是最水的，水火不容，圣火熄灭。</p>
-
-
-<p>8：56个民族的56个演员被钢丝钓在空中，围绕着圣火在空中跳舞，最后由傣族进行泼水，圣火熄灭。</p>
-
-
-<p>9：耍赖皮，不熄灭，做景点，收门票。</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/25/to-finally-did-i-orgasm/">[转]我到最后也没高潮</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-25T21:57:25+08:00" pubdate data-updated="true">Aug 25<span>th</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 class="entry-title"><a target=_blank class="entry-title-link" target="_blank" href="http://mopa.blogbus.com/logs/28101631.html">我到最后也没高潮<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" width="18" height="18"></a></h2>
-
-
-<div class="entry-author"><span class="entry-source-title-parent">from <a target=_blank href="http://www.google.com/reader/view/feed/http%3A%2F%2Ffeedsky.blogbus.com%2Fmopa_blogbus_com" class="entry-source-title" target="_blank">Mild Talk - 魔派部落</a></span> by <span class="entry-author-name">魔派</span></div>
-
-
-<p><img src="http://mopa.blogbus.com/files/12195867100.jpg" alt="" border="0"></p>
-
-
-<p>51金，奖牌100。面对这样前所未有的最佳成绩连带看完闭幕式，说实话，我却只有打麻将碰完了手里的对子，独拿一张听张的纠结，或者说十六天的兴奋不止到最后依然高潮不来的感觉，以致昨晚我守着电视一心期待郎平率领的美国女排能够获胜，想借一个高潮，但却也借不到。<br />
-<br />
-奥运的奖牌榜历来就没有官方认可的正式标准，《奥林匹克宪章》第五十八条明确规定：国际奥委会和地方奥组委不得进行国家排名，而应该展示运动员的个人荣誉。因此，全世界各国的媒体就始终根据自己的评判价值，以同样的数据，作不同的排列。比如<a target=_blank target="_blank" href="http://results.beijing2008.cn/WRM/CHI/INF/GL/95A/GL0000000.shtml">北京奥委会官方网站的奖牌榜</a>就以金牌数量列序，而<a target=_blank target="_blank" href="http://www.nytimes.com/interactive/2008/08/04/sports/olympics/20080804_MEDALCOUNT_MAP.html">美国一贯则以总奖牌数排名</a>，在澳大利亚昆士兰大学人口健康学院任职的福赛斯从1996年亚特兰大奥运会起就每届奥运会在互联网上公布自己计算的“<a target=_blank target="_blank" href="http://simon.forsyth.net/olympics.html">人口奖牌榜</a>”，以一个国家或地区每百万人口产生的金牌数、奖牌数和奖牌加权分排名，此刻占首位的是每百万人口产生2.16枚金牌的牙买加，总奖牌居首的美国仅居人口奖牌榜的第33位，每百万人口产生0.1195枚金牌，总金牌居首的中国更只居第47位，每百万人口产生0.0386枚金牌。2004年雅典奥运会后，该学者又建立了“<a target=_blank target="_blank" href="http://simon.forsyth.net/olympicsGDP2008.html">GDP奖牌榜</a>”，以一个国家的金牌数、奖牌数折算每十亿美元国民生产总值可产生金牌数排列，至今占首位的是折算每十亿美元产值可产生452.2840块金牌的津巴布韦，而中国以每十亿美元换7.2951块居第35位，美国仅2.6012枚居第47位。<br />
-<br />
-于是我也想做一个奖牌榜，如果按2008年北京奥运会共设比赛项目为28个大项、302个小项计，金银牌应各为302枚，因柔道14小项和拳击11小项全部采取第三第四并列铜牌，所以铜牌应为327枚，这样总计是931枚，但实际制作交付的奥运奖牌数是6000枚，这因其中有双人、多人项目，特别是三大球集体项目。如果以实际获得的金牌数排列，那么中国军团将真的远远落后于美国，在本届奥运会上，美国分别获得了女足、男女篮、男排冠军，占了三大球的半壁江山，而中国在这些团体项目上只收获了女子曲棍球银牌和女排铜牌，而且中国获得的众多金牌中，也没有一枚来自田径项目，恰恰无论三大球还是田径都是市场化渗透最深的领域，而我们依然占据的还是运动中一些强调姿态、毅力和力量的体育项目，如体操、跳水、举重和射击等，当然还有乒乓球，但从电视收视率看，本届奥运会上对比篮球比赛收视率的不断高涨，排球收视率的节节攀升，以及游泳、田径收视率的居高不下，乒乓比赛的收视率即使相对射击、举重的增长也暗显危机，之前垒球、棒球亦因同样原因而至商业力不足，从下届起将不再登上奥运舞台。可见，缺失富商业化项目优势不仅造成本届最终营造出兴奋点高潮，也为未来体育前景蒙上阴影。<br />
-<br />
-毋庸反对我的观点，虽然我们在媒体上看到对金牌高居榜首的一味溢美之词，但在最后两大决赛赛场上，观众在男足尼阿决赛赛场上叫出的“谢亚龙下课”和女排美巴决赛上喊出的“郎平加油”都像在寻觅着对夺牌持续兴奋后寻觅和迷失一个高潮的呼唤。8月21日，在被问及这是不是中国体育“举国体制”发挥效力时，北京奥组委高级顾问魏纪中表示，获得这么多金牌在一定程度上说明“举国体制”是有效的。但他的回答显然存在着一个悖论，既然“举国体制是有效的”，为何它在富商业化的团体项目上却显得如此失效。被我寄托想借到高潮的美国女排主教练郎平就根据自己的切身体会认为，<a target=_blank target="_blank" href="http://club.pchome.net/topic_1_15_2826204__.html">美中两国奥运会观念大不同</a>，说到底这个不同就反映在市场机制与举国机制上，其实际效果就表现在一方面我们能借举国机制，依靠国家机器在那些如举重、射击之类商业性不够因而缺乏竞争的项目在短时间内赢得先机，而另一方面在如足球、篮球等富商业性从而竞争充分的项目上却显示出无可避免的颓势；一方面它使穷孩子可以通过体校层层选拔从而跻身到那些传统优势项目奥运金牌榜的最前列，而另一方面他们却被忽略了文化课程，很多冷门项目的运动员退役后因为没有一技之长将最终承受清苦日子。而在市场机制下，成才不在体校而在大学，美国的大学是现代国际奥林匹克运动的最大基地，这是在其青少年俱乐部——大学——职业联赛这一三级完整体育制度中最关键的层级，因此郎平表示：美国运动员优于中国运动员之处是：身体素质好，文化水平高，“他们自己独立思考的能力非常强，因为我们的球员都是大学毕业，他们接受和领受技术非常快，而且对训练和比赛非常有热情。”<br />
-<br />
-当国际奥委会也依据商业来实施未来的奥运瘦身计划时，我们不能不担忧我们的优势还会持续多久，而即使那些弱商业化的体育项目还将有被保留的，但随着我们本身国力的增强，随着今后中国人生活水平的进一步提高，“穷孩子”越来越少，仍坚守这样的举国机制又会有什么调动得起未来运动员和全民的积极性。有一组数据就能反映这一体制在当下中国经济发展条件下对中国体坛的制约作用：中国足球青少年人口已经从1990年至1995年间的65万，到1996年至2000年间的61万，到2000年至2005年间的18万，再到目前的3万，人才流失触目惊心。欧美很多国家的足球人口动辄就有1000万、2000万，近邻日本也在向着250万迈进，13亿人的中国，只有3万青少年足球人口，你能试想出怎样的未来。即使在本届奥运会上我们拿到银牌的女曲，两国人口之比是13亿比1600万，而专业女球员之比却是200人比20万人！<br />
-<br />
-当然，这还不是全民机制所有的危机，当看到中国女足前助理教练瑞典人皮娅·松德哈格在本届奥运会上率领美国女足夺冠，而我们的两支奥运国足又在经历了纷繁的选帅风波后同样在奥运前经历纷繁的换帅风波，体育其实只是一种行政，而真正指导这些球队的并非专业教练，其实只是能想出“<a target=_blank target="_blank" href="http://www.google.cn/search?complete=1&amp;hl=zh-CN&amp;rls=GGGL%2CGGGL%3A2008-30%2CGGGL%3Azh-CN&amp;q=%E5%8F%89%E8%85%B0%E8%82%8C&amp;btnG=Google+%E6%90%9C%E7%B4%A2&amp;meta=&amp;aq=f">叉腰肌</a>”这样连谷歌、百度也不知所云，或许只有按摩店女郎才深知蹊跷的“专业术语”的政工干部。<br />
-<br />
-1998年韩国奥运会连韩国的泡菜也因此走向了世界，而面对令人咂舌的北京奥运盛宴，承办下届奥运会的英国人只能耸耸肩告诉他们的实际想法：北京是任何别的城市不能也不愿效仿的。比金牌更重要的是人的价值观，你不可能指望别人接受落伍于市场的一个举国机制的价值观。同样，就像香港文化人林奕华在一篇《致张艺谋》书信里直言的：奥运精神在现代中国人的眼中是什么？这大抵是我最想看见被诠释却没有看见的东西。 </p>
-
-
-<p>北京奥运营造的不过是一座现代圆明园，它让我在十六天里享受了兴奋，但直到最后我也没有高潮。 </p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/24/the-way-of-the-world/">世态</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-24T23:10:59+08:00" pubdate data-updated="true">Aug 24<span>th</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在大街上走着走着，突然听见一个胖胖的中年男子怒吼：“你拉不拉？！拉不拉？！”</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/22/revision-modified-handsome/">改版改得帅</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-22T22:43:51+08:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>刷了一下首页，我以为我到了开心了，太帅了。。。。。。<br /></p>
-
-<br />
-
-
-<p>没有开心帐号的，点下面的邀请<br />
-http://www.kaixin001.com/reg/?uid=109328&amp;usercode=f4138b3123e097e044f96b8d6e5e2904_109328__%E7%8E%B0%E5%9C%A8%E5%90%8C%E4%BA%8B<br /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/21/united-states-funding-for-sports-and-spending/">美国体育的资金投入和花费</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-21T18:22:35+08:00" pubdate data-updated="true">Aug 21<span>st</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 class="entry-title"><a target=_blank class="entry-title-link" target="_blank" href="http://item.feedsky.com/%7Efeedsky/unicorninfo/%7E1219213/105669104/1220882/1/item.html">胡戈：美国体育的资金投入和花费<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" width="18" height="18"></a></h2>
-
-
-<div class="entry-author"><span class="entry-source-title-parent">from <a target=_blank href="http://www.google.com/reader/view/feed/http%3A%2F%2Ffeed.feedsky.com%2Funicorninfo" class="entry-source-title" target="_blank">独角兽资讯</a></span> by <span class="entry-author-name">独角兽资讯</span></div>
-
-
-<p>文章提交者：胡戈 </p>
-
-
-<p>美国联邦政府没有任何部门是与体育有关的。</p>
-
-
-<p>美国联邦政府有一个“健康与公共事业部”（Department of Health and HumanServices）可能与体育有那么一丁点儿关系，因为这个部门是主管全民健康的，所以他们也希望通过倡导全民身体锻炼的方式来促进人们的健康，但他们是对全体公民的，并不为运动员服务，而且他们鼓励锻炼的方式是以精神上的鼓励为主，没有金钱上的。比如这个部门下有一个“疾病控制与预防中心”，该中心联合世界卫生组织、国家癌症协会等健康组织、国际奥委会、FIFA等体育组织搞了一个“无烟草运动行动”活动，劝说年轻人以运动来取代吸烟行为。</p>
-
-
-<p>美国还有一个“身体健康和运动总统会议”（The President&#8217;s Council on Physical Fitness and Sports，官方网站：<a target=_blank target="_blank" href="http://www.fitness.gov/">http://www.fitness.gov/</a>），这是一个顾问委员会性质的组织，由20名志愿者（普通公民）组成，没有工资，每个人“任期”2年，每年至少召开一次对公众公开的会议，给总统提出一些关于人民健康方面的建议，并提出一些用于促进全体美国公民健康的身体方面的项目计划，这些项目主要是以精神鼓励的方式对人们参加锻炼进行奖励。</p>
-
-
-<p>在这个组织的倡导下所建立的项目有：“总统挑战”（The President&#8217;sChallenge）：一个用来鼓励所有美国人进行经常性的身体锻炼的计划。这个计划中包括“积极生活方式总统奖”，用来鼓励那些经常锻炼的普通人。从1966年开始，“总统挑战”为学生们提供健康嘉奖，由教师、俱乐部、基督教青年会等人和组织来管理和执行。到现在已经有六百万年轻人接受了奖励。项目中还有“州优胜者奖”，这是一个联合教育部门的，为学校提供的奖励，每年一次，每个州有三个学校获奖，获奖条件是该学校的“身体健康总统奖”的获奖人数和学生人数的比例是该州前三强。另一个项目是“全国学校示范计划”，选出一些身体健康锻炼开展比较好的学校，让其他学校来参观和学习。还有其他一些项目，全部都是用来鼓励人们参与健康锻炼的。请注意这些项目中所提到最多的词是“fitness”（健康），而“sports”很少提及。这些奖励都是精神上的鼓励，只是对人们进行锻炼的一种承认和认可。</p>
-
-
-<p>不过，由于美国实行的是联邦制，各个州、城市的制度都不太一样，有的城市政府有涉及体育的部门，比如纽约市政府就有“纽约体育委员会”（官方网站：<a target=_blank target="_blank" href="http://www.nyc.gov/html/sports/html/home.html">http://www.nyc.gov/html/sports/html/home.html</a>），但他们的目的是为了发展城市经济、给市民提供参与体育的途径、刺激旅游业的发展，所以他们的主要工作是“吸引各种体育比赛和体育活动到纽约举行”，说白了，就是鼓励、协助各种体育组织或商业企业在纽约开展体育比赛和活动，劝说、鼓励、协助各种全国性、国际性的比赛到纽约举行，而不是花钱培养运动员出去打比赛为城市争光。由于美国各政府的财务都对外公开，受到各种刁民的严格审议，所以绝不会出现政府花钱为个别人服务的情况。如果有市民愿意花自己的钱去支持运动员或某项体育运动，他可以直接把钱打入那个运动员或体育组织的帐号（许多人就是这样做的，美国各个体育组织包括美国奥委会在内，都对外募款），而用不着要求政府花所有纳税人的钱去支持运动员，如果你认为别人也应该支持运动员，那么你可以建一个类似于“支持我们的运动员”这样的组织（现实中确实有这个组织，官方网站<a target=_blank target="_blank" href="http://supportourathletes.org/">http://supportourathletes.org/</a>），劝说别人支持运动员并募集资金。</p>
-
-
-<p>美国运动员进行训练，参加比赛，政府都不提供费用（如果不信可以看下面的财务报告），最多只提供一些精神上的支持，比如赞扬，邀请访问白宫等（路费也要自己承担）。那么运动员进行训练、比赛的费用从哪来？一是自费，二是体育组织提供费用，而体育组织的钱主要来自于公众捐助和商业经营，如果没有公众捐助和商业赞助，那么就只能依靠会员的会费。美国运动员参加奥运会全部由美国奥委会来经营和管理。美国的“政府”与“民间组织”分得十分清楚，互相无关联，更别提资金上的支持。</p>
-
-
-<p>美国在1978年通过了一个《业余体育法》(The Amateur Sports Act)，1998年重新修改成了《特德史蒂文斯奥林匹克与业余体育法》(Ted Stevens Olympic and Amateur Sports Act)，下载地址：<a target=_blank target="_blank" href="http://videos.usoc.org/legal/TedStevens.pdf">http://videos.usoc.org/legal/TedStevens.pdf</a>。该法案规定美国奥委会是具有垄断性的与奥运相关的体育活动的协调机构，对美国参加奥运会的所有事项行使专属管辖权，这就意味着其他任何人、组织、政府都不得插手奥运会的事务。当然，美国奥委会依然是民间机构，法律保护的是其唯一性，而不是意味着它是一个政府机构或者与政府有关的东西。之所以要保护其唯一性，是因为在美国任何人都可以成立组织，也可以举办体育比赛，美国有各种各样五花八门的体育组织，甚至有“北美同性恋排球协会”这样的组织（不要以为他们是来搞笑的，虽然规模非常小，但他们是一个正规运作的体育组织，每年都有全国联赛），所以如果没有明确的法律保护，那么后果可想而知。</p>
-
-
-<p>美国奥委会的运作资金来自个体公民的捐赠、赞助、特许使用费、商业经营。美国政府不出一分钱（下面有财务报告）。美国奥委会的主要开支是资助奥委会的成员组织（比如举重协会，全部成员组织名单可以在这里查到：<a target=_blank target="_blank" href="http://teamusa.org/ngb/sports">http://teamusa.org/ngb/sports</a>），资助运动员，开展奥运集训，出国参加比赛等。美国奥委会及其成员组织的财务全部是对外公开的，在他们网站上可以下载每年的税务报表和年度报告（网址：<a target=_blank target="_blank" href="http://teamusa.org/content/index/1537">http://teamusa.org/content/index/1537</a> ），从中可以很清楚地看到他们的收入和支出情况。例如2004年（也就是雅典奥运会的那年）美国奥委会的财务情况是：</p>
-
-
-<p>总收入 2 亿 3966 万美元，其中包括<br />
-- 接受捐赠：2056 万美元（其中有“来自政府的”一项，数额是空缺，也就是没有）<br />
-- Equity in earnings of OPUS joint venture（这个不知道是什么意思）：3660 万<br />
-- 盐湖城冬季奥运会组织委员会 distributions（大概是主办冬奥会之后剩下的钱的意思）：1156 万<br />
-- 电视转播权费：1 亿 919 万<br />
-- 美国奥委会商标使用权（即允许一些企业比如可口可乐使用奥运标志）：2952 万（这是美国奥委会所得到的 20% 的钱，另外 80% 都给了国际奥委会）<br />
-- 许可费用（即允许一些企业销售带有美国奥委会标志的商品）：901 万<br />
-- 投资收入：2026 万<br />
-- 零售收入（销售T恤衫等等小商品）：30 万<br />
-- 其他：489 万</p>
-
-
-<p>总支出 1 亿 1803 万美元，其中包括<br />
-- 会员支持 5815 万。其中，付给旗下的成员组织3349万，付给运动员1195万，给运动员办保险288万（由于美国奥委会是民间组织，运动员一旦出事将会索要巨额赔偿，而政府是不会管的，所以必须办保险以降低风险）<br />
-- 奥林匹克训练中心（用来搞奥运集训）花销 2293 万。其中薪资511万，附加津贴139万，食物服务费用190万，车辆支出68万，租用费104万，场馆、器材折旧费397万，其他还有很多花费较小的项目。<br />
-- 国内活动（举办奥运选拔赛等） 239 万<br />
--国际比赛（参加雅典奥运会）1624万。其中薪资121万，附加津贴30万，飞机等交通费用701万（几百人前往雅典，这个花销是最大的），运动事务支出326万，邮费、运输、搬运费60万，车辆支出51万，各种租用费88万，其他还有很多花费较小的项目，由于雅典免费提供食物，所以食物支出为零（据说北京奥运不但免费提供食物，还大手笔免除了所有国家的往返飞机以及交通费用，因此今年光是美国就能省下至少800万美元的交通费用）<br />
-- 运动科学研究 368 万<br />
-- 药物控制 370 万<br />
-- 公共关系 230 万<br />
-- 运动医疗 287 万<br />
-- 国际性事务 322 万<br />
-其他还有一些</p>
-
-
-<p>注意这些费用都是美国奥委会花掉的钱，不包括运动员自己自费训练时的花费。</p>
-
-
-<p>美国奥委会自身的运营支出 4672 万美元</p>
-
-
-<p>总的来说入大于出。可见美国奥委会完全是自主经营、精打细算。</p>
-
-
-<p>美国还有众多体育组织，或许我们还应该看看这些组织的财务报告。在美国奥委会的成员组织（比如美国举重协会）网站上，也可以下载到他们的年度税务报表。比如美国举重协会2007年的税务报表是：<a target=_blank target="_blank" href="http://assets.teamusa.org/assets/documents">http://assets.teamusa.org/assets/documents</a> /attached_file/filename/1406/USAW_990_for_2007.pdf 。让我们来看看其中的一些收入和支出情况。</p>
-
-
-<p>总收入139万美元，其中包括：<br />
-- 接受捐赠88万美元，其中来自政府的数额是空缺（没有）。<br />
-- 服务收入28万，其中教练培训（意思是有人想当举重教练，交钱给举重协会参加学习）26万，举办活动收入1万5千。<br />
-- 协会会员缴费14万。<br />
-- 商品销售总额15万。</p>
-
-
-<p>总支出137万美元，其中包括：<br />
-- 服务费用95万，其中包括给运动员的津贴、比赛奖金，训练营费用，教练费用一共49万，参加国际比赛的费用23万，为会员服务的费用（包括办杂志和网站，补偿地方举重协会参加比赛的费用等）12万，举办国内比赛，举办奥运选拔赛等的费用11万。<br />
-- 经营管理40万<br />
-- 募集资金费用2万6千</p>
-
-
-<p>举重在美国是个冷门项目，所以举重组织的经营规模自然是很小，不管有多小，政府都是不管的，一切都要靠自己经营和管理。我们可以看出美国的体育制度大概就是没有制度，一切随着自然发展，不刻意。在苏联等国家实行举国体育制度之前，美国一直是举重金牌大户。</p>
-
-
-<p>来源：加帖在 猫眼看人 <a target=_blank target="_blank" href="http://www.kdnet.net/">【凯迪网络】</a> </p>
-
-
-<p>延伸阅读：</p>
-
-
-<p><a target=_blank target="_blank" href="http://www.unicornbbs.cn/dispbbs.asp?boardID=18&amp;ID=26510">美国为中国奥运算账：25倍于美投资值不值？</a> <br />
-</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/21/to-10-worst-of-china-law/">[转]10条最糟糕的中国法律</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-21T18:15:14+08:00" pubdate data-updated="true">Aug 21<span>st</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 class="entry-title"><a target=_blank class="entry-title-link" target="_blank" href="http://www.ruanyifeng.com/blog/2008/08/the_10_worst_chinese_laws.html">10条最糟糕的中国法律<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" width="18" height="18"></a></h2>
-
-
-<div class="entry-author"><span class="entry-source-title-parent">from <a target=_blank href="http://www.google.com/reader/view/feed/http%3A%2F%2Ffeeds.feedburner.com%2Fruanyifeng" class="entry-source-title" target="_blank">阮一峰的网络日志</a></span> </div>
-
-
-<div class="entry-body"><div><div class="item-body"><div><p><span>美</span>国的《外交政策》（Foreign Policy）杂志网站上，最近有一篇文章，题目是<a target=_blank target="_blank" href="http://www.foreignpolicy.com/story/cms.php?story_id=4453&amp;print=1">《10条最糟糕的中国法律》</a>（The 10 Worst Chinese Laws）。</p>
-<p>最终来说，中国是一个什么样的国家，不是由经济发展决定的，而是由这些法律决定的。不去改变这些法律，这个国家就永远是一个中世纪的国家。</p>
-<p><img src="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2008082001.jpg" border="0"></p>
-<p><strong>1. 《刑法》</strong></p>
-<blockquote><div><p><strong>第一百零五条</strong> 组织、策划、实施颠覆国家政权、推翻社会主义制度的，对首要分子或者罪行重大的，处无期徒刑或者十年以上有期徒刑；对积极参加的，处三年以上十年以下有期徒刑；对其他参加的，处三年以下有期徒刑、拘役、管制或者剥夺政治权利。</p>
-<p>以造谣、诽谤或者其他方式煽动颠覆国家政权、推翻社会主义制度的，处五年以下有期徒刑、拘役、管制或者剥夺政治权利；首要分子或者罪行重大的，处五年以上有期徒刑。 </p>
-</div></blockquote><p>虽然中华人民共和国《宪法》第35条规定，公民有言论自由。但是，由于《刑法》第105条的规定，使得政府可以合法地压制所有的批评。许多批评政府的人，最终都被以颠覆罪起诉。</p>
-<p><strong>2. 《中华人民共和国户口登记条例》</strong></p>
-<blockquote><div><p><strong>第六条</strong>  公民应当在经常居住的地方登记为常住人口，一个公民只能在一个地方登记为常住人口。</p>
-</div></blockquote><p>户口制度采用居住地将公民分类，人为制造不同的社会经济等级。除非满足某些条件，农村户口不得转为城镇户口。如果没有当地户口，外来人口就很难享受居住地的医疗待遇，以及难以顺利解决子女教育问题。</p>
-<p><strong>3. 《互联网信息服务管理办法》（国务院292号令）</strong></p>
-<blockquote><div><p><strong>第四条</strong> 国家对经营性互联网信息服务实行许可制度；对非经营性互联网信息服务实行备案制度。未取得许可或者未履行备案手续的，不得从事互联网信息服务。</p>
-<p><strong>第九条</strong> 从事互联网信息服务，拟开办电子公告服务的，应当在申请经营性互联网信息服务许可或者办理非经营性互联网信息服务备案时，按照国家有关规定提出专项申请或者专项备案。</p>
-<p><strong>第十四条</strong>从事新闻、出版以及电子公告等服务项目的互联网信息服务提供者，应当记录提供的信息内容及其发布时间、互联网地址或者域名；互联网接入服务提供者应当记录上网用户的上网时间、用户帐号、互联网地址或者域名、主叫电话号码等信息。互联网信息服务提供者和互联网接入服务提供者的记录备份应当保存60日，并在国家有关机关依法查询时，予以提供。</p>
-<p><strong>第十五条</strong> 互联网信息服务提供者不得制作、复制、发布、传播含有下列内容的信息：<br />
-　　 （一）反对宪法所确定的基本原则的；<br />
-　　 （二）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；<br />
-　　 （三）损害国家荣誉和利益的；<br />
-　　 （四）煽动民族仇恨、民族歧视，破坏民族团结的；<br />
-　　 （五）破坏国家宗教政策，宣扬邪教和封建迷信的；<br />
-　　 （六）散布谣言，扰乱社会秩序，破坏社会稳定的；<br />
-　　 （七）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；<br />
-　　 （八）侮辱或者诽谤他人，侵害他人合法权益的；<br />
-　　 （九）含有法律、行政法规禁止的其他内容的。</p>
-</div></blockquote><p>禁止网站发布“扰乱社会秩序，破坏社会稳定的”信息，这种模糊的写法实际上就是规定了，政府对互联网的审查制度。据说，中国政府雇用了3万个网络警察，负责监视2.5亿网民。同时，由于ISP（互联网信息服务提供者）必须对网站内容负责，使得自我审查（self-censorship）广为流行。</p>
-<p><strong>4. 《中华人民共和国各级人民代表大会常务委员会监督法》</strong></p>
-<blockquote><div><p><strong>第三条</strong> 各级人民代表大会常务委员会行使监督职权，应当围绕国家工作大局，以经济建设为中心，坚持中国共产党的领导，坚持马克思列宁主义、毛泽东思想、邓小平理论和“三个代表”重要思想，坚持人民民主专政，坚持社会主义道路，坚持改革开放。</p>
-</div></blockquote><p>这条法律规定立法机关必须服从党的领导。实际上，这一条等于取消了立法机关的独立性，规定它必须成为“橡皮图章”。虽然，宪法规定中国有8个民主党派，但是由于存在上面的法律，使得他们对政府几乎毫无影响。</p>
-<p><strong>5. 《物权法》</strong></p>
-<blockquote><div><p><strong>第四十二条</strong>　为了公共利益的需要，依照法律规定的权限和程序可以征收集体所有的土地和单位、个人的房屋及其他不动产。</p>
-</div></blockquote><p>这一条法律授予政府剥夺私有财产的权力，只要满足“公共利益的需要”。在实际操作中，政府或者开发商为了商业利益，常常滥用这一条规定，只对拆迁对象或者征地对象提供非常少的补偿。许多农民因为土地被政府征收，而沦为彻底的一无所有。</p>
-<p><strong>6. 《宗教事务条例》（国务院426号令）</strong></p>
-<blockquote><div><p><strong>第三条</strong> 宗教团体、宗教活动场所和信教公民应当遵守宪法、法律、法规和规章，维护国家统一、民族团结和社会稳定。</p>
-<p><strong>第六条</strong> 宗教团体的成立、变更和注销，应当依照《社会团体登记管理条例》的规定办理登记。</p>
-<p><strong>第十三条</strong> 筹备设立宗教活动场所，由宗教团体向拟设立的宗教活动场所所在地的县级人民政府宗教事务部门提出申请。县级人民政府宗教事务部门应当自收到申请之日起３０日内，对拟同意的，报设区的市级人民政府宗教事务部门审批。</p>
-<p>    设区的市级人民政府宗教事务部门应当自收到县级人民政府宗教事务部门的报告之日起３０日内，对拟同意设立寺院、宫观、清真寺、教堂的，提出审核意见，报省、自治区、直辖市人民政府宗教事务部门审批；对设立其他固定宗教活动处所的，作出批准或者不予批准的决定。</p>
-<p>    省、自治区、直辖市人民政府宗教事务部门应当自收到设区的市级人民政府宗教事务部门拟同意设立寺院、宫观、清真寺、教堂的报告之日起３０日内，作出批准或者不予批准的决定。</p>
-<p>    宗教团体在宗教活动场所的设立申请获批准后，方可办理该宗教活动场所的筹建事项。 </p>
-</div></blockquote><p>第六条和第十三条规定了政府可以自行确定宗教团体的合法性，而第三条中“民族团结和社会稳定”的模糊写法，使得政府有了任意干预宗教的合法借口。</p>
-<p><strong>7. 《中华人民共和国工会法》</strong></p>
-<blockquote><div><p><strong>第九条</strong> 上级工会组织领导下级工会组织。 </p>
-<p><strong>第十条</strong> 全国建立统一的中华全国总工会。 </p>
-<p><strong>第十一条</strong> 基层工会、地方各级总工会、全国或者地方产业工会组织的建立，必须报上一级工会批准。</p>
-</div></blockquote><p>《工会法》规定了全中国只有一个合法工会——中华全国总工会，它由政府领导。其他工会都是非法工会，并且个人不得自行组织工会。这样的规定非常不利于保护工人的权益。在现实中，工会往往是软弱无力的，资方则是非常强势，工人处在弱势地位。</p>
-<p><strong>8. 《国家安全法》</strong></p>
-<blockquote><div><p><strong>第四条</strong>　任何组织和个人进行危害中华人民共和国国家安全的行为都必须受到法律追究。</p>
-<p>　　本法所称危害国家安全的行为，是指境外机构、组织、个人实施或者指使、资助他人实施的、或者境内组织、个人与境外机构、组织、个人相勾结实施的下列危害中华人民共和国国家安全的行为：</p>
-<p>　　（一）阴谋颠覆政府，分裂国家，推翻社会主义制度的；</p>
-<p>　　（二）参加间谍组织或者接受间谍组织及其代理人的任务的；</p>
-<p>　　（三）窃取、刺探、收买、非法提供国家秘密的；</p>
-<p>　　（四）策动、勾引、收买国家工作人员叛变的；</p>
-<p>　　（五）进行危害国家安全的其他破坏活动的。</p>
-</div></blockquote><p><br />
-许多发表批评政府的言论的人士，往往都被以这一条的第一款“阴谋颠覆政府，分裂国家，推翻社会主义制度”或第三款“窃取、刺探、收买、非法提供国家秘密”而起诉。根据John Kamm的统计，99%的被起诉者被判有罪。</p>
-<p><strong>9. Consumer Protection Law, Chapter II, Articles 7 and 8</strong></p>
-<p>（这一部分我不确定原作者所指的条文，所以不翻译，只提供原文。）</p>
-<p>What it says: Companies are expected to maintain safety standardscurrently established by other companies, and businesses can’t bepunished for falling behind raised standards established by goodsentering the market at a later time.</p>
-<p>What it does: Safety standards and laws fluctuate with shifts in themarket. Thus, there are no objective mandates for consumer productsafety. After last summer’s string of product recalls, the U.S. andChinese product safety agencies met to discuss new measures, includingbanning the use of lead paint in toys exported to the United States.Still, there is little hope for progress unless Chinese localauthorities stop haphazardly enforcing rules and regulations.</p>
-<p><strong>10. 《中华人民共和国突发事件应对法》</strong></p>
-<blockquote><div><p><strong>第五十三条</strong>　履行统一领导职责或者组织处置突发事件的人民政府，应当按照有关规定统一、准确、及时发布有关突发事件事态发展和应急处置工作的信息。</p>
-<p><strong>第五十四条</strong>　任何单位和个人不得编造、传播有关突发事件事态发展或者应急处置工作的虚假信息。</p>
-</div></blockquote><p>由于2003年SARS期间出现的社会混乱，导致立法者希望规范信息的传播。但是，这二条法律实际上剥夺了个人传播信息的权利，将信息的传播权全部交给政府。在现实中，它为地方政府控制媒体，提供了合法借口。许多煤矿和工业事故的消息，都是因为“破坏社会稳定”，而被拖延公开或隐瞒，导致重大伤亡。</p>
-<p>（完） </p>
-</div></div></div></div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/19/to-i-looked-into-the-olympic-spirit/">[转]我朝奥运精神</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-19T20:45:56+08:00" pubdate data-updated="true">Aug 19<span>th</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>我就读的高中有不少体育特长生，这些人成天打架、旷课，基本就是地痞流氓。这些人高考考300分左右就可以上大学了(普通分数线大概是580分)，所以他们只要稍微努力就可以跃入龙门了。<br /></p>
-
-<br />
-
-
-<p>我有学长跃入了龙门(武汉体院)看到的又是另外一个景象，体院眷养了一批散打高手的，据说是从某武术之乡&#8221;收购&#8221;而来，仅参加比赛，不用上课，还发薪水。我可怜的学长后来在理发厅打死了人，又是一番悲惨遭遇。<br /></p>
-
-<br />
-
-
-<p>这些有体育特长的人基本分布到了各学校、体育队：省队、县队等，当然有一批人入选了国家队，开始了奥运精神、体育精神的淬炼。<br />
-当然也有一部分很小年纪就进入国家队进行训练的小孩。<br />
-这些体育精神的体现者是如何体现的呢？<br /></p>
-
-<br />
-
-
-<br />
-
-
-<p>而两德统一后，数千东德教练失业，有的被礼聘到中国，成为中国游泳女队暴发的秘密武器<br />
-http://view.news.qq.com/a/20080802/000023.htm<br /></p>
-
-<br />
-
-
-<p>马家军<br />
-<img src="http://cimg2.163.com/cnews/2006/5/26/200605261129022e6b2.jpg" alt=""><br />
-脸是黑色的，女孩子经过什么样的训练能到这么个脸色呢？我在武汉大学生运动会上见过王军霞的师妹，令人震撼的是非洲人一般的脸色和身躯。<br /></p>
-
-<br />
-
-
-<p>http://www.china.com.cn/chinese/news/1169905.htm<br />
-举重冠军跟丈夫到大众浴池打工，靠给顾客搓背，赚取微薄的收入<br /></p>
-
-<br />
-
-
-<p>这是我们需要的奥运精神吗？是所谓公平的体育精神吗？其他国家的体育也是这么在搞么？</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/10/">&larr; Older</a>
@@ -1004,23 +1104,31 @@ http://view.news.qq.com/a/20080802/000023.htm<br /></p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+        <a href="/blog/2012/03/22/mawk-and-gawk/">mawk and gawk</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+        <a href="/blog/2011/12/31/trivial-detail-in-facebook-messenger/">trivial detail in facebook messenger</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+        <a href="/blog/2011/12/23/csdn-password-leak-under/">密码泄漏事件下的冰山</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+        <a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+        <a href="/blog/2011/11/30/digest/">Digest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/nc-and-tar-play-nice-then/">nc and tar play nice then</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/01/hao-xi-guan/">好习惯</a>
       </li>
     
   </ul>

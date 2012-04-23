@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>密码泄漏事件下的冰山 - HeartOutside</title>
+  <meta name="author" content="Ken">
+
+  
+  <meta name="description" content="曝光在大众面前的 CSDN 密码泄漏事件只是冰山一角，很小的一角。
+如开始时间，其实攻击从2011年初就开始了，下载文件里的日期一般不会做假：
+- 2011-01-31 22:46 100W.txt
+- 2011-03-08 20:49 duowan_user.txt
+- 2011-10-16 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://log.heartoutside.com/blog/2011/12/23/csdn-password-leak-under">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="HeartOutside" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">HeartOutside</a></h1>
+  
+    <h2>not yet</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:log.heartoutside.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">密码泄漏事件下的冰山</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-23T12:45:00+08:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>曝光在大众面前的 CSDN 密码泄漏事件只是冰山一角，很小的一角。
+如开始时间，其实攻击从2011年<strong>初</strong>就开始了，下载文件里的日期一般不会做假：
+-    2011-01-31 22:46 100W.txt
+-    2011-03-08 20:49 duowan_user.txt
+-    2011-10-16 01:02 www.csdn.net.sql</p>
+
+<p>至这些密码泄漏开始，利用这些数据获取其他价值的的攻击行为从来就没有停止过，差不多同时就听闻各大网站被攻击。至 CSDN 事件曝光这是很长的一段时间，但是各大公司都选择了沉默应对攻击。</p>
+
+<p>对历次泄漏数据汇总后，共计有 24249858 个合法邮件地址</p>
+
+<blockquote><pre><code>24249858 total
+10874262 qq.com
+ 5811878 163.com
+ 2362741 126.com
+ 1259566 sina.com
+  780195 yahoo.com.cn
+  644629 hotmail.com
+  474650 sohu.com
+  301836 yahoo.cn
+  284507 tom.com
+  195086 21cn.com
+  193720 gmail.com
+  165742 vip.qq.com
+  161241 yahoo.com
+   93434 yeah.net
+   88933 eyou.com
+   79438 sina.com.cn
+   64147 139.com
+   61092 yahoo.com.tw
+   46959 msn.com
+   42924 163.net
+   40649 live.cn
+   26327 263.net
+   26000 foxmail.com
+   24563 yahoo.com.hk
+   18414 vip.sina.com
+   17923 sina.cn
+   16093 sogou.com
+   15333 citiz.net
+   13412 mail.china.com
+   11049 chinaren.com
+    8239 etang.com
+    7201 189.cn
+    6759 live.com
+    5731 vip.163.com
+    5324 china.com
+    3993 msn.cn
+    3480 2008.sina.com
+    2251 371.net
+    1648 yahoo.co.jp
+    1603 netease.com
+    1389 elong.com
+    1132 mail.ustc.edu.cn
+     820 sjtu.edu.cn
+     645 x263.net
+     564 zte.com.cn
+     526 hotmail.com.tw
+     522 neusoft.com
+     453 bjtu.edu.cn
+     406 huawei.com
+     202 bofthew.com
+     149 owlpic.com
+      78 uggsrock.com
+</code></pre></blockquote>
+
+<p>邮件服务提供商似乎没有太多作为，Gmail 提示不要使用相同密码，我使用的国内的邮件服务商(qq,163)没有类似举动。</p>
+
+<p>各个邮件服务提供商都没有表现出应有的社会责任，未及时告知用户安全问题，导致整个中国互联网集体容颜扫地。</p>
+
+<p>在表现上，各邮件服务提供商反应也不尽相同。
+*   QQ 每个登录都有验证码
+*   163 貌似没有采取什么措施，截至12月22日还能用其中信息登录他人账户成功</p>
+
+<p>不管如何，这次事件各互联网公司应对策略都有了长足的进步，验证码等技术得到了提升。</p>
+
+<p>真正的冰山是利用这些信息的非法获利，各大互联网公司都有虚拟货币，甚至支付宝，有什么样的故事呢，我不得而知。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ken</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-23T12:45:00+08:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://log.heartoutside.com/blog/2011/12/23/csdn-password-leak-under/" data-via="boostguy" data-counturl="http://log.heartoutside.com/blog/2011/12/23/csdn-password-leak-under/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/12/19/question-to-a-startup-team/" title="Previous Post: Question to a Startup Team">&laquo; Question to a Startup Team</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/12/31/trivial-detail-in-facebook-messenger/" title="Next Post: trivial detail in facebook messenger">trivial detail in facebook messenger &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/22/mawk-and-gawk/">mawk and gawk</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/31/trivial-detail-in-facebook-messenger/">trivial detail in facebook messenger</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/23/csdn-password-leak-under/">密码泄漏事件下的冰山</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/30/digest/">Digest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/nc-and-tar-play-nice-then/">nc and tar play nice then</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/01/hao-xi-guan/">好习惯</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("boostguy", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/boostguy" class="twitter-follow-button" data-show-count="false">Follow @boostguy</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Ken -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'kenshao';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://log.heartoutside.com/blog/2011/12/23/csdn-password-leak-under/';
+        var disqus_url = 'http://log.heartoutside.com/blog/2011/12/23/csdn-password-leak-under/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

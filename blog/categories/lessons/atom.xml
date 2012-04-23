@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: lessons | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/lessons/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: lessons | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/lessons/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[MySpace 为什么会失败？]]></title>
-    <link href="http://blog.heartoutside.com/blog/2011/03/28/why-myspace-will-fail/"/>
+    <link href="http://log.heartoutside.com/blog/2011/03/28/why-myspace-will-fail/"/>
     <updated>2011-03-28T10:02:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2011/03/28/why-myspace-will-fail</id>
+    <id>http://log.heartoutside.com/blog/2011/03/28/why-myspace-will-fail</id>
     <content type="html"><![CDATA[<p>前些年 <a href="http://www.myspace.com">Myspace</a> 是社会网络的王者，在2005年7月由News Corp以 $580 million 收购。但从此之后，MySpace 停止了增长，用户流失飞快，在2010年5月时只有109 million用户了，比去年下降13%。<br /></p>
 
 <br />

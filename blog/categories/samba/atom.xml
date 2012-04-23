@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: samba | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/samba/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: samba | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/samba/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[我的工作模式]]></title>
-    <link href="http://blog.heartoutside.com/blog/2011/02/10/my-work-mode/"/>
+    <link href="http://log.heartoutside.com/blog/2011/02/10/my-work-mode/"/>
     <updated>2011-02-10T15:03:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2011/02/10/my-work-mode</id>
+    <id>http://log.heartoutside.com/blog/2011/02/10/my-work-mode</id>
     <content type="html"><![CDATA[<p>我有两台计算机，一台是 Windows XP，另外一台是 32bit Ubuntu。 设置了一些环境，让工作顺畅一些。</p>
 
 <h2>Samba 共享 Ubuntu 下的工作目录，Windows 共享访问</h2>
@@ -25,7 +25,7 @@
 <p>好处： 代码只有一份，一次修改，两个地方同时生效。通常在 linux 下操作文件、代码库，需要写大量代码时才会使用 windows。<br /></p>
 
 <p></div>在 windows 下把 linux下的工作目录映射为一个逻辑盘<br />
-<img border="0" height="156" src="http://blog.heartoutside.com/pic/windows_share.png" width="200" /></p>
+<img border="0" height="156" src="http://log.heartoutside.com/pic/windows_share.png" width="200" /></p>
 
 <p>Samba 配置 /etc/samba/smb.conf 内容大致为</p>
 
@@ -106,7 +106,7 @@ end
 其实还能生成 Mac 下的 xcode 项目文件，可惜我没有 Mac 系统。</p>
 
 <p>使用 Visual Studio 写代码比 vi 能快不少。<br />
-<img border="0" height="250" src="http://blog.heartoutside.com/pic/vs.png" width="320" /></p>
+<img border="0" height="250" src="http://log.heartoutside.com/pic/vs.png" width="320" /></p>
 ]]></content>
   </entry>
   

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>heartoutside</title>
+  <title>HeartOutside</title>
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="最近爆出了腾讯大讲堂的资料，貌似是内部培训的资料，涉及了几乎所有的产品、部门。开发、运营、产品各类型都有，有很多数据非常有价值。列举一二 移动QQ产品发展历程 要是有最近两年的数据就。。。。。。 QQ邮箱成长历程 06 年初开发3.0版 06年10月看到了希望 07 年初成功 其技术经验很有价值 &hellip;">
+  <meta name="description" content="我有两台计算机，一台是 Windows XP，另外一台是 32bit Ubuntu。 设置了一些环境，让工作顺畅一些。 Samba 共享 Ubuntu 下的工作目录，Windows 共享访问 好处： 代码只有一份，一次修改，两个地方同时生效。通常在 linux 下操作文件、代码库， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,13 +18,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.heartoutside.com/blog/page/3">
+  <link rel="canonical" href="http://log.heartoutside.com/blog/page/3">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="HeartOutside" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -35,7 +35,7 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">heartoutside</a></h1>
+  <h1><a href="/">HeartOutside</a></h1>
   
     <h2>not yet</h2>
   
@@ -49,7 +49,7 @@
   
 <form action="https://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input type="hidden" name="q" value="site:log.heartoutside.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -64,6 +64,671 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/02/10/my-work-mode/">我的工作模式</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-10T15:03:00+08:00" pubdate data-updated="true">Feb 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我有两台计算机，一台是 Windows XP，另外一台是 32bit Ubuntu。 设置了一些环境，让工作顺畅一些。</p>
+
+<h2>Samba 共享 Ubuntu 下的工作目录，Windows 共享访问</h2>
+
+<p>好处： 代码只有一份，一次修改，两个地方同时生效。通常在 linux 下操作文件、代码库，需要写大量代码时才会使用 windows。<br /></p>
+
+<p></div>在 windows 下把 linux下的工作目录映射为一个逻辑盘<br />
+<img border="0" height="156" src="/pic/windows_share.png" width="200" /></p>
+
+<p>Samba 配置 /etc/samba/smb.conf 内容大致为</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[global]
+</span><span class='line'>server string = xxx
+</span><span class='line'>dns proxy = no
+</span><span class='line'>encrypt passwords = true
+</span><span class='line'>passdb backend = tdbsam
+</span><span class='line'>obey pam restrictions = yes
+</span><span class='line'>unix password sync = yes
+</span><span class='line'>passwd program = /usr/bin/passwd %u
+</span><span class='line'>passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+</span><span class='line'>map to guest = bad user
+</span><span class='line'>usershare allow guests = no
+</span><span class='line'>
+</span><span class='line'>[w]
+</span><span class='line'>comment = a shared directory
+</span><span class='line'>path = /path/to/shared
+</span><span class='line'>guest ok = no
+</span><span class='line'>write list=username
+</span><span class='line'>create mask = 0600</span></code></pre></td></tr></table></div></figure>
+
+
+<h2><a href="http://synergy2.sf.net">Synergy2</a>，一套键盘鼠标控制两(多)台计算机</h2>
+
+<p>一般使用 linux 作为主机，其配置也是相当的简单</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>section: screens
+</span><span class='line'> linux-name:
+</span><span class='line'> windows-name:
+</span><span class='line'>end
+</span><span class='line'>section: links
+</span><span class='line'> windows-name:
+</span><span class='line'> right = linux-name
+</span><span class='line'> linux-name:
+</span><span class='line'> left = windows-name
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>windows 下的 Synergy2 有设置界面。apt-get 安装的版本可能稍微旧了一些。</p>
+
+<h2>GYP，编译系统</h2>
+
+<p>同时支持 Makefile 和 Visual Studio 的 .vcproj 工程文件，出自 Google 的 Chrome http://code.google.com/p/gyp/</p>
+
+<p>其中 gyp 内容一般为：<br /></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{
+</span><span class='line'> 'targets': [
+</span><span class='line'> {
+</span><span class='line'>  'target_name': 'foo',
+</span><span class='line'>  'type': 'executable'
+</span><span class='line'>  'dependencies': [
+</span><span class='line'>   'xyzzy',
+</span><span class='line'>   '../bar/bar.gyp:bar',
+</span><span class='line'>  ],
+</span><span class='line'>  'defines': [
+</span><span class='line'>   'DEFINE_FOO',
+</span><span class='line'>   'DEFINE_A_VALUE=value',
+</span><span class='line'>  ],
+</span><span class='line'>  'include_dirs': [
+</span><span class='line'>   '..',
+</span><span class='line'>  ],
+</span><span class='line'>  'sources': [
+</span><span class='line'>   'file1.cc',
+</span><span class='line'>   'file2.cc',
+</span><span class='line'>  ],
+</span><span class='line'> },
+</span><span class='line'> ],
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><span style="color: #6aa84f;">gyp -fmake foo.gyp</span> 能产生 Makefile<br />
+<span style="color: #6aa84f;">gyp -fmsvs foo.gyp</span> 产生 foo.vcproj 以及 foo.sln</p>
+
+<p>其编译速度通常比 cmake, scons 快很多。管理大型工程是非常的合适。<br />
+其实还能生成 Mac 下的 xcode 项目文件，可惜我没有 Mac 系统。</p>
+
+<p>使用 Visual Studio 写代码比 vi 能快不少。<br />
+<img border="0" height="250" src="/pic/vs.png" width="320" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/14/programmers-three-laws/">程序员三大法则</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-14T17:50:39+08:00" pubdate data-updated="true">Jan 14<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>    <a href="http://lifesinger.org/blog/2011/01/three-laws-of-programmers/" target="_blank">程序员三大法则</a></h2>
+
+
+<p>    <span>from <a href="https://www.google.com/reader/view/feed/http%3A%2F%2Flifesinger.org%2Fblog%2F%3Ffeed%3Drss2" target="_blank">岁月如歌</a></span> <span>by <span>lifesinger</span></span></p>
+
+
+<h3>第一法则</h3>
+
+
+<p>程序员不得损害产品质量，或袖手旁观产品质量受到损害。</p>
+
+
+<h3>第二法则</h3>
+
+
+<p>程序员必须服从产品经理的命令，除非违背第一法则。</p>
+
+
+<h3>第三法则</h3>
+
+
+<p>程序员必须保护自己，除非违背第一和第二法则。</p>
+
+
+<p>据说还有一条繁殖定律：</p>
+
+
+<h4>繁殖定律</h4>
+
+
+<h4>程序员不得参与程序员的孕育和培养，除非新程序员的行动符合以上三大法则。</h4>
+
+
+<p>参考资料：<a href="http://en.wikipedia.org/wiki/Three_Laws_of_Robotics" target="_blank">Three Laws of Robotics</a></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/07/use-ocr-identify-verification-code/">使用 OCR 识别验证码</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-07T10:18:00+08:00" pubdate data-updated="true">Jan 7<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>tesseract-ocr 是一个历史悠久的 OCR 引擎，代码位于 http://code.google.com/p/tesseract-ocr/。现在由 Google 开发。几年间代码有了很多 Google 的风格，也相对成熟稳定了一些。对于简单英文字符有很高的识别率。<br /></p>
+
+<br />
+
+
+<p>在代码顶层目录执行 <br />
+TESSDATA_PREFIX=./ api/tesseract 1.jpg 1 -l eng<br />
+解释一下：<br />
+TESSDATA_PREFIX 是环境变量，该目录下有 tessdata/<br />
+下面应该有 configs/ eng.traineddata 等<br />
+tesseract 是 OCR 识别程序<br />
+1.jpg 是需要识别的图像文件<br />
+1 会生成 1.txt 的识别结果<br />
+-l eng 是指应用训练库 eng.traineddata 进行识别<br /></p>
+
+<br />
+
+
+<p>一般难度的验证码，如 <div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_CZ0niZQI8-o/TSZzHnQ_g1I/AAAAAAAAF4g/YDOVxfryATQ/s1600/6.jpg" style="clear: left; float: left; margin-right: 1em; margin-bottom: 1em;"><img border="0" height="45" src="http://2.bp.blogspot.com/_CZ0niZQI8-o/TSZzHnQ_g1I/AAAAAAAAF4g/YDOVxfryATQ/s320/6.jpg" width="120" /></a></div>都可以达到 20% 左右的的正确率。<br /></p>
+
+<br />
+
+
+<p>tesseract-ocr 没有关于layout analysis，如果先对图像预处理，会有更高的效果。<br /></p>
+
+<br />
+
+
+<p>如果针对图像训练会有意想不到的效果。但是其wiki里的文档没有说太明白<br />
+过程如下：<br />
+1) 先生成box文件，可能有错误<br />
+api/tesseract 1.jpg 1 makebox<br />
+api/tesseract 1.jpg 2 makebox<br /></p>
+
+<br />
+
+
+<p>2) 使用 python 的编辑器，调整 box 文件内矩形数据的正确性<br />
+python tesseractTrainer.py<br /></p>
+
+<br />
+
+
+<p>3) 开始训练。<br />
+api/tesseract 1.jpg {output} box.train<br />
+api/tesseract 2.jpg {output} box.train<br />
+&#8230;<br /></p>
+
+<br />
+
+
+<p>4) 对训练结果进行转换<br />
+training/mftraining <em>.tr<br />
+training/cntraining </em>.tr<br />
+training/unicharset_extractor *.box<br /></p>
+
+<br />
+
+
+<p>cp unicharset tessdata/rr.unicharset<br />
+cp pffmtable tessdata/rr.pffmtable<br />
+cp inttemp tessdata/rr.inttemp<br />
+cp normproto tessdata/rr.normproto<br /></p>
+
+<br />
+
+
+<p>5) 合并成 rr.traineddata<br />
+cd tessdata<br />
+../training/combine_tessdata rr.<br /></p>
+
+<br />
+
+
+<p>之后就可以使用-l rr来识别了</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/29/google-employees-read-me-teaching-at-harvard-and-works-in-google-difference/">Google员工自述：在哈佛教书和在Google工作的差别</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-29T22:47:09+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>    <a href="http://dongxi.net/b03SL" target="_blank">Google员工自述：在哈佛教书和在Google工作的差别</a></h2>
+
+
+<p>    <span>from <a href="https://www.google.com/reader/view/feed/http%3A%2F%2Fwww.dongxi.net%2Ffeed" target="_blank">东西</a></span> <span>by <span>伯乐在线</span></span>    <p>        <p>            <span>3 people liked this</span>        </p>
+    </p>
+</p>
+
+
+<p>编者按：2003年到2010年期间，原文作者Matt Welsh  是哈佛大学工程和应用科学学院的计算机科学系教授。2010年加入Google，是一名高级工程师。他当前的工作重点是广域网性能和健壮性。下文由 Matt所写，文章对比了Matt在Google和哈佛大学时的一天作息，译文由伯乐在线编译。<br />
+     <br />
+ 最近我在想，和在哈佛时的院系工作相比，在Google上班日子到底有多么不同。最大的差别就是，相比之下，我曾在哈佛比较幸运，一周花半个小时做编 程相关的事。而在Google，我花费将近（或超过）90%的时间在编写代码。另外，我拖延所耗费的时间和浏览大量&ldquo;无意义&rdquo;网站的时间更少了，这大致是 因为我更享受工作带来的乐趣。<br />
+     <br />
+     <strong>下面就是我在Google典型一天的过程：</strong>    <br />
+     <br />
+ 6：30 - 起床、把儿子叫起床、洗漱、早餐、带狗遛公园。<br />
+     <br />
+ 8：30 - 去上班（大多数时间是乘地铁）。<br />
+     <br />
+ 9：00 - 到公司。输入6个不同的窗口密码，让我的工作场所返回正常状态。检查邮件。检查我在不同数据中心的几个部署任务的状态，然后接着昨天的工作。<br />
+     <br />
+ 9：30 - 10：15 - 开始编码，给我所在的系统增加请求的功能。一直调试，直至正常运作，编写一到两个单元测试。处理代码变动列表。去拿当日的三瓶免费的无糖可乐。<br />
+     <br />
+ 10：15 - 11：00 - 转到另外一个项目Git分支。查看同事给我所写代码的Review评论。仔细检查代码，并着手处理评论中所提问题。构建新版本，重新测试，重新修改代码，以确保代码看起来和运作都不错。提交修改后的变动列表，回应评论。<br />
+     <br />
+ 11：00 - 11：30 - 再次切换Git分支。安全起见，重构代码，然后启动一个需运行三小时的MapReduce任务，生成日志数据，来分析网络延迟。<br />
+     <br />
+ 11：30 - 12：00 - 和在山景城的团队成员开快速的视频会议。<br />
+     <br />
+ 12：00 - 12：35 - 在餐厅品尝免费的美味午餐。和同事一起逗乐，分享我在中学时破解 Apple IIgs的故事。<br />
+     <br />
+ 12：35 - 14：00 - 返回办公桌。检查邮件。检查MapReduce的工作状态 - 基本完成一大半。回应上午已完成的代码Review的最新评论，然后提交代码。合并并清理Git分支。查看任务列表，决定接下来做什么事。<br />
+     <br />
+ 14：00 - 15：00  -和在剑桥、山景城和其他地方的团队开视频项目会议。这个会议是我一周之内唯一时长一小时的会议。这段时间比较有趣，我用来对笔记本做些小检查，点击&ldquo;重 载&rdquo;MapReduce的状态页面，查看是否已经完成。检查Buzz，并匿名发布一到两条评论。<br />
+     <br />
+ 15：00 - 16：00  -灌点红牛，保持能量，继续奋战剩余时间。MapReduce已经完成。生成（MapReduce的）结果数据图，并仔细凝视观察一会。分析结果为什么和 预期结果不一样，并编写新版本代码，来生成另外一套统计数据。在结束当日工作之前，尽可能把代码整理到可以启动另一个MapReduce。<br />
+     <br />
+ 16：00 - 17：00 - Whiskey Thursday！一群同事聚集到一块，喝苏格兰威士忌并弹吉他。（我办公桌下面收集一些苏格兰威士忌。不知怎么的，我被指派为&ldquo;酒会&rdquo;的护卫，不过这挺适合我的。）<br />
+     <br />
+ 17：00 - 收拾笔记本，回家。<br />
+     <br />
+ 17：30 - 20：00 - 晚餐，家庭时间直至儿子去睡觉。<br />
+     <br />
+ 20：00直至睡觉 - 如果晚上有事做，就做事。如果没事，就喝些鸡尾酒。<br />
+     <br />
+     <br />
+     <strong>相比之下，我在哈佛典型的一天工作：</strong>    <br />
+     <br />
+ 6：30 - 起床、把儿子叫起床、洗漱、早餐、带狗遛公园。<br />
+     <br />
+ 8：30 - 去上班（从家走到办公室是20分钟路程，我会带着狗一起去）。<br />
+     <br />
+ 9：00 - 到办公室。检查邮件。抱怨下午会议之前我必须要做的大量工作。<br />
+     <br />
+ 9：15 - 开始写资助申请书。大约三分钟后，我不知道我要写些什么东西，所以接下来的约45分钟时间是在看Engadget、Hacker News和Facebook。<br />
+     <br />
+ 10：00 - 尽力迅速从看网站的昏迷状态中恢复过来，尽力在一堆必须写的推荐信中有所进展。幸运的是，这些工作容易，可以借鉴我以前写给其他人的推荐信，大部分是&ldquo;拷贝粘贴&rdquo;的工作。<br />
+     <br />
+ 11：00 - 查看日历，发现我仅剩一个小时来完成实质性的工作。回复一些在我收件箱呆了几周的邮件。给助手发邮件，安排下周的三次以上的会议。<br />
+     <br />
+ 11：30 - 起草一份预算，给不同的支持人员发送三封邮件，尽力在资助申请书方面有所进展。给申请书取一个标题和全额预算，使其听起来合理。不过仍然还不知道项目内容会是什么样的。<br />
+     <br />
+ 12：00 - 带着狗狗，在校园溜达20分钟。如果遇到其他狗狗，花的时间会更多些。<br />
+     <br />
+ 12：30 - 跑到法学院餐厅，打超贵又不怎么好吃的午饭。回到办公室一个人郁郁寡欢地吃，边吃边看Engadget和Hacker News。<br />
+     <br />
+ 13：00 - 当日的第一个会议，和随机来自台湾公司的随机人员开会。他们并没有给我任何费用，但却想让我花费半个小时时间，来超详细地解释我给他们做的研究项目。<br />
+     <br />
+ 13：30  -当日的第二个会议，和一位二年级的学生开。他突然决定，在漫无目的的四年大学生活后，他想去伯克利或麻省理工攻读哲学博士。虽然我解释说，没有相关研究 记录，不大可能有机会了，但他最后请求我无论如何要写一封推荐信。（于是）狡黠地留意可以借鉴哪些推荐信。<br />
+     <br />
+ 14：00 - 想到不得不做半个小时的讲课。（于是）找出去年的讲课笔记，把幻灯片标题中的&ldquo;2009&rdquo;改成&ldquo;2010&rdquo;。大概浏览一下，虽然想起来这个讲课完全是个灾难，但我并没有时间来修正了。<br />
+     <br />
+ 14：30 - 16：00  -向大约70名又困又烦的本科生讲了缓存算法。为了让讲课更加令人兴奋，我用了大量的PPT动画，也用激光笔狂热地做手势。在回答大量问题后，让我想起 来，这个幻灯片去年为什么是灾难了，发誓一定要在来年再次使用这个幻灯片之前要修改它。<br />
+     <br />
+ 16：00 - 16：10 - 关门躲在办公室，尽力平静心情，平复在讲课过程中飙升的肾上/腺。狂灌可乐来补充能力和水分。<br />
+     <br />
+ 16：10 - 16：20 - 查看邮件；浏览Engadget；查看Facebook。<br />
+     <br />
+ 16：30 - 17：00  -当日的最后一次会议，和两位研究生讨论所剩时间不到一周就要提交的论文。尽管他们没有大纲和结果，但他们非常乐观，相信能及时完成。我在白板上花约半个 小时概述思想和可能的图表，他们则在笔记本上龙飞凤舞地记录。许下一个模糊的承诺，如果本周我可以看到草稿，我可以检查。<br />
+     <br />
+ 17：00 - 带着狗狗走路回家。这是一天中最爽的时候。<br />
+     <br />
+ 17：30 - 回到家，立刻坐下来查看我在演讲和会议中积累的大量邮件。给我助手发送五个新的会议请求，让他在下周安排好。<br />
+     <br />
+ 17：45 - 20：00 - 家庭时间，晚餐。<br />
+     <br />
+ 20：00 - 通过查看邮件和修改我下周要用到的幻灯片，来假装&ldquo;工作&rdquo;。由于太累，啥正事也干不了了，喝点酒，然后再次浏览Engadget网站。<br />
+     <br />
+     <br />
+     <strong>编者后话</strong>    <br />
+     <br />
+ 也许你看过此文后，会觉得哈佛教授的一天工作时间怎么有点懒散，其实原文评论中也有类似疑问，Matt在回复中解释说，这是他个人不善于时间管理，并非所有哈佛同事都和他一样。</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/20/tencent-auditorium-internal-information-continued-3/">腾讯大讲堂内部资料 - 续3</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-20T23:18:37+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>分享事故，总结经验</p>
+
+
+<p>第一个引进游戏《凯旋》<br />
+    <img src="http://fmn.rrimg.com/fmn055/20101020/1500/b_large_oB8w_7c150010a0915c41.jpg" alt=""><br />
+    <br />
+    <img src="http://fmn.rrimg.com/fmn048/20101020/1500/b_large_x5Un_24fb000b68df5c43.jpg" alt=""><br />
+    <img src="http://fmn.rrimg.com/fmn051/20101020/1500/b_large_mvik_782a00133f825c44.jpg" alt=""><br />
+腾讯然后调整了游戏运营的工作模型<br />
+    <br />
+    <strong>接着是腾讯</strong><strong>自己开发</strong><strong>的《</strong><strong>QQ堂</strong><strong>》</strong>    <br />
+    <img src="http://fmn.rrimg.com/fmn054/20101020/1500/b_large_4h3k_1d2b00054a4f5c41.jpg" alt=""></p>
+
+
+<p>《QQ幻想》<br />
+    <img src="http://fmn.rrimg.com/fmn047/20101020/1505/b_large_9Q7D_1d3d0007ea2c5c42.jpg" alt=""></p>
+
+
+<p>    <img src="http://fmn.rrimg.com/fmn055/20101020/1505/b_large_OZjb_085e000958dd5c40.jpg" alt=""><br />
+最后玩家强烈要求回档，不得已调动一切力量回档</p>
+
+
+<p>    <img src="http://fmn.rrimg.com/fmn051/20101020/1505/b_large_xjf1_7822000efeb05c44.jpg" alt=""></p>
+
+
+<p>后面本来还有一个技术故障导致的事故，但是意义不大了。腾讯几年前就能做到能分享事故，然而号称还在创业期的公司都做不到。</p>
+
+
+<p>腾讯今年初的一个讲座里显示游戏运营俨然已经是一个大规模的利润制造平台了。<br />
+    <br />
+我都在考虑迁居到南方了。</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/15/tencent-auditorium-internal-information-continued-2/">腾讯大讲堂内部资料 - 续2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-15T23:51:15+08:00" pubdate data-updated="true">Oct 15<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>机器数量<br />
+    <br />
+    <img src="http://fmn.rrimg.com/fmn054/20101015/1545/b_large_2cNc_086c001716865c40.jpg" alt=""><br />
+    <br />
+    <br />
+    <img src="http://fmn.rrimg.com/fmn053/20101015/1545/b_large_kbwW_782a00117e025c44.jpg" alt=""><br />
+    <br />
+带宽数据<br />
+    <br />
+    <img src="http://fmn.rrimg.com/fmn050/20101015/1545/b_large_itrw_7c9d00105ac45c3f.jpg" alt=""><br />
+    <br />
+其他，腾讯有业务间调用接口监控，统一日志。<br />
+估计现在其规模已经超过Facebook</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/14/tencent-auditorium-internal-information-continued-1/">腾讯大讲堂内部资料 - 续1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-14T22:20:16+08:00" pubdate data-updated="true">Oct 14<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>    <strong>腾讯内部的Web Server</strong>    <br />
+    <img src="http://fmn.rrimg.com/fmn051/20101014/1410/b_large_9lzP_7c190011df295c41.jpg" alt=""><br />
+似乎现在还有名为 CWS-imgcache, SWS 的服务器<br />
+    <br />
+    <strong>QQ Video 的系统架构</strong>    <br />
+    <img src="http://fmn.rrimg.com/fmn055/20101014/1410/b_large_bOHq_24ff000abf435c43.jpg" alt=""><br />
+    <br />
+    <strong>Cookie大小对响应时间的影响</strong>    <br />
+    <img src="http://fmn.rrimg.com/fmn054/20101014/1410/b_large_iRQB_7820000453cf5c44.jpg" alt=""><br />
+    <br />
+    <br />
+    <strong>QQ 邮箱的服务器端的优化</strong>很有参考意义<br />
+    <img src="http://fmn.rrimg.com/fmn052/20101014/1415/b_large_tLoI_2501000efd1b5c43.jpg" alt=""><br />
+    <br />
+    <br />
+    <img src="http://fmn.rrimg.com/fmn051/20101014/1415/b_large_kfLF_7c970005964a5c3f.jpg" alt=""><br />
+    <br />
+    <br />
+    <img src="http://fmn.rrimg.com/fmn046/20101014/1415/b_large_qoBf_7820000454505c44.jpg" alt=""><br />
+    <br />
+    <br />
+    <img src="http://fmn.rrimg.com/fmn055/20101014/1415/b_large_aFZQ_08640009e9485c40.jpg" alt=""><br />
+    <br />
+    <br />
+    <img src="http://fmn.rrimg.com/fmn047/20101014/1415/b_large_App9_1d430008e7bb5c42.jpg" alt=""><br />
+    <br />
+    <br />
+    <img src="http://fmn.rrimg.com/fmn047/20101014/1415/b_large_lW8i_24ff000ac13a5c43.jpg" alt=""><br />
+    <br />
+    <br />
+    <img src="http://fmn.rrimg.com/fmn048/20101014/1415/b_large_dG3m_781c00022e925c44.jpg" alt=""><br />
+</p>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -266,834 +931,6 @@ No SPOF and HA is most important for a&nbsp; robust system.<br /></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/29/latest-public-facebook-information/">Facebook最新公开信息</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-29T19:32:06+08:00" pubdate data-updated="true">Jun 29<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今年Velocity上的<a href="http://www.youtube.com/watch?v=T-Xr_PJdNmQ&feature=player_embedded#%21" target="_blank">视频</a>，部分信息的截屏.</p>
-
-
-<p>A Day in the Life of Facebook Operations</p>
-
-
-<p>    <strong>Facebook有多大？</strong>     <br />
-     <img src="http://fmn.xnimg.cn/fmn038/20100629/1115/b_large_SucK_7406000142de2d14.jpg" alt=""></p>
-
-
-<p>    <br />
-     <img src="http://fmn.xnimg.cn/fmn036/20100629/1120/b_large_QsDV_74060001430a2d14.jpg" alt=""><br />
-     <br />
-     <img src="http://fmn.xnimg.cn/fmn044/20100629/1120/b_large_acdX_7406000143142d14.jpg" alt=""><br />
-     <br />
-     <img src="http://fmn.xnimg.cn/fmn038/20100629/1120/b_large_2cXE_7408000206ed2d14.jpg" alt=""><br />
-     <br />
-Growth<br />
-     <img src="http://fmn.xnimg.cn/fmn043/20100629/1120/b_large_D8KY_7408000207022d14.jpg" alt=""></p>
-
-
-<p>服务器数量，去年公布的3万台，估计今年应该到了6万。<br />
-     <img src="http://fmn.xnimg.cn/fmn038/20100629/1120/b_large_z2oG_74060001434e2d14.jpg" alt=""></p>
-
-
-<p>正在俄勒冈建立第3个数据中心 http://facebook.com/prinevilledatacenter</p>
-
-
-<p>    <img src="http://fmn.xnimg.cn/fmn041/20100629/1120/b_large_j6vq_740a00030d622d14.jpg" alt=""><br />
-     <br />
-架构<br />
-     <img src="http://fmn.xnimg.cn/fmn041/20100629/1120/b_large_9Ws4_740a00030db72d14.jpg" alt=""></p>
-
-
-<p>    <br />
-     <img src="http://fmn.xnimg.cn/fmn036/20100629/1120/b_large_JVQ9_74080002082a2d14.jpg" alt=""><br />
-     <br />
-     <img src="http://fmn.xnimg.cn/fmn040/20100629/1120/b_large_muIa_74080002083b2d14.jpg" alt=""><br />
-     <br />
-     <img src="http://fmn.xnimg.cn/fmn043/20100629/1120/b_large_6xhI_740a00030e2b2d14.jpg" alt=""><br />
-     <br />
-     <img src="http://fmn.xnimg.cn/fmn044/20100629/1120/b_large_5VCR_740a00030e462d14.jpg" alt=""><br />
-     <br />
-Configure Managment 在fb有举足轻重的地位，使用 CFengine 3 管理集群<br />
-     <img src="http://fmn.xnimg.cn/fmn038/20100629/1120/b_large_nwRq_7408000208ab2d14.jpg" alt=""><br />
-     <br />
-     <strong>Deployment</strong>     <br />
-we focus on web push first.<br />
-     <img src="http://fmn.xnimg.cn/fmn040/20100629/1120/b_large_YvSK_7408000208d12d14.jpg" alt=""><br />
-这可能是最有意思的细节了<br />
-Use BitTorrent to deploy source code, It&#8217;s very fast.</p>
-
-
-<p>    <strong>开发</strong>     <br />
-一般开发模式可能是 Engineering/QA/Operations，但是我们没有QA，因为沟通成本太高<br />
-我们的Engineers write,and deploy their own code, 能够快速关注性能问题，流量等<br />
-运营人员&lsquo;embedded&rsquo; int oengineering teams，来更好的做好架构决策，更好的理解产品<br />
-     <img src="http://fmn.xnimg.cn/fmn042/20100629/1125/b_large_4ylZ_740000002be82d14.jpg" alt=""><br />
-     <br />
-     <strong>Change logging</strong>     <br />
-所做的操作都记录在案，大部分更新时间都在凌晨1点<br />
-     <img src="http://fmn.xnimg.cn/fmn042/20100629/1125/b_large_4BYL_7406000144bc2d14.jpg" alt=""></p>
-
-
-<p>    <strong>Monitor and Metrics</strong>     <br />
-     <img src="http://fmn.xnimg.cn/fmn040/20100629/1125/b_large_EN7v_740a00030fcd2d14.jpg" alt=""><br />
-     <br />
-     <img src="http://fmn.xnimg.cn/fmn045/20100629/1125/b_large_fnFB_740a00030feb2d14.jpg" alt=""><br />
-     <br />
-Ganglia is very Fast.<br />
-     <img src="http://fmn.xnimg.cn/fmn043/20100629/1125/b_large_V4MZ_740a000310092d14.jpg" alt=""><br />
-     <br />
-another graph tool ODS <br />
-     <img src="http://fmn.xnimg.cn/fmn040/20100629/1125/b_large_sDRe_7406000145182d14.jpg" alt=""><br />
-     <br />
-     <img src="http://fmn.xnimg.cn/fmn045/20100629/1125/b_large_mAUt_740a000310732d14.jpg" alt=""><br />
-     <br />
-basically use Nagios.<br />
-     <br />
-     <strong>Aggregation</strong>     <br />
-     <img src="http://fmn.xnimg.cn/fmn045/20100629/1125/b_large_oVLk_740200005c2c2d14.jpg" alt=""><br />
-     <br />
-     <strong>How we do it</strong>     <br />
-Constant Growth<br />
-Constant Failure<br />
-Logical Units<br />
-servers, racks, clusters, datacenters<br />
-Constant Communication<br />
-     <img src="http://fmn.xnimg.cn/fmn043/20100629/1125/b_large_ZFCK_740a000310fa2d14.jpg" alt=""><br />
-这个也很有意思，每个员工都在使用IRC<br />
-     <br />
-     <strong>Small Teams</strong>     <br />
-这是fb最引以为豪的事情<br />
-     <img src="http://fmn.xnimg.cn/fmn038/20100629/1125/b_large_2rRN_7406000145862d14.jpg" alt=""></p>
-
-
-<p>Recap<br />
-     <img src="http://fmn.xnimg.cn/fmn041/20100629/1125/b_large_i1UM_740a000311842d14.jpg" alt=""></p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/29/a-day-in-the-life-of-facebook-operations/">A Day in the Life of Facebook Operations</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-29T11:14:00+08:00" pubdate data-updated="true">Jun 29<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>How big Facebook is?</h2>
-
-<p><img border="0" src="http://2.bp.blogspot.com/_CZ0niZQI8-o/TClZ1kgIbBI/AAAAAAAAFWs/IjkL-G9uAF8/s320/fb_1.png" /></p>
-
-<p><img border="0" src="http://2.bp.blogspot.com/_CZ0niZQI8-o/TClZ4ntQCYI/AAAAAAAAFW0/QlyO87wEsN4/s320/fb_2.png" /></p>
-
-<p><img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TClZ5yksdII/AAAAAAAAFW8/jkR4A1lyiWI/s320/fb_3.png" /></p>
-
-<p><img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TClZ9ev6egI/AAAAAAAAFXE/CLzrJntOp78/s320/fb_4.png" /></p>
-
-<p>and servers, 60K?</p>
-
-<p><img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TClgijuptCI/AAAAAAAAFYE/NiiQcWNYOFk/s320/fb_6_server.png" /></p>
-
-<h2>Rapid Growth</h2>
-
-<p><img border="0" src="http://1.bp.blogspot.com/_CZ0niZQI8-o/TClZ-e2wyMI/AAAAAAAAFXM/okv4H7W76hc/s320/fb_5_growth.png" /><br /></p>
-
-<br />
-
-
-<p>正在俄勒冈建立第3个数据中心<br />
-<img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TClc1HhX4sI/AAAAAAAAFXU/h_oapa2Vhgs/s320/fb_7_DC.png" /></p>
-
-<h2>architect</h2>
-
-<p><img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TClc6OOnkyI/AAAAAAAAFXk/hCkCJ5voqFM/s320/fb_arch.png" /><br /></p>
-
-<br />
-
-
-<p>Hiphop for PHP<br /></p>
-
-<p><img border="0" src="http://2.bp.blogspot.com/_CZ0niZQI8-o/TClc5G1-dZI/AAAAAAAAFXc/G9FOgaK-xhs/s320/fb_7_php.png" />memcached 300+TB live data in RAM<br />
-<img border="0" src="http://2.bp.blogspot.com/_CZ0niZQI8-o/TClhFwKDqiI/AAAAAAAAFYM/O3U3lWEkvH8/s320/fb_9_memcached.png" />
-<img border="0" src="http://1.bp.blogspot.com/_CZ0niZQI8-o/TClhG_ySqCI/AAAAAAAAFYU/OZpWZkhxUDY/s320/fb_10_services.png" />All services are independent.<br /></p>
-
-<p><img border="0" src="http://1.bp.blogspot.com/_CZ0niZQI8-o/TClc7h6bXII/AAAAAAAAFXs/li-GVSNKLKg/s320/fb_arch2.png" /></p>
-
-<h2>Configure Managment</h2>
-
-<p>use CFengine 3<br />
-<img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TClc-5zkzjI/AAAAAAAAFX0/YVEFJjhzHuc/s320/fb_cfengine.png" /><br />
-Deployment</p>
-
-<p>we focus on web push.<br />
-Use BitTorrent to deploy source code, It&#8217;s very fast. <br /></p>
-
-<p><img border="0" src="http://1.bp.blogspot.com/_CZ0niZQI8-o/TCldGKDdrmI/AAAAAAAAFX8/wnZ86Su-m_g/s320/fb_webpush.png" /><br /></p>
-
-<br />
-
-
-<br />
-
-
-<br />
-
-
-<p>一般开发模式可能是 Engineering/QA/Operations，但是我们没有QA，因为沟通成本太高<br />
-我们的Engineers write,and deploy their own code, 能够快速关注性能问题，流量等<br />
-运营人员‘embedded’ int oengineering teams，来更好的做好架构决策，更好的理解产品<br /></p>
-
-<p><img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TCliNPdHmKI/AAAAAAAAFYc/3AL0JQhaVC8/s320/fb_14_engineering.png" /><br /></p>
-
-<br />
-
-
-<p>Change logging<br />
-所做的操作都记录在案，大部分更新时间都在凌晨1点<br /></p>
-
-<p><img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TCliT9U0O9I/AAAAAAAAFYk/ZuHLLt1i4Vs/s320/fb_15_change_logging.png" /><br /></p>
-
-<h2>Monitor and Metrics</h2>
-
-<p>Ganglia is very Fast.<br />
-<img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TClig79cXfI/AAAAAAAAFYs/aqbI5QkF19Q/s320/fb_16_monitor.png" />
-<img border="0" src="http://1.bp.blogspot.com/_CZ0niZQI8-o/TClijJ3VlGI/AAAAAAAAFY0/5bnB2jPKn4A/s320/fb_17_monitor2.png" /><br />
-another graph tool ODS <br /></p>
-
-<p><img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TCli2cVKxqI/AAAAAAAAFZE/Xdr4OLpD_AI/s320/fb_19_ods2.png" /><br /></p>
-
-<p><img border="0" src="http://3.bp.blogspot.com/_CZ0niZQI8-o/TCliltk5tNI/AAAAAAAAFY8/sdOJjgKLg8Q/s320/fb_18_ganglia.png" /><br />
-We basically use Nagios.<br /></p>
-
-<h2>Aggregation</h2>
-
-<p><img border="0" src="http://4.bp.blogspot.com/_CZ0niZQI8-o/TCli_LG0kDI/AAAAAAAAFZM/HSfWEp8m_PU/s320/fb_20_alarm.png" /><br /></p>
-
-<br />
-
-
-<h2>How we do it</h2>
-
-<p>Constant Growth<br />
-Constant Failure<br />
-Logical Units<br />
-servers, racks, clusters, datacenters<br />
-Constant Communication<br />
-Everyone use IRC<br /></p>
-
-<p><img border="0" src="http://2.bp.blogspot.com/_CZ0niZQI8-o/TCljJ21jt4I/AAAAAAAAFZU/wj7EoG2iIOE/s320/fb_21_communiction.png" /><br /></p>
-
-<h2>Small Teams</h2>
-
-<p><img border="0" src="http://2.bp.blogspot.com/_CZ0niZQI8-o/TCljTPe2YwI/AAAAAAAAFZc/e61xS_fRftI/s320/fb_22_users.png" /><br /></p>
-
-<br />
-
-
-<p>Recap<br /></p>
-
-<p><img border="0" src="http://2.bp.blogspot.com/_CZ0niZQI8-o/TCljZRhB8mI/AAAAAAAAFZk/vGW1HOEeN94/s320/fb_23_recap.png" /><br />
-screenshot from <a href="http://www.youtube.com/watch?v=T-Xr_PJdNmQ&amp;amp;feature=player_embedded#%21">youtube.</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/12/distributed-file-system-glusterfs/">分布式文件系统 GlusterFS</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-12T10:04:00+08:00" pubdate data-updated="true">Jun 12<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>文档</h2>
-
-<p>http://gluster.com/community/documentation/index.php/Gluster_Storage_Platform<br />
-http://gluster.com/community/documentation/index.php/GlusterFS_cookbook<br />
-最好的文档应该是git中的 user-guide.pdf<br /></p>
-
-<h2>代码</h2>
-
-<p>git clone git://git.gluster.com/glusterfs.git<br />
-貌似在gnu还有一份拷贝，但是似乎两个版本有细微差距<br />
-GlusterFS 能使用 libibverbs，下载地址在 http://www.openfabrics.org/downloads/verbs/ <br /></p>
-
-<p>对应于 configure 的结果中的  Infiniband verbs<br /></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>FUSE client        : yes
-</span><span class='line'>Infiniband verbs   : no
-</span><span class='line'>epoll IO multiplex : yes
-</span><span class='line'>argp-standalone    : no
-</span><span class='line'>fusermount         : no</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>优点</h2>
-
-<p>1 结构清晰<br />
-* libglusterfs<br />
-* glusterfsd<br />
-* booter<br />
-* glusterfs<br />
-* mod_gluster for apache/lighttpd 甚至支持 DAV<br /></p>
-
-<p>各司其职，每个模块功能都做到极致</p>
-
-<p>2 支持多种 signal 控制<br />
- object dump<br />
- latency 评测<br />
- 崩溃后会输出 backtrace(有可能不准确)<br />
- log rotate<br />
-功能不是很突出，但是这种编程、思维模式很好。<br /></p>
-
-<p>3 其 Translators 概念非常不错<br />
-   号称实现了所有 filesystem operations, 内部有一个比VFS更精细的树状结构:<br />
-   cluster/afr 貌似支持 raid1<br />
-   type cluster/unify<br />
-   type cluster/stripe<br />
-   type cluster/dht<br /></p>
-
-<p>都是很有价值的功能<br /></p>
-
-<p>这是我最喜欢的分布式文件系统实现，缺点是卷的配置是固定的，动态添加节点应该是不可能的(至少得改变父节点的配置文件)。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/11/distributed-file-system-ceph/">分布式文件系统 Ceph</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-11T09:46:00+08:00" pubdate data-updated="true">Jun 11<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Ceph 的<a href="http://ceph.newdream.net/about/">优点</a>写 得很突出
-* Striping
-* dynamic Meta Server
-* object  storage ?</p>
-
-<p>07 年就开始发布paper了，<a href="http://www.newdream.net/%7Esage/">作者</a>貌似只有一人，06 年的Phd毕业生。<br />
-系统好像依赖 btrfs, 有人说 btrfs 没有达到 product  级别，Ceph 作者也<a href="http://ceph.newdream.net/2010/05/linux-v2-6-34-is-out/">坦承</a>：</p>
-
-<blockquote><p>Please note, however, that Ceph is still  <strong>experimental</strong> and is not yet ready for use in a production environment.</p></blockquote>
-
-<p>因为Ceph依赖文件系统，搭建测试会比较费劲<br />
-我在初步阅读了服务器端的代码，C++实现, 代码量很大，感觉写得很丑陋，直觉就是不想测试这个分布式系统了。</p>
-
-<p>我没有阅读已经进入 Kernel 的Ceph Client 的代码。</p>
-
-<p>doc<br />
-<a href="http://www.ibm.com/developerworks/linux/library/l-ceph/index.html" target="_blank">http://www.ibm.com/developerworks/linux/library/l-ceph/index.html</a><br />
-<a href="http://ceph.newdream.net/about/" target="_blank">http://ceph.newdream.net/about/</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/10/system-monitoring-munin/">系统监控 Munin</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-10T09:44:00+08:00" pubdate data-updated="true">Jun 10<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在系统监控方面，有很多选择，如 ganglia, nagios, cacti, monit等等，各有所长。<br />
-ganglia 在集群监控上优势很大，对系统管理员非常有价值，但是对于服务开发者－程序员来说远远不够，监控项目太少了，二次开发，定制比较困难。</p>
-
-<p>munin 对内存的监控项目如下<br /></p>
-
-<p><img border="0" height="335" src="/pic/munin-memory-day.png" width="400" /><br /></p>
-
-<p>应该是非常详尽了的。<br /></p>
-
-<h2>munin 的特点</h2>
-
-<ul><li>扩展<br />
-munin 的 <a href="http://munin-monitoring.org/wiki/HowToWritePlugins">plugin</a> 编写比 ganglia 简单很多<br />
-ganglia 需要实现约定接口，最麻烦的是需要配置文件对输出结果进行自定义。统计項复杂时，几乎不可接受。<br />
-并且一个Plugin只能汇报一个值(统计项)，如果要在 rrdtool 中汇聚了多个值，出图又成问题。<br />
-munin 的扩展编写只需要脚本即可，如下：<br />
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo a.value 100</span></code></pre></td></tr></table></div></figure>
-并且一个独立的脚本就可以控制：出图，出值，配置信息<br />
-
-其<a href="http://munin-monitoring.org/wiki/Debugging_Munin_plugins">调试</a>过程也很容易,运行 munin-run load, munin-run load config 就能看到脚本是否正确<br />
-远程使用 telnet host 4949 也能进行测试<br />
-
-对于程序员，可以把程序内部的计数器，如函数调用次数，内部状态等汇报至监控系统。<br />
-</li>
-
-<li>性能<br />
-ganglia 本身轻量级很多，应该是主机向集群节点主动推送的机制 ?<br />
-munin 是中心节点定时去主机那里获取信息<br />
-munin-node 的执行开销比 gmond 的执行开销要大。可以通过禁用掉不太有价值的 plugin 来降低 load<br />
-</li>
-
-<li>系统容量<br />
-munin 能监控的主机数目完全受中心节点系统资源限制，如果 5 分钟内没有办法遍历一次所有主机就成问题了，munin 支持并发更新<br />
-其 Web 支持静态文件和 <a href="http://munin-monitoring.org/wiki/CgiHowto">CGI 方式</a><br />
-静态方式每次都要产生 png 和 html</li>
-
-<li>还有，munin 能使用 nagios 报警</li>
-</ul>
-
-
-<p>安装方式</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>yum -y install munin
-</span><span class='line'>yum -y install munin-node</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果失败，可以尝试配置 dag 的 yum repos<br /></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[dag]
-</span><span class='line'>name=Dag RPM Repository for Red Hat Enterprise Linux
-</span><span class='line'>baseurl=http://apt.sw.be/redhat/el5/en/$basearch/dag
-</span><span class='line'>gpgcheck=1
-</span><span class='line'>gpgkey=http://dag.wieers.com/rpm/packages/RPM-GPG-KEY.dag.txt
-</span><span class='line'>enabled=1</span></code></pre></td></tr></table></div></figure>
-
-
-<p>其他系统安装见<a href="http://munin-monitoring.org/wiki/LinuxInstallation">这儿</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/09/ip-query/">Ip库查询</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-09T09:51:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>现在网上流传的ip库，稍微处理了一下，一共 373691条记录，压缩后是 3.5M<br />
-记录格式如<br /></p>
-
-<blockquote>63.211.200.72&nbsp;&nbsp; 63.211.200.79&nbsp;&nbsp; 美国 加利福尼亚州山景市谷歌公司<br />
-64.41.221.192&nbsp;&nbsp; 64.41.221.207&nbsp;&nbsp; 美国 加利福尼亚州山景市谷歌公司<br />
-64.68.64.64&nbsp;&nbsp;&nbsp;&nbsp; 64.68.64.127&nbsp;&nbsp;&nbsp; 美国 加利福尼亚州山景市谷歌公司<br />
-64.68.80.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 64.68.95.255&nbsp;&nbsp;&nbsp; 美国 加利福尼亚州山景市谷歌公司<br />
-64.233.160.0&nbsp;&nbsp;&nbsp; 64.233.191.255&nbsp; 美国 加利福尼亚州山景市谷歌公司<br />
-66.102.0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 66.102.15.255&nbsp;&nbsp; 美国 加利福尼亚州山景市谷歌公司<br />
-66.249.64.0&nbsp;&nbsp;&nbsp;&nbsp; 66.249.95.255&nbsp;&nbsp; 美国 加利福尼亚州山景市谷歌公司<br />
-72.14.192.0&nbsp;&nbsp;&nbsp;&nbsp; 72.14.255.255&nbsp;&nbsp; 美国 加利福尼亚州山景市谷歌公司<br />
-74.125.0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 74.125.255.255&nbsp; 美国 加利福尼亚州山景市谷歌公司<br />
-194.221.68.0&nbsp;&nbsp;&nbsp; 194.221.68.255&nbsp; 英国 谷歌(北爱尔兰)有限公司<br />
-195.249.20.0&nbsp;&nbsp;&nbsp; 195.249.20.255&nbsp; 丹麦 谷歌公司</blockquote>
-
-
-<p>IP范围，然后是名称。名称为utf8编码。使用掩码表示可能更专业一些。<br /></p>
-
-<br />
-
-
-<p>写了个简单Python程序，使用二分法检索这个IP库。实际使用时启动为daemon，不用每次都加载30万条记录<br /></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">socket</span><span class="o">,</span> <span class="nn">struct</span><span class="o">,</span> <span class="nn">string</span>
-</span><span class='line'><span class="c"># import datetime</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">SubNetwork</span><span class="p">:</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-</span><span class='line'>    <span class="bp">self</span><span class="o">.</span><span class="n">portion</span> <span class="o">=</span> <span class="n">p</span>
-</span><span class='line'>    <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">m</span>
-</span><span class='line'>    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">n</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">return</span> <span class="s">&#39;</span><span class="si">%d</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">portion</span><span class="p">,</span>
-</span><span class='line'>      <span class="n">socket</span><span class="o">.</span><span class="n">inet_ntoa</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">&#39;&gt;I&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">portion</span><span class="p">)),</span>
-</span><span class='line'>      <span class="n">socket</span><span class="o">.</span><span class="n">inet_ntoa</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">&#39;&gt;I&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">)),</span>
-</span><span class='line'>      <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">IpLibrary</span><span class="p">:</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span class='line'>    <span class="bp">self</span><span class="o">.</span><span class="n">list</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">Find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ips</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">ip</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">&#39;&gt;I&#39;</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">inet_pton</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">ips</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>    <span class="n">high</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">):</span>
-</span><span class='line'>      <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span><span class="o">+</span><span class="n">high</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
-</span><span class='line'>      <span class="k">if</span> <span class="n">m</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">):</span>
-</span><span class='line'>        <span class="k">return</span> <span class="bp">None</span> <span class="c">#self.list[-1]</span>
-</span><span class='line'>      <span class="n">mv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">[</span><span class="n">m</span><span class="p">]</span>
-</span><span class='line'>      <span class="k">if</span> <span class="n">ip</span> <span class="o">&gt;</span> <span class="n">mv</span><span class="o">.</span><span class="n">portion</span> <span class="ow">and</span> <span class="n">ip</span> <span class="o">&lt;</span> <span class="n">mv</span><span class="o">.</span><span class="n">end</span><span class="p">:</span>
-</span><span class='line'><span class="c">#        print &#39;%d got (%d &lt; %d &lt; %d)&#39; % (m, mv.portion, ip, mv.end)</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">mv</span>
-</span><span class='line'>      <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">ip</span> <span class="o">&gt;</span> <span class="n">mv</span><span class="o">.</span><span class="n">end</span><span class="p">:</span>
-</span><span class='line'>          <span class="n">low</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>          <span class="n">high</span> <span class="o">=</span> <span class="n">m</span> <span class="o">-</span><span class="mi">1</span>
-</span><span class='line'><span class="c">#        print &#39;%d (%d  %d)&#39; % (m, ip, mv.end)</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">mv</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">Split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">sep</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">arr</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">sep</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
-</span><span class='line'>      <span class="k">if</span> <span class="n">i</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">ret</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">Load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-</span><span class='line'>      <span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span class='line'>      <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Split</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">)</span>
-</span><span class='line'>      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">continue</span>
-</span><span class='line'>      <span class="c"># &gt;I mean big-endian unsigned int</span>
-</span><span class='line'>      <span class="n">p</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">&#39;&gt;I&#39;</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">inet_pton</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-</span><span class='line'>      <span class="n">m</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">&#39;&gt;I&#39;</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">inet_pton</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-</span><span class='line'>      <span class="n">name</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">sn</span> <span class="o">=</span> <span class="n">SubNetwork</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">))</span>
-</span><span class='line'>      <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sn</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">#      if c &gt; 200:</span>
-</span><span class='line'><span class="c">#        break</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">Load</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-</span><span class='line'>  <span class="k">global</span> <span class="n">_lib</span>
-</span><span class='line'>  <span class="n">_lib</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">Query</span><span class="p">(</span><span class="n">ips</span><span class="p">):</span>
-</span><span class='line'>  <span class="k">global</span> <span class="n">_lib</span>
-</span><span class='line'><span class="c">#  t = datetime.datetime.now()</span>
-</span><span class='line'>  <span class="n">r</span> <span class="o">=</span> <span class="n">_lib</span><span class="o">.</span><span class="n">Find</span><span class="p">(</span><span class="n">ips</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">r</span>
-</span><span class='line'><span class="c">#  print &#39;query %s, result: %s, used: %s&#39; % (</span>
-</span><span class='line'><span class="c">#    ips, r, str(datetime.datetime.now() - t))</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span class='line'>  <span class="n">_lib</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span><span class="s">&#39;ipsu.txt&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">Query</span><span class="p">(</span><span class="s">&#39;1.155.3.3&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">Query</span><span class="p">(</span><span class="s">&#39;0.0.3.3&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">Query</span><span class="p">(</span><span class="s">&#39;255.255.3.3&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">Query</span><span class="p">(</span><span class="s">&#39;0.0.0.0&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">Query</span><span class="p">(</span><span class="s">&#39;218.0.4.137&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">Query</span><span class="p">(</span><span class="s">&#39;218.0.5.0&#39;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>需要注意的是，代码中的</p>
-
-<blockquote><p>struct.unpack(&#8216;>I&#8217;, &#8230;)</p>
-
-<p>&gt;I 的意思是 big-endian unsigned int</p></blockquote>
-
-<p>实际使用时，基本都在30毫秒左右返回结果</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/09/sector-sphere-review/">Sector/Sphere Review</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-09T09:36:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Sector/Sphere 是一个分布并行计算系统，用来存储、计算天文信息。Sector 是文件系统，Sphere 是并行计算平台。<br />
-其<a href="http://sector.sourceforge.net/benchmark.html">性能</a>超过了 Hadoop 一倍多。性能评测结果 <br />
-其分布指分布在几个州的 rack，使用 udt 通讯。<br /></p>
-
-<h2>特性</h2>
-
-<ul>
-<li>Master 能多份，好像得手工同步一些信息。
-Master和Node能随时添加、删除</li>
-<li>Sector automatically replicates files to different nodes to provide high reliability and availability. In addition, this strategy favors read-intensive scenarios since clients can read from different replicas.</li>
-<li>不对大文件切分，但是每个 dataset 还是可以由多个物理文件组成，切分是application的职责。</li>
-<li>流量：When Sector is running on 120 nodes, the aggregate network IO is greater than 60 Gb/s, while for Hadoop the number is only 15 Gb/s.</li>
-</ul>
-
-
-<p>开发了 3 年，开始并没有模仿 GFS，HDFS 等。发布了一些 Paper，最近一次发布在 2 月，SVN 在几天前也有更新。作者貌似是一个中国人。</p>
-
-<h2>其他</h2>
-
-<p>有 Python,Java binding<br />
-测试代码较少，几乎没有<br />
-C++，有严重 Java 痕迹，不算优雅，结构还过得去，能写成这样已算不错。<br />
-不能跨平台<br />
-有 fuse 实现<br />
-管理工具可能比较少</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1111,23 +948,31 @@ C++，有严重 Java 痕迹，不算优雅，结构还过得去，能写成这�
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+        <a href="/blog/2012/03/22/mawk-and-gawk/">mawk and gawk</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+        <a href="/blog/2011/12/31/trivial-detail-in-facebook-messenger/">trivial detail in facebook messenger</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+        <a href="/blog/2011/12/23/csdn-password-leak-under/">密码泄漏事件下的冰山</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+        <a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+        <a href="/blog/2011/11/30/digest/">Digest</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/nc-and-tar-play-nice-then/">nc and tar play nice then</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/01/hao-xi-guan/">好习惯</a>
       </li>
     
   </ul>

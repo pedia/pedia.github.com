@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: gfw | heartoutside]]></title>
-  <link href="http://blog.heartoutside.com/blog/categories/gfw/atom.xml" rel="self"/>
-  <link href="http://blog.heartoutside.com/"/>
-  <updated>2012-04-20T18:52:16+08:00</updated>
-  <id>http://blog.heartoutside.com/</id>
+  <title><![CDATA[Category: gfw | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/gfw/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-23T15:58:45+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[[转载]怎样访问被封杀了的几个网站|How to Visit the Banned Websites]]></title>
-    <link href="http://blog.heartoutside.com/blog/2007/03/30/reprint-how-to-access-was-blocked-several-websites-how-to-visit-the-banned-websites/"/>
+    <link href="http://log.heartoutside.com/blog/2007/03/30/reprint-how-to-access-was-blocked-several-websites-how-to-visit-the-banned-websites/"/>
     <updated>2007-03-30T13:58:00+08:00</updated>
-    <id>http://blog.heartoutside.com/blog/2007/03/30/reprint-how-to-access-was-blocked-several-websites-how-to-visit-the-banned-websites</id>
+    <id>http://log.heartoutside.com/blog/2007/03/30/reprint-how-to-access-was-blocked-several-websites-how-to-visit-the-banned-websites</id>
     <content type="html"><![CDATA[<p>原文地址：http://my.opera.com/fermi/blog/2007/03/29/how-to-visit-the-banned-websites<br />
 之前写到过<a href="http://my.opera.com/fermi/blog/2007-03-22-how-to-visit-the-banned-blogspot" target="_blank">如何利用脚本来访问被封杀的BlogSpot</a>（现已解封，万望愤青勿骂），看到还<a href="http://blogsearch.google.com/blogsearch?hl=en&amp;q=fermi+zhang+blogspot&amp;btnG=Search+Blogs" target="_blank">蛮多人回应和转载</a>的，原来大家都受大防火墙之苦这么深啊？呵呵。现在除了BlogSpot之外，我继续分享一下如何利用脚本访问被封杀的<a href="http://en.wikipedia.org/" target="_blank">Wikipedia</a>，<a href="http://fermi.wordpress.com/" target="_blank">WordPress</a>，<a href="http://huangjiahua.livejournal.com/" target="_blank">LiveJournal</a>（注：上述链接仅供测试）。同样的，打开记事本，写入以下内容：<br /></p>
 
