@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 架构 | heartoutside]]></title>
+  <link href="http://blog.heartoutside.com/blog/categories/架构/atom.xml" rel="self"/>
+  <link href="http://blog.heartoutside.com/"/>
+  <updated>2012-04-20T18:52:16+08:00</updated>
+  <id>http://blog.heartoutside.com/</id>
+  <author>
+    <name><![CDATA[Ken]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[WHY COM?]]></title>
+    <link href="http://blog.heartoutside.com/blog/2007/06/01/why-com/"/>
+    <updated>2007-06-01T13:03:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2007/06/01/why-com</id>
+    <content type="html"><![CDATA[<p>为何很多大型程序都使用了COM?</p>
+
+<p>COM 对程序有什么价值?</p>
+
+<p>使用了COM作为框架的程序:</p>
+
+<ul>
+<li>Firefox, <a href="http://lxr.mozilla.org/seamonkey/find?string=idl">搜索idl</a>能找到很多文件，并且实现了跨平台的<a href="http://www.mozilla.org/projects/xpcom/">XPCOM</a>,非常优秀的程序。</li>
+<li>IE, 自然使用了Window平台内置的COM</li>
+</ul>
+
+
+<p>我的机器上安装了一些Google的程序，我查看了一下：</p>
+
+<ul>
+<li><p>common/update/:<br />
+<a href="http://boostguy.googlepages.com/goopdate.idl">goopdate.idl</a> <br />
+<a href="http://boostguy.googlepages.com/UpdaterService.idl">UpdaterService.idl</a></p></li>
+<li><p>Google Desktop Search/:<br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopActions.idl"></a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopActions.idl"></a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopActions.idl">GoogleDesktopActions.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDeskband.idl">GoogleDeskband.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopAPI2.idl">GoogleDesktopAPI2.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopDisplay.idl">GoogleDesktopDisplay.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopIndex.idl">GoogleDesktopIndex.IDL</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopSSD.idl">GoogleDesktopSSD.IDL</a><br />
+<a href="http://boostguy.googlepages.com/GoogleUIEngine.idl">GoogleUIEngine.IDL</a><br /></p></li>
+<li><p>Google Earth<br />
+<a href="http://boostguy.googlepages.com/googleearth.idl">googleearth.IDL</a></p></li>
+<li><p>Google Talk<br />
+<a href="http://boostguy.googlepages.com/googletalk.idl">googletalk.IDL</a><br />
+<a href="http://boostguy.googlepages.com/swg.idl">swg.IDL</a></p></li>
+<li>Google Toolbar<br />
+<a href="http://boostguy.googlepages.com/googletoolbar3.idl">googletoolbar3.IDL</a></li>
+<li>RealPlayer SDK<br />
+<a href="http://www.google.com/codesearch?hl=en&amp;lr=&amp;q=IRMAPlayer&amp;btnG=Search">IRMAPlayer</a></li>
+</ul>
+
+
+<p>有必要说明的是很多程序为了和IE，Shell交互必须使用COM实现一些接口，如 Google Toolbar，但是有些程序为了暴露API給开发者也使用了COM,如GoolgeTalk, RealPlayerSDK,MSN等。</p>
+
+<p>编写小程序的确不应该用COM，依赖注册表，还有TypeLibrary等问题，的确不划算。但是有复杂进程通讯，复杂界面和逻辑交互的程序使用COM的确有不少好处：</p>
+
+<ul>
+<li>几乎能在任何需要的地方方便的得到任何需要的对象。避免使用可耻的全局变量。</li>
+<li>不用担心对象生存期和泄露问题，COM内置的引用计数解决了这个问题，当然接口泄露也会开始折磨程序员。</li>
+<li>接口定义是强制性的了。</li>
+</ul>
+
+
+<p>我个人倾向于使用COM，但是应该避免使用注册表，复杂的ConnectionPoint等技术。</p>
+]]></content>
+  </entry>
+  
+</feed>

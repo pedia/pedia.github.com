@@ -1,0 +1,1178 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>heartoutside</title>
+  <meta name="author" content="Ken">
+
+  
+  <meta name="description" content="转： 豆瓣的第二台应用服务器终于投入了使用。Hongqn 忙了一晚上就完成了部署。第一台服务器支撑到 500 万动态PV/天，服务 On Demand 即时分布式部署...... 500 万 PV , 还是动态 PV, 是个很惊人的数字。因为，如果都能达到一台机器支撑 500 万， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.heartoutside.com/blog/page/15">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">heartoutside</a></h1>
+  
+    <h2>not yet</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/01/17/5-million-dynamic-pv/">500万动态PV</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-17T07:07:29+08:00" pubdate data-updated="true">Jan 17<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><pre>转：<br />
+<br />
+豆瓣的第二台应用服务器终于投入了使用。Hongqn 忙了一晚上就完成了部署。第一台服务器支撑到 500 万动态PV/天，服务 On Demand 即时分布式部署......</pre>
+
+
+<p>500 万 PV , 还是动态 PV, 是个很惊人的数字。因为，如果都能达到一台机器支撑 500 万，那么国内稍有点规模的网站(就说动态PV 上亿的吧)，只需要 20 台 Web 服务器就够了。事实上，即使比较强调技术的网站怕也要上百台 Web 服务器的规模。</p>
+
+
+<p>我们知道豆瓣用 Lighttpd 做 Web 服务器。 从侦测到的数据看，目前线上有两个版本。<br />
+<br />
+</p>
+
+
+<pre>$ curl -I http://www.douban.com<br />
+HTTP/1.1 200 OK<br />
+.....(无关内容略)<br />
+Server: <strong>lighttpd/1.4.15</strong></pre>
+
+
+<p>另外一个版本：</p>
+
+
+<pre>$ curl -I http://www.douban.com/people/ahbei/<br />
+HTTP/1.1 200 OK<br />
+.....(无关内容略)<br />
+Server: <strong>lighttpd/1.4.18<br />
+<br />
+</strong></pre>
+
+
+<p>其实豆瓣服务器还有个更为惊人的性能数字。从这个 <a target=_blank target="_blank" href="http://trac.lighttpd.net/trac/wiki/PoweredByLighttpd">Powered by Lighttpd</a> 的列表来看，豆瓣在一台 Gentoo 服务器上的记录是 1200 万/天的点击量。这应该是动、静态页面混合情况下的吧。</p>
+
+
+<p>有同事对这个数据有些好奇，问我到底豆瓣是用啥做的服务器，其实这个问题我也问过阿北，他们就是自己攒的 PC 服务器，然后把性能发挥到极致。阿北也表示过，即使现在豆瓣流量激增个十倍啥的性能也不会是问题。这也是从起始就考虑扩展性的收益吧。</p>
+
+
+<p>这里这位老兄用 <a target=_blank target="_blank" href="http://shanti.railsblog.com/how-7-mongrels-handled-a-550k-pageview-digging">七台 Mongrels 跑了 55 万 PV</a> 就蛮自豪的，所以豆瓣的一台跑了&#8221;500 万动态 PV&#8221; 的确非常惊人。<br />
+<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+</p>
+
+
+<p>ｊａｖａ前台能搞定吗？有达人知否？<br />
+</p>
+
+
+<p><br />
+</p>
+
+
+<p>update: 豆瓣只有两台应用服务器？<br />
+5000000/3600=1388.8&nbsp; <br />
+<br />
+update: 上面算错了<br />
+应该是 5000000/(24*3600) = 57.87<br />
+谢谢黄晶<br />
+<br />
+<br />
+</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/01/12/country-swing-stands/">在祖国摆个小摊</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-12T06:53:21+08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><font size="5">祖国啊，我只是摆个小摊</font>！<br />
+<br />
+作者：老蛋<br />
+　　<br />
+　　祖国啊，他们嫌我挡了城市的道路<br />
+　　嫌我污秽了城市的路面<br />
+　　嫌我让城市不够宽敞明亮<br />
+　　嫌我影响了交通<br />
+　　影响了他们的升迁和政绩<br />
+　　<br />
+　　祖国啊，我知道我错了<br />
+　　我知道我应该买一个临街的商品房<br />
+　　可那些房价对我来说就是天价<br />
+　　祖国啊，我知道我很没用<br />
+　　我没有能力象一个真正的商人那样<br />
+　　填一大堆的表格<br />
+　　办理一大堆的证件<br />
+　　交一笔又一笔的费用<br />
+　　请一次又一次的客<br />
+　　祖国啊，我没有这个能力<br />
+　　我的能力只是埋头干活<br />
+　　埋头干活<br />
+　　<br />
+　　祖国啊，我只想摆一个小摊<br />
+　　每天能收到一些零钱<br />
+　　给孩子们交学费<br />
+　　支付老人的医疗费<br />
+　　我要让孩子们好好读书<br />
+　　不要再想我这样无用<br />
+　　我要让我的儿子在成年后<br />
+　　能够堂堂正正地办理营业执照<br />
+　　法人代码、税务登记、年检等等<br />
+　　能够堂堂正正地办理好所有的手续<br />
+　　做一个堂堂正正的商人<br />
+　　做一个堂堂正正的人<br />
+　　<br />
+　　祖国啊，这是个需要请客送礼的时代<br />
+　　可是我没有钱<br />
+　　没有钱买高级香烟和酒水<br />
+　　祖国啊，他们一般都抽高级香烟<br />
+　　喝好酒<br />
+　　我请不起送不到所以我活的很卑微<br />
+　　<br />
+　　祖国啊，我一定要让我的下一代<br />
+　　做一个不用摆摊的人<br />
+　　做一个不卑微的人<br />
+　　不要再象我这样<br />
+　　活着给城市添堵<br />
+　　<br />
+　　祖国啊<br />
+　　我是你四肢健全的儿子<br />
+　　可是却不能挽救倒闭的工厂<br />
+　　我是你听话懂事的儿子<br />
+　　却不能响应他们的号召<br />
+　　祖国啊，因为待在家里是不行的呀<br />
+　　孩子上学要花很多的钱呀<br />
+　　看个感冒也要花很多钱呀<br />
+　　<br />
+　　祖国啊，我想过去开出租车做个让大家都省心的车夫<br />
+　　可是我们没买车的钱更没有买证的钱<br />
+　　而且一辆出租车所需要办理的证件<br />
+　　都拿出来<br />
+　　是满满一兜子呀<br />
+　　<br />
+　　祖国啊，我只是想摆个小摊<br />
+　　其实都怪我胆子小<br />
+　　做这样成本小所以风险小的小买卖<br />
+　　我想过在亲戚朋友间四处借贷<br />
+　　开一个正经的合法的小餐厅<br />
+　　可是我实在不敢呀<br />
+　　实在赔不起呀<br />
+　　你知道我曾经将整个青春都赔掉了呀<br />
+　　祖国啊，那是我的青春呀<br />
+　　<br />
+　　祖国啊，这些道理其实我都懂<br />
+　　无证经营就会影响那些有证经营的人<br />
+　　这是一个公平的社会原则<br />
+　　这个原则是我儿时就懂得的真理<br />
+　　为了这个真理<br />
+　　我曾经在一面旗帜下奋斗了大半个人生<br />
+　　<br />
+　　祖国啊，我们曾经在一面旗帜下追求现代化<br />
+　　现在我实在想不通<br />
+　　没有了小摊<br />
+　　城市就现代化了吗<br />
+　　难道是我阻碍了现代化进程吗<br />
+　　我有这样大的罪恶吗<br />
+　　所以才会有带着大沿帽的人砸我的小摊<br />
+　　毁我的生计和我的尊严<br />
+　　<br />
+　　祖国啊，在我的心目中<br />
+　　大沿帽代表的是执法者<br />
+　　他们打我<br />
+　　就意味着我确实有罪<br />
+　　<br />
+　　祖国啊，我只是摆个小摊<br />
+　　在他们眼里却犯了如此地罪恶<br />
+　　需要用拳头来惩罚我<br />
+　　需要将我打倒在地<br />
+　　<br />
+　　祖国啊，我只是摆个小摊<br />
+　　我浅薄地认为城市应该允许存在小摊<br />
+　　毕竟开车需要宽敞道路的人是少数<br />
+　　大多数人都骑着自行车<br />
+　　在城市里享受城市的自由<br />
+　　<br />
+　　祖国啊，我只是摆个小摊<br />
+　　就算是有一万个理由证明我的罪恶<br />
+　　但念在我曾经为了那个振臂一呼的事业而洒下的汗水<br />
+　　我觉得我也值一个小摊<br />
+　　<br />
+　　祖国啊，我觉得我的大半生确实值一个小摊<br />
+　　就算我不值一个小摊<br />
+　　但我认为不应该殴打我<br />
+　　就算应该殴打我<br />
+　　但不能砸烂我的小摊<br />
+　　就算是应该砸烂我的小摊<br />
+　　但不应该砸烂小摊里的鸡蛋和葱花<br />
+　　<br />
+　　祖国啊，他不应该砸烂小摊里的鸡蛋和葱花<br />
+　　有了我的小摊还有鸡蛋和葱花<br />
+　　我就还有希望<br />
+　　<br />
+　　祖国啊，他不应该砸烂我的希望啊<br />
+　　虽然我没有一技之长<br />
+　　也没有什么经营头脑<br />
+　　可是我知道这是一个开放的时代<br />
+　　是一个日益宽容的时代<br />
+　　是一个强调平民意识的时代<br />
+　　是一个急需平民本色的时代<br />
+　　这个城市是我们每一个人的城市<br />
+　　就象祖国是我们每一个人的祖国一样<br />
+　　<br />
+　　祖国啊<br />
+　　祖国啊<br />
+　　无论如何他们都不应该<br />
+　　让我这个七尺高的中年男人在祖国的马路边<br />
+　　失声痛哭<br /></p>
+
+<br />
+
+
+<br />
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/01/11/finally-someone-said-java-does-not-fit-as-the-main-programming-language/">终于有人说出来了—ｊａｖａ不适合于作为主要编程教学语言</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-11T17:54:49+08:00" pubdate data-updated="true">Jan 11<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><font size="3"><a target=_blank href="http://blog.csdn.net/myan/archive/2008/01/10/2033386.aspx">转贴</a>，看下面加重部分。<br /></p>
+
+<br />
+
+
+<p>CSDN首页推荐了一篇文章，说两位退休的美国大学教授上书反对将ｊａｖａ作为编程教学语言，对此我表示高度认同。对于ｊａｖａ，我并不反感，而且相信它在工业应用中的地位不可取代，但是，我一直反对将ｊａｖａ作为主要的编程教学语言，因为教学语言承担着与生产语言不同的任务，它必须能够帮助学生奠定坚实的技术基础，塑造核心技术能力。在这方面，ｊａｖａ不能够胜任。<br /></p>
+
+<br />
+
+
+<p>1990年代中期以前，美国的计算机编程入门教育以Pascal为主。我的一位美国程序员朋友至今还怀念他与Pascal为伴的高中年代。到了1990年代中后期，由于ANSIC语言“纠正”了早期C语言的一些不适合编程教学的问题，因此成为很多美国高中和大学编程入门课的教学语言。1998年，美国指导编程教学的一个协会推荐将C++作为入门教学语言，在当时引起很大的反响，认为是编程教育方面的一个重要进步。但遗憾的是，C++非常复杂，而当时C++语言的教育体系又非常不成熟，因此很多地方的教学方法不得当，把学生迅速拖入无边无际的语言细节当中，引起了学生痛苦的抱怨。大约经过两三年不成功的实践之后，在本世纪初，美国计算机教育界普遍接受ｊａｖａ作为编程入门语言。此后在很短的时间里，ｊａｖａ迅速成为美国高中和大学里的首选编程教学语言，老师教得轻松，学生学得甜蜜，所以这个局面一直持续到现在。<br /></p>
+
+<br />
+
+
+<p>而在中国，BASIC语言及其变体一直到1990年代中期都还是“算法语言”课程的主要教学内容，充分折射出当时中国计算机教学与工业应用之间的脱节。只是到了1990年代后期，C语言才确立了在中国工科计算机编程入门教育中的主流地位。到现在为止，大部分工科学生都“必修”“C程序设计语言”这门课程。不过事实上，根据我的了解，这门课程的总体教学质量相当糟糕，大部分学生可以说是满怀希望而来，两手空空而去。在这种情况下，中国高校计算机编程入门教育已经开始悄悄向ｊａｖａ过渡了。据我所知，有一些名校已经开始将ｊａｖａ设为编程入门课程，并且认为这是与国际接轨进步标志。<br /></p>
+
+<br />
+
+
+<p>在我的朋友圈子里，大多数真正的一线开发者和技术领导者，对于将ｊａｖａ作为入门教学语言的“发展方向”都持质疑态度。他们中很多人目前主要的工作都集中在ｊａｖａ上，因此这种态度并非来自所谓语言宗教情绪，而是来自他们招聘和实际工作中的感受。他们发现，只学习ｊａｖａ、C#、VB等“现代”编程语言的学生，精于拿来主义，长于整合和快速开发，思维活跃，生产效率高，让他们来做直截了当的、有章可循的、非研究性和非创新性的工作比较合适，但是基础不扎实，对计算机系统的理解薄弱，处理细节和矛盾的能力不足，一旦他们熟悉的套路用不上，则缺少自主分析问题、解决问题的知识、能力和经验。<br /></p>
+
+<br />
+
+
+<p>今天看到两位教授的“上书”，才知道原来他们也有同感。只不过这两位教授说的更直白，直接反对将ｊａｖａ作为入门编程语言，而是冒天下之大不韪，公然号召开历史倒车，要求退回到C、C++、Lisp和Ada去。<br /></p>
+
+<br />
+
+
+<p>我是支持两位教授的。我认为，ｊａｖａ、C#、VB和其它虚拟机之上的语言都不适合作为专业程序员的入门教学语言。在中国还非常缺乏具有创新和独立解决问题的高水平程序员的局面下，我们应该认真做好的事情是努力提高C/C++的教学质量，而不是图快活转向ｊａｖａ。<br /></p>
+
+<br />
+
+
+<p>教学语言的选择是至关重要的事情。作为大多数学生第一种需要认真学习理解的编程语言，教学语言将会成为他们中间很多人的“编程母语”，深深地烙印在学生的思维方式中。这个编程母语要帮助学生破除计算机和软件的神秘感，建立对于程序的基本认识和对计算机模型的最初理解。在后续专业基础课和专业课程的学习中，这门编程语言应该作为主要工具贯穿始终，帮助学生认识计算机系统，掌握算法与数据结构技能，熟悉操作系统概念，理解编译原理知识，理解软件抽象及软件设计的基本思想，完成一定量的课程及课外项目实践，建立正确的软件开发实践习惯。不但如此，这种教学语言必须是工业界的主流语言，否则学生学非所用，学习动力无法保证。<br /></p>
+
+<br />
+
+
+<p>按照这个标准来衡量，ｊａｖａ适合于作为主要的编程教学语言吗？我不这么认为。首先，我承认ｊａｖａ在教学上有一些优势，比如其开发环境和工具支持非常成熟，有助于培养学生正确的编程习惯；ｊａｖａ是当今第一工业主流语言，标准类库非常全面，可以迅速地开发具有实际用途的程序，有助于激发和保持学生的兴趣；而在数据结构、算法、编译原理的教学方面，ｊａｖａ也毫不落于下风，在软件抽象设计（面向对象）方面，ｊａｖａ还有着明显的优势；特别是在并行编程的教学方面，ｊａｖａ 1.5concurrency包提供的优势是压倒性的。尽管有如上这些优势，但ｊａｖａ作为教学语言存在着一个致命的缺陷，即它是一个虚拟机语言，这一点就足以把它从教学语言的名单上去掉。作为一个虚拟机语言，ｊａｖａ对开发者隔绝了下层的真实系统，从而构造了一个近乎完美的环境，在这个环境里，世界上只有一种机器，一个操作系统，内存是无限的，所有的机器都具有相同的字节顺序和一致的类型约定，为了设计的优美而牺牲速度永远是正义行为，从反射到运行时自动加载，从完备的容器类到统一字符编码，一大堆漂亮的功能都可以不费吹灰之力唾手而得。要是这个世界上每台计算机都是一个ｊａｖａ机器，每项编程任务都可以在这样一个近乎完美的环境中开发，那毫无以为，ｊａｖａ是最合适的编程教学语言。但是事实上呢？这样一个完美的环境是ｊａｖａ力量的源泉，但这却不是真实的世界。在真实世界里，我们可能面对非常原始的环境，苛刻的运行时限制，复杂多变的系统环境，令人窒息的细节魔鬼，要对付这些东西，需要开发者具有在应对复杂性，自己构造环境，在诸多限制条件下寻找解决方案的能力。而这种能力，被无数人无数次地证明是软件开发、特别是软件创新的核心能力。把ｊａｖａ作为教学语言，恰恰会导致这种核心能力的缺失。除此之外，如果耐心观察的话，不难发现，几乎在任何软件领域里的创新性成果都首先是由C/C++语言实现的，原因很简单，ｊａｖａ是站在C/C++基础之上的，只有C/C++先把大路趟开，ｊａｖａ才能够顺势而上。<br /></p>
+
+<br />
+
+
+<p>相反，尽管C/C++语言作为教学语言有很多的不足，比如不同环境下开发模式差异大，细节繁多，开发效率低，容易犯错，测试和调试困难，学习者难以保持动力，等等，但是这些问题都可以解决。而C/C++的关键优点，是能够让学习者在真实的计算机抽象上、在大量的细节和矛盾中学会思考，学会解决问题，学会了解真实的系统，知轻重，明生死，从而建立核心能力。掌握了C/C++语言，再去学习和理解ｊａｖａ、C#、Python、Ruby和其它语言，就比较容易达到更高的境界。反之，如果习惯了舒舒服服躺在完美世界里当阔少，那就很难有勇气面对真实的世界。当然，很多开发者认为，现在更重要的能力是理解业务、整合现有资源的能力，而不是处理底层细节的技术。这种说法放在个人身上没有问题，但是不能成为整个编程教育的指导思想。我们需要各个层面上的人才，精通业务和设计的架构师固然很重要，但能够在底层作出创新成果的编程高手实际上更为稀缺和珍贵，很多时候也能够创造更大的价值。而且，更重要的是，一个精通系统知识的开发者在往上走的时候不会遇到大的障碍，而一个只知道拼装组合的“高级设计师”，往往连往下看的勇气都没有。<br /></p>
+
+<br />
+
+
+<p><font size="4"><span style="font-weight: bold;">ｊａｖａ的另外一个问题，是其所倡导的繁琐设计风格，一个对象套一个对象，一个对象叠一个对象，概念之间彼此横七竖八地互相依赖，人为制造出一大堆貌似精美、实则累赘的所谓设计。</span></font>这个问题我已经批评过多次，并且相信这股歪风一定会最终被人们抛弃，ｊａｖａ最终会归于质朴。但是在这一天到来之前，ｊａｖａ对于初学者来说，很可能蒙住他们的双眼，使他们看不到软件设计中最可贵的简单性和优美的统一，体会不到数据和程序的统一。在这一点上，C表现的非常好，而C++如果教学得体，可以做的更好。<br /></p>
+
+<br />
+
+
+<p>当然，这并不是为现在的C/C++教学辩护。恰恰相反，从我了解的情况来看，目前普通高校的C/C++教学质量非常令人担忧。学生学不会，而且越学越没有兴趣，老师则感到教起来很棘手，迫于现实情况往往选择敷衍了事。反而是教ｊａｖａ，无论如何学生还能学到一点东西，对就业也有直接的帮助。至于学生的核心能力确实，发展后劲不足等问题，就让他们在现实工作中自己解决吧。坦率地说，这种想法也很有道理。不过，从教学角度来说，我认为老师们还是应该积极考虑如何提高C/C++的教学质量。毕竟学生阶段是十分宝贵的，基础不在这个时期夯实，将来想弥补，就算不是完全不可能，也将付出十倍的代价。本着对学生职业生涯的负责态度，还是应该帮助学生达到这个阶段应该达到的目标。在两位教授的公开信里，也充分表达出这个意思。<br /></p>
+
+<br />
+
+
+<p>我赞成的编程教育过程，应当是以C/C++（基本上是C）为主线，贯穿起算法、数据结构、系统原理、编译和数据处理、软件设计和组件技术等关键知识领域，让学生能够从根本上理解现代软件系统的原理和构造，并通过有效的练习建立正确的软件设计观念和良好的工程实践习惯。在这个基础上，无论将来是深入学习C++，还是进入ｊａｖａ的繁荣世界，或者拥抱Python、Ruby，甚至于走向Web开发，都会心领神会，势如破竹。</font></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/01/10/mars-on-antispam/">火星文对AntiSpam</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-10T05:03:27+08:00" pubdate data-updated="true">Jan 10<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 class="entry-title"><a target=_blank class="entry-title-link" target="_blank" href="http://blog.sina.com.cn/s/blog_487ab9d501008io9.html">学究版火星文<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" height="18" width="18"></a></h2>
+
+
+<div class="entry-author"><span class="entry-source-title-parent">from <a target=_blank href="http://www.google.com/reader/view/feed/http%3A%2F%2Fblog.sina.com.cn%2Frss%2Fliusublog.xml" class="entry-source-title" target="_blank">三姓学奴网志</a></span> by <span class="entry-author-name">金仕并</span></div>
+
+
+<div>　　什么叫学究版火星文？如下：</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>　　三@角@地　－＞　三甪地。甪，音鹿，地名用字，实际上本来就是“角”字。</div>
+
+
+<div>　　自@由@门　－＞　自甴门。甴，古义罕用，在粤语中，“曱甴”是蟑螂的意思。</div>
+
+
+<div>　　法@轮@大@法　－＞　灋輪亣灋。灋，法的异体；亣，大的异形。</div>
+
+
+<div><div>　　冰@点@周@刊　－＞　氷奌週栞。氷：冰的异体；奌：点的俗体；週：周的繁体；栞：刊的异体。</div><div>&nbsp;</div></div>
+
+
+<div>　　另一种学究版火星文如下：</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>　　共@产@党　－＞　鉷铲镋，洪浐灙，拱摌攩。关键是要知道产和党的繁体。</div>
+
+
+<div>　　达@赖　－＞　澾濑，撻攋，橽櫴，薘藾。可惜的是字库只有噠，没有口＋赖。</div>
+
+
+<div>　　胡@锦@涛　－＞　鍸锦铸，湖淿涛，楜棉梼，媩婂嬦。最后一个比较搞，呵呵。</div>
+
+
+<div>　　毛@泽@东　－＞　蚝蠌蝀，枆檡栋。前一个可能喜欢的人会多一些。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>　　丄靣純屬娛楽，釱镓钘鈊铡钶。</div>
+
+
+<div>&nbsp;</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/01/10/abandoned-in-java/">遭到抛弃的ｊａｖａ</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-10T02:56:56+08:00" pubdate data-updated="true">Jan 10<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><font size="2">斯蒂文乔布斯发表声明：“ｊａｖａ根本不值得被嵌入，因为根本就没人会再去用它了！（它）简直臃肿笨重的跟囚犯脚上的脚链一样。”(是关于AppleiPhone上的语言的支持，<a target=_blank target="_blank" href="http://jdj.sys-con.com/read/331264.htm">原文</a>，<a target=_blank target="_blank" href="http://yeeyan.com/articles/view/16640/3966">翻译</a>)</font><br /></p>
+
+<br />
+
+
+<p><font size="2">         美国纽约大学的两位计算机科学系退休教授<a target=_blank target="_blank" href="http://developers.slashdot.org/article.pl?sid=08/01/08/0348239">发表一篇公开文章</a>，标题是“<a target=_blank target="_blank" href="http://www.stsc.hill.af.mil/CrossTalk/2008/01/0801DewarSchonberg.html">计算机科学教育：明日的软件工程师在何处？</a>”。在文中，他们强烈的批评了纽约大学和其他大学，没有向学生传授纯粹的语言如C、C++、Lisp和ADA。</font><i><br />
+<font size="2">“</font></i><font size="2">学生从当前教育实践课程中获取的技能不足以应付今日软件行业的发展（尤其是安全和安全目的方面）。更不幸的是，与外部行业需要过于匹配了，我们训练了许多容易被取代的软件工程师&#8230;.由于web应用程序的流行，ｊａｖａ成为入门课程中使用最普遍的语言。但是存在的缺陷使ｊａｖａ语言课程不是作为学生的第一课准备的，更不用提其它的更高级的语言。学生发现很难在一个没有图像界面的语言上编写程序，不清楚源程序和硬件如何执行之间的关系，更具有危险性的是一点也不了解指示器的语义，这使得使用C语言编程也成为挑战。”教授们认为真正的程序员能够使用任何语言（C，ｊａｖａ，Lisp，Ada）。<br /></p>
+
+<br />
+
+
+<p><span style="font-weight: bold;">这年头写个什么ｊａｖａ程序都离不开框架，而且都是巨型、重量级框架，难学、难用，和重量级类库一脉相承。好处是写出来的程序只要逻辑正确几乎不会崩溃。</span><br />
+</font></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/01/10/goal-of-earning-billions-of-dollars/">年收入千亿美元的目标</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-10T02:06:14+08:00" pubdate data-updated="true">Jan 10<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span style="font-weight: bold;">Google 太强大了，</span><a target=_blank style="font-weight: bold;" href="http://www.gseeker.com/50226711/googleceaec_134219.php">这</a><span style="font-weight: bold;">文章说到：</span><br /></p>
+
+<br />
+
+
+<p>EricSchmdit期望未来四年内，全世界的手机数量将达到40亿部，如果这些手机使用Google软件（Android平台）去销售广告，那么Google年收入达到1000亿美元只是迟早的事。他还说手机平台上的广告比绝大多数的广告更个人化及命中率更高，除此以外，电视也是另一个至关重要的广告市场。目前全球广告市场大概有10000亿美元，因此如果Google实现了1000亿美元的年入，那么就意味着Google占了10%的总份额。千亿美元的目标绝非易事，在2007年，Google的年收入也仅为160亿美元。但至少现在Google确认了它未来的重心。<br /></p>
+
+<br />
+
+
+<p>　　很显然，是否能实现千亿美元的目标，关键是Android平台能否有效地与Symbian、WindowsMobile等现有市场统治平台展开竞争。Google不像Apple那样亲自设计手机硬件，它只能依靠软件平台及应用，因此花费千万美元来鼓励开发，完全不过分。再者，在千亿美元的目标下，我们也至少可确认Google Phone并不只是玩玩而已，应该会有不少惊喜才对。<br /></p>
+
+<br style="font-weight: bold;"><span style="font-weight: bold;">选取手机作为增长点，我想Google做对了。</span><a target=_blank style="font-weight: bold;" target="_blank" href="http://www.gseeker.com/50226711/google_android_sdkceeaaeaecce_126173.php">Google Android平台</a><span style="font-weight: bold;">的开放在将来会具有巨大的历史意义的，和当年Gmail的横空出世一样影响巨大。</span>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/01/02/a-blog-answer-on-40cpp41/">上一篇日志答案&#40;c++&#41;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-02T22:18:16+08:00" pubdate data-updated="true">Jan 2<span>nd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>原文地址：<br />
+http://herbsutter.spaces.live.com/Blog/cns!2D4327CC297151BB!378.entry<br />
+作者是 herb sutter，不用怀疑权威性吧，哈～，<font size="-1">Secretary of the ISO/ANSI C++ Standards Committee<br />
+</font>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-正文开始&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br /></p>
+
+<p>A friend recently asked me whether Example 1 below is legal, and ifso what it means. It led to a nice discussion I thought I&#8217;d post here.Since it was in close to <a target=_blank target="_blank" href="http://www.gotw.ca/gotw/">GotW</a>style already, I thought I&#8217;d do another honorary one after all theseyears&#8230; no, I have not made a New Year&#8217;s Resolution to resume writingregular GotWs. :-)<br />
+<br />
+ </p>
+
+
+<h2>JG Questions</h2>
+
+
+<p> <h3>Q1: Is the following code legal C++?</h3> <blockquote> <p>// Example 1 </p></p>
+
+<p>string f() { return &#8220;abc&#8221;; } </p>
+
+
+<p>void g() {<br />
+&nbsp; <strong>const string&amp; s</strong> = f();<br />
+&nbsp; cout &lt;&lt; s &lt;&lt; endl;&nbsp;&nbsp;&nbsp; // can we still use the &#8220;temporary&#8221; object?<br />
+}</p>
+
+
+<p></blockquote> <h3>A1: Yes.</h3> <p>This is a C++ feature… the code is valid and does exactly what it appears to do.  </p></p>
+
+<p>Normally,a temporary object lasts only until the end of the full expression inwhich it appears. However, C++ deliberately specifies that binding atemporary object to a reference <em>to const</em> lengthens thelifetime of the temporary to the lifetime of the reference itself, andthus avoids what would otherwise be a common dangling-reference error.In the example above, the temporary returned by f() lives until theclosing curly brace. </p>
+
+
+<p>Does this work in practice? Yes, it works on all compilers I tried (except <a target=_blank target="_blank" href="http://digitalmars.com/download/freecompiler.html">Digital Mars</a>, so I just sent a bug report to Walter to rattle his cage :-) ).  </p>
+
+
+<h3>Q2: What if we take out the const&#8230; is Example 2 still legal C++?</h3>
+
+
+<p> <blockquote> <p>// Example 2 </p></p>
+
+<p>string f() { return &#8220;abc&#8221;; } </p>
+
+
+<p>void g() {<br />
+&nbsp; <strong>string&amp; s</strong> = f();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // still legal?<br />
+&nbsp; cout &lt;&lt; s &lt;&lt; endl;<br />
+}</p>
+
+
+<p></blockquote> <h3>A2: No.</h3> <p>The&#8221;const&#8221; is important. The first line is an error and the code won&#8217;tcompile portably with this reference to non-const, because f() returnsa temporary object (i.e., rvalue) and only lvalues can be bound toreferences to non-const. </p></p>
+
+<p>Note: Visual C++ does allow Example 2but emits a &#8220;nonstandard extension used&#8221; warning by default. Aconforming C++ compiler can always allow otherwise-illegal C++ code tocompile and give it some meaning &#8211; hey, it could choose to allowinline COBOL if some kooky compiler writer was willing to implementthat extension, maybe after a few too many Tequilas. For some kinds ofextensions the C++ standard requires that the compiler at least emitsome diagnostic to say that the code isn&#8217;t valid ISO C++, as thiscompiler does. </p>
+
+
+<p>I once heard <a target=_blank target="_blank" href="http://erdani.org/">Andrei Alexandrescu</a> give a talk on <a target=_blank target="_blank" href="http://www.ddj.com/cpp/184403758">ScopeGuard</a> where he used this C++ feature and called it &#8220;the most important <strong>const</strong>I ever wrote.&#8221; And this brings us to the Guru Question, whichhighlights the additional subtlety that Andrei&#8217;s code deftlyleveraged&#8230; </p>
+
+
+<p> <p> </p></p>
+
+<h2><br />
+Guru Question</h2>
+
+
+<p> <h3>Q3: When the reference goes out of scope, which destructor gets called?</h3> <h3>A3: The same destructor that would be called for the temporary object. It&#8217;s just being delayed.</h3> <p>Corollary: You can take a const Base&amp; to a Derived temporary and it will be destroyed <em>without virtual dispatch on the destructor call</em>.  </p></p>
+
+<p>This is nifty. Consider the following code:  </p>
+
+
+<blockquote> <p>// Example 3  </p>
+<p>Derived factory(); // construct a Derived object  </p>
+<p>void g() {<br />
+&nbsp; const Base&amp; b = factory(); // calls Derived::Derived here<br />
+&nbsp; // … use b …<br />
+} // <b>calls Derived::~Derived directly here</b> &#8211; not Base::~Base + virtual dispatch!</p>
+</blockquote>
+
+
+<p> <p>Doesthis work in practice on real compilers? Yes: Every compiler I haveaccess to calls the correct Derived destructor, including even ancientBorland 5.5 and Visual C++ 6.0 (and Digital Mars, though DM calls thedestructor at the wrong time, as noted above). </p>
+Andrei leveragesthis subtlety (of course) in his ScopeGuard implementation to avoidmaking the implementation classes&#8217; destructors virtual at all, which isokay in that case because those classes otherwise have no need for one.<img src="http://c.services.spaces.live.com/CollectionWebService/c.gif?cid=3261494312968475067&amp;page=RSS%3a+GotW+%2388%3a+A+Candidate+For+the+%22Most+Important+const%22&amp;referrer=" alt="" border="0" height="1" width="1"><br /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/01/02/cpp/">会c++的进来</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-02T21:16:58+08:00" pubdate data-updated="true">Jan 2<span>nd</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>下面的代码有问题吗？and why？<br />
+<br />
+</p>
+
+
+<p>string f() { return &#8220;abc&#8221;; } </p>
+
+
+<p>void g() {<br />
+&nbsp; <strong>string &amp; s</strong> = f();<br />
+&nbsp; cout &lt;&lt; s &lt;&lt; endl;&nbsp;&nbsp;&nbsp; // can we still use the &#8220;temporary&#8221; object?<br />
+}</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/27/happy-hobbit-feet/">Happy Hobbit Feet</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-27T21:36:50+08:00" pubdate data-updated="true">Dec 27<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span style="font-style: italic;">网监似乎没有屏蔽南开事件，互联网开始自由？发个图庆祝一下：</span><a target=_blank href="http://fm301.img.xiaonei.com/blog/20071227/13/28/A333505582940CUC.jpg" target="_blank"><br />
+<img src="http://fm301.img.xiaonei.com/blog/20071227/13/28/A333505582940CUC.jpg" alt="2131816420_7f48331f74.jpg"><br /></p>
+
+<br />
+
+
+<p><span style="font-size: 12pt;"><u><span style="color: Blue;"><div align="center"><b>&nbsp;新快报年度十大好书  2007-12-25  来源: 金羊网(广州)</b></div></span></u><br />
+来源：<a target=_blank href="http://news.163.com/07/1225/02/40HB61SH000120GU.html" title="http://news.163.com/07/1225/02/40HB61SH000120GU.html" target="_blank">http://news.163.com/07/1225/02/40HB61SH000120GU.html</a><br /></p>
+
+<br />
+
+
+<p>　　 《定西孤儿院纪事》<br />
+　　杨显惠/花城出版社/2007年3月版/定价：25.00元<br /></p>
+
+<br />
+
+
+<p>　　在《夹边沟纪事》后，杨显惠对人类生存绝境再一次集中展示和思索。巨大而又真切的苦难，使人喘不过气来，这样一种奇特的阅读体验，更多的是源于我们对47年前那场史无前例的饥荒。当我们看到一家人依次饿死在坑上无人掩埋，即将饿死的母亲绝望地吃掉自己的骨肉……觉得新奇乃至恐惧。以个体的经验，痛苦是难以遗忘的，但群体却未必会这样，杨显惠好比我们中间的巡更人，执着地敲着老锣，用嘶哑的呐喊提醒着我们“小心火烛”。（小古）<br /></p>
+
+<br />
+
+
+<p>　　《到黑夜想你没办法》<br /></p>
+
+<br />
+
+
+<p>　　曹乃谦/长江文艺出版社/2007年4月版/定价：24.00元<br /></p>
+
+<br />
+
+
+<p>　　从《最后的村庄》开始，曹乃谦就以其精练而简洁的文学语言让写作界感到惊诧。到《黑夜想你没办法》中，简短而直接的对话，平白之中讳莫如深的叙事，雁北地区一群光棍无法压制的性欲，再次使得一个原始而又民风淳朴的乡村出现在读者面前。和其他写作者不同，曹乃谦完全以脱离写作群体的自如状态进行创作，他坚持自己顽固的话语方式，不依靠采访，不需要虚构，他就是写自己的生活。他的独特，他和生活的亲近，唤醒着我们刻骨铭心的阅读体验。（朝北）<br /></p>
+
+<br />
+
+
+<p>　　《十年一觉电影梦》<br /></p>
+
+<br />
+
+
+<p>　　张靓蓓著李安（校订）/人民文学出版社/2007年10月版/定价：38.00<br /></p>
+
+<br />
+
+
+<p>　　如果选定年度最好的电影书，《十年一觉电影梦》的入列丝毫不过分。这本书虽以《李安传》的名目出现，但是，李安从《喜宴》开始一路谈来，直到《断背山》，他很详实、认真地谈论了自己对电影的理解。导演李安的“电影观”在全书中得到了比较完整的呈现。<br /></p>
+
+<br />
+
+
+<p>　　国内的电影书比较多的还是评论性的。电影评论应该是所有评论文体中门槛最低的，但因为电影知识的相对缺乏，使得影评文字更多的是观后感式的，导演群体似乎也都偷懒，在电影出版中也鲜见工作手记之类的文字；而《十年一觉电影梦》的出现，给影迷们打开了李安的窗户，同时电影的门可能也被风吹开了。（朝北）<br /></p>
+
+<br />
+
+
+<p>　　《致女儿书》<br /></p>
+
+<br />
+
+
+<p>　　王朔/人民文学出版社/2007年9月版/定价：15.00元<br /></p>
+
+<br />
+
+
+<p>　　和王朔以往的作品相比，可以说这是他的第一次“真人秀”。面对女儿，他坦诚地打开了真实的内心世界，他在此作了自我批判和反省。在别的事情上也许他都有为自己辩护的理由，惟独面对女儿，他无法辩护。抛弃了骂人时那副腔调的王朔，是一个慈爱的父亲，这本书在一定程度上是一个父亲的“忏悔录”。（荆墨）<br /></p>
+
+<br />
+
+
+<p>　　《福寿春》<br /></p>
+
+<br />
+
+
+<p>　　李师江/人民文学出版社/2007年8月版/定价：20.00元<br /></p>
+
+<br />
+
+
+<p>　　作者几乎是在原封不动地“复制”乡村，他极力将行文、观念包融在“乡村圆圈”之中，形式上更是借鉴明清白话小说，将乡村一层层地包裹得“团团圆圆”。他极力抑制自己的声音，限制自己过多的解释，避免主体的过多介入影响乡村生活的原生态呈现，“压抑住了局部出彩”，“把浑圆的力量藏在整体感中，缓缓地从文本中传递出去”（“创作札记”）。这种复制，需要读者有极大的耐心，需要读者调动自己的生活经历、思考去切入。不管怎么说，《福寿春》是一部很优秀、很独特的作品，它给我们带来的是一个新的惊喜。（之外人）<br /></p>
+
+<br />
+
+
+<p><span style="color: Blue;">《记者如何专业》<br /></p>
+
+<br />
+
+
+<p>　　张志安/南方日报出版社/2007年11月版/定价：38.00元<br /></p>
+
+<br />
+
+
+<p>　　相对一些学院论文而言，往往民间学人的研究更具鲜活的力量，不过最近由复旦大学新闻学院讲师完成的访问集却打破了这种局面。接受他采访的传媒人有李大同、卢跃刚、江艺平、迟宇宙、展江等知名传媒人，他们绕开了理论问题，直接谈论新闻业中最为基本和核心的问题，比如“监督的困境”、“调查的逻辑”、“记录的策略”等。<br /></p>
+
+<br />
+
+
+<p>　　新闻本身是一个重实践的领域，但是往往我们的新闻教育资源却最缺乏这一块。陈旧的教材、毫无从业经验的人员在新闻学院担任教职，直接导致了研究的滞后。《记者如何专业》是近来传媒书中上佳之作。（朝北）</span><br /></p>
+
+<br />
+
+
+<p>　　《我叫刘跃进》<br /></p>
+
+<br />
+
+
+<p>　　刘震云/长江文艺出版社/2007年11月版/定价：25.00元<br /></p>
+
+<br />
+
+
+<p>　　不管是“冯氏幽默”也好，“刘氏幽默”也罢，都敌不过生活的荒诞。而生活的荒诞，并不只因为这个世界的偶发艺术，更在于它的一本正经和自以为是。当我们都正襟危坐地思虑幽默的层次的时候，幽默本身也就成了荒诞。用一种可笑的方式来解构、呈现世界，是不错的主意；但解构本身，并不是最重要的东西，最重要的，仍然是付之一笑的背后，那坚硬如铁的现实。（小古）<br /></p>
+
+<br />
+
+
+<div style="width: 100%; overflow-x: auto;"><a target=_blank href="http://cimg2.163.com/catchpic/2/29/2952223C4C873B3B18766CD627A85567.jpg" target="_blank"><img src="http://cimg2.163.com/catchpic/2/29/2952223C4C873B3B18766CD627A85567.jpg" alt="http://cimg2.163.com/catchpic/2/29/2952223C4C873B3B18766CD627A85567.jpg"></a></div>
+
+
+<br />
+
+
+<br />
+
+
+<p>　　《我爱问连岳》<br /></p>
+
+<br />
+
+
+<p>　　连岳/作家出版社/2007年6月版/定价：28.00元<br /></p>
+
+<br />
+
+
+<p>　　连岳的出现，是因为这一悖论的需要，无论是上一本《我是鸡汤》，还是这本《我爱问连岳》。但连岳之所以是连岳，是因为他是反悖论的——也许他明白，当人们再度纷纷觉醒，这一行当迟早会消失，为了避免消失后无事可干，那就干脆不把自己装在一个大师，一个专家，一个牛逼得让你自惭形秽的神人。连岳选择一种为朋友看手相、聊星座的语言体系，没有阅读障碍的语言体系。他还选择了一套“爱情本身来源于世俗，不相信爱情是可悲的，但是把爱情概念化、标准化、真空化又是愚昧的”的价值体系，极具可操作性的价值体系。（小古）<br /></p>
+
+<br />
+
+
+<p>　　《小时候》<br /></p>
+
+<br />
+
+
+<p>　　桑格格/新星出版社/2007年5月版/定价：28.00元<br /></p>
+
+<br />
+
+
+<p>　　我不清楚这本由上世纪70年代人所写下的那段青春经验，到底能引起多少的共鸣，毕竟那只是属于一代人的特殊经历。但是这样的担心似乎又是多余，由于那样的独特历史环境，无论是大城市，还是内地县城，那些孩子们所面对的成人价值观与能接触到的知识世界都大体相同。在这样的时代背景下，桑格格给我们呈现了一个成都女童的成长经历。没有含情脉脉，也没有今不如昔的感伤，有的只是对幼稚的坦白，对成长的迷惑。以至于当我阅读的时候，虽然时常感伤，却又常常大笑。（成庆）<br /></p>
+
+<br />
+
+
+<p>　　《灿烂千阳》<br /></p>
+
+<br />
+
+
+<p>　　卡勒德·胡赛尼著李继宏译/上海人民出版社/2007年9月版/定价：28.00元<br /></p>
+
+<br />
+
+
+<p>　　在这部小说中，卡勒德·胡赛尼的所描写的是阿富汗的普通人。确切地说，他讲的是两位阿富汗女性的故事。作者作为男性，去写作两位女性的故事，不可谓不勇敢。这不是一个时下网络中流行的快餐故事，我也不会去写一个例行的评论。如果有一个感人至深的故事，那作者要做的只是安静地讲述就可以了。对于叙述本身的讨论，是哲学家的工作。只是要指出一点，尽管有着如此大的内在张力，作者却延续了上一本书的风格：很少有对于心理的直接描写。我喜欢这样的描写，不着一字，尽得风流。</span><br />
+</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/26/rogue-plugin-and-firefox/">流氓插件和Firefox</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-26T19:16:38+08:00" pubdate data-updated="true">Dec 26<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>为什么没有什么流氓插件傍上Firefox呢？<br /></p>
+
+<br />
+
+
+<p>Firefix和ie都支持plugin和extension，并且安装方式都有些类似：都是下载一个zip格式的包，执行安装脚本；启动时、打开某些网页时载入plugin。<br /></p>
+
+<br />
+
+
+<table border="1"><tbody><tr><td style="width: 100px; height: 23px;"><br />
+</td><td style="width: 100px; height: 23px;">安装包</td><td style="width: 100px; height: 23px;">安装脚本</td><td style="width: 100px; height: 23px;">载入机制</td><td style="width: 100px; height: 23px;">安装</td><td style="width: 100px; height: 23px;">卸载</td></tr><tr><td style="width: 100px;">firefox</td><td style="width: 100px;">xpi(zip format)</td><td style="width: 100px;">js + chrom + xpinstall</td><td style="width: 100px;">xpt</td><td style="width: 100px;">提示</td><td style="width: 100px;">extension 提供超级控制<br />
+plugin 似乎没有卸载支持</td></tr><tr><td style="width: 100px;">ie</td><td style="width: 100px;">cab(zip format)</td><td style="width: 100px;">inf</td><td style="width: 100px;">com</td><td style="width: 100px;">提示</td><td style="width: 100px;">一般，受安装方式限制，采用非一般安装ie根本卸载不了</td></tr></tbody></table>
+
+
+<br />
+
+
+<p>流氓时代(互联网泡沫时期)大量的插件都是extension的形式，通过非法手段导致ie卸载方式失效，ie7似乎也没有改进这种问题。firefox 的控制可谓非常严格：一般用户肯定能卸载、禁用一个extension。<br /></p>
+
+<br />
+
+
+<p>以前还写过一个ie插件：只要安装上了该插件，浏览一下某个页面会通过js控制下载安装包、执行安装(可以成为任何东西：extension，service&#8230;)。<br /></p>
+
+<br />
+
+
+<p>我最近在看如何写Firefox的Plugin，发现firefox远比我想象的脆弱，plugin方式和ie一样容易被植入流氓软件，甚至都没有卸载(能从界面上卸载flash插件吗？)。<br /></p>
+
+<br />
+
+
+<p>如果firefox的市场占有率上来了，结果可能会和ie一样？plugin能翻身成为extension吗？<br /></p>
+
+<br />
+
+
+<br />
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/16/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/14/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("boostguy", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/boostguy" class="twitter-follow-button" data-show-count="false">Follow @boostguy</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Ken -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'kenshao';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

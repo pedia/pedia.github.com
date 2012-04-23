@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>gtalk 支持 multi-chat - heartoutside</title>
+  <meta name="author" content="Ken">
+
+  
+  <meta name="description" content="// Generated .IDL file (by the OLE/COM Object Viewer)
+// // typelib filename: googletalk.exe [
+&nbsp; uuid(7B29C130-826A-4070-BA18-EC01E703D244),
+& &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.heartoutside.com/blog/2007/06/24/gtalk-support-for-multi-chat">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">heartoutside</a></h1>
+  
+    <h2>not yet</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Gtalk 支持 Multi-chat</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-06-24T07:49:37+08:00" pubdate data-updated="true">Jun 24<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>// Generated .IDL file (by the OLE/COM Object Viewer)<br />
+// <br />
+// typelib filename: googletalk.exe<br /></p>
+
+<br />
+
+
+<p>[<br />
+&nbsp; uuid(7B29C130-826A-4070-BA18-EC01E703D244),<br />
+&nbsp; version(1.0),<br />
+&nbsp; helpstring(&#8220;Google Talk API 1.0 Type Library&#8221;),<br />
+&nbsp; custom(DE77BA64-517C-11D1-A2DA-0000F8773CE9, 100663657),<br />
+&nbsp; custom(DE77BA63-517C-11D1-A2DA-0000F8773CE9, 1167684000),<br />
+&nbsp; custom(DE77BA65-517C-11D1-A2DA-0000F8773CE9, Created by MIDL version 6.00.0361 at Mon Jan 01 12:39:59 2007<br />
+)<br /></p>
+
+<br />
+
+
+<p>]<br />
+library GoogleTalkAPILib<br />
+{<br />
+&nbsp;&nbsp;&nbsp; // TLib :&nbsp;&nbsp;&nbsp;&nbsp; // TLib : OLE Automation : {00020430-0000-0000-C000-000000000046}<br />
+&nbsp;&nbsp;&nbsp; importlib(&#8220;stdole2.tlb&#8221;);<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; // Forward declare all types defined in this typelib<br />
+&nbsp;&nbsp;&nbsp; interface ITalkAPI;<br />
+&nbsp;&nbsp;&nbsp; interface <span style="font-weight: bold;">IMUCTalkAPI</span>;<br />
+&nbsp;&nbsp;&nbsp; interface IChatRoom;<br />
+&nbsp;&nbsp;&nbsp; interface IMUCTalkPlugin;<br />
+&nbsp;&nbsp;&nbsp; interface IChatRoomContact;<br />
+&nbsp;&nbsp;&nbsp; interface ITalkFriend;<br />
+&nbsp;&nbsp;&nbsp; interface ITalkPlugin;<br />
+&nbsp;&nbsp;&nbsp; interface ITalkTunnelExp;<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(4A1527F6-C11F-4131-82BC-FE891D4E3B70),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ITalkAPI Interface&#8221;),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; interface ITalkAPI : IUnknown {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT RegisterPlugin(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR plugin_guid, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR plugin_name, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR plugin_description, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR plugin_url, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR capability, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [out, retval] BSTR<em> token);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT UnregisterPlugin(BSTR plugin_guid_or_progid);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010002)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT SendMessage(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_id, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] SAFEARRAY(unsigned char) data);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010003)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT SendTextMessage(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_id, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR message);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010004)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetFriends(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [out, retval] SAFEARRAY(VARIANT)</em> friends);<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(7A9D1480-C6A1-11DA-95AB-00E08161165F),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;IMUCTalkAPI Interface&#8221;),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; interface IMUCTalkAPI : ITalkAPI {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60020000)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OpenChatRoom(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR room_jid, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_nickname, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_resource, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_app_capability, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_app_presence, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [out, retval] IChatRoom** chatroom_interface);<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(74C992C7-BA13-4E6A-A469-B43AE8FD557A),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;IChatRoom Interface&#8221;),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; interface IChatRoom : IUnknown {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetContacts([out, retval] SAFEARRAY(VARIANT)* contacts);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT SetUserNickname([in] BSTR nickname);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010002)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT SetUserPresenceState(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR capability, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR presence);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010003)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT LeaveRoom();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010004)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT BroadcastMessage(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] SAFEARRAY(unsigned char) data);<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(4C9DC108-C73F-11DA-95AB-00E08161165F),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;IMUCTalkPlugin Interface&#8221;),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; interface IMUCTalkPlugin : IUnknown {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OnNewContact([in] IChatRoomContact<em> chatroom_contact);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OnDeleteContact([in] IChatRoomContact</em> chatroom_contact);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010002)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OnPresenceUpdate([in] IChatRoomContact* chatroom_contact);<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(2C876D28-FB0C-11DA-9804-B622A1EF5492),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;IChatRoomContact Interface&#8221;),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; interface IChatRoomContact : IUnknown {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetNickname([out, retval] BSTR<em> nickname);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetResource([out, retval] BSTR</em> resource);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010002)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetCapability([out, retval] BSTR<em> capability);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010003)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetPresenceState([out, retval] BSTR</em> presence);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010004)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetRoomJid([out, retval] BSTR* room_jid);<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(38FDD2C4-9164-4EAF-8C74-24D764FF613E),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ITalkFriend Interface&#8221;),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; interface ITalkFriend : IUnknown {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetName([out, retval] BSTR<em> name);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetUserId([out, retval] BSTR</em> user_id);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010002)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetCapabilities([out, retval] SAFEARRAY(BSTR)<em> capabilities);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010003)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetStatus([out, retval] unsigned long</em> status);<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(5A9FF74C-53D0-4513-9481-0F61EDEEFFE2),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ITalkPlugin Interface&#8221;),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; interface ITalkPlugin : IUnknown {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OnReceiveMessage(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] IUnknown<em> talk_friend, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] SAFEARRAY(unsigned char) data);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OnDropDataOverFriend(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] IUnknown</em> talk_friend, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token);<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(65D12388-C5E9-468C-83B9-60AEA2E658DF),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ITalkTunnelExp Interface&#8221;),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; interface ITalkTunnelExp : IUnknown {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT RelayUrl(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_id, <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR url);<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(0507EEDE-3AE7-49C7-BF37-0EB4A62D8638),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;TalkAPI Class&#8221;)<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; coclass TalkAPI {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [default] interface IMUCTalkAPI;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; interface ITalkAPI;<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(D33F3CED-D7D5-44F1-A9FE-6927DABB1934),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ChatRoom Class&#8221;)<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; coclass ChatRoom {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [default] interface IChatRoom;<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(33B07FD4-5917-43E1-968D-4C79231836BF),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ChatRoomContact Class&#8221;)<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; coclass ChatRoomContact {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [default] interface IChatRoomContact;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; interface ITalkTunnelExp;<br />
+&nbsp;&nbsp;&nbsp; };<br /></p>
+
+<br />
+
+
+<p>&nbsp;&nbsp;&nbsp; [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(A8F086C3-2497-4229-82FE-586F2D326F95),<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;TalkFriend Class&#8221;)<br />
+&nbsp;&nbsp;&nbsp; ]<br />
+&nbsp;&nbsp;&nbsp; coclass TalkFriend {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [default] interface ITalkFriend;<br />
+&nbsp;&nbsp;&nbsp; };<br />
+};<br /></p>
+
+<br />
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ken</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-06-24T07:49:37+08:00" pubdate data-updated="true">Jun 24<span>th</span>, 2007</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.heartoutside.com/blog/2007/06/24/gtalk-support-for-multi-chat/" data-via="boostguy" data-counturl="http://blog.heartoutside.com/blog/2007/06/24/gtalk-support-for-multi-chat/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2007/06/23/google-ms-and-yahoo-in-alexa-top-100/" title="Previous Post: Google, M$ and yahoo in Alexa top 100">&laquo; Google, M$ and yahoo in Alexa top 100</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2007/07/13/xiaonei-experience-40-issue-41/" title="Next Post: xiaonei 使用体验&#40;问题版&#41;">xiaonei 使用体验&#40;问题版&#41; &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("boostguy", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/boostguy" class="twitter-follow-button" data-show-count="false">Follow @boostguy</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Ken -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'kenshao';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.heartoutside.com/blog/2007/06/24/gtalk-support-for-multi-chat/';
+        var disqus_url = 'http://blog.heartoutside.com/blog/2007/06/24/gtalk-support-for-multi-chat/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

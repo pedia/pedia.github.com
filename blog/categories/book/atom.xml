@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Book | heartoutside]]></title>
+  <link href="http://blog.heartoutside.com/blog/categories/book/atom.xml" rel="self"/>
+  <link href="http://blog.heartoutside.com/"/>
+  <updated>2012-04-20T18:52:16+08:00</updated>
+  <id>http://blog.heartoutside.com/</id>
+  <author>
+    <name><![CDATA[Ken]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[《软件随想录》 摘录]]></title>
+    <link href="http://blog.heartoutside.com/blog/2010/02/05/an-extract-of-the-software-were-recorded-in-the-caprice/"/>
+    <updated>2010-02-05T12:13:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2010/02/05/an-extract-of-the-software-were-recorded-in-the-caprice</id>
+    <content type="html"><![CDATA[<p><a href="http://www.douban.com/subject/4163938/">More Joe on Software</a><br />      - Joel Spolsky<br /></p>
+
+<h2>寻找优秀的程序员</h2>
+
+<ul><li>走出去</li>
+<li>实习生</li>
+<li>建立自己的社区</li>
+</ul>
+
+
+<h2>程序员在组织中如何被对待</h2>
+
+<ul><li>如果你不尊重程序员，你就得不到优秀的程序员。</li>
+<li>谁是他们的同事</li>
+<li>独立和自主<br />
+基本上，如果你要雇佣聪明人，你就必须让他们在工作中发挥机能。<br />
+程序员希望自己之所以被雇佣，是因为自己的机能，希望被被人当成专家那样对待，有权力在自己的专业领域中作出决定。</li>
+<li>不搞政治</li>
+<li>让一流的新员工挑选他们自己的项目</li>
+<li>使用非常必要的热门新技术</li>
+</ul>
+
+
+<br />
+
+
+<h2>程序员不在乎的一件事</h2>
+
+<p>他们实际上不在乎钱，除非你在其他事情上搞砸了。<br />
+当然并不意味着你可以向他们支付低工资。因为程序员对公正公平是在乎的。他们会被激怒的，然后突然之间，钱就将成为一个大问题。<br /></p>
+
+<br />
+
+
+<h2>三种管理方法</h2>
+
+<ul><li>军事化管理法</li>
+<li>经济利益驱动法</li>
+<li>认同法</li>
+</ul>
+
+
+<br />
+
+
+<h2>学校只教Java的危险性</h2>
+
+<ul><li>过去十年中，大量本来堪称完美的好学校，都百分之百转向了Java语言的怀抱。[P52]</li>
+<li>大学里只教Java语言，无法淘汰那些永远也成不了优秀程序员的学生，这已经是很糟糕的事情了。[P54]</li>
+<li>还有，计算机科学是由证明(递归)、算法(递归)、语言(λ演算)、操作系统(指针)、编译器(λ演算)所组成的，所以说那些不教C语言、不教Scheme语言、只教Java语言的学校实际上根本不是在教授计算机科学。[P56]</li>
+</ul>
+
+
+<br />
+
+
+<h2>技术派(geek)和务实派</h2>
+
+<p>从这个角度看，计算机界可以分成技术派(geek)和务实派(suits)两大类。[P61]<br />
+技术派想要把质量问题用软件自动处理。为了这个目的，他们发明了单元测试、测试驱动开发方法、自动测试、动态逻辑等，目的只有一个，就是证明程序中没有错误。<br />
+务实派并不真地关心质量有没有问题。只要有人愿意出钱购买软件，他们才不想关心代码中有没有错误。<br />
+当前，在技术派和务实派的大战中，务实派是获胜的一方，因为他们控制了公司的预算。老实说，我不觉得这是一件很糟糕的事情。务实派认识到，消灭软件代码中 的错误是一件边际报酬递减的事情。一旦软件的质量达到了一定的水准，能够用来解决特定的问题，那么就会有用户从这个软件中获益，用户也会因此愿意出钱购 买。<br />
+同时，务实派对于“质量”有一个更广义的定义。你尽管大胆的想象，这个定义完全符合利益原则。<br /></p>
+
+<br />
+
+
+<h2>给计算机系学生的建议</h2>
+
+<ol><li>毕业前练好写作</li>
+<li>毕业前学好C语言</li>
+<li>毕业前学好微观经济学</li>
+<li>不要因为枯燥就不选修非计算机专业的课程</li>
+<li>选修有大量编程实践的课程</li>
+<li>别担心所有工作都被印度人抢走</li>
+<li>找一份好的暑期实习工作</li>
+<li>寻求专业人士的帮助，培养你的自信心</li>
+</ol>
+
+
+<p></div></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Long Tail and Music]]></title>
+    <link href="http://blog.heartoutside.com/blog/2007/02/14/the-long-tail-and-music/"/>
+    <updated>2007-02-14T11:12:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2007/02/14/the-long-tail-and-music</id>
+    <content type="html"><![CDATA[<p>最近开始阅读<span style="font-style: italic;"><a href="http://book.sina.com.cn/nzt/live/fin/changwelilun/index.shtml">长尾理论</a></span>(<span style="font-style: italic;">The Long Tail</span>)，很不错的一本书，翻译质量也是上上之作(如果技术性书籍翻译水准能达到这个水平就好了)。<br /></p>
+
+<br />
+
+
+<blockquote>我们可以把长尾理论浓缩为简单的一句话：我们的文化和经济重心正在加速转移，从需求曲线头部的少数大热门（主流产品和市场）转向需求曲线尾部的大量利基产品。在一个没有货架空间的限制和其他供应瓶颈的时代，面向特定小群体的产品和服务可以和主流热点具有同样的经济吸引力。</blockquote>
+
+
+<br />
+
+
+<blockquote>1. 在任何市场中，利基产品都远远多于热门产品。而且，随着生产技术变得越来越廉价，越来越普及，利基产品的比重仍在以指数级的速度提高。<br />
+2. 获得这些利基产品的成本正在显著下降。数字传播、强大的搜索技术和宽带的渗透力组合成了一种力量，凭借它，在线市场正在改写零售经济学。现在，许多市场已经有能力供应空前丰富的产品。<br />
+3. 但仅仅供应更多的品种并不能改变需求，消费者必须有办法找到适合他们的特殊需求和兴趣的利基。从自动推荐到产品排名，一系列的工具和技术都能有效地做到这一点。这些“过滤器”可以把需求推向长尾的后端。<br />
+4. 一旦有了空前丰富的品种和用来做出选择的过滤器，需求曲线就会扁平化。热门产品和利基产品仍然存在，但热门产品的流行度会相对下降，利基产品的流行度则会相对上升。<br />
+5. 尽管没有一个利基产品能实现大的销量，但由于利基产品数不胜数，它们聚合起来，将共同形成一个可与大热门市场相抗衡的大市场。<br />
+6. 当以上几点全部实现，需求曲线的天然形状将会显现出来，不受供给瓶颈、信息匮乏和有限货架空间的扭曲。而且，这种形状受少数大热门的支配程度，远不像我们想象的那样大。相反，它的分布就像人口本身一样分散。</blockquote>
+
+
+<br />
+
+
+<p>想获得利基市场其实是一件很难的事情，技术上要解决的问题太多了：大量数据的搜索、存储、传输。哪个环节解决不好都会直接导致用户体验非常糟糕:-(，而且每个技术都是不那么容易的。<br /></p>
+
+<br />
+
+
+<p>做数字音乐的人士阅读这本书还是有些意义的，该理论似乎解释了音乐媒体的很多变化。<br /></p>
+
+<br />
+
+]]></content>
+  </entry>
+  
+</feed>

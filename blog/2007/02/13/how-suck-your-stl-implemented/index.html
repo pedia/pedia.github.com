@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How suck your STL implemented? - heartoutside</title>
+  <meta name="author" content="Ken">
+
+  
+  <meta name="description" content="我在vc7中做了一个测试，插入50万条随机生成的记录到hash_map中，结果令我大吃一惊。 随机字符串生成：字符串长度为1-12个小写字母(50万个字符串中大概只有34万个不重复) 插入的速度 vc7 STLstlport 4.62
+前25万条350ms/万条200ms/万条 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">heartoutside</a></h1>
+  
+    <h2>not yet</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How Suck Your STL Implemented?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-02-13T12:53:00+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>我在vc7中做了一个测试，插入50万条随机生成的记录到hash_map中，结果令我大吃一惊。</p>
+
+<p>随机字符串生成：字符串长度为1-12个小写字母(50万个字符串中大概只有34万个不重复)</p>
+
+<p>插入的速度</p>
+
+<table border="1" cellpadding="10" cellspacing="10"><tbody><tr><td></td><td>vc7 STL</td><td>stlport 4.62</td></tr>
+<tr><td>前25万条</td><td>350ms/万条</td><td>200ms/万条</td></tr>
+<tr><td>后25万条</td><td>进程没有反应</td><td>200ms/万条</td></tr>
+</tbody></table>
+
+
+<p>查询速度也有较大的差异，VC7 STL最差的命中查询在10ms。</p>
+
+<p>VC7自带的stl的效率差得让人吃惊。</p>
+
+<p>并且hash_map::resize等方法也没有提供(在bucket容量超过75%时hash表的效率一般会降低，不能调用resize扩充bucket容量了)。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ken</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-02-13T12:53:00+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2007</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/c-/'>c++</a>, <a class='category' href='/blog/categories/effective/'>effective</a>, <a class='category' href='/blog/categories/stl/'>stl</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented/" data-via="boostguy" data-counturl="http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2007/02/13/great-library-sigslot/" title="Previous Post: Great library: sigslot">&laquo; Great library: sigslot</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2007/02/13/vc7-compile-optimization/" title="Next Post: vc7 compile optimization">vc7 compile optimization &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("boostguy", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/boostguy" class="twitter-follow-button" data-show-count="false">Follow @boostguy</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Ken -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'kenshao';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented/';
+        var disqus_url = 'http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: dsel | heartoutside]]></title>
+  <link href="http://blog.heartoutside.com/blog/categories/dsel/atom.xml" rel="self"/>
+  <link href="http://blog.heartoutside.com/"/>
+  <updated>2012-04-20T18:52:16+08:00</updated>
+  <id>http://blog.heartoutside.com/</id>
+  <author>
+    <name><![CDATA[Ken]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[about DSEL]]></title>
+    <link href="http://blog.heartoutside.com/blog/2010/02/08/about-dsel/"/>
+    <updated>2010-02-08T15:06:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2010/02/08/about-dsel</id>
+    <content type="html"><![CDATA[<p>最近开始看一本老书(2004年版的): <strong>C++ Template Metaprogramming: Concepts, Tools, and Techniques from Boost and Beyond</strong>,
+<a href="http://www.amazon.com/Template-Metaprogramming-Concepts-Techniques-Beyond/dp/0321227255/ref=sr_1_1?ie=UTF8&amp;amp;s=books&amp;amp;qid=1265611847&amp;amp;sr=1-1">in amazon</a>
+我看的是中文版 <strong>C++模板元编程</strong>(2010年版), in <a href="http://www.amazon.cn/gp/product/B002WB1J0U/ref=ox_ya_os_product"> amazon.cn</a><br /></p>
+
+<p>之所以想到要看这本书，是因为对模板一直有些疑问，希望籍此解决模板方面的认知错误。<br />
+看到第一章，就被其讲述的<a href="http://en.wikipedia.org/wiki/Domain-specific_language">Domain Specific Language</a>吸引了，这是我的另外一个心病。<br /></p>
+
+<p>其中一句话：</p>
+
+<blockquote><p>最成功的DSLs通常是申诉式(declarative)语言，它为我们提供了用来描述 "what" 而不是 "how" 的符号。</p></blockquote>
+
+<p>并讲述了一个例子: Make语言，一般的Make语法都支持<br />
+<code>make
+OBJECTS = main.o kbd.o command.o
+edit: $(OBJECTS)
+main.o: main.cpp defs.h
+kbd.o: kbd.cpp defs.h command.h
+</code></p>
+
+<p>其省略了how, 如
+``` makefile
+main.o: main.cpp defs.h</p>
+
+<pre><code>c++ -c main.cpp
+</code></pre>
+
+<p>```
+这几乎接近DSEL的一个理想：<b>允许一个问题仅仅个哦能通过描述可以得到解决</b>。</p>
+]]></content>
+  </entry>
+  
+</feed>

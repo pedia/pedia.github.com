@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>WHY COM? - heartoutside</title>
+  <meta name="author" content="Ken">
+
+  
+  <meta name="description" content="为何很多大型程序都使用了COM? COM 对程序有什么价值? 使用了COM作为框架的程序: Firefox, 搜索idl能找到很多文件，并且实现了跨平台的XPCOM,非常优秀的程序。
+IE, 自然使用了Window平台内置的COM 我的机器上安装了一些Google的程序，我查看了一下： &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.heartoutside.com/blog/2007/06/01/why-com">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">heartoutside</a></h1>
+  
+    <h2>not yet</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">WHY COM?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-06-01T13:03:00+08:00" pubdate data-updated="true">Jun 1<span>st</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>为何很多大型程序都使用了COM?</p>
+
+<p>COM 对程序有什么价值?</p>
+
+<p>使用了COM作为框架的程序:</p>
+
+<ul>
+<li>Firefox, <a href="http://lxr.mozilla.org/seamonkey/find?string=idl">搜索idl</a>能找到很多文件，并且实现了跨平台的<a href="http://www.mozilla.org/projects/xpcom/">XPCOM</a>,非常优秀的程序。</li>
+<li>IE, 自然使用了Window平台内置的COM</li>
+</ul>
+
+
+<p>我的机器上安装了一些Google的程序，我查看了一下：</p>
+
+<ul>
+<li><p>common/update/:<br />
+<a href="http://boostguy.googlepages.com/goopdate.idl">goopdate.idl</a> <br />
+<a href="http://boostguy.googlepages.com/UpdaterService.idl">UpdaterService.idl</a></p></li>
+<li><p>Google Desktop Search/:<br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopActions.idl"></a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopActions.idl"></a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopActions.idl">GoogleDesktopActions.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDeskband.idl">GoogleDeskband.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopAPI2.idl">GoogleDesktopAPI2.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopDisplay.idl">GoogleDesktopDisplay.idl</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopIndex.idl">GoogleDesktopIndex.IDL</a><br />
+<a href="http://boostguy.googlepages.com/GoogleDesktopSSD.idl">GoogleDesktopSSD.IDL</a><br />
+<a href="http://boostguy.googlepages.com/GoogleUIEngine.idl">GoogleUIEngine.IDL</a><br /></p></li>
+<li><p>Google Earth<br />
+<a href="http://boostguy.googlepages.com/googleearth.idl">googleearth.IDL</a></p></li>
+<li><p>Google Talk<br />
+<a href="http://boostguy.googlepages.com/googletalk.idl">googletalk.IDL</a><br />
+<a href="http://boostguy.googlepages.com/swg.idl">swg.IDL</a></p></li>
+<li>Google Toolbar<br />
+<a href="http://boostguy.googlepages.com/googletoolbar3.idl">googletoolbar3.IDL</a></li>
+<li>RealPlayer SDK<br />
+<a href="http://www.google.com/codesearch?hl=en&amp;lr=&amp;q=IRMAPlayer&amp;btnG=Search">IRMAPlayer</a></li>
+</ul>
+
+
+<p>有必要说明的是很多程序为了和IE，Shell交互必须使用COM实现一些接口，如 Google Toolbar，但是有些程序为了暴露API給开发者也使用了COM,如GoolgeTalk, RealPlayerSDK,MSN等。</p>
+
+<p>编写小程序的确不应该用COM，依赖注册表，还有TypeLibrary等问题，的确不划算。但是有复杂进程通讯，复杂界面和逻辑交互的程序使用COM的确有不少好处：</p>
+
+<ul>
+<li>几乎能在任何需要的地方方便的得到任何需要的对象。避免使用可耻的全局变量。</li>
+<li>不用担心对象生存期和泄露问题，COM内置的引用计数解决了这个问题，当然接口泄露也会开始折磨程序员。</li>
+<li>接口定义是强制性的了。</li>
+</ul>
+
+
+<p>我个人倾向于使用COM，但是应该避免使用注册表，复杂的ConnectionPoint等技术。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ken</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-06-01T13:03:00+08:00" pubdate data-updated="true">Jun 1<span>st</span>, 2007</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/com/'>COM</a>, <a class='category' href='/blog/categories/google/'>Google</a>, <a class='category' href='/blog/categories/idl/'>IDL</a>, <a class='category' href='/blog/categories/xpcom/'>XPCOM</a>, <a class='category' href='/blog/categories/架构/'>架构</a>, <a class='category' href='/blog/categories/程序/'>程序</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.heartoutside.com/blog/2007/06/01/why-com/" data-via="boostguy" data-counturl="http://blog.heartoutside.com/blog/2007/06/01/why-com/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2007/03/30/reprint-how-to-access-was-blocked-several-websites-how-to-visit-the-banned-websites/" title="Previous Post: [转载]怎样访问被封杀了的几个网站|How to Visit the Banned Websites">&laquo; [转载]怎样访问被封杀了的几个网站|How to Visit the Banned Websites</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2007/06/21/wall-street-hopes-jerry-yang-is-offensive/" title="Next Post: 华尔街希望杨致远具有攻击性">华尔街希望杨致远具有攻击性 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("boostguy", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/boostguy" class="twitter-follow-button" data-show-count="false">Follow @boostguy</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Ken -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'kenshao';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.heartoutside.com/blog/2007/06/01/why-com/';
+        var disqus_url = 'http://blog.heartoutside.com/blog/2007/06/01/why-com/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

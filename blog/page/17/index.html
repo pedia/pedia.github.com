@@ -1,0 +1,975 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>heartoutside</title>
+  <meta name="author" content="Ken">
+
+  
+  <meta name="description" content="Microsoft.com: What&#8217;s the story? If you&#8217;ve ever wondered how microsoft.com uses our technology then read on.&nbsp; I recently came across &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.heartoutside.com/blog/page/17">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">heartoutside</a></h1>
+  
+    <h2>not yet</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/19/microsoftcom-what39s-the-story/">Microsoft.com: What&#39;s the Story?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-19T07:00:52+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h5 class="posthead pageTitle"><b style="color: black; background-color: rgb(255, 255, 102);">Microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b>: <b style="color: black; background-color: rgb(160, 255, 255);">What&#8217;s</b> the <b style="color: black; background-color: rgb(153, 255, 153);">story</b>? </h5>
+
+
+<p><font face="Segoe UI" size="2">If you&#8217;ve ever wondered how </font><a target=_blank href="http://www.microsoft.com/"><font face="Segoe UI" size="2"><b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b></font></a><font face="Segoe UI" size="2"> uses our technology then read on.&nbsp; I recently came across some good information from the folks over at the </font><a target=_blank href="http://blogs.technet.com/mscom/default.aspx"><font face="Segoe UI" size="2">Operations team</font></a><font face="Segoe UI" size="2"> at <b style="color: black; background-color: rgb(255, 255, 102);">Microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b>.&nbsp; The thread basically talks about how we use IIS, Firewalls and Windows Server 2008.&nbsp; I think as we come up to launch next year it&#8217;s a really good and quick insight into what they do and how they do it.&nbsp; So enjoy the reading and let me know what you think..Pretend I&#8217;ve asked about how they protect our sites&#8230;</font></p>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><font face="Segoe UI"><span style="background: yellow none repeat scroll 0%; font-size: 10pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US">At this point we still don&#8217;t use firewalls for MS.COM sites and don&#8217;t have any plans on the books to put them in place.</span><span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US">&nbsp; Here is the short answer as to why:</span></font></p>
+
+
+<ol><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">1 We don&#8217;t handle HBI data so we don&#8217;t have the need for external logging capabilities.&nbsp; If we did handle HBI, we&#8217;d have firewalls.</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">2 We have <b>~650GB/day of IIS logs</b> just for <font color="#000000"><a target=_blank href="http://www.microsoft.com/" target="_blank">www.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b></a></font> and </font><a target=_blank href="http://update.microsoft.com/"><font face="Segoe UI">update.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b></font></a><font face="Segoe UI"> (not including the <strong>6GB/hour</strong> for each download server).&nbsp; Just IIS logs are a challenge without trying to parse another <strong>~650GB</strong> of firewall logs.&nbsp; </font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">3 5+ years ago, there wasn&#8217;t a firewall solution that would scale to our needs and this forced us to focus on network, host, and application security.&nbsp; Based on the success of that work, we&#8217;ve not looked further at firewalls even though there are solutions that I believe (haven&#8217;t tested) would handled the traffic load (our non-download based web traffic alone can be in the <strong>8-9 Gbps</strong> range and ~30 total for internal hosted traffic).</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">4 <span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">We also used NLB for load balancing exclusively up until July 2006 and the micro segmentation of networks required by that solution made firewalls an expensive and very complex solution.&nbsp; Again, especially at the scalability that used to be available.</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">5 Application security is critical since a firewall is likely going to allow traffic on the correct port and protocol through to the web servers so IIS/ASP.NET/Applications must deal with these requests gracefully.&nbsp; I realize there are other options/features of firewalls/IPS that provide other options.</font></span></div></li></ol>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI"><br />
+In terms of how we protect the sites, we utilize (starting at the outside edge of the network and working in):<br />
+<br />
+ </font></span></p>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span></p>
+
+
+<ol><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">1 Cisco Guards for DoS detection and automated response</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">2 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">Router ACLs are in place to block unnecessary ports</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">3 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">NetScalers for <font color="#0000ff"><a target=_blank href="http://www.microsoft.com/" target="_blank">www.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b></a></font> and MSDN/TechNet (NLB still for update.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b>) and those also provide DoS protection inherently as well as providing a few other knobs we can turn when required.</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">4 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">Windows and IIS&#8230;<strong>rock solid and secure!</strong>&nbsp; </font><a target=_blank href="http://www.microsoft.com/" target="_blank"><font color="#0000ff" face="Segoe UI">www.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b></font></a><font face="Segoe UI"> is on Windows Server 2008/IIS7, MSDN/TechNet are migrating to Win2k8/IIS7, and update.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b> is on Windows Server 2003/IIS6.&nbsp; We do all the normal shut-off-unused-services practices that line up with MS published security guidance and we utilize GFS images to ensure standardized builds of systems.</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">5 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">Automated Netmon/Perfmon captures for attack analysis on NLB systems when SYN floods occur (event trigger).&nbsp; We&#8217;ve not yet done this for NetScaler systems, but we are noodling on how in our copious spare time :).</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">6 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">We do run AV on our servers when we can.&nbsp; At times product adoption means we don&#8217;t install it, but we do normally run AV.</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">7 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">Application security as mentioned.&nbsp; ACE is very good resource for this aspect.&nbsp; ACE is an internal team that does threat modelling for applications.</font></span></div></li></ol>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI"><br />
+So there you have it.&nbsp; I think this is a good insight into how we run our own internet properties today.&nbsp; What do you think?&nbsp; Have you got any feedback for the boys over at our MSCOM Operations team?</font></span></p>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span></p>
+
+
+<div class="wlWriterSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:03ecc2a4-e585-46f6-97b0-b5e6a7aab6c0" style="margin: 0px; padding: 0px; display: inline;">Technorati Tags: <a target=_blank href="http://technorati.com/tags/IIS" rel="tag">IIS</a>,<a target=_blank href="http://technorati.com/tags/Windows%20Server%202008" rel="tag">Windows Server 2008</a></div>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span></p>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">Cheers, Jeffa</font></span></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/18/mm-said-ten-ways-to-own-money-the-guy-the-article-is-too-cow-go/">对MM说自己有钱的十种方法 &#8211; 这厮的文章太牛了，转</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-18T18:25:58+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 class="entry-title"><a target=_blank class="entry-title-link" target="_blank" href="http://hi.baidu.com/huge/blog/item/914794ee6570d72a2df534e2.html">对MM说自己有钱的十种方法<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" height="18" width="18"></a></h2>
+
+
+<div class="entry-author"><span class="entry-source-title-parent">from <a target=_blank href="http://www.google.com/reader/view/feed/http%3A%2F%2Ffeed.hugege.com%2F" class="entry-source-title" target="_blank">胡戈戈的空间</a></span> by <span class="entry-author-name">胡戈戈2008</span></div>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1、我太穷了。我穷得除了剩下钱以外什么都没有了。</p>
+
+
+<p>　　[靠，这种话也能说出口。有钱人就是不一样，根本不把钱当钱。]</p>
+
+
+<p>　　2、哦，是你呀。我现在正在忙。忙什么？呵呵，今天出太阳了，我把钱搬出来晒一晒。</p>
+
+
+<p>　　[不至于吧，你有多少钱？都发霉了，还没花掉。有没有搞错。靠，你就不怕待会刮大风时把你钱给刮跑了？]</p>
+
+
+<p>　　3、比尔·盖兹？他那也叫有钱？靠，我要是让他给我数钱，他准会说我判了他一个无期。</p>
+
+
+<p>　　恭喜恭喜！你荣获21世纪无期徒刑最佳创意奖了。还有，你的这种创意已被收入吉尼斯世界纪录大全。］</p>
+
+
+<p>　　4、现在，银行的人都怕我了。他们说我要是把钱全都存到他们那里去，他们可就连落脚的地方也没有了。</p>
+
+
+<p>　　[多余的话我也不说了，强烈建议你把你银行放不下的钱全都放到我家。期待中。]</p>
+
+
+<p>　　5、谢灵运说，“天下才分十斗，曹子建独得八斗，我得一斗，天下人共用一斗。” 我说，“天下财分十斗，我独得八斗，我的家人得一斗，天下人共用一斗。”</p>
+
+
+<p>　　[偶像，佩服佩服。呕——］</p>
+
+
+<p>　　６、以前，我手底下的人一不听话，我就用钱砸他们。现在，我不砸了，我把他们带到我家，他们一进去，就说，乖乖，这么多钱，吓都吓死了。然后，说着就口吐白沫了。</p>
+
+
+<p>　　［天那，我被你的话吓住了。我无话可说了。］</p>
+
+
+<p>　　７、不好意思，到现在才打电话给你。是这样的，上个星期我见到了一只大象，我见它不爽，用钱砸它，它被砸死了。后来，处理此事的人，火化大象花了一天，焚烧我那钱好像到现在还没烧完。我正在关注着这事。</p>
+
+
+<p>　　［不是吧。大象的丧葬费也太高了吧。］</p>
+
+
+<p>　　８、你快打电话叫一百辆挖土机来吧。我家门口被倒塌下来的钱堵住了，我爬都爬不出来。</p>
+
+
+<p>　　［请问，一百辆挖土机够吗？］</p>
+
+
+<p>　　９、你在哪里？你快坐直升飞机来吧。我开跑车在钱堆里都三天三夜了，也没找到出口。</p>
+
+
+<p>　　［你掉到钱眼里去了？这是骂人的，说你比钱眼还要渺小。但再渺小，还知道你在钱眼里。你掉到钱堆里去了？这也是骂人的，但骂归骂，意义已经不同了。因为现在，你连渺小也不如了，你压根就已不存在。］</p>
+
+
+<p>　　１０、你知道什么叫闻风丧胆吗？当我告诉你我有多少钱时我知道了。靠，早知道如此，就不对你说了。现在还要带你去医院。真是的。</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/18/famous-in-the-history-of-the-top-ten-silly-events/">史上著名的十大超级愚蠢事件</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-18T07:02:27+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class="tit">史上著名的十大超级愚蠢事件</div>
+
+
+<div class="date">2007年12月11日 星期二  00:15</div>
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ●一位在竞选活动的民意调查中落后的日本政治家，为了获得同情的支持选票，制造出被人暗杀的假象。为了使暗杀看上去确有其事，这位政客用刀在自己腿上砍了一刀。没想到砍断了动脉，血流如注。在发表最后的竞选演说之前，他就一命呜呼。 <br /></p>
+
+<br />
+
+
+<p>　　●1971年，一位亚利桑那人开枪打伤了自己。这倒没有什么可大惊小怪的，这种事情时有发生。可是为了提高呼救声的分贝，这位受伤的人又开了一枪——打中了另外一条腿。 <br /></p>
+
+<br />
+
+
+<p>　　●17世纪的西班牙国王菲利普三世因发烧而去世，他的高烧是由于长时间坐在炉火旁而引起的。 <br /></p>
+
+<br />
+
+
+<p>　　既然他知道它的温度高，可为什么这位国王不从炉火那里移开呢？那不是他作为国王的工作。宫廷里负责照看炉火的佣人没有上班，他的工作就是把国王的座椅往后拉。 <br /></p>
+
+<br />
+
+
+<p>　　●一个法国人1998年尝试一次复杂的自杀。他站在一个高高的悬崖上，在脖子上套上一个索套，把绳索固定在一块巨大的岩石上。然后他喝下了毒药，并开始自焚。在从悬崖上跳下去的时候，他又朝着自己的脑袋开了一枪。 <br /></p>
+
+<br />
+
+
+<p>　　子弹没有打中目标，反而打穿了绳索，因此他掉到了海里而没能吊死。冰冷的海水扑灭了他衣服上的火焰，而且这种冲击力使他把毒药呕吐出来。 <br /></p>
+
+<br />
+
+
+<p>　　一位渔民把他从水里拖了起来，送到医院，结果他由于体温过低而死亡。 <br /></p>
+
+<br />
+
+
+<p>　　●纽约的一个反吸毒组织向在校小学生免费发放铅笔，铅笔上印有反毒品文字：“聪明人不沾染毒品”(Too Cool to DoDrugs)。当铅笔被削尖用完了一截后，那文字就变成了“聪明人沾染毒品”(Cool Do Drugs)。然后就是：“沾染毒品”(DoDrugs)。 <br /></p>
+
+<br />
+
+
+<p>　　●胡奥·菲格雷多将军在1979年被选为巴西总统之后，马上表现出权力政治的风格。 <br /></p>
+
+<br />
+
+
+<p>　　“我要把这个国家向民主开放，”他高兴地宣布，“我将把任何反对民主的人投入监狱，把他们砸碎！” <br /></p>
+
+<br />
+
+
+<p>　　●1932年洛杉矶奥运会。当法国的朱利·内尔打破了铁饼的奥运会纪录时，他那获胜的一掷被判无效——并非他违反了任何比赛规则，而是因为所有本应该注视着铁饼比赛的裁判员都转过头去观看撑杆跳高了。 <br /></p>
+
+<br />
+
+
+<p>　　●在投篮秒表出现之前，伊利诺伊州有过这样一场比赛：比赛开始不久，乔治城队罚球得了一分，接着他们就把球藏起来了，霍马队的队员毫无办法，只好在球场上席地而坐，而裁判则在看报纸。当比赛时间结束时，乔治城队开始庆祝他们1∶0的胜利。 <br /></p>
+
+<br />
+
+
+<p>　　●一位乌克兰商人给他的50名员工每人买了一个传呼机作为礼物。在他返回的路上，这50个传呼机同时叫了起来，他由于受惊过度以至于把车撞到电线杆上。 <br /></p>
+
+<br />
+
+
+<p>　　检查完伤势之后，他开始查看传呼机上的信息。只见这50个传呼机上出现了同一句话：“感谢购买本机！” <br /></p>
+
+<br />
+
+
+<p>　　●1968年，底特律的一个窃贼带着他的爱犬入室行窃。当警察发现时，窃贼仓皇逃走，却把爱犬留在后面。 <br /></p>
+
+<br />
+
+
+<p>　　警察非常容易地就抓住了窃贼，因为他们只是对狗说了句：“回家，宝贝！”</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/16/public-opinion/">民意</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-16T05:09:40+08:00" pubdate data-updated="true">Dec 16<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>某牧场买进了一批牛，其中一头公牛长的膘肥体壮油光水滑，牧场领导大喜过望，赐名“民意”。每逢节庆都把民意拉出来展示，以显示牧场工作的完美。但领导有个毛病，一兴奋起来就要扯蛋，久而久之民意就有了个蛋疼的毛病。<p>这蛋疼可不是什么好事，有句话叫“蛋疼不是病，疼起来真姚明”。民意也是这样，随着蛋疼逐渐严重，他的脾气也是越来越暴躁。某次重要庆典中甚至发狂把领导摔了个跟头。领导忍无可忍，终于下令阉了民意。</p></p>
+
+<p>太监后的民意解决了蛋疼的毛病，但食量却越来越大，领导只能把它散养在牧场上。某一天，它正在大口吃草，突然旁边一群母牛夺命狂奔，民意很纳闷：跑什么啊？母牛回答说：砖家们来了! 他们要吹牛B呢! 快跑啊……</p>
+
+
+<p>民意心想：我是公牛不是母牛，我没事儿……继续吃草。</p>
+
+
+<p>这时身边又冲过来一群公牛！民意更纳闷了，问：人家母牛跑，你们公牛跑啥啊？一公牛答道：砖家们不光吹牛B啊，还扯蛋呢！民意心想：我是阉牛，没有蛋蛋让他们扯，我怕谁？继续吃草。又过了一会儿，民意突然觉得下身传来一阵疼痛，一下子就昏了过去。 他猛然想到：居然忘记了砖家还擅长强奸民意啊……<br />
+<br />
+转自：http://zishuo.com/2007/12/14/185.html<br />
+</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/12/the-economist-recommending-200700-book-business-class/">《经济学人》推荐的2007百本好书 商业经济类</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-12T21:06:18+08:00" pubdate data-updated="true">Dec 12<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>1 《最后的大亨: Lazard Frères &amp; Co 的秘密历史 –关于无限野心、亿万财富、拜占庭式权利挣扎、以及隐秘丑闻的故事》<br />
+　　<br />
+　　The Last Tycoons: The Secret History of Lazard Frères &amp; Co—A Taleof Unrestrained Ambition, Billion-Dollar Fortunes, Byzantine PowerStruggles, and Hidden Scandal - By William D. Cohan. Doubleday; 742pages;<br />
+　　<br />
+　　William Cohan 曾经在Lazard 工作。他在书中讲述这家向富豪权贵提供企业咨询的投资银行是如何运作的 – 其商业模式不仅依赖资产负债表、而且有赖老板的头脑和阴谋。 <br />
+　　<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><br />
+2. 《黑天鹅：高度可改善带来的影响》<br />
+　　<br />
+　　The Black Swan: The Impact of the Highly Improbable - By Nassim Nicholas Taleb. Random House; 400 pages;<br />
+　　<br />
+　　讲叙华尔街操盘手在突如其来的权利下变成哲人<br />
+　　</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br />
+　　3.《底层十亿人：最贫穷的国家为何继续衰败？能采取什么措施？》<br />
+　　<br />
+　　The Bottom Billion: Why the Poorest Countries are Failing and What CanBe Done About It - By Paul Collier. Oxford University Press; 224 pages;<br />
+　　这本书由牛津大学的经济学教授撰写，洋溢着统计学才华和常识，那些卷入了助人摆脱贫困这一不讨好事业的人士必读。<br />
+　　</strong></strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><em><br />
+　　4.《动荡年代：新世界冒险》<br />
+　　The Age of Turbulence: Adventures in a New World - By Alan Greenspan(格林斯潘). Penguin Press; 531 pages; <br />
+　　<br />
+　　著名的前联储主席回忆录与文章，无甚惊喜，但可读性出奇地好。<br />
+　　</em></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><strong><strong><br />
+　　5.《维基经济学：大众合作如何改变一切》<br />
+　　Wikinomics: How Mass Collaboration Changes Everything<br />
+　　 - By Don Tapscott and Anthony D. Williams. Portfolio; 320 pages; <br />
+　　<br />
+　　互联网社区兴起将根本改变商业模式，相信的人应该读一读这本指南。<br />
+　　</strong></strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><br />
+　　6.《从目标远大到雇佣军：美国商学院的社会转型，对管理职业的期待不能兑现》<br />
+　　<br />
+　　From Higher Aims to Hired Hands: The Social Transformation of AmericanBusiness Schools and the Unfulfilled Promise of Management as aProfession - By Rakesh Khurana. Princeton University Press; 542 pages; <br />
+　　<br />
+　　哈佛商学院教授讲述管理学如何误入歧途的有趣故事。<br />
+　　</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><strong><strong><br />
+　　7.《亿万富翁不再：Chuck Feeney如何秘密致富又如何千金散尽》<br />
+　　<br />
+　　The Billionaire Who Wasn&#8217;t: How Chuck Feeney Secretly Made and GaveAway a Fortune - By Conor O&#8217;Clery. PublicAffairs; 352 pages;<br />
+　　<br />
+　　热衷于秘而不宣的一个爱尔兰美国人，如何隐秘地开拓商业王国，又如何革命性地改变了慈善事业。此书讲叙这样一个热闹繁华了一场的故事。<br />
+　　</strong></strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><br />
+　　<br />
+　　8.《善的力量：六大法则造就高影响力的非盈利组织》<br />
+　　Forces for Good: The Six Practices of High-Impact Nonprofits - ByLeslie R. Crutchfield and Heather McLeod Grant. Jossey-Bass; 336 pages;<br />
+　　当非盈利组织的重要性壮大时，如何妥善有效地管理它们也愈发重要。巧妙挑选的例子展示了创造出影响力的最佳非盈利组织是如何运作的。<br />
+　　</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>____<br />
+　　9.《超级数字天才：为何数字式思考是变得精明的新方法》<br />
+　　Super Crunchers: Why Thinking-by-Numbers Is the New Way to Be Smart<br />
+　　- By Ian Ayres. Bantam; 272 pages; $25. John Murray;<br />
+　　<br />
+　　通过生动清晰的分析，显示累计大量数据正如何改变商业（和个人）决策。<br /></p>
+
+<br />
+
+
+<p>注：曾在eng2chi.blog.tianya.cn 公布此翻译</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/12/2006-part-of-the-40-national-human-rights-report-includes-tibet-hong-kong-and-macau-41-select-and-translate/">2006年度各国人权报告 &#8211; 中国部分&#40;包括西藏、香港和澳门&#41;摘译</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-12T02:13:32+08:00" pubdate data-updated="true">Dec 12<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>原文地址： http://www.sohoxiaobao.com/chinese/bbs/blog_view.php?id=779425<br /></p>
+
+<br />
+
+
+<p> <div align="center"><center><table style="" bgcolor="#cccccc" border="0" cellpadding="0" cellspacing="0" width="650"><tbody><tr><td bgcolor="#666666" height="3"><img src="http://www.sohoxiaobao.com/chinese/bbs/images/spacer.gif" border="0" height="1" width="1"></td></tr><tr><td><br /></p>
+
+<table align="center"><tbody><tr><td align="left"><br />
+<blockquote><p align="center"><span class="blog_topic"><b>《2006年度各国人权报告》──中国</b></span></p>
+</blockquote></td></tr><tr><td align="center"><br />
+</td></tr></tbody></table>
+
+
+<p></td></tr><tr><td><br />
+</td></tr><tr><td><br />
+</td></tr><tr><td bgcolor="#666666" height="3"><br />
+</td></tr></tbody></table></center></div><br /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/11/math-problem-to-ask-for-help/">数学题请求帮助</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-11T01:57:30+08:00" pubdate data-updated="true">Dec 11<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>外甥问一个题，不知如何计算，请求帮助<br /></p>
+
+<br />
+
+
+<p>一个两位数除另一个两位数商和余相等，请问被除数最大是多少？</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/11/know-34-sitnation-34-translation/">知道&#34;真抓实干&#34;的翻译吗？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-11T01:43:55+08:00" pubdate data-updated="true">Dec 11<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 class="entry-title"><a target=_blank class="entry-title-link" target="_blank" href="http://www.sohoxiaobao.com/chinese/bbs/blog_view.php?id=778897">真抓实FUCK<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" height="18" width="18"></a></h2>
+
+
+<div class="entry-author"><span class="entry-source-title-parent">from <a target=_blank href="http://www.google.com/reader/view/feed/http%3A%2F%2Fwww.sohoxiaobao.com%2Fchinese%2Fbbs%2FRssFeed.php%3FRssID%3D7%26BlogId%3D9213%26RssDataMode%3D1" class="entry-source-title" target="_blank">钱烈宪要发炎</a></span> by <span class="entry-author-name">moogee</span></div>
+
+
+<br />
+
+
+<p><img src="http://www.sohoxiaobao.com/chinese/uploadfile2/_2007/_12/_10/200712_10_15_36_11_1197272171.4.jpg" width="470"><br /></p>
+
+<br />
+
+
+<p><img src="http://www.sohoxiaobao.com/chinese/uploadfile2/_2007/_12/_10/200712_10_15_36_41_1197272201.59.jpg" width="470"><br /></p>
+
+<br />
+
+
+<p>页面地址：<br />
+<a target=_blank target="_blank" href="http://scholar.ilib.cn/A-gssjjglgbxyxb200302001.html">http://scholar.ilib.cn/A-gssjjglgbxyxb200302001.html</a><p><br />
+貌似已经处理掉了<br />
+但是在该站搜索中，依然保留<br />
+点击上页面中部红色“全部关键词”进入：</p></p>
+
+<br />
+
+
+<p>http://service.ilib.cn/Search/Search.aspx?Query=%e7%94%98%e8%82%83%e7%9c%81+%e5%ae%9e%e6%96%bd%e8%a5%bf%e9%83%a8%e5%a4%a7%e5%bc%80%e5%8f%91+%e6%88%90%e7%bb%a9+%e7%bb%8f%e9%aa%8c+%e4%b8%8e%e6%97%b6%e4%bf%b1%e8%bf%9b+%e7%9c%9f%e6%8a%93%e5%ae%9e%e5%b9%b2<br />
+或者 http://www.ilib.cn/A-gssjjglgbxyxb200302001.html<br /></p>
+
+<br />
+
+
+<br />
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/09/open-source-license-in-new-version-im/">Open Source License in New Version IM</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-09T06:33:52+08:00" pubdate data-updated="true">Dec 9<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天<a target=_blank href="http://xiaonei.com/getuser.do?portal=search&amp;id=202911262">小白</a>问了一下新版的IM的实现，谈起License问题，俺自己都不知道使用的库分别是什么License。使用的Open Source和License列表如下：<br /></p>
+
+<br />
+
+
+<p><a target=_blank target="_blank" href="http://upp.sf.net">UPP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BSD,and <a target=_blank target="_blank" href="http://www.ultimatepp.org/app$ide$About$en-us.html">&#8230;</a>&nbsp; 界面框架<br />
+<a target=_blank target="_blank" href="http://camaya.net/gloox">gloox</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GPL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jabber协议的实现<br />
+<a target=_blank target="_blank" href="http://sqlite.org">sqlite</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; other:几乎等于放弃版权&nbsp; 数据库<br />
+<a target=_blank target="_blank" href="http://www.int64.org/sqlite.html">SQLite C++ Wrapper</a>&nbsp;&nbsp; zlib&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+boost&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a target=_blank target="_blank" href="http://boost.org/more/license_info.html">boost license</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 使用(string&nbsp; algorithm, property_tree)<br />
+<a target=_blank target="_blank" href="http://sigslot.sourceforge.net/"></a><a target=_blank target="_blank" href="http://boost.org/more/license_info.html"><br />
+</a>只有gloox是gpl的，之前的方案是打算用 <a target=_blank target="_blank" href="http://code.google.com/p/libjingle">libjingle，</a> 是BSD的。<br /></p>
+
+<br />
+
+
+<p>我们该如何做呢？License会困扰我们吗？<br /></p>
+
+<br />
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/06/elite-dictatorship-zt/">精英专政 Zt</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-06T05:39:44+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 class="entry-title"><a target=_blank class="entry-title-link" target="_blank" href="http://www.yeeyan.com/articles/view/888888/3356">精英专政<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" height="18" width="18"></a></h2>
+
+
+<div class="entry-author"><span class="entry-source-title-parent">from <a target=_blank href="http://www.google.com/reader/view/feed/http%3A%2F%2Ffeeds.feedburner.com%2Fyeeyan_tech_zh" class="entry-source-title" target="_blank">译言-技术与创业</a></span> by <span class="entry-author-name">cccccc</span></div>
+
+
+<p>原文作者：david brooks<br />
+原文链接：<a target=_blank target="_blank" href="http://www.nytimes.com/2007/12/04/opinion/04brooks.html?_r=3&amp;ref=opinion&amp;oref=slogin&amp;oref=slogin&amp;oref=slogin">d</a><br />
+译者：<a target=_blank target="_blank" href="http://www.yeeyan.com/space/show/888888">cccccc</a></p>
+
+
+<div>假设你出生在中国。你是一位独生子，被父母和四位祖父母宠着，有时他们甚至称你为小皇帝。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>他们慢慢向你灌输儒教传统，尤其是等级和努力工作的价值。他们把你送到学校。你发现要学习汉字得有非凡的记忆。你慢慢的被中国强烈的人力资本规则塑造成型。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>你很快就会明白一个外来者在经过许多交流后理解的东西：今天的中国是一个被人才迷住了的社会，并且中国执政精英就像NBA一样招募人才 <strong>—</strong> 严厉，无情，以一个完全精英的方式。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>随着逐渐升学，你需要在每学期末的考试中取得一流的成绩，才能进入精英大学。中国学生已经像这样考试超过一千年了。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>考试不鼓励创新思维，它只鼓励努力学习和死记硬背。你的青春期就是围绕着考试转 <strong>－</strong> 补习讲座，数小时的预习。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>每年大概有九百万学生参加考试。最优秀的1%会进入一流大学。其它的只能进入二流学校，这部分最多。这些不幸的人会发现，虽然他们的职业前景不会永久的被排除在外，取得成功的可能机会却大大减少。在这些学校自杀率很高，因为学生感觉到自己让父母失望了。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>但是你成功了，你成绩优异，进入了北京大学。你把教授当做上帝看，并知道如果你能拿到高分你可以入党。西方人认为共产党仍然与政治意识形态有关。 你知道在中国除了经济繁荣外没有政治哲学。共产党基本上就是一个庞大的精英组织。它只是其成员共同用来创造财富的一个社会网络。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>你真是一个优秀的孩子，因为你在大学也很成功。你有很多选择机会。你可以在一家美国跨国公司找到一份工作，学习资本技巧，然后返回中国做一个企业家。但是你决定进入政府工作，这样风险较小，并且有机会变富(台面之下)和为国家服务。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>从某种意义上来说，你的选择并不重要。无论你从商还是从政，你都会隶属于公司官僚制之下。在西方，商业精英和政治精英关系紧张。但是在中国，这些精英都是同一社会网络的一部分，为共同致富而合作。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>你的生活被公司官僚制的规则统制。合作具有高度价值。没有真正意识形态的敌对，但是不同的社会网络为权力和财富竞争。这个体系真正的鼓励人才。组织部选择那些证明了他们管理能力的人。你工作努力。你协助管理一个省。你在分管钢铁和通信的国企担当主管人员。你上升得很快。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>美国人还抱着古怪的中国共产主义的旧观念，中国永远也不再是一个共产主义国家。它有一套不同的体系：精英家长式统治。想象一下，共产党身上披着常青藤联盟的外套，但它决定不想换个名字。想象一支哈佛校友组成的大军。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>告诉你的美国朋友，这是一个精英政府。它就像一个精明的父亲统治家庭一样统治国家。它与公民也有协商，但是对于什么会更好的服务于国家，大多数管理阶层会自己做决定。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>这些精英领导阶级吸收竞争对手的力量基础。曾经以为经济增长会产生出一批独立自主的中产阶级，但是现在清楚了，社会的富有部份被吸收到国家/企业机构中去了。曾经还有学者游说民主，但是现在他们对经济自由和机遇感到满足了。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>公司官僚制没有停滞不前。它的成员很快认识到中国的弱点，并且很快开始现代化改革(只要改革不威胁到政治体制)。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>最重要的一点是你相信，教育式家长作风带来的好的一面。中国正在急速发展。数以亿计的人摆脱了贫困。上海的商业街比美国任何同类都要繁华。商业大楼林立，奥迪车阻塞了道路。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>你对公司官僚制取得的成就感到骄傲，期待它带领中国走向下一阶段的现代化 － 从制造经济向服务经济的转变。但在您潜意识里您知道：对于一个彻头彻尾的记忆型精英来说，要管理一个灵活、创新的信息经济，不管它的成员多么聪明，这都是不可能的。</div>
+
+
+<div>&nbsp;</div>
+
+
+<div>这是一个在半夜里你想都不愿细想的想法。</div>
+
+
+<p><a target=_blank target="_blank" href="http://www.yeeyan.com/articles/view/888888/3356#newComment">添加评论</a></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/18/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/16/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("boostguy", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/boostguy" class="twitter-follow-button" data-show-count="false">Follow @boostguy</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Ken -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'kenshao';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

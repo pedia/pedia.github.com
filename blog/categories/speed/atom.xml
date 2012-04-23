@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: speed | heartoutside]]></title>
+  <link href="http://blog.heartoutside.com/blog/categories/speed/atom.xml" rel="self"/>
+  <link href="http://blog.heartoutside.com/"/>
+  <updated>2012-04-20T18:52:16+08:00</updated>
+  <id>http://blog.heartoutside.com/</id>
+  <author>
+    <name><![CDATA[Ken]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[vc7 compile optimization]]></title>
+    <link href="http://blog.heartoutside.com/blog/2007/02/13/vc7-compile-optimization/"/>
+    <updated>2007-02-13T18:12:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2007/02/13/vc7-compile-optimization</id>
+    <content type="html"><![CDATA[<p>我写Windows程序的编译器一直都是vc7,并且短时间内也不打算迁移到其他版本。</p>
+
+<p>最近开始写一个低内存消耗的程序(对比：<a href="http://www.ttplayer.com" target="_blank">千千静听</a>)，所以测试了一下针对内存的优化效果。</p>
+
+<p>改变了一下程序编译优化设置，运行后使用 <a href="http://www.microsoft.com/technet/sysinternals/utilities/ProcessExplorer.mspx" target="_blank"> <font size="-1">Process Explorer</font></a>查看内存占用量，得到的结果如下：</p>
+
+<pre><code>         最大化速度(/O2)      最小化大小(/O1)
+</code></pre>
+
+<p> Working Set: 580K      440K             6%</p>
+
+<p> WS Private:  252       240</p>
+
+<p> WS Sharedable: 328     200</p>
+
+<p> WS Shared:     316     192</p>
+
+<p>优化最大化大小比最大化速度的 Working Set 低了 6%。</p>
+
+<p>ps: 这篇文章使用gmail<a href="http://help.blogger.com/bin/answer.py?answer=41452&amp;topic=8929">邮件</a>发送.</p>
+]]></content>
+  </entry>
+  
+</feed>

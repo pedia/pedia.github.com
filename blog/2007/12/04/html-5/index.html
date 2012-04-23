@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>HTML 5 - heartoutside</title>
+  <meta name="author" content="Ken">
+
+  
+  <meta name="description" content="HTML3到4变化巨大，4到5会更大，估计很多人心理上不大会接受：html 4 + 已经很强大了，为何要搞一套新东西呢？
+摘自 http://www.crockford.com/html/ No more doctypes. &nbsp; &nbsp;Great， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.heartoutside.com/blog/2007/12/04/html-5">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">heartoutside</a></h1>
+  
+    <h2>not yet</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">HTML 5</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-04T06:31:49+08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>HTML3到4变化巨大，4到5会更大，估计很多人心理上不大会接受：html 4 + 已经很强大了，为何要搞一套新东西呢？<br />
+摘自 http://www.crockford.com/html/<br /></p>
+
+<br />
+
+
+<p>No more doctypes. &nbsp; &nbsp;<span style="font-weight: bold;">Great，我从来就没有完全搞清楚那些doctype<br />
+</span><br />
+<a></a><a></a><a><a>script</a></a> <br />
+&nbsp;一个html只支持一种类型的<a></a><a></a><a><a>script</a></a>了(微软搞的ie能同时并存js,vbs，还能互相调用，绝对是专家级的技术)，&lt;<a></a><a></a><a><a>script</a></a>&gt;没有属性了<br />
+&nbsp;<code>&lt;<a></a><a></a><a><a>script</a></a>&gt;</code> tags are not immediately executed. <code>&lt;<a></a><a></a><a><a>script</a></a>&gt;</code>   tags do not block loading of other assets.<br />
+&nbsp;When the <code>&lt;/head&gt;</code>   is reached, all of the <a></a><a></a><a><a>script</a></a>s that were included in the head are then   executed in order. When the <code>&lt;/body&gt;</code> is reached, all   of the <a></a><a></a><a><a>script</a></a>s that were included in the body are then executed in order.<br />
+<span style="font-weight: bold;">&nbsp;明确了</span><br /></p>
+
+<br />
+
+
+<p>&nbsp;No more <code>document.write</code>. No more in-page event handlers.   No more <code>:</code> urls.<br />
+<span style="font-weight: bold;">&nbsp;支持，难看的document.write</span><br /></p>
+
+<br />
+
+
+<p>Frame<br />
+&nbsp;No more framesets, frames, or ｉｆｒａｍｅs. The security properties of these   were problematic. Instead we&#8217;ll have modules.<br />
+&nbsp;<span style="font-weight: bold;">如何实现类似frame呢？看Modules</span><br /></p>
+
+<br />
+
+
+<p>Modules<br />
+&nbsp;<code>&lt;module&gt;</code> creates a sub-tree which can contain a document   with a communication channel. See <a target=_blank target="_blank" href="http://json.org/module.html">http://json.org/module.html</a>   for a de<a></a><a></a><a><a>script</a></a>ion.<br />
+<span style="font-weight: bold;">&nbsp;似乎是ｉｆｒａｍｅ+ ajax，更强大了</span><br /></p>
+
+<br />
+
+
+<p>CSS<br />
+&nbsp;The default CSS content needs to be standardized. <br />
+&nbsp;<span style="font-weight: bold;">现在的css太复杂了,实现一个功能没有人说清楚一共有多少种实现</span><br /></p>
+
+<br />
+
+
+<p>Encoding<br />
+&nbsp;The only character encoding permitted in HTML 5 is <code>UTF-8</code>.   <br />
+&nbsp;<span style="font-weight: bold;">HOHOHO</span><br /></p>
+
+<br />
+
+
+<p>Entities, Empty Tags, Custom Tags, Custom Attributes<br />
+&nbsp;&#8230;&#8230;.<br /></p>
+
+<br />
+
+
+<br />
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ken</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-04T06:31:49+08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2007</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.heartoutside.com/blog/2007/12/04/html-5/" data-via="boostguy" data-counturl="http://blog.heartoutside.com/blog/2007/12/04/html-5/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2007/12/01/be-ruthless/" title="Previous Post: 赶尽杀绝">&laquo; 赶尽杀绝</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2007/12/06/elite-dictatorship-zt/" title="Next Post: 精英专政 zt">精英专政 zt &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("boostguy", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/boostguy" class="twitter-follow-button" data-show-count="false">Follow @boostguy</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Ken -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'kenshao';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.heartoutside.com/blog/2007/12/04/html-5/';
+        var disqus_url = 'http://blog.heartoutside.com/blog/2007/12/04/html-5/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

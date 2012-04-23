@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>500万动态PV - heartoutside</title>
+  <meta name="author" content="Ken">
+
+  
+  <meta name="description" content="转： 豆瓣的第二台应用服务器终于投入了使用。Hongqn 忙了一晚上就完成了部署。第一台服务器支撑到 500 万动态PV/天，服务 On Demand 即时分布式部署...... 500 万 PV , 还是动态 PV, 是个很惊人的数字。因为，如果都能达到一台机器支撑 500 万， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.heartoutside.com/blog/2008/01/17/5-million-dynamic-pv">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">heartoutside</a></h1>
+  
+    <h2>not yet</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">500万动态PV</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-17T07:07:29+08:00" pubdate data-updated="true">Jan 17<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><pre>转：<br />
+<br />
+豆瓣的第二台应用服务器终于投入了使用。Hongqn 忙了一晚上就完成了部署。第一台服务器支撑到 500 万动态PV/天，服务 On Demand 即时分布式部署......</pre>
+
+
+<p>500 万 PV , 还是动态 PV, 是个很惊人的数字。因为，如果都能达到一台机器支撑 500 万，那么国内稍有点规模的网站(就说动态PV 上亿的吧)，只需要 20 台 Web 服务器就够了。事实上，即使比较强调技术的网站怕也要上百台 Web 服务器的规模。</p>
+
+
+<p>我们知道豆瓣用 Lighttpd 做 Web 服务器。 从侦测到的数据看，目前线上有两个版本。<br />
+<br />
+</p>
+
+
+<pre>$ curl -I http://www.douban.com<br />
+HTTP/1.1 200 OK<br />
+.....(无关内容略)<br />
+Server: <strong>lighttpd/1.4.15</strong></pre>
+
+
+<p>另外一个版本：</p>
+
+
+<pre>$ curl -I http://www.douban.com/people/ahbei/<br />
+HTTP/1.1 200 OK<br />
+.....(无关内容略)<br />
+Server: <strong>lighttpd/1.4.18<br />
+<br />
+</strong></pre>
+
+
+<p>其实豆瓣服务器还有个更为惊人的性能数字。从这个 <a target=_blank target="_blank" href="http://trac.lighttpd.net/trac/wiki/PoweredByLighttpd">Powered by Lighttpd</a> 的列表来看，豆瓣在一台 Gentoo 服务器上的记录是 1200 万/天的点击量。这应该是动、静态页面混合情况下的吧。</p>
+
+
+<p>有同事对这个数据有些好奇，问我到底豆瓣是用啥做的服务器，其实这个问题我也问过阿北，他们就是自己攒的 PC 服务器，然后把性能发挥到极致。阿北也表示过，即使现在豆瓣流量激增个十倍啥的性能也不会是问题。这也是从起始就考虑扩展性的收益吧。</p>
+
+
+<p>这里这位老兄用 <a target=_blank target="_blank" href="http://shanti.railsblog.com/how-7-mongrels-handled-a-550k-pageview-digging">七台 Mongrels 跑了 55 万 PV</a> 就蛮自豪的，所以豆瓣的一台跑了&#8221;500 万动态 PV&#8221; 的确非常惊人。<br />
+<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+</p>
+
+
+<p>ｊａｖａ前台能搞定吗？有达人知否？<br />
+</p>
+
+
+<p><br />
+</p>
+
+
+<p>update: 豆瓣只有两台应用服务器？<br />
+5000000/3600=1388.8&nbsp; <br />
+<br />
+update: 上面算错了<br />
+应该是 5000000/(24*3600) = 57.87<br />
+谢谢黄晶<br />
+<br />
+<br />
+</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ken</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-17T07:07:29+08:00" pubdate data-updated="true">Jan 17<span>th</span>, 2008</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.heartoutside.com/blog/2008/01/17/5-million-dynamic-pv/" data-via="boostguy" data-counturl="http://blog.heartoutside.com/blog/2008/01/17/5-million-dynamic-pv/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/01/12/country-swing-stands/" title="Previous Post: 在祖国摆个小摊">&laquo; 在祖国摆个小摊</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/01/23/play-mahjong-in-four-students-in-the-dormitory-when-police-broke-in-and-took-five-people/" title="Next Post: 四个学生在宿舍里打麻将,突然警察破门而入,把五个人都带走了">四个学生在宿舍里打麻将,突然警察破门而入,把五个人都带走了 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("boostguy", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/boostguy" class="twitter-follow-button" data-show-count="false">Follow @boostguy</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Ken -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'kenshao';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.heartoutside.com/blog/2008/01/17/5-million-dynamic-pv/';
+        var disqus_url = 'http://blog.heartoutside.com/blog/2008/01/17/5-million-dynamic-pv/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

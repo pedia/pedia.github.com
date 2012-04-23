@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: effective | heartoutside]]></title>
+  <link href="http://blog.heartoutside.com/blog/categories/effective/atom.xml" rel="self"/>
+  <link href="http://blog.heartoutside.com/"/>
+  <updated>2012-04-20T18:52:16+08:00</updated>
+  <id>http://blog.heartoutside.com/</id>
+  <author>
+    <name><![CDATA[Ken]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How suck your STL implemented?]]></title>
+    <link href="http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented/"/>
+    <updated>2007-02-13T12:53:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented</id>
+    <content type="html"><![CDATA[<p>我在vc7中做了一个测试，插入50万条随机生成的记录到hash_map中，结果令我大吃一惊。</p>
+
+<p>随机字符串生成：字符串长度为1-12个小写字母(50万个字符串中大概只有34万个不重复)</p>
+
+<p>插入的速度</p>
+
+<table border="1" cellpadding="10" cellspacing="10"><tbody><tr><td></td><td>vc7 STL</td><td>stlport 4.62</td></tr>
+<tr><td>前25万条</td><td>350ms/万条</td><td>200ms/万条</td></tr>
+<tr><td>后25万条</td><td>进程没有反应</td><td>200ms/万条</td></tr>
+</tbody></table>
+
+
+<p>查询速度也有较大的差异，VC7 STL最差的命中查询在10ms。</p>
+
+<p>VC7自带的stl的效率差得让人吃惊。</p>
+
+<p>并且hash_map::resize等方法也没有提供(在bucket容量超过75%时hash表的效率一般会降低，不能调用resize扩充bucket容量了)。</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: c++ | heartoutside]]></title>
+  <link href="http://blog.heartoutside.com/blog/categories/c-/atom.xml" rel="self"/>
+  <link href="http://blog.heartoutside.com/"/>
+  <updated>2012-04-20T18:52:16+08:00</updated>
+  <id>http://blog.heartoutside.com/</id>
+  <author>
+    <name><![CDATA[Ken]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[about DSEL]]></title>
+    <link href="http://blog.heartoutside.com/blog/2010/02/08/about-dsel/"/>
+    <updated>2010-02-08T15:06:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2010/02/08/about-dsel</id>
+    <content type="html"><![CDATA[<p>最近开始看一本老书(2004年版的): <strong>C++ Template Metaprogramming: Concepts, Tools, and Techniques from Boost and Beyond</strong>,
+<a href="http://www.amazon.com/Template-Metaprogramming-Concepts-Techniques-Beyond/dp/0321227255/ref=sr_1_1?ie=UTF8&amp;amp;s=books&amp;amp;qid=1265611847&amp;amp;sr=1-1">in amazon</a>
+我看的是中文版 <strong>C++模板元编程</strong>(2010年版), in <a href="http://www.amazon.cn/gp/product/B002WB1J0U/ref=ox_ya_os_product"> amazon.cn</a><br /></p>
+
+<p>之所以想到要看这本书，是因为对模板一直有些疑问，希望籍此解决模板方面的认知错误。<br />
+看到第一章，就被其讲述的<a href="http://en.wikipedia.org/wiki/Domain-specific_language">Domain Specific Language</a>吸引了，这是我的另外一个心病。<br /></p>
+
+<p>其中一句话：</p>
+
+<blockquote><p>最成功的DSLs通常是申诉式(declarative)语言，它为我们提供了用来描述 "what" 而不是 "how" 的符号。</p></blockquote>
+
+<p>并讲述了一个例子: Make语言，一般的Make语法都支持<br />
+<code>make
+OBJECTS = main.o kbd.o command.o
+edit: $(OBJECTS)
+main.o: main.cpp defs.h
+kbd.o: kbd.cpp defs.h command.h
+</code></p>
+
+<p>其省略了how, 如
+``` makefile
+main.o: main.cpp defs.h</p>
+
+<pre><code>c++ -c main.cpp
+</code></pre>
+
+<p>```
+这几乎接近DSEL的一个理想：<b>允许一个问题仅仅个哦能通过描述可以得到解决</b>。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[不要做客户端软件开发]]></title>
+    <link href="http://blog.heartoutside.com/blog/2009/10/17/not-to-do-client-side-software-development/"/>
+    <updated>2009-10-17T15:13:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2009/10/17/not-to-do-client-side-software-development</id>
+    <content type="html"><![CDATA[<p>几乎在所有的互联网公司里，客户端部门，如果有，都不会受到重视。因为有QQ，<a href="http://digi.tech.qq.com/a/20091012/000059.htm">一家独大</a>，好像其他客户端都没有太多意义了。<br />
+可怜的我一直都在做客户端，深刻的体会到了意义的重要性。不管情形如何，也积累了不少经验和体会，得出的结论就是不要做客户端。<br />
+客户端开发相比于网站开发有其独特的特性。<br /></p>
+
+<h2>特点</h2>
+
+<ul>
+<li><p><strong>复杂</strong>，有连续的用户输入、持续的界面刷新、通讯、数据库、多线程等因素，维度多，C/S程序还有数据一致性问题<br />
+每多一维都会把事情搞得复杂很多。</p></li>
+<li><p>强依赖操作系统，浏览器环境<br />
+这是无法避免的。现在Windows98 愈来愈少了，还坚持不使用 UNICODE 的程序最终会在国际化、多语言方面遇到障碍的。使用 UTF8 做程序内码也是不错的选择。<br />
+虽然我很不赞成使用 IE 插件，但是它的确能在很大情况下省却很多开发时间。但是带来的问题有可能你根本解决不了，你得更加依赖 MSDN 了，你得揣摩你用到的接口的文档里的每句话。因为文档少得可怜，特殊情况下你甚至得猜测着写代码，简直就是噩梦。如果有好的强壮的图文混排技术，应当彻底抛弃 IE。<br /></p></li>
+<li><p>由于产品定位，用户环境等问题，<b>局限了语言<br />
+显然，使用其他语言 .Net, Python, VB会遇到发布安装问题，某些应用甚至有不可解决的性能问题。C++ 是唯一的选择。<br /></p></li>
+<li><p>更新<br />
+程序已经安装在某个遥远的机器里硬盘的某个角落了，出了问题该如何解决呢？ WEB 更新一下页面，问题就没有了。客户端得有强大、鲁棒的更新机制，在出现问题时能解救你。更新通常需要很长的时间大部分用户才会完成更新。<br /></p></li>
+</ul>
+
+
+<h3>比较</h3>
+
+
+<p>WEB，现在WEB做不到的事情很少了，除非在很有必要的情况下才需要使用客户端。并且得接受你的客户端很难做大的思想准备。<br />
+手机的客户端，相对于WAP有点类似，也很尴尬。<br /></p>
+
+<p>C++ 是很复杂的语言，能力也很强，没有必要浪费在无法做大的客户端上。找寻更有价值的用武之地吧。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Googler use c++?]]></title>
+    <link href="http://blog.heartoutside.com/blog/2007/02/27/googler-use-cplusplus/"/>
+    <updated>2007-02-27T21:41:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2007/02/27/googler-use-cplusplus</id>
+    <content type="html"><![CDATA[<p>最近发现<a href="http://code.google.com/hosting/">Google code</a>上多了<a href="http://code.google.com/hosting/search?q=label%3AGoogle+&amp;btn=Search+Projects">好多</a>Google的开源项目，比较有意思的项目有：</p>
+
+<p><a href="http://code.google.com/p/airbag/">airbag - Crash reporting</a></p>
+
+<p>An open-source multi-platform crash reporting system</p>
+
+<p>exception_handler能在Windows下生成dmp文件，processor 能直接分析出崩溃地址详细信息：</p>
+
+<p>```
+Crash reason:  EXCEPTION_ACCESS_VIOLATION</p>
+
+<p>Crash address: 0x45</p>
+
+<p>Thread 0 (crashed)
+0  test_app.exe!`anonymous namespace'::CrashFunction [test_app.cc : 58 + 0x3]
+1  test_app.exe!main [test_app.cc : 65 + 0x4]
+2  test_app.exe!__tmainCRTStartup [crt0.c : 327 + 0x11]
+3  kernel32.dll!BaseProcessStart + 0x22
+```</p>
+
+<p>注意：processor 并不依赖Windows就能识别dmp文件格式，非常适合于在服务器上做自动分析，然后生成报表。</p>
+
+<ul>
+<li><a href="http://code.google.com/p/google-gen/">google-gen - A system for learning generative models of relational data.</a></li>
+</ul>
+
+
+<p>这样的项目都能开源，太有意思了。真是目标远大</p>
+
+<ul>
+<li><a href="http://code.google.com/p/google-ctemplate/">google-ctemplate - A simple but powerful template language for C++</a></li>
+</ul>
+
+
+<p>我估计(感觉而已)Google的搜索结果不是用这套代码实现的。模版功能非常强。</p>
+
+<ul>
+<li><a href="http://code.google.com/p/gnscd/">gnscd - New nscd daemon</a></li>
+</ul>
+
+
+<p>不知道干什么用的。</p>
+
+<ul>
+<li><a href="http://code.google.com/p/libjingle/">libjingle - Google Talk Voice, File Sharing, and P2P Interoperability Library</a></li>
+</ul>
+
+
+<p>Gtalk的核心，代码写得非常不错，但是有过度设计之嫌。</p>
+
+<ul>
+<li><p><a href="http://code.google.com/p/gpo/">gpo - Google Pose Optimizer</a></p></li>
+<li><p><a href="http://code.google.com/p/google-perftools/">google-perftools</a></p></li>
+</ul>
+
+
+<p>Fast, mutli-threaded malloc() and nifty performance analysis tools</p>
+
+<ul>
+<li><p><a href="http://code.google.com/p/google-sparsehash/">google-sparsehash - An extremely memory-efficient hash_map implementation</a></p>
+
+<p>sparsehash 支持两种模式：效率优先，内存占用优先。</p></li>
+<li><p><a href="http://code.google.com/p/google-oaf/">google-oaf - Google Open Automation Framework</a></p></li>
+</ul>
+
+
+<p>没有刻意去找寻Google的所有开源项目，但是发现使用C++要多一些，并且大都很重的使用了STL，没有使用<a href="http://www.boost.org/">Boost</a>,
+但是几个项目(google-breakpad, ctemplate)都实现了<a href="www.boost.org/libs/smart_ptr/scoped_ptr.htm">scoped_ptr</a>，也直接使用了</p>
+
+<p>``` c++</p>
+
+<h1>include <hash></h1>
+
+<p>```</p>
+
+<p>在Bjarne Stroustrup's homepage上有这么句话</p>
+
+<blockquote><p><a href="http://www.research.att.com/~bs/">February 21: Google (Mountainview): "Initalization in C++0x".</a></p></blockquote>
+
+<p>似乎Google 请 Bjarne Stroustrup 去 talk，可见 Google 对 C++ 的重视程度。</p>
+
+<p>个人认为：Google做出了一个代表，<strong>应用开发的首选语言应该是C++，而不是C</strong>。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[vc7 compile optimization]]></title>
+    <link href="http://blog.heartoutside.com/blog/2007/02/13/vc7-compile-optimization/"/>
+    <updated>2007-02-13T18:12:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2007/02/13/vc7-compile-optimization</id>
+    <content type="html"><![CDATA[<p>我写Windows程序的编译器一直都是vc7,并且短时间内也不打算迁移到其他版本。</p>
+
+<p>最近开始写一个低内存消耗的程序(对比：<a href="http://www.ttplayer.com" target="_blank">千千静听</a>)，所以测试了一下针对内存的优化效果。</p>
+
+<p>改变了一下程序编译优化设置，运行后使用 <a href="http://www.microsoft.com/technet/sysinternals/utilities/ProcessExplorer.mspx" target="_blank"> <font size="-1">Process Explorer</font></a>查看内存占用量，得到的结果如下：</p>
+
+<pre><code>         最大化速度(/O2)      最小化大小(/O1)
+</code></pre>
+
+<p> Working Set: 580K      440K             6%</p>
+
+<p> WS Private:  252       240</p>
+
+<p> WS Sharedable: 328     200</p>
+
+<p> WS Shared:     316     192</p>
+
+<p>优化最大化大小比最大化速度的 Working Set 低了 6%。</p>
+
+<p>ps: 这篇文章使用gmail<a href="http://help.blogger.com/bin/answer.py?answer=41452&amp;topic=8929">邮件</a>发送.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How suck your STL implemented?]]></title>
+    <link href="http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented/"/>
+    <updated>2007-02-13T12:53:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2007/02/13/how-suck-your-stl-implemented</id>
+    <content type="html"><![CDATA[<p>我在vc7中做了一个测试，插入50万条随机生成的记录到hash_map中，结果令我大吃一惊。</p>
+
+<p>随机字符串生成：字符串长度为1-12个小写字母(50万个字符串中大概只有34万个不重复)</p>
+
+<p>插入的速度</p>
+
+<table border="1" cellpadding="10" cellspacing="10"><tbody><tr><td></td><td>vc7 STL</td><td>stlport 4.62</td></tr>
+<tr><td>前25万条</td><td>350ms/万条</td><td>200ms/万条</td></tr>
+<tr><td>后25万条</td><td>进程没有反应</td><td>200ms/万条</td></tr>
+</tbody></table>
+
+
+<p>查询速度也有较大的差异，VC7 STL最差的命中查询在10ms。</p>
+
+<p>VC7自带的stl的效率差得让人吃惊。</p>
+
+<p>并且hash_map::resize等方法也没有提供(在bucket容量超过75%时hash表的效率一般会降低，不能调用resize扩充bucket容量了)。</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: LBS，MongoDB | heartoutside]]></title>
+  <link href="http://blog.heartoutside.com/blog/categories/lbs-mongodb/atom.xml" rel="self"/>
+  <link href="http://blog.heartoutside.com/"/>
+  <updated>2012-04-20T18:52:16+08:00</updated>
+  <id>http://blog.heartoutside.com/</id>
+  <author>
+    <name><![CDATA[Ken]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[LBS的两种实现]]></title>
+    <link href="http://blog.heartoutside.com/blog/2011/04/22/lbs-in-two/"/>
+    <updated>2011-04-22T15:26:00+08:00</updated>
+    <id>http://blog.heartoutside.com/blog/2011/04/22/lbs-in-two</id>
+    <content type="html"><![CDATA[<p><a href="http://en.wikipedia.org/wiki/Location-based_service">LBS</a>的核心是地理位置信息的索引和检索。位置信息一般采用经纬度表示，不支持通用的比较、排序，所以导致系统实现难度很大。<br /></p>
+
+<br />
+
+
+<p>地理位置信息计算需要解决的问题有<br /></p>
+
+<h2>精度</h2>
+
+<p>一般表示为<br />
+<code>
+40:26:46N,79:56:55W
+40:26:46.302N 79:56:55.903W
+40°26′47″N 79°58′36″W
+40d 26′ 47″ N 79d 58′ 36″ W
+40.446195N 79.948862W
+40.446195, -79.948862
+40° 26.7717, -79° 56.93172
+</code></p>
+
+<p>用度分秒表示时，1度可能是41km，很大的一个单位。</p>
+
+<h2>距离</h2>
+
+<p>由于地球半径的影响，两个经纬度之间的距离计算非常的<a href="http://en.wikipedia.org/wiki/Geographical_distance">麻烦</a><br />
+PostGis</p>
+
+<blockquote><p>PostGIS adds support for geographic objects to the <a href="http://www.postgresql.org/">PostgreSQL</a> object-relational database.是一个非常专业的实现。支持众多的系统和数据格式，据称现在版本已经支持3D。</p></blockquote>
+
+<p>实现一个位置查询：With the population of the people in New York within 500 meters of a subway station:</p>
+
+<p><code>
+&amp;gt; SELECT Sum(popn_total) FROM nyc_census_blocks census
+  JOIN nyc_subway_stations subway ON ST_DWithin(census.the_geom, subway.the_geom, 500);
+10556898
+</code></p>
+
+<p>其数据表示很是有意思
+<code>
+360610001009000 = 36 061 00100 9000
+36     = State of New York
+061    = New York County (Manhattan)
+000100 = Census Tract
+9      = Census Block Group
+000    = Census Block
+</code></p>
+
+<p>也可以做简单地理性质的计算
+<code>
+&amp;gt; SELECT ST_Distance(ST_GeographyFromText('POINT(-118.4079 33.9434)'),
+-- Los Angeles (LAX)ST_GeographyFromText('POINT(2.5559 49.0083)')     
+-- Paris (CDG));&amp;nbsp;
+</code></p>
+
+<p>由于对 PostgreSQL 生态系统知之甚少，不太敢于使用。</p>
+
+<p>MongoDB</p>
+
+<p>相比PostgreSQL的实现简单、易懂很多。
+其位置表示为：</p>
+
+<p><code>
+{ loc : { long : 40.739037, lat: 73.992964 } }
+</code></p>
+
+<p>创建索引
+<code>
+db.places.ensureIndex( { loc : "2d" } )
+</code></p>
+
+<p>按矩形区域查找
+```</p>
+
+<blockquote><p>box = [[40.73083, -73.99756], [40.741404,  -73.988135]]
+db.places.find({"loc" : {"$within" : {"$box" : box}}})
+```</p></blockquote>
+
+<p>按半径查找
+<code>
+&amp;gt; center = [50, 50]
+&amp;gt; radius = 10
+&amp;gt; db.places.find({"loc" : {"$within" : {"$center" : [center, radius]}}})
+</code></p>
+
+<p>作为新兴的数据库系统，在使用过程中被爆了很多问题</p>
+
+<ul>
+<li><a href="https://foursquare.com/">FourSquare</a>使用过程中散列不够均匀</li></li>
+<li>存储较为浪费</li></li>
+<li>使用了 mmap 可能导致数据丢失</li></li>
+</ul>
+
+
+<p>我去年测试其集群功能时，在数据量达到1亿左右时也出现了问题，但是MongoDB绝对是最快、最合适的解决方案，当然要避免、解决很多问题。</p>
+]]></content>
+  </entry>
+  
+</feed>

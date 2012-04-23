@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>LBS的两种实现 - heartoutside</title>
+  <meta name="author" content="Ken">
+
+  
+  <meta name="description" content="LBS的核心是地理位置信息的索引和检索。位置信息一般采用经纬度表示，不支持通用的比较、排序，所以导致系统实现难度很大。 地理位置信息计算需要解决的问题有 精度 一般表示为 1
+2
+3
+4
+5
+6
+7
+40:26:46N,79:56:55W
+40:26:46.302N 79:56:55.903W &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.heartoutside.com/blog/2011/04/22/lbs-in-two">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="heartoutside" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">heartoutside</a></h1>
+  
+    <h2>not yet</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.heartoutside.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">LBS的两种实现</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-22T15:26:00+08:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://en.wikipedia.org/wiki/Location-based_service">LBS</a>的核心是地理位置信息的索引和检索。位置信息一般采用经纬度表示，不支持通用的比较、排序，所以导致系统实现难度很大。<br /></p>
+
+<br />
+
+
+<p>地理位置信息计算需要解决的问题有<br /></p>
+
+<h2>精度</h2>
+
+<p>一般表示为<br /></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>40:26:46N,79:56:55W
+</span><span class='line'>40:26:46.302N 79:56:55.903W
+</span><span class='line'>40°26′47″N 79°58′36″W
+</span><span class='line'>40d 26′ 47″ N 79d 58′ 36″ W
+</span><span class='line'>40.446195N 79.948862W
+</span><span class='line'>40.446195, -79.948862
+</span><span class='line'>40° 26.7717, -79° 56.93172</span></code></pre></td></tr></table></div></figure>
+
+
+<p>用度分秒表示时，1度可能是41km，很大的一个单位。</p>
+
+<h2>距离</h2>
+
+<p>由于地球半径的影响，两个经纬度之间的距离计算非常的<a href="http://en.wikipedia.org/wiki/Geographical_distance">麻烦</a><br />
+PostGis</p>
+
+<blockquote><p>PostGIS adds support for geographic objects to the <a href="http://www.postgresql.org/">PostgreSQL</a> object-relational database.是一个非常专业的实现。支持众多的系统和数据格式，据称现在版本已经支持3D。</p></blockquote>
+
+<p>实现一个位置查询：With the population of the people in New York within 500 meters of a subway station:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; SELECT Sum(popn_total) FROM nyc_census_blocks census 
+</span><span class='line'>  JOIN nyc_subway_stations subway ON ST_DWithin(census.the_geom, subway.the_geom, 500);
+</span><span class='line'>10556898</span></code></pre></td></tr></table></div></figure>
+
+
+<p>其数据表示很是有意思</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>360610001009000 = 36 061 00100 9000
+</span><span class='line'>36     = State of New York
+</span><span class='line'>061    = New York County (Manhattan)
+</span><span class='line'>000100 = Census Tract
+</span><span class='line'>9      = Census Block Group
+</span><span class='line'>000    = Census Block</span></code></pre></td></tr></table></div></figure>
+
+
+<p>也可以做简单地理性质的计算</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; SELECT ST_Distance(ST_GeographyFromText('POINT(-118.4079 33.9434)'), 
+</span><span class='line'>-- Los Angeles (LAX)ST_GeographyFromText('POINT(2.5559 49.0083)')     
+</span><span class='line'>-- Paris (CDG));&nbsp;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>由于对 PostgreSQL 生态系统知之甚少，不太敢于使用。</p>
+
+<p>MongoDB</p>
+
+<p>相比PostgreSQL的实现简单、易懂很多。
+其位置表示为：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{ loc : { long : 40.739037, lat: 73.992964 } }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>创建索引</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>db.places.ensureIndex( { loc : "2d" } )</span></code></pre></td></tr></table></div></figure>
+
+
+<p>按矩形区域查找</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; box = [[40.73083, -73.99756], [40.741404,  -73.988135]]
+</span><span class='line'>&gt; db.places.find({"loc" : {"$within" : {"$box" : box}}})</span></code></pre></td></tr></table></div></figure>
+
+
+<p>按半径查找</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; center = [50, 50]
+</span><span class='line'>&gt; radius = 10
+</span><span class='line'>&gt; db.places.find({"loc" : {"$within" : {"$center" : [center, radius]}}})</span></code></pre></td></tr></table></div></figure>
+
+
+<p>作为新兴的数据库系统，在使用过程中被爆了很多问题</p>
+
+<ul>
+<li><a href="https://foursquare.com/">FourSquare</a>使用过程中散列不够均匀</li></li>
+<li>存储较为浪费</li></li>
+<li>使用了 mmap 可能导致数据丢失</li></li>
+</ul>
+
+
+<p>我去年测试其集群功能时，在数据量达到1亿左右时也出现了问题，但是MongoDB绝对是最快、最合适的解决方案，当然要避免、解决很多问题。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ken</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-22T15:26:00+08:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/lbs-mongodb/'>LBS，MongoDB</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.heartoutside.com/blog/2011/04/22/lbs-in-two/" data-via="boostguy" data-counturl="http://blog.heartoutside.com/blog/2011/04/22/lbs-in-two/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/08/patriotic-heart-often-to-express-patriotic-feelings/" title="Previous Post: 常怀爱国之心，常抒爱国之情">&laquo; 常怀爱国之心，常抒爱国之情</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/05/10/mobile-phone-website-ultimate-optimization/" title="Next Post: 手机网站的终极优化">手机网站的终极优化 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/19/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/14/recommended-reading-the-i-fair-network-for-two-months-full-version/">推荐阅读：《我在赶集网的两个月（完整版）》</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan/">Facebook卓越研发文化中的宝贵经验 - 黄易山</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/13/who-is-using-mongodb/">谁在用MongoDB</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/05/11/go-xia-junfeng-second-defence/">转：夏俊峰案二审辩护词</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("boostguy", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/boostguy" class="twitter-follow-button" data-show-count="false">Follow @boostguy</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Ken -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'kenshao';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.heartoutside.com/blog/2011/04/22/lbs-in-two/';
+        var disqus_url = 'http://blog.heartoutside.com/blog/2011/04/22/lbs-in-two/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
