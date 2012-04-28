@@ -9,11 +9,7 @@
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="我一直不太喜欢在大小写敏感的地方过多的使用大写，如 xml，c programm, URL, 等地方。
-好处是：
-&nbsp;输入时少按一个按键
-&nbsp;不太容易出现因为大小写问题导致的错误
-&nbsp;更专业一些，因为这是Unix的传统，呵呵 xiaonei.com 的 URL 几乎都有大写 &hellip;">
+  <meta name="description" content="猜！这是什么？ ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -53,7 +49,8 @@
   
 <form action="https://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:log.heartoutside.com" />
+    <input type="hidden" name="domains" value="log.heartoutside.com" />
+    <input type="hidden" name="sitesearch" value="log.heartoutside.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -68,6 +65,47 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/08/11/guess-what-is-it/">猜！这是什么？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-11T21:05:44+08:00" pubdate data-updated="true">Aug 11<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>猜！这是什么？<br /></p>
+
+<br />
+
+
+<p><a target=_blank href="http://fm151.img.xiaonei.com/blog/20070811/13/05/A873990416172MUS.jpg" target="_blank"><img src="http://fm151.img.xiaonei.com/blog/20070811/13/05/A873990416172MUS.jpg" alt="dmp.jpg"></a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -555,315 +593,6 @@ Ok，现在你有了程序师，但你还需要资金来实施你的项目。<a 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/06/24/gtalk-support-for-multi-chat/">Gtalk 支持 Multi-chat</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-06-24T07:49:37+08:00" pubdate data-updated="true">Jun 24<span>th</span>, 2007</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>// Generated .IDL file (by the OLE/COM Object Viewer)<br />
-// <br />
-// typelib filename: googletalk.exe<br /></p>
-
-<br />
-
-
-<p>[<br />
-&nbsp; uuid(7B29C130-826A-4070-BA18-EC01E703D244),<br />
-&nbsp; version(1.0),<br />
-&nbsp; helpstring(&#8220;Google Talk API 1.0 Type Library&#8221;),<br />
-&nbsp; custom(DE77BA64-517C-11D1-A2DA-0000F8773CE9, 100663657),<br />
-&nbsp; custom(DE77BA63-517C-11D1-A2DA-0000F8773CE9, 1167684000),<br />
-&nbsp; custom(DE77BA65-517C-11D1-A2DA-0000F8773CE9, Created by MIDL version 6.00.0361 at Mon Jan 01 12:39:59 2007<br />
-)<br /></p>
-
-<br />
-
-
-<p>]<br />
-library GoogleTalkAPILib<br />
-{<br />
-&nbsp;&nbsp;&nbsp; // TLib :&nbsp;&nbsp;&nbsp;&nbsp; // TLib : OLE Automation : {00020430-0000-0000-C000-000000000046}<br />
-&nbsp;&nbsp;&nbsp; importlib(&#8220;stdole2.tlb&#8221;);<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; // Forward declare all types defined in this typelib<br />
-&nbsp;&nbsp;&nbsp; interface ITalkAPI;<br />
-&nbsp;&nbsp;&nbsp; interface <span style="font-weight: bold;">IMUCTalkAPI</span>;<br />
-&nbsp;&nbsp;&nbsp; interface IChatRoom;<br />
-&nbsp;&nbsp;&nbsp; interface IMUCTalkPlugin;<br />
-&nbsp;&nbsp;&nbsp; interface IChatRoomContact;<br />
-&nbsp;&nbsp;&nbsp; interface ITalkFriend;<br />
-&nbsp;&nbsp;&nbsp; interface ITalkPlugin;<br />
-&nbsp;&nbsp;&nbsp; interface ITalkTunnelExp;<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(4A1527F6-C11F-4131-82BC-FE891D4E3B70),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ITalkAPI Interface&#8221;),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; interface ITalkAPI : IUnknown {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT RegisterPlugin(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR plugin_guid, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR plugin_name, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR plugin_description, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR plugin_url, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR capability, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [out, retval] BSTR<em> token);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT UnregisterPlugin(BSTR plugin_guid_or_progid);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010002)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT SendMessage(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_id, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] SAFEARRAY(unsigned char) data);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010003)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT SendTextMessage(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_id, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR message);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010004)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetFriends(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [out, retval] SAFEARRAY(VARIANT)</em> friends);<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(7A9D1480-C6A1-11DA-95AB-00E08161165F),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;IMUCTalkAPI Interface&#8221;),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; interface IMUCTalkAPI : ITalkAPI {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60020000)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OpenChatRoom(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR room_jid, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_nickname, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_resource, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_app_capability, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_app_presence, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [out, retval] IChatRoom** chatroom_interface);<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(74C992C7-BA13-4E6A-A469-B43AE8FD557A),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;IChatRoom Interface&#8221;),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; interface IChatRoom : IUnknown {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetContacts([out, retval] SAFEARRAY(VARIANT)* contacts);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT SetUserNickname([in] BSTR nickname);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010002)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT SetUserPresenceState(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR capability, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR presence);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010003)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT LeaveRoom();<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010004)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT BroadcastMessage(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] SAFEARRAY(unsigned char) data);<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(4C9DC108-C73F-11DA-95AB-00E08161165F),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;IMUCTalkPlugin Interface&#8221;),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; interface IMUCTalkPlugin : IUnknown {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OnNewContact([in] IChatRoomContact<em> chatroom_contact);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OnDeleteContact([in] IChatRoomContact</em> chatroom_contact);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010002)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OnPresenceUpdate([in] IChatRoomContact* chatroom_contact);<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(2C876D28-FB0C-11DA-9804-B622A1EF5492),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;IChatRoomContact Interface&#8221;),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; interface IChatRoomContact : IUnknown {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetNickname([out, retval] BSTR<em> nickname);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetResource([out, retval] BSTR</em> resource);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010002)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetCapability([out, retval] BSTR<em> capability);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010003)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetPresenceState([out, retval] BSTR</em> presence);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010004)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetRoomJid([out, retval] BSTR* room_jid);<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(38FDD2C4-9164-4EAF-8C74-24D764FF613E),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ITalkFriend Interface&#8221;),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; interface ITalkFriend : IUnknown {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetName([out, retval] BSTR<em> name);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetUserId([out, retval] BSTR</em> user_id);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010002)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetCapabilities([out, retval] SAFEARRAY(BSTR)<em> capabilities);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010003)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT GetStatus([out, retval] unsigned long</em> status);<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(5A9FF74C-53D0-4513-9481-0F61EDEEFFE2),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ITalkPlugin Interface&#8221;),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; interface ITalkPlugin : IUnknown {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OnReceiveMessage(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] IUnknown<em> talk_friend, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] SAFEARRAY(unsigned char) data);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010001)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT OnDropDataOverFriend(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] IUnknown</em> talk_friend, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token);<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; odl,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(65D12388-C5E9-468C-83B9-60AEA2E658DF),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ITalkTunnelExp Interface&#8221;),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dual,<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oleautomation<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; interface ITalkTunnelExp : IUnknown {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [id(0x60010000)]<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HRESULT RelayUrl(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR token, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR user_id, <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [in] BSTR url);<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(0507EEDE-3AE7-49C7-BF37-0EB4A62D8638),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;TalkAPI Class&#8221;)<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; coclass TalkAPI {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [default] interface IMUCTalkAPI;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; interface ITalkAPI;<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(D33F3CED-D7D5-44F1-A9FE-6927DABB1934),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ChatRoom Class&#8221;)<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; coclass ChatRoom {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [default] interface IChatRoom;<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(33B07FD4-5917-43E1-968D-4C79231836BF),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;ChatRoomContact Class&#8221;)<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; coclass ChatRoomContact {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [default] interface IChatRoomContact;<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; interface ITalkTunnelExp;<br />
-&nbsp;&nbsp;&nbsp; };<br /></p>
-
-<br />
-
-
-<p>&nbsp;&nbsp;&nbsp; [<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uuid(A8F086C3-2497-4229-82FE-586F2D326F95),<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helpstring(&#8220;TalkFriend Class&#8221;)<br />
-&nbsp;&nbsp;&nbsp; ]<br />
-&nbsp;&nbsp;&nbsp; coclass TalkFriend {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [default] interface ITalkFriend;<br />
-&nbsp;&nbsp;&nbsp; };<br />
-};<br /></p>
-
-<br />
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/30/">&larr; Older</a>
@@ -879,6 +608,10 @@ library GoogleTalkAPILib<br />
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/28/high-power-smartphone/">high power smartphone</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/03/22/mawk-and-gawk/">mawk and gawk</a>
@@ -902,10 +635,6 @@ library GoogleTalkAPILib<br />
     
       <li class="post">
         <a href="/blog/2011/11/08/nc-and-tar-play-nice-then/">nc and tar play nice then</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/01/hao-xi-guan/">好习惯</a>
       </li>
     
   </ul>

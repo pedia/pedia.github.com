@@ -9,7 +9,11 @@
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="今年Velocity上的视频，部分信息的截屏. A Day in the Life of Facebook Operations Facebook有多大？ Growth 服务器数量，去年公布的3万台，估计今年应该到了6万。 正在俄勒冈建立第3个数据中心 http://facebook.com/ &hellip;">
+  <meta name="description" content="This is how I choose a DFS: 1 Fault Tolerance
+2 No SPOF
+3 Data Node add/remove easy
+4 Application develop easy
+5 POSIX semantics file system &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -49,7 +53,8 @@
   
 <form action="https://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:log.heartoutside.com" />
+    <input type="hidden" name="domains" value="log.heartoutside.com" />
+    <input type="hidden" name="sitesearch" value="log.heartoutside.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -64,6 +69,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/15/choose-a-distributed-file-system/">Choose a Distributed File System</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-15T14:42:00+08:00" pubdate data-updated="true">Jul 15<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is how I choose a DFS:<br /></p>
+
+<br />
+
+
+<p>1 Fault Tolerance<br />
+2 No SPOF<br />
+3 Data Node add/remove easy<br />
+4 <span id="goog_1765811814"></span><span id="goog_1765811815"></span>Application develop easy<br />
+5 POSIX semantics <span></span>file system interface<br />
+6 Monitor and tools &#8230;<br /></p>
+
+<br />
+
+
+<p>There is a full list In <a href="http://en.wikipedia.org/wiki/List_of_file_systems#Distributed_fault-tolerant_file_systems">wikipedia</a>.<br />
+For situation 1, Disk, file, machine, network failure should be consider.<br />
+No SPOF and HA is most important for a&nbsp; robust system.<br /></p>
+
+<br />
+
+
+<p>At last I choose <a href="http://en.wikipedia.org/wiki/Moose_File_System">Moose File System</a>, it&#8217;s much like <a href="http://labs.google.com/papers/gfs.html">GFS</a> and it is great. Thanks to them.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1078,55 +1141,6 @@ C++，有严重 Java 痕迹，不算优雅，结构还过得去，能写成这�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/01/13/about-google/">About Google</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-13T22:25:05+08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>去年，Google遭受到一次来自中国的攻击，通过调查发现此次攻击目标还包括其他互联网、金融、技术、媒体和化学行业的20家大公司。</p>
-
-
-<p>有证据证明此次攻击的主要目标是为获取中国某些活跃的人权分子的Gmail账户的控制权。最终只有两个账户的有限信息被窃取。</p>
-
-
-<p>还有证据表明有大量人权人士相关的Gmail账户被routinely accessed by third parties。These accounts have not been accessed through any security breach at Google, but most likely via phishingscams or malware placed on the users&#8217; computers.</p>
-
-
-<p>&nbsp;</p>
-
-
-<p>Gdriver要来了，免费空间是1G</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1142,6 +1156,10 @@ C++，有严重 Java 痕迹，不算优雅，结构还过得去，能写成这�
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/28/high-power-smartphone/">high power smartphone</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/03/22/mawk-and-gawk/">mawk and gawk</a>
@@ -1165,10 +1183,6 @@ C++，有严重 Java 痕迹，不算优雅，结构还过得去，能写成这�
     
       <li class="post">
         <a href="/blog/2011/11/08/nc-and-tar-play-nice-then/">nc and tar play nice then</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/01/hao-xi-guan/">好习惯</a>
       </li>
     
   </ul>

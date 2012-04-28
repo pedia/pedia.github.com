@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: smartphone | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/smartphone/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-04-28T11:00:31+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
+  <author>
+    <name><![CDATA[Ken]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[high power smartphone]]></title>
+    <link href="http://log.heartoutside.com/blog/2012/04/28/high-power-smartphone/"/>
+    <updated>2012-04-28T10:35:00+08:00</updated>
+    <id>http://log.heartoutside.com/blog/2012/04/28/high-power-smartphone</id>
+    <content type="html"><![CDATA[<p>收集了最近能找到的电池容量超过1500mAh的智能机的信息，列表如下。</p>
+
+<table border="1">
+    <tr>
+      <td>
+      </td>
+      <td>
+        battery(mAh)</td>
+      <td>
+        price(RMB Yuan)</td>
+    </tr>
+    <tr>
+      <td>
+        三星GALAXY SII</td>
+      <td>
+        1650</td>
+      <td>
+        2750</td>
+    </tr>
+    <tr>
+      <td>
+        索尼LT26i</td>
+      <td>
+        1750</td>
+      <td>
+        3600</td>
+    </tr>
+    <tr>
+      <td>
+        联想乐Phone K2</td>
+      <td>
+        1760</td>
+      <td>
+        2999</td>
+    </tr>
+    <tr>
+      <td>
+        摩托罗拉XT910</td>
+      <td>
+        1780</td>
+      <td>
+        3199</td>
+    </tr>
+    <tr>
+      <td>
+        HTC One X</td>
+      <td>
+        1800</td>
+      <td>
+        3950</td>
+    </tr>
+    <tr>
+      <td>
+        LGOptimus LTE</td>
+      <td>
+        1830</td>
+      <td>
+        2750</td>
+    </tr>
+    <tr>
+      <td>
+        华为U8860</td>
+      <td>
+        1930</td>
+      <td>
+        1899</td>
+    </tr>
+    <tr>
+      <td>
+        小米M1</td>
+      <td>
+        1930</td>
+      <td>
+        2430</td>
+    </tr>
+    <tr>
+      <td>
+        摩托罗拉XT910 MAXX</td>
+      <td>
+        3300</td>
+      <td>
+        4290</td>
+    </tr>
+    <tr>
+      <td>
+        三星GALAXY Note I9220</td>
+      <td>
+        2500</td>
+      <td>
+        4299</td>
+    </tr>
+    <tr>
+      <td>
+        酷派D539</td>
+      <td>
+        2500</td>
+      <td>
+        925</td>
+    </tr>
+    <tr>
+      <td>
+        华为S8600</td>
+      <td>
+        2000</td>
+      <td>
+        1798</td>
+    </tr>
+    <tr>
+      <td>
+        天语W800</td>
+      <td>
+        2000</td>
+      <td>
+        2980</td>
+    </tr>
+    <tr>
+      <td>
+        联想乐Phone P70</td>
+      <td>
+        2000</td>
+      <td>
+        989</td>
+    </tr>
+  </table>
+
+]]></content>
+  </entry>
+  
+</feed>

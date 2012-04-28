@@ -9,7 +9,7 @@
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="回首十年&mdash;&mdash;从程序员到 CTO 文/Diane Yu from Diane&#8217;s Blog by Diane Per popular request, I am posting the following article that I wrote for《 &hellip;">
+  <meta name="description" content="Trip Report: Exit Concepts, Final ISO C++ Draft in ~18 Months via Sutter&#8217;s Mill by Herb Sutter on 7/21/09 &nbsp; A week ago, I attended the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -49,7 +49,8 @@
   
 <form action="https://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:log.heartoutside.com" />
+    <input type="hidden" name="domains" value="log.heartoutside.com" />
+    <input type="hidden" name="sitesearch" value="log.heartoutside.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -64,6 +65,131 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/07/23/concept-and-cpp0x/">Concept and C++0x</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-23T21:51:50+08:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>    <p>        <a href="http://herbsutter.wordpress.com/2009/07/21/trip-report/">Trip Report: Exit Concepts, Final ISO C++ Draft in ~18 Months</a>    </p>
+</h2>
+
+
+<p>via <a href="http://herbsutter.wordpress.com/">Sutter&#8217;s Mill</a> by Herb Sutter on 7/21/09</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>A week ago, I attended the summer <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2711.pdf">ISO C++ meeting in Frankfurt, Germany</a> . The C++ committee made a lot of progress on addressing national body comments on the full committee draft published last year, and is well on the way to publishing a second and final CD this winter with a final draft international standard a year after that. To meet that schedule, the committee decided to defer a major feature, &ldquo;concepts&rdquo;, and not include it in this standard.</p>
+
+
+<p>I&rsquo;m surprised at some of the commentary I&rsquo;ve been reading on the web about the deferral of concepts, including not just technical inaccuracies but also that their absence in C++0x is somehow a big deal for C++ as a language or is a major geopolitical firestorm. It may feel like a big deal because of the work that&rsquo;s gone into concepts and the large number of pages of standardese that were needed to specify the feature, and there was a lot of discussion about important design details including heavy traffic on the committee reflectors this spring and early summer that probably made them look more controversial than they are.</p>
+
+
+<p>But my opinion is that concepts&rsquo; presence or absence in C++0x just won&rsquo;t make much difference to most users. Let me give some reasons why I feel that&rsquo;s so, and maybe debunk some common misconceptions along the way, in the form of an unofficial FAQ. Note that I was never involved in the design of concepts and don&rsquo;t speak for the designers, whose views might differ here and there; the following are observations from my point of view as a participant in the standards body (including in Frankfurt last week), and chair of the ISO C++ committee during the entire time concepts were being developed up to the meeting they were voted into the ISO C++0x working draft last fall.</p>
+
+
+<p>    <strong>Q: <a href="http://www.research.att.com/%7Ebs/">Bjarne Stroustrup</a> is the creator of C++ and a primary designer of concepts. What&rsquo;s his take?</strong></p>
+
+
+<p>A: Great question. <a href="http://www.ddj.com/architect/218600111"><strong>See Bjarne&rsquo;s coverage here</strong> </a> , published earlier today in Dr. Dobb&rsquo;s.</p>
+
+
+<p>    <strong>Q: Were concepts removed because of political reason X, Y, or Z?</strong></p>
+
+
+<p>A: No. Concepts were removed because of normal project management considerations. The basic constraint has been phrased in many ways, all of them hitting at the same underlying tension among time, scope, cost, and quality. Here are two examples: &ldquo;You can pick what goes on the train, or you can pick when the train leaves the station, but you can&rsquo;t pick both.&rdquo; &ldquo;You can have good, fast, and cheap &ndash; pick any two.&rdquo;</p>
+
+
+<p>Fundamentally, the committee members felt that concepts are desirable but many (though not all) believed that they were still in design mode and needed more &ldquo;bake time&rdquo; &ndash; a formal poll of committee members in Frankfurt put the expected time at between three and four years &ndash; to get up to the quality of a feature that belongs in an international standard. Therefore, the two major options, and the ones that people generally argued for, were to either:</p>
+
+
+<ul>    <li>        <em>Prioritize (bigger) scope.</em> <strong> </strong> Wait for concepts, and accept a delay to the rest of the standard including features that are already finalized and ready to ship. </li>    <li>        <em>Prioritize (faster) schedule.</em> Finish and ship the standard to get already-done features into users&rsquo; hands, and decouple concepts to continue work on them for a future standard. </li></ul>
+
+
+<p>The committee decided to prioritize schedule and ship C++0x sooner while still leaving the door wide open to also adopt concepts later.</p>
+
+
+<p>    <strong>Q: Isn&rsquo;t removing concepts a lot of work? Concepts are used pervasively in the C++0x CD published last fall.</strong></p>
+
+
+<p>A: Yes, but it&rsquo;s less work than you&rsquo;d think. We won&rsquo;t have a de-conceptized working draft for the post-meeting mailing, two weeks after the meeting, but should have one soon after that. (I would be remiss not to add: Thanks to our always-hardworking project editor, Pete Becker!)</p>
+
+
+<p>Recall that, until last September, we had a complete draft of C++0x features specified entirely without the use of concepts. And many of the uses of concepts in the draft standard library were just replacements of preexisting non-concepts wording or implicit requirements (e.g., DefaultConstructible, MemberContainer), and will just revert to their previous wording or disappear back into implicitness.</p>
+
+
+<p>The main C++0x feature that was always specified in terms of concepts was the new range-based for loop (e.g., <em>for( x : collection )</em> ). I&rsquo;ve seen some wonder what we&rsquo;ll do about that, but it&rsquo;s already done; the non-concepts text for that feature was already voted in at the same Frankfurt meeting.</p>
+
+
+<p>    <strong>Q: Wasn&rsquo;t this C++0x&rsquo;s one big feature?</strong></p>
+
+
+<p>A: No. Concepts would be great, but for most users, the presence or absence of concepts will make no difference to their experience with C++0x except for quality of error messages (see below).</p>
+
+
+<p>C++0x is still a major revision with many new major features, including improvements to templates (e.g., variadic templates, template aliases). C++&rsquo;s other major new features include lambda functions (which unfortunately for Java were rejected for Java 7), move semantics (aka rvalue references), a concurrency memory model, threading and atomics libraries, initializer lists, and more. Other handy new features include delegating constructors, inherited constructors, defaulted and deleted functions, explicit virtual overriding control, alignment support, static assertions, and more. Not to mention convenience features like range-based for loops and &ldquo;auto&rdquo; type inference that are small but will certainly get a lot of use (as they do in C# and Java).</p>
+
+
+<p>A number of those features are available now or soon in real compilers, including Gnu gcc, Visual C++ 2010, and Intel C++.</p>
+
+
+<p>    <strong>Q: Aren&rsquo;t concepts about adding major new expressive power to the language, and so enable major new kinds of programs or programming styles?</strong></p>
+
+
+<p>A: Not really. Concepts are almost entirely about getting better error messages.</p>
+
+
+<p>Yes, concepts would add one truly new expressive capability to the language, namely the ability to overload on concepts. That&rsquo;s inconvenient to simulate without language support. Concept-based overloading would have been used in a handful of places in the standard library. But that&rsquo;s it.</p>
+
+
+<p>By far the most visible benefit of concepts lies in clearer template error messages, including the ability to do separate checking &ndash; confirming that a template&rsquo;s implementation type-checks correctly with all possible valid types without having to instantiate it, and confirming that a given type can be used to instantiate a template without knowing the template&rsquo;s implementation.</p>
+
+
+<p>    <strong>Q: Weren&rsquo;t concepts all about bringing templates into the 21st century? Where does this leave templates?</strong></p>
+
+
+<p>A: Templates are still king of the genericity hill, for all their faults in the area of opaque compiler messages.</p>
+
+
+<p>It&rsquo;s important to remember that, in 1994, C++ was the only major language whose type genericity capabilities were strong enough to create the <a href="http://en.wikipedia.org/wiki/Standard_Template_Library">Standard Template Library (STL)</a> . Today, 15 years later, that is still true; you can&rsquo;t express the STL&rsquo;s containers-algorithms design separation well, or at all, using generics facilities in Ada, Java, .NET, or any other significant commercial or research language that I know of; as we learned when doing <a href="http://msdn.microsoft.com/en-us/library/ms379600%28VS.80%29.aspx">STL.NET</a> , you can do the containers well with other generics, but not the orthogonalization with algorithms that is the heart of STL design style. Concepts or not, that hasn&rsquo;t changed.</p>
+
+
+<p>So my personal view is that templates have been in the 21st century since about 1994. No other language has yet caught up to their expressive power. And C++0x is adding some further power to templates, in particular by adding variadic templates and template aliases, both of which will help to simplify template code.</p>
+
+
+<p>Posted in C++</p>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -699,77 +825,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/05/07/seven-kinds-of-unit-tests/">单元测试的七种境界</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-07T07:03:38+08:00" pubdate data-updated="true">May 7<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>         <a href="http://www.yeeyan.com/articles/view/zhaorui/39868" target="_blank">单元测试的七种境界</a> </h2>
-
-
-<p>         <span>from <a href="http://www.google.com/reader/view/feed/http%3A%2F%2Ffeeds.feedburner.com%2Fyeeyan_tech_zh" target="_blank">译言-技术与创业</a> </span> by <span>zhaorui</span> </p>
-
-
-<p>原文作者：Karl Seguin<br />
- 原文链接：<a href="http://codebetter.com/blogs/karlseguin/archive/2009/04/27/the-7-phases-of-unit-testing.aspx" target="_blank">The 7 Phases of Unit Testing</a>          <br />
- 译者：<a href="http://www.yeeyan.com/space/show/zhaorui" target="_blank">zhaorui</a> </p>
-
-
-<p>单元测试的七种境界</p>
-
-
-<p>1. 以各种借口拒绝单元测试Unit Test，比较常用的是&ldquo;你没有足够的时间（进行单元测试）&rdquo;。</p>
-
-
-<p>2. 尝试单元测试并且立刻开始在自己的博客商鼓吹单元测试和测试驱动开发Test Driven Development的好处。</p>
-
-
-<p>3. 单元测试一切。为了能够完成单元测试，而将私有private的方法和属性修改为内部internal；为了达到单元测试覆盖率100%而测试getter() 和 setter() 属性（方法）。</p>
-
-
-<p>4. 无法忍受脆弱的单元测试，在没有弄明白是什么的时候，就匆忙转向&ldquo;集成测试&#8221; integration test。</p>
-
-
-<p>5. 发现了一种模拟 mocking 框架，并且乐于使用强制语义（strict semantics）。</p>
-
-
-<p>6. 模拟mock所有可能模拟mocked的对象。</p>
-
-
-<p>7. 开始真正有效单元测试。</p>
-
-
-<p> <!--XN_AntiSpam_Robot 2009-06-16--></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -785,6 +840,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/28/high-power-smartphone/">high power smartphone</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/03/22/mawk-and-gawk/">mawk and gawk</a>
@@ -808,10 +867,6 @@
     
       <li class="post">
         <a href="/blog/2011/11/08/nc-and-tar-play-nice-then/">nc and tar play nice then</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/01/hao-xi-guan/">好习惯</a>
       </li>
     
   </ul>
