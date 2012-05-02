@@ -9,7 +9,7 @@
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="Trip Report: Exit Concepts, Final ISO C++ Draft in ~18 Months via Sutter&#8217;s Mill by Herb Sutter on 7/21/09 &nbsp; A week ago, I attended the &hellip;">
+  <meta name="description" content="转自 http://www.yeeyan.com/articles/view/docman_cn/52317 10个让我去寻找比Java更好的语言的原因 别误会我. 在我的职业生涯中我写了无数的Java代码,我当然认为它是个十分优秀的语言. 必须承认,Java在C++ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,95 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/07/30/poor-java/">可怜的Java</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-30T07:22:33+08:00" pubdate data-updated="true">Jul 30<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>转自 http://www.yeeyan.com/articles/view/docman_cn/52317</p>
+
+
+<h1>10个让我去寻找比Java更好的语言的原因</h1>
+
+
+<p>别误会我.   在我的职业生涯中我写了无数的Java代码,我当然认为它是个十分优秀的语言. 必须承认,Java在C++和Smalltalk的基础上改进了不少.  但是现在,Java也开始感觉到了第15岁的沉重了.<br />
+     <br />
+ 确实,在我的编程日子中,我不得不面对Java在当初设计时留下来的错误,缺陷和限制.这给程序员的编程生活减少了很多乐趣. 面对成百万的Java程序员和他们产出的亿计的代码行,我恐怕必须要说:Java在不久的将来就会死掉. 然而,随着越来越多的JVM兼容的语言的出现(我最喜欢的是Scala),这些问题让我越发没有耐性,我认为是到了慢慢脱离Java的时候了(但不脱离 JVM). 详细的说,按我的观点,Java的十大问题是:</p>
+
+
+<p>    <strong>1.没有Closure:</strong> 我 觉得没必要再次解释这个问题. 基于函数的编程十年前就出现了,但这几年越来越受人们的关注.最主要的原因是它能让人按最普素的方式编写并行程序. Joshua Bloch 强调应该再考虑把这个特征加入到Java中(BGGA的野心有些大)我对这些观点有所保留.事实上,他们的设计上的缺陷不可能使Java具有真正的函数 性.</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>    <strong>2.没有一级函数:</strong> 这个问题跟前一个问题有关联,但我觉得这个问更糟糕 . 在Java里实现类似功能的唯一途径是使用巨丑陋,巨郁闷的只有一个方法的内部匿名类,这个方案实在很差劲. 就连C#也通过代理机制提供了一种比它好的实现.<br />
+     <br />
+     <strong>3. 基本类型:</strong> 如果Java里的一切都是对象，那将是一个很美的事情，但Java并没有像这样设计。 这就导致了一些问题,例如,你不能实现一个装着int的Collection,Java5里使用自动封装机制只是部分的解决了这个问题(如下). 它也同时产生了按值传参和按引用传参的混淆. 基本数据类型是通过值传递的(把数据复制一份传近去),而真正的对象是按引用传递的.<br />
+     <br />
+     <strong>4.自动封装和解封:</strong> 这 个特征已经引入到Java5里了,用来解决由于基本数据类型的存在而产生的问题. 它可以隐式的自动将基本数据类型转化为相应的对象,但这经常会引起一些问题. 例如一个Integer可以是null值，但是int却不可以，所以当你把这样一个Integer被转化成int时，JVM除了能抛出该摸不着头脑的 NullPointerException，什么都做不了。 更甚者它能产生一些其他的奇怪的行为，就像下面的，估计大家都会很难理解为什么这个给变量会是false：<br />
+     <br />
+     <code> Intger a = new Integer(1024);<br />
+ Intger b = new Integer(1024);<br />
+ boolean test = a &lt; b || a == b || a &gt; b;</code>     <br />
+     <br />
+     <strong>5.不能泛型具体化：</strong> 泛型是在Java5中引入的一个很酷的特征，但是为了和老版本的Java兼容，放弃了一些很重要的特性。 特别是不能即时检测并使用泛型。 例如你的一个方法可以接收 List&lt;?&gt;的参数，当你传进去 List&lt;String&gt;时，你却不能即时知道确切的参数的类型。 同样的道理，你不能创建一个数组型的泛型。 这就意味着下面这行尽管看起来是如此自然无误的语句去不能编译：<br />
+     <br />
+     <code> List&lt;String&gt;[] listsOfStrings = new List&lt;String&gt;[3];<br />
+     </code>     <br />
+     <strong>6.逃避不了的泛型警告：</strong> 你 是否曾经发现自己怎么都去不掉那些关于泛型的警告？ 如果你像我一样大量的使用泛型，我相信你会的。 就连Java设计者们也感觉到有必要引入一个特殊的标记 (@SuppressWarnings(&#8220;unchecked&#8221;))来解决这个问题，这正表明这个问题的严重性，按我的观点，泛型实际上可以设计的更好。<br />
+     <br />
+     <strong>7.不能在调用方法时传入一个 void：</strong> 我相信把一个void 传进一个方法的需求初一看时是多么的奇怪。 问题是这样，我喜欢DSL，为了在我的DSL库里（<a href="http://code.google.com/p/lambdaj/" target="_blank">lambdaj</a> ） 实现一个特殊的功能，我需要写这样的一个方法： void doSomething(Object parameter)，被传进去的参数有可能是另一个可以被调用的方法语句，这个语句将来将会被执行。 让我十分沮丧的是，很显然，没有什么好方法，因为，就像下面，这个println方法会返回void，Java是不允许我写成这样的：<br />
+     <br />
+     <code> doSomething(System.out.println("test"));<br />
+     </code>     <br />
+     <strong>8.没有本地代理机制：</strong> 代 理是一个很有用的且广泛使用的模式，但是Java提供的代理机制只是使用接口来实现，没有具体的类。 这就是为什么像cglib这样能提供这种功能的类库会在如此多的像hibernate,spring的主流框架中使用. 然而cglib只是通过即时生成一个类来继承扩展被代理的对象的方法实现这个特性.这种方法有个明显的限制,就是你不能生成一个对象继承一个final对 象,spring里就有这个问题.<br />
+     <br />
+     <strong>9.弱的</strong> <strong>switch &#8230; case语句：</strong> switch &#8230; case在Java里规定的只能使用int和enum（enum在Java5里才开始用）。 这个让人觉得特别的无奈,特别是跟那些提供了这个功能现代语言来说,例如scala.<br />
+     <br />
+     <strong>10.异常检测：</strong> 就 像基本数据类型一样，异常检测是Java的原罪之一。 它强迫程序员去做下面两个让人哭笑不得的事情之一：一个是让你把代码里填满不可理解又易出错的try &#8230; catch语句，这样做唯一的目的就是把运行时捕捉到的异常再抛出去；或者是把你的API上加入成堆的throws语句，使程序缺少灵活性而且不易扩展。<br />
+     <br />
+ 能解决大部分上面我所提到的这些问题的唯一方法是，需要做一个痛苦的决定，定一个新的语言规范，抛弃向后兼容的做法，从头再来。 我相信，他们永远不会做这个事情，即使是我相信，写一个能自动转化老的Java源代码，达到兼容目的的工具并不困难的情况下，他们也不愿意做。 最终，这就成了我为什么要开始去寻找一个更好的JVM兼容的编程语言的理由。</p>
+
+
+<p>&nbsp;</p>
+
+
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+
+
+<p>1,2,3,7我都不明白</p>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -782,49 +871,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/05/07/i-am-illiterate/">本人系文盲</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-07T21:28:05+08:00" pubdate data-updated="true">May 7<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>本人系文盲，文中多数字不认识，多数词不明白其含义，跟帖行为纯粹是身体缺乏营养，倒置肌肉神经抽搐，被动随手敲击键盘所致，并不意味本人同意、支持、反对，或了解、知晓文中观点，如有任何疑问请直接联系原作者本人。故本人不对以上内容负法律责任（包括民法、刑法或婚姻法，及文中提及或未提及之法律）。</p>
-
-
-<p>         <br />
- 另：最近电脑黑客肆虐，因此回复内容可能为黑客发出，而非本人真实意思表示，谢绝跨省追捕，如拟了解详情，请直接与计算机黑客联系。谢谢。</p>
-
-
-<p> <!--XN_AntiSpam_Robot 2009-06-16--></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -840,6 +886,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/05/02/collaboration-in-corp/">公司内部代码协作</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/04/28/high-power-smartphone/">high power smartphone</a>
@@ -863,10 +913,6 @@
     
       <li class="post">
         <a href="/blog/2011/11/30/digest/">Digest</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/08/nc-and-tar-play-nice-then/">nc and tar play nice then</a>
       </li>
     
   </ul>

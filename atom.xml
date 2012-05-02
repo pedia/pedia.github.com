@@ -4,7 +4,7 @@
   <title><![CDATA[HeartOutside]]></title>
   <link href="http://log.heartoutside.com/atom.xml" rel="self"/>
   <link href="http://log.heartoutside.com/"/>
-  <updated>2012-04-28T11:00:31+08:00</updated>
+  <updated>2012-05-02T11:04:03+08:00</updated>
   <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
@@ -12,6 +12,113 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[公司内部代码协作]]></title>
+    <link href="http://log.heartoutside.com/blog/2012/05/02/collaboration-in-corp/"/>
+    <updated>2012-05-02T10:58:00+08:00</updated>
+    <id>http://log.heartoutside.com/blog/2012/05/02/collaboration-in-corp</id>
+    <content type="html"><![CDATA[<p>公司内部，团队间不可避免的有代码互相访问的事情发生。</p>
+
+<h2>普通方式</h2>
+
+<p>提供者提供头文件和库供调用者实施访问，这是比较常见的方式。当然库有可能是静态库，动态库。</p>
+
+<p>静态库要求双方编译环境，运行环境一致，否则就得提供多种环境的库文件。动态库要求稍微弱一些而已。</p>
+
+<p>很多人会把别人的头文件进行封装，美其名曰为了<strong>屏蔽变化</strong>，虽说封装开销微乎其微，但是我尤其讨厌这么做。
+这种事情甚至会出现在一个团队内的两个人间，一般这两人可能是独立设计。这是缺乏信任、沟通的结果。</p>
+
+<p>如果只提供二进制，看不到代码，又不是经济方面的原因，那么这种公司可以离开了。</p>
+
+<p>如果出现数次使用邮件、聊天软件传文件等方式交流代码，也无力改变，这种公司也可以考虑离开。</p>
+
+<h2>远程调用</h2>
+
+<p>提供者可以只提供 IDL 文件。
+取决于远程调用的使用、部署方式等。工程间的依赖、接口的变更这都是需要解决的问题。</p>
+
+<p>也可以进一步提供封装过服务发现、调用方式、错误处理等后的库。问题就和<strong>普通方式</strong>一致了。</p>
+
+<h2>直接使用</h2>
+
+<p>要求大家的代码在一颗代码树下，代码间能互相调用，工程间能引用。</p>
+
+<p>假想公司内有个独立的防止 Spam 的小组，业务部门 Blog 需要使用他们的代码。</p>
+
+<figure class='code'><figcaption><span>spam/check.h</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#ifndef SPAM_CHECK_H__</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">namespace</span> <span class="n">spam</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">bool</span> <span class="n">Check</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">text</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>该工程产生 libcheck.a</p>
+
+<figure class='code'><figcaption><span>blog/publish.cc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include &quot;spam/check.h&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">Post</span><span class="p">(...)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">spam</span><span class="o">::</span><span class="n">Check</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// ...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>调用方的工程文件需要声明</p>
+
+<figure class='code'><figcaption><span>blog/blog.gyp</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>  <span class="s1">&#39;dependencies&#39;</span> <span class="o">:</span> <span class="p">[</span><span class="s1">&#39;spam.gyp:check&#39;</span><span class="p">],</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://code.google.com/p/gyp">gyp</a> 为工程文件，最终生成 Makefile</p>
+
+<p>Blog 编译时自动加入 -lcheck，一般静态链接发布。能如此做是有很多先决条件的：</p>
+
+<ul>
+<li><p>公司内一颗代码树，至少都拥有可读权限</p></li>
+<li><p>每个团队间的代码不能互相影响，需要每个团队都得采用分支开发，保证主线是稳定，可发布版本</p></li>
+<li><p>信息是开放的，每个团队的代码的变更其他团队应该能知道</p></li>
+<li><p>公司内部有统一的良好的沟通工具，如 IRC, 邮件列表等</p></li>
+</ul>
+
+
+<p>还有其他规范，如</p>
+
+<ul>
+<li><p>统一的代码风格</p></li>
+<li><p>目录规则、namepsace 规则、冲突解决等。</p></li>
+</ul>
+
+
+<p>如果是远程调用，大致可以拆解为：服务发现、调用包装、错误处理等子项，每个子项也可以同理解决。</p>
+
+<p>很多公司把代码的权限管理得相当不错，虽然我也能遵守，但是通常呢？</p>
+
+<blockquote><p> 有能力的人不太在乎那些个代码，没有能力的呢？通常可能都玩不转那些个代码
+ 连Google都是内部开放代码，有什么理由制造层层障碍。这种公司也不值得留下。</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[high power smartphone]]></title>
@@ -1609,64 +1716,6 @@ Nginx as reverse-proxy server<br /></p>
 <p>&#8212;&#8212;-感言分割线&#8212;&#8212;&#8212;&#8212;<br />
 有很多人说“选择什么语言都一样”，是的，我很赞成，这话我也常说。但是选择语言后，之后的影响是深远的，乃至于思维理念、人都会不一样。这是一句空话。<br />
 至此在我内心关于架构的争论结束了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[能知道究竟是那个进程使用了swap吗？]]></title>
-    <link href="http://log.heartoutside.com/blog/2011/02/15/do-you-know-what-is-the-process-using-the-swap/"/>
-    <updated>2011-02-15T20:40:40+08:00</updated>
-    <id>http://log.heartoutside.com/blog/2011/02/15/do-you-know-what-is-the-process-using-the-swap</id>
-    <content type="html"><![CDATA[<p>昨天有同学问了这个问题<br />
-我查了一下：<br />
-top 显示关于内存的信息<br />
-Mem:&nbsp;&nbsp; 1984888k total,&nbsp;&nbsp; 867772k used,&nbsp; 1117116k free,&nbsp;&nbsp;&nbsp; 88520k buffers<br />
-Swap:&nbsp; 7201788k total,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0k used,&nbsp; 7201788k free,&nbsp;&nbsp; 295756k cached<br />
-     <br />
-其中 swap 信息来自于 /proc/meminfo<br />
-SwapTotal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7201788 kB<br />
-SwapFree:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7201788 kB<br />
-     <br />
-是 kernel 内页使用情况的真实反映：<br />
-mm/swapfile.c:1710: val-&gt;totalswap = total_swap_pages + nr_to_be_unused;<br />
-     <br />
-top 貌似也能显示每个进程的 SWAP 信息：<br />
-其值来自（402为进城id）：<br />
-/proc/402/task/402/stat or /proc/402/statm<br />
-数值分别是:<br />
-size, resident, share, trs, lrs, drs, dt<br />
-     <br />
-     <strong>其值不可能是真实的swap信息</strong>，计算方式是<br />
-case P_SWP:<br />
-&nbsp; MKCOL(scale_num(PAGES_TO_KB(p-&gt;size - p-&gt;resident), w, s));<br />
-&nbsp; break;<br />
-     <br />
-     <span style="color: rgb(128,128,128);">我想如果内核的mm模块不报告page的进程信息，那么压根就没有地方能准确得到&ldquo;那个进程使用了swap&rdquo;信息，后来在 htop 的faq 里找到了佐证： http://htop.sourceforge.net/index.php?page=faq</span></p>
-
-
-<p>[update]<br />
-不知为何，我机器上的代码居然是2006年的，那时还没有以下方法呢</p>
-
-
-<p>2008年在 /proc/pid/smaps 添加了 Swap 信息(account swap entries)<br />
-最早的实现方法是遍历了所有的page, 如果 is_swap_pte, 就记录为 swap<br />
-     <br />
-还有一个更精确的计算是/proc/pid/pagemap，但是是二进制的</p>
-
-
-<p>&nbsp;* /proc/pid/pagemap - an array mapping virtual pages to pfns<br />
-&nbsp;*<br />
-&nbsp;* For each page in the address space, this file contains one 64-bit entry<br />
-&nbsp;* consisting of the following:<br />
-&nbsp;*<br />
-&nbsp;* Bits 0-55&nbsp; page frame number (PFN) if present<br />
-&nbsp;* Bits 0-4&nbsp;&nbsp; swap type if swapped<br />
-&nbsp;* Bits 5-55&nbsp; swap offset if swapped<br />
-&nbsp;* Bits 55-60 page shift (page size = 1&lt;&lt;page shift)<br />
-&nbsp;* Bit&nbsp; 61&nbsp;&nbsp;&nbsp; reserved for future use<br />
-&nbsp;* Bit&nbsp; 62&nbsp;&nbsp;&nbsp; page swapped<br />
-&nbsp;* Bit&nbsp; 63&nbsp;&nbsp;&nbsp; page present</p>
-
 ]]></content>
   </entry>
   
