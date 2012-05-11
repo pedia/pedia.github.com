@@ -9,8 +9,7 @@
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="我在vc7中做了一个测试，插入50万条随机生成的记录到hash_map中，结果令我大吃一惊。 随机字符串生成：字符串长度为1-12个小写字母(50万个字符串中大概只有34万个不重复) 插入的速度 vc7 STLstlport 4.62
-前25万条350ms/万条200ms/万条 &hellip;">
+  <meta name="description" content="我写Windows程序的编译器一直都是vc7,并且短时间内也不打算迁移到其他版本。 最近开始写一个低内存消耗的程序(对比：千千静听)，所以测试了一下针对内存的优化效果。 改变了一下程序编译优化设置，运行后使用 Process Explorer查看内存占用量，得到的结果如下： 最大化速度(/O2) &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,61 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/02/13/vc7-compile-optimization/">Vc7 Compile Optimization</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-02-13T18:12:00+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我写Windows程序的编译器一直都是vc7,并且短时间内也不打算迁移到其他版本。</p>
+
+<p>最近开始写一个低内存消耗的程序(对比：<a href="http://www.ttplayer.com" target="_blank">千千静听</a>)，所以测试了一下针对内存的优化效果。</p>
+
+<p>改变了一下程序编译优化设置，运行后使用 <a href="http://www.microsoft.com/technet/sysinternals/utilities/ProcessExplorer.mspx" target="_blank"> <font size="-1">Process Explorer</font></a>查看内存占用量，得到的结果如下：</p>
+
+<pre><code>         最大化速度(/O2)      最小化大小(/O1)
+</code></pre>
+
+<p> Working Set: 580K      440K             6%</p>
+
+<p> WS Private:  252       240</p>
+
+<p> WS Sharedable: 328     200</p>
+
+<p> WS Shared:     316     192</p>
+
+<p>优化最大化大小比最大化速度的 Working Set 低了 6%。</p>
+
+<p>ps: 这篇文章使用gmail<a href="http://help.blogger.com/bin/answer.py?answer=41452&amp;topic=8929">邮件</a>发送.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -233,6 +287,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/05/11/nexus-flash/">Nexus Update 4.0.4(IMM761)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/05/02/collaboration-in-corp/">公司内部代码协作</a>
       </li>
     
@@ -254,10 +312,6 @@
     
       <li class="post">
         <a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/30/digest/">Digest</a>
       </li>
     
   </ul>

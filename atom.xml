@@ -4,7 +4,7 @@
   <title><![CDATA[HeartOutside]]></title>
   <link href="http://log.heartoutside.com/atom.xml" rel="self"/>
   <link href="http://log.heartoutside.com/"/>
-  <updated>2012-05-02T11:04:03+08:00</updated>
+  <updated>2012-05-11T11:16:02+08:00</updated>
   <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Nexus Update 4.0.4(IMM761)]]></title>
+    <link href="http://log.heartoutside.com/blog/2012/05/11/nexus-flash/"/>
+    <updated>2012-05-11T10:00:00+08:00</updated>
+    <id>http://log.heartoutside.com/blog/2012/05/11/nexus-flash</id>
+    <content type="html"><![CDATA[<p>我没有参考什么攻略，直接看<a href="https://developers.google.com/android/nexus/images">Google Nexus Images的文档</a>，
+然后下载 <a href="https://developers.google.com/android/nexus/images#yakju">yakju</a>，</p>
+
+<p>然后解开压缩包</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar zxf yakju-imm76i-factory-8001e72f.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后执行</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd yakju-imm76i
+</span><span class='line'>sudo ./flash-base.sh</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>yakju-imm76i $ sudo fastboot -w update image-yakju-imm76i.zip
+</span><span class='line'>archive does not contain 'boot.sig'
+</span><span class='line'>archive does not contain 'recovery.sig'
+</span><span class='line'>archive does not contain 'system.sig'
+</span><span class='line'>--------------------------------------------
+</span><span class='line'>Bootloader Version...: PRIMELA03
+</span><span class='line'>Baseband Version.....: I9250XXLA2
+</span><span class='line'>Serial Number........: 0--------------2
+</span><span class='line'>--------------------------------------------
+</span><span class='line'>checking product... OKAY
+</span><span class='line'>checking version-bootloader... OKAY
+</span><span class='line'>checking version-baseband... OKAY
+</span><span class='line'>sending 'boot' (4148 KB)... OKAY
+</span><span class='line'>writing 'boot'... OKAY
+</span><span class='line'>sending 'recovery' (4478 KB)... OKAY
+</span><span class='line'>writing 'recovery'... OKAY
+</span><span class='line'>sending 'system' (316111 KB)... OKAY
+</span><span class='line'>writing 'system'... OKAY
+</span><span class='line'>erasing 'userdata'... OKAY
+</span><span class='line'>erasing 'cache'... OKAY</span></code></pre></td></tr></table></div></figure>
+
+
+<p>系统重新启动，成功 <br/>
+<img src="http://log.heartoutside.com/pic/nexus.png" width="360" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[公司内部代码协作]]></title>
@@ -107,7 +178,7 @@
 
 <ul>
 <li><p>统一的代码风格</p></li>
-<li><p>目录规则、namepsace 规则、冲突解决等。</p></li>
+<li><p>目录规则、namespace 规则、冲突解决等。</p></li>
 </ul>
 
 
@@ -115,8 +186,10 @@
 
 <p>很多公司把代码的权限管理得相当不错，虽然我也能遵守，但是通常呢？</p>
 
-<blockquote><p> 有能力的人不太在乎那些个代码，没有能力的呢？通常可能都玩不转那些个代码
+<blockquote><p> 有能力的人不太在乎那些个代码，没有能力的呢？通常可能都玩不转那些个代码<br/>
  连Google都是内部开放代码，有什么理由制造层层障碍。这种公司也不值得留下。</p></blockquote>
+
+<p>限制创造力的规则。</p>
 ]]></content>
   </entry>
   
@@ -1660,62 +1733,6 @@ Interesting lessons to watch. What decisions has your company made to accelerate
     </p>
 </p>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[终结技术架构争论]]></title>
-    <link href="http://log.heartoutside.com/blog/2011/02/16/end-technology-architecture-debate/"/>
-    <updated>2011-02-16T18:17:00+08:00</updated>
-    <id>http://log.heartoutside.com/blog/2011/02/16/end-technology-architecture-debate</id>
-    <content type="html"><![CDATA[<p>Quora.com 是facebook CTO离开后的创业项目，现在已经有不小成就，在美国流量排名已经达到634名<br />
-<img border="0" src="http://traffic.alexa.com/graph?&amp;w=400&amp;h=220&amp;o=f&amp;c=1&amp;y=r&amp;b=ffffff&amp;n=666666&amp;r=2y&amp;u=quora.com&amp;" />&nbsp;作为成就了Facebook技术体系的人，又有机会从头构建技术体系，其选择必然有所参考价值。<br /></p>
-
-<h2>Quora并没有继续沿用 PHP</h2>
-
-<p><a href="http://www.quora.com/What-are-the-crawling-horrors-of-PHP">PHP 某些糟糕的语言特性</a><br />
-<a href="http://www.quora.com/Do-Facebook-engineers-enjoy-programming-in-PHP">Facebook 工程师喜欢PHP么</a><br /></p>
-
-<h2>而是<a href="http://www.quora.com/Why-did-Quora-choose-Python-for-its-development">选择了 Python</a></h2>
-
-<blockquote><p>Python was a language that Charlie and I both knew reasonably well  (though I know it a lot better now than I did when we started). We also  briefly considered C#, Java, and Scala. The biggest issues with Python  are speed and the lack of typechecking.<br /></p>
-
-<p>We decided that Python was fast enough for most of what we need to do  (since we push our performance-critical code to backend servers written  in C++ whenever possible). As far as typechecking, we ended up writing  very thorough unit tests which are worth writing anyway, and achieve  most of the same goals. We also had a lot of confidence that Python  would continue to evolve in a direction that would be good for the life  of our codebase, having watched it evolve over the last 5 years.<br /></p>
-
-<p>So  far, we&#8217;ve been pretty happy with the choice. There&#8217;s a small selection  bias, but all of the employees who&#8217;d been working with other languages  in the past have been happy to transition to Python, especially those  coming from PHP. Since starting the following things have happened:</p></blockquote>
-
-<ul><li>Python  2.6 got to the point where enough of the libraries we used were  compatible with it, and we made a very easy transition to it.</li>
-<li><span class="qlink_container"><a href="http://www.quora.com/Tornado-web-framework">Tornado (web framework)</a></span>&nbsp;was released as open source, and we moved our live updating web service to that.</li>
-<li><span class="qlink_container"><a href="http://www.quora.com/PyPy">PyPy</a></span>&nbsp;got to the point where it looks like it will eventually be usable and will give us a significant speedup.</li>
-<li>Python data structures map well to JavaScript data structures so  marshaling data between the browser and the server is straightforward  and easy. &nbsp;This is really nice since Quora involves a lot of  interactions between the client and server that aren&#8217;t page loads.</li>
-<li>Python  code tends to be very readable and since we wanted to be able to work  on the site with a bunch of people, this was important.</li>
-<li>There  are lots of other libraries that are written in Python so its easy to  incorporate things like custom mail servers, task queues, etc. into the  rest of our codebase.</li>
-</ul>
-
-
-<h2>为何没有选择Java</h2>
-
-<blockquote><p>For a lot of little reasons, Java programs end up being longer and more  painful to write than the equivalent Python programs. It&#8217;s also harder  to interoperate with non-Java stuff.&nbsp;Scala had a lot of the downsides of  Java and the JVM, although it wasn&#8217;t quite as bad. The language seemed a  little too new and like it would bring some unnecessary risk (for  example, who knows how good will support be in 10 years).</p></blockquote>
-
-<h2>没有选择 C#</h2>
-
-<blockquote><p>C# seemed pretty promising. As a programming language, it&#8217;s great, but:<br />
-* We  didn&#8217;t want to be on the Microsoft stack. We were up for learning  something new, and MS SQL Server actually seemed pretty good, but we  knew we&#8217;d need to integrate with lots of open source code that has only  second-class support for .NET, if it supports it at all. Also, most of  the best engineers these days are used to open source stuff.
-* We  didn&#8217;t want to take the risk of being on Mono (an open source  implementation of C#/.NET). It&#8217;s not clear how long funding will be  around for that project, and I&#8217;d heard of various performance problems.  Plus, it seemed like everything else in the C# ecosystem would assume we  were on the Microsoft stack.</p></blockquote>
-
-<h2>数据库选择 MySQL</h2>
-
-<p>使用 Memcache 作为数据库前面的cache<br />
-据说Quora实现了两个 C++ 的服务，采用 Thrift 作为远程调用和语言粘合剂<br />
-Pylons 为 web framework<br />
-Tornado 实现 Long Polling(Comet)<br />
-采用 JQuery 为 Javascript 基础库，还有 JQuery UI<br />
-HAProxy Load-Balancing<br />
-Nginx as reverse-proxy server<br /></p>
-
-<p>&#8212;&#8212;-感言分割线&#8212;&#8212;&#8212;&#8212;<br />
-有很多人说“选择什么语言都一样”，是的，我很赞成，这话我也常说。但是选择语言后，之后的影响是深远的，乃至于思维理念、人都会不一样。这是一句空话。<br />
-至此在我内心关于架构的争论结束了。</p>
 ]]></content>
   </entry>
   

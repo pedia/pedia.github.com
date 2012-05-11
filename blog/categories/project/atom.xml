@@ -4,7 +4,7 @@
   <title><![CDATA[Category: project | HeartOutside]]></title>
   <link href="http://log.heartoutside.com/blog/categories/project/atom.xml" rel="self"/>
   <link href="http://log.heartoutside.com/"/>
-  <updated>2012-05-02T11:04:03+08:00</updated>
+  <updated>2012-05-11T11:18:46+08:00</updated>
   <id>http://log.heartoutside.com/</id>
   <author>
     <name><![CDATA[Ken]]></name>
@@ -93,7 +93,7 @@
 
 <ul>
 <li><p>统一的代码风格</p></li>
-<li><p>目录规则、namepsace 规则、冲突解决等。</p></li>
+<li><p>目录规则、namespace 规则、冲突解决等。</p></li>
 </ul>
 
 
@@ -101,8 +101,10 @@
 
 <p>很多公司把代码的权限管理得相当不错，虽然我也能遵守，但是通常呢？</p>
 
-<blockquote><p> 有能力的人不太在乎那些个代码，没有能力的呢？通常可能都玩不转那些个代码
+<blockquote><p> 有能力的人不太在乎那些个代码，没有能力的呢？通常可能都玩不转那些个代码<br/>
  连Google都是内部开放代码，有什么理由制造层层障碍。这种公司也不值得留下。</p></blockquote>
+
+<p>限制创造力的规则。</p>
 ]]></content>
   </entry>
   

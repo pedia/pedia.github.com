@@ -9,7 +9,7 @@
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="对MM说自己有钱的十种方法 from 胡戈戈的空间 by 胡戈戈2008 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1、我太穷了。我穷得除了剩下钱以外什么都没有了。 　　[靠，这种话也能说出口。有钱人就是不一样，根本不把钱当钱。] 　　2、哦，是你呀。我现在正在忙。 &hellip;">
+  <meta name="description" content="Microsoft.com: What&#8217;s the story? If you&#8217;ve ever wondered how microsoft.com uses our technology then read on.&nbsp; I recently came across &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,80 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/19/microsoftcom-what39s-the-story/">Microsoft.com: What&#39;s the Story?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-19T07:00:52+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h5 class="posthead pageTitle"><b style="color: black; background-color: rgb(255, 255, 102);">Microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b>: <b style="color: black; background-color: rgb(160, 255, 255);">What&#8217;s</b> the <b style="color: black; background-color: rgb(153, 255, 153);">story</b>? </h5>
+
+
+<p><font face="Segoe UI" size="2">If you&#8217;ve ever wondered how </font><a target=_blank href="http://www.microsoft.com/"><font face="Segoe UI" size="2"><b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b></font></a><font face="Segoe UI" size="2"> uses our technology then read on.&nbsp; I recently came across some good information from the folks over at the </font><a target=_blank href="http://blogs.technet.com/mscom/default.aspx"><font face="Segoe UI" size="2">Operations team</font></a><font face="Segoe UI" size="2"> at <b style="color: black; background-color: rgb(255, 255, 102);">Microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b>.&nbsp; The thread basically talks about how we use IIS, Firewalls and Windows Server 2008.&nbsp; I think as we come up to launch next year it&#8217;s a really good and quick insight into what they do and how they do it.&nbsp; So enjoy the reading and let me know what you think..Pretend I&#8217;ve asked about how they protect our sites&#8230;</font></p>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><font face="Segoe UI"><span style="background: yellow none repeat scroll 0%; font-size: 10pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US">At this point we still don&#8217;t use firewalls for MS.COM sites and don&#8217;t have any plans on the books to put them in place.</span><span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US">&nbsp; Here is the short answer as to why:</span></font></p>
+
+
+<ol><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">1 We don&#8217;t handle HBI data so we don&#8217;t have the need for external logging capabilities.&nbsp; If we did handle HBI, we&#8217;d have firewalls.</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">2 We have <b>~650GB/day of IIS logs</b> just for <font color="#000000"><a target=_blank href="http://www.microsoft.com/" target="_blank">www.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b></a></font> and </font><a target=_blank href="http://update.microsoft.com/"><font face="Segoe UI">update.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b></font></a><font face="Segoe UI"> (not including the <strong>6GB/hour</strong> for each download server).&nbsp; Just IIS logs are a challenge without trying to parse another <strong>~650GB</strong> of firewall logs.&nbsp; </font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">3 5+ years ago, there wasn&#8217;t a firewall solution that would scale to our needs and this forced us to focus on network, host, and application security.&nbsp; Based on the success of that work, we&#8217;ve not looked further at firewalls even though there are solutions that I believe (haven&#8217;t tested) would handled the traffic load (our non-download based web traffic alone can be in the <strong>8-9 Gbps</strong> range and ~30 total for internal hosted traffic).</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">4 <span style="font-size: 10pt; color: black;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">We also used NLB for load balancing exclusively up until July 2006 and the micro segmentation of networks required by that solution made firewalls an expensive and very complex solution.&nbsp; Again, especially at the scalability that used to be available.</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">5 Application security is critical since a firewall is likely going to allow traffic on the correct port and protocol through to the web servers so IIS/ASP.NET/Applications must deal with these requests gracefully.&nbsp; I realize there are other options/features of firewalls/IPS that provide other options.</font></span></div></li></ol>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI"><br />
+In terms of how we protect the sites, we utilize (starting at the outside edge of the network and working in):<br />
+<br />
+ </font></span></p>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span></p>
+
+
+<ol><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">1 Cisco Guards for DoS detection and automated response</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">2 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">Router ACLs are in place to block unnecessary ports</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">3 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">NetScalers for <font color="#0000ff"><a target=_blank href="http://www.microsoft.com/" target="_blank">www.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b></a></font> and MSDN/TechNet (NLB still for update.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b>) and those also provide DoS protection inherently as well as providing a few other knobs we can turn when required.</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">4 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">Windows and IIS&#8230;<strong>rock solid and secure!</strong>&nbsp; </font><a target=_blank href="http://www.microsoft.com/" target="_blank"><font color="#0000ff" face="Segoe UI">www.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b></font></a><font face="Segoe UI"> is on Windows Server 2008/IIS7, MSDN/TechNet are migrating to Win2k8/IIS7, and update.<b style="color: black; background-color: rgb(255, 255, 102);">microsoft</b>.<b style="color: black; background-color: rgb(255, 255, 102);">com</b> is on Windows Server 2003/IIS6.&nbsp; We do all the normal shut-off-unused-services practices that line up with MS published security guidance and we utilize GFS images to ensure standardized builds of systems.</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">5 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">Automated Netmon/Perfmon captures for attack analysis on NLB systems when SYN floods occur (event trigger).&nbsp; We&#8217;ve not yet done this for NetScaler systems, but we are noodling on how in our copious spare time :).</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">6 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">We do run AV on our servers when we can.&nbsp; At times product adoption means we don&#8217;t install it, but we do normally run AV.</font></span></div></li><li><div class="MsoNormal" style="margin: 0cm 0cm 0pt;">7 <span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">Application security as mentioned.&nbsp; ACE is very good resource for this aspect.&nbsp; ACE is an internal team that does threat modelling for applications.</font></span></div></li></ol>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI"><br />
+So there you have it.&nbsp; I think this is a good insight into how we run our own internet properties today.&nbsp; What do you think?&nbsp; Have you got any feedback for the boys over at our MSCOM Operations team?</font></span></p>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span></p>
+
+
+<div class="wlWriterSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:03ecc2a4-e585-46f6-97b0-b5e6a7aab6c0" style="margin: 0px; padding: 0px; display: inline;">Technorati Tags: <a target=_blank href="http://technorati.com/tags/IIS" rel="tag">IIS</a>,<a target=_blank href="http://technorati.com/tags/Windows%20Server%202008" rel="tag">Windows Server 2008</a></div>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"></span></p>
+
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: 10pt;" tahoma?,?sans-serif?;="" mso-ansi-language:="" en-us?="" lang="EN-US"><font face="Segoe UI">Cheers, Jeffa</font></span></p>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -784,100 +858,6 @@ boost&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/12/04/html-5/">HTML 5</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-12-04T06:31:49+08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2007</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>HTML3到4变化巨大，4到5会更大，估计很多人心理上不大会接受：html 4 + 已经很强大了，为何要搞一套新东西呢？<br />
-摘自 http://www.crockford.com/html/<br /></p>
-
-<br />
-
-
-<p>No more doctypes. &nbsp; &nbsp;<span style="font-weight: bold;">Great，我从来就没有完全搞清楚那些doctype<br />
-</span><br />
-<a></a><a></a><a><a>script</a></a> <br />
-&nbsp;一个html只支持一种类型的<a></a><a></a><a><a>script</a></a>了(微软搞的ie能同时并存js,vbs，还能互相调用，绝对是专家级的技术)，&lt;<a></a><a></a><a><a>script</a></a>&gt;没有属性了<br />
-&nbsp;<code>&lt;<a></a><a></a><a><a>script</a></a>&gt;</code> tags are not immediately executed. <code>&lt;<a></a><a></a><a><a>script</a></a>&gt;</code>   tags do not block loading of other assets.<br />
-&nbsp;When the <code>&lt;/head&gt;</code>   is reached, all of the <a></a><a></a><a><a>script</a></a>s that were included in the head are then   executed in order. When the <code>&lt;/body&gt;</code> is reached, all   of the <a></a><a></a><a><a>script</a></a>s that were included in the body are then executed in order.<br />
-<span style="font-weight: bold;">&nbsp;明确了</span><br /></p>
-
-<br />
-
-
-<p>&nbsp;No more <code>document.write</code>. No more in-page event handlers.   No more <code>:</code> urls.<br />
-<span style="font-weight: bold;">&nbsp;支持，难看的document.write</span><br /></p>
-
-<br />
-
-
-<p>Frame<br />
-&nbsp;No more framesets, frames, or ｉｆｒａｍｅs. The security properties of these   were problematic. Instead we&#8217;ll have modules.<br />
-&nbsp;<span style="font-weight: bold;">如何实现类似frame呢？看Modules</span><br /></p>
-
-<br />
-
-
-<p>Modules<br />
-&nbsp;<code>&lt;module&gt;</code> creates a sub-tree which can contain a document   with a communication channel. See <a target=_blank target="_blank" href="http://json.org/module.html">http://json.org/module.html</a>   for a de<a></a><a></a><a><a>script</a></a>ion.<br />
-<span style="font-weight: bold;">&nbsp;似乎是ｉｆｒａｍｅ+ ajax，更强大了</span><br /></p>
-
-<br />
-
-
-<p>CSS<br />
-&nbsp;The default CSS content needs to be standardized. <br />
-&nbsp;<span style="font-weight: bold;">现在的css太复杂了,实现一个功能没有人说清楚一共有多少种实现</span><br /></p>
-
-<br />
-
-
-<p>Encoding<br />
-&nbsp;The only character encoding permitted in HTML 5 is <code>UTF-8</code>.   <br />
-&nbsp;<span style="font-weight: bold;">HOHOHO</span><br /></p>
-
-<br />
-
-
-<p>Entities, Empty Tags, Custom Tags, Custom Attributes<br />
-&nbsp;&#8230;&#8230;.<br /></p>
-
-<br />
-
-
-<br />
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/19/">&larr; Older</a>
@@ -893,6 +873,10 @@ boost&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/05/11/nexus-flash/">Nexus Update 4.0.4(IMM761)</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/05/02/collaboration-in-corp/">公司内部代码协作</a>
@@ -916,10 +900,6 @@ boost&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n
     
       <li class="post">
         <a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/30/digest/">Digest</a>
       </li>
     
   </ul>
