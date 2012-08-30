@@ -9,12 +9,7 @@
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="我没有参考什么攻略，直接看Google Nexus Images的文档，
-然后下载 yakju， 然后解开压缩包 1
-tar zxf yakju-imm76i-factory-8001e72f.tgz 然后执行 1
-2
-cd yakju-imm76i
-sudo ./flash-base.sh 最后 &hellip;">
+  <meta name="description" content="苦于电影字幕显示异常，进而发现问题时由于字体导致的，在 FontBook 中能看到某些字缺失。 很多关键字体,如 AppleMyungjo，AppleGothic, Hiragino Kaku，Hiragino Mincho 系列基本都有问题。OS X 也未提供方法改变系统字体，工具软件如 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,7 +18,7 @@ sudo ./flash-base.sh 最后 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://log.heartoutside.com">
+  <link rel="canonical" href="http://log.heartoutside.com/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -54,8 +49,7 @@ sudo ./flash-base.sh 最后 &hellip;">
   
 <form action="https://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="domains" value="log.heartoutside.com" />
-    <input type="hidden" name="sitesearch" value="log.heartoutside.com" />
+    <input type="hidden" name="q" value="site:log.heartoutside.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -70,6 +64,73 @@ sudo ./flash-base.sh 最后 &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/30/os-x-font-trouble/">OS X Font Trouble</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-30T18:08:00+08:00" pubdate data-updated="true">Aug 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>苦于电影字幕显示异常，进而发现问题时由于字体导致的，在 FontBook 中能看到某些字缺失。
+<img src="/pic/fontbook-fail.png"></p>
+
+<p>很多关键字体,如 AppleMyungjo，AppleGothic, Hiragino Kaku，Hiragino Mincho 系列基本都有问题。OS X 也未提供方法改变系统字体，工具软件如 TinkerTool 等也没有能改变中文字体的工具。</p>
+
+<p>粗暴一些的做法，直接覆盖</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo cp a-true-type.ttf /System/Library/Fonts/AppleGothic.ttf</span></code></pre></td></tr></table></div></figure>
+
+
+<p>就能解决问题。</p>
+
+<p>推荐在号称对字体美感出名的 Apple 系统里安装 Microsoft YaHei Version 6.01 字体。</p>
+
+<p>也推荐 <a href="http://zonble.github.com/tcfail/en.html">tcfail</a> 的解决方案。</p>
+
+<p>English Version:</p>
+
+<p>How to change OS X Chinese system font?</p>
+
+<ul>
+<li><p>Use FontBook find out which font ruin the Chinese word.</p></li>
+<li><p>Copy a normal True Type Font file to replace it, like:</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo cp a-true-type.ttf /System/Library/Fonts/AppleGothic.ttf</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -896,45 +957,6 @@ receiver</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/01/hao-xi-guan/">好习惯</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-01T16:47:00+08:00" pubdate data-updated="true">Nov 1<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天遇到一个工程师把控制台的快捷键 Ctrl+C 改为了 Copy 功能，固然方便了拷贝，但是导致很多进程没有办法退出，我看到他都采用 Ctrl+Z 对付此类情形。
-结果就是机器上有很多stopped 的进程。最悲悴的是有个长连接被 stopped 后导致远端的进程被 kill 后一直不正常退出。</p>
-
-<p>个性的工程师都有某些独门秘笈，公开交流会有很好的效果，但是一定需要去发现并纠正某些错误习惯。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -948,6 +970,10 @@ receiver</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/30/os-x-font-trouble/">OS X Font Trouble</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/05/11/nexus-flash/">Nexus Update 4.0.4(IMM761)</a>
@@ -971,10 +997,6 @@ receiver</p>
     
       <li class="post">
         <a href="/blog/2011/12/23/csdn-password-leak-under/">密码泄漏事件下的冰山</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a>
       </li>
     
   </ul>

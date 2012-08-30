@@ -9,9 +9,8 @@
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="最近开始看一本老书(2004年版的): C++ Template Metaprogramming: Concepts, Tools, and Techniques from Boost and Beyond,
-in amazon
-我看的是中文版 C++模板元编程(2010年版), in &hellip;">
+  <meta name="description" content="Sector/Sphere 是一个分布并行计算系统，用来存储、计算天文信息。Sector 是文件系统，Sphere 是并行计算平台。
+其性能超过了 Hadoop 一倍多。性能评测结果 其分布指分布在几个州的 rack，使用 udt 通讯。 特性 Master 能多份，好像得手工同步一些信息。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ in amazon
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://log.heartoutside.com/blog/page/5">
+  <link rel="canonical" href="http://log.heartoutside.com/blog/page/5/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -51,8 +50,7 @@ in amazon
   
 <form action="https://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="domains" value="log.heartoutside.com" />
-    <input type="hidden" name="sitesearch" value="log.heartoutside.com" />
+    <input type="hidden" name="q" value="site:log.heartoutside.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -67,6 +65,66 @@ in amazon
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/09/sector-sphere-review/">Sector/Sphere Review</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-09T09:36:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Sector/Sphere 是一个分布并行计算系统，用来存储、计算天文信息。Sector 是文件系统，Sphere 是并行计算平台。<br />
+其<a href="http://sector.sourceforge.net/benchmark.html">性能</a>超过了 Hadoop 一倍多。性能评测结果 <br />
+其分布指分布在几个州的 rack，使用 udt 通讯。<br /></p>
+
+<h2>特性</h2>
+
+<ul>
+<li>Master 能多份，好像得手工同步一些信息。
+Master和Node能随时添加、删除</li>
+<li>Sector automatically replicates files to different nodes to provide high reliability and availability. In addition, this strategy favors read-intensive scenarios since clients can read from different replicas.</li>
+<li>不对大文件切分，但是每个 dataset 还是可以由多个物理文件组成，切分是application的职责。</li>
+<li>流量：When Sector is running on 120 nodes, the aggregate network IO is greater than 60 Gb/s, while for Hadoop the number is only 15 Gb/s.</li>
+</ul>
+
+
+<p>开发了 3 年，开始并没有模仿 GFS，HDFS 等。发布了一些 Paper，最近一次发布在 2 月，SVN 在几天前也有更新。作者貌似是一个中国人。</p>
+
+<h2>其他</h2>
+
+<p>有 Python,Java binding<br />
+测试代码较少，几乎没有<br />
+C++，有严重 Java 痕迹，不算优雅，结构还过得去，能写成这样已算不错。<br />
+不能跨平台<br />
+有 fuse 实现<br />
+管理工具可能比较少</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -734,57 +792,6 @@ in amazon
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/08/13/using-goolgereader-in-the-sendto-function-to-school-to-share/">使用 GoolgeReader Sendto 功能分享到校内</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-13T22:13:16+08:00" pubdate data-updated="true">Aug 13<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>    <img src="http://fmn042.xnimg.cn/fmn042/20090813/1410/b__4VRe_5c520000e1112d10.jpg" alt=""></h1>
-
-
-<h1>    <span style="font-size: small;">URL 为<br />
- http://tl.api.xiaonei.com/share/buttonshare.do?title=${title}&amp;link=${url}</span></h1>
-
-
-<p>    <strong>Icon URL</strong>     <br />
- http://s.xnimg.cn/favicon.ico</p>
-
-
-<h1>    <img src="http://fmn045.xnimg.cn/fmn045/20090813/1415/b__dFEj_5c560002d01d2d10.jpg" alt=""></h1>
-
-
-<h1>    <img src="http://fmn041.xnimg.cn/fmn041/20090813/1415/b__chxW_5c540001b06f2d10.jpg" alt=""></h1>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -800,6 +807,10 @@ in amazon
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/30/os-x-font-trouble/">OS X Font Trouble</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/05/11/nexus-flash/">Nexus Update 4.0.4(IMM761)</a>
@@ -823,10 +834,6 @@ in amazon
     
       <li class="post">
         <a href="/blog/2011/12/23/csdn-password-leak-under/">密码泄漏事件下的冰山</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a>
       </li>
     
   </ul>

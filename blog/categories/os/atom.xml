@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: os | HeartOutside]]></title>
+  <link href="http://log.heartoutside.com/blog/categories/os/atom.xml" rel="self"/>
+  <link href="http://log.heartoutside.com/"/>
+  <updated>2012-08-30T18:53:32+08:00</updated>
+  <id>http://log.heartoutside.com/</id>
+  <author>
+    <name><![CDATA[Ken]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OS X Font Trouble]]></title>
+    <link href="http://log.heartoutside.com/blog/2012/08/30/os-x-font-trouble/"/>
+    <updated>2012-08-30T18:08:00+08:00</updated>
+    <id>http://log.heartoutside.com/blog/2012/08/30/os-x-font-trouble</id>
+    <content type="html"><![CDATA[<p>苦于电影字幕显示异常，进而发现问题时由于字体导致的，在 FontBook 中能看到某些字缺失。
+<img src="http://log.heartoutside.com/pic/fontbook-fail.png"></p>
+
+<p>很多关键字体,如 AppleMyungjo，AppleGothic, Hiragino Kaku，Hiragino Mincho 系列基本都有问题。OS X 也未提供方法改变系统字体，工具软件如 TinkerTool 等也没有能改变中文字体的工具。</p>
+
+<p>粗暴一些的做法，直接覆盖
+<code>
+sudo cp a-true-type.ttf /System/Library/Fonts/AppleGothic.ttf
+</code></p>
+
+<p>就能解决问题。</p>
+
+<p>推荐在号称对字体美感出名的 Apple 系统里安装 Microsoft YaHei Version 6.01 字体。</p>
+
+<p>也推荐 <a href="http://zonble.github.com/tcfail/en.html">tcfail</a> 的解决方案。</p>
+
+<p>English Version:</p>
+
+<p>How to change OS X Chinese system font?</p>
+
+<ul>
+<li><p>Use FontBook find out which font ruin the Chinese word.</p></li>
+<li><p>Copy a normal True Type Font file to replace it, like:
+<code>
+sudo cp a-true-type.ttf /System/Library/Fonts/AppleGothic.ttf
+</code></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

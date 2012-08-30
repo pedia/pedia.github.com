@@ -9,9 +9,7 @@
   <meta name="author" content="Ken">
 
   
-  <meta name="description" content="南方周末：《系统》
-来源: 南方周末
-作者: 曹筠武　张春蔚　王轶庶 ■编者按： 在一款同时在线人数超过百万、全部玩家加起来可以组成一个超级城市的网络游戏中，它的游戏精神是指向乐趣，还是指向权力和金钱？它的社会规则是新世界的开放自由，还是率土之滨莫非王臣？这不只是对某一款游戏的追问， &hellip;">
+  <meta name="description" content="为什么没有什么流氓插件傍上Firefox呢？ Firefix和ie都支持plugin和extension，并且安装方式都有些类似：都是下载一个zip格式的包，执行安装脚本；启动时、打开某些网页时载入plugin。 安装包安装脚本载入机制安装卸载firefoxxpi(zip format)js + &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://log.heartoutside.com/blog/page/17">
+  <link rel="canonical" href="http://log.heartoutside.com/blog/page/17/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -51,8 +49,7 @@
   
 <form action="https://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="domains" value="log.heartoutside.com" />
-    <input type="hidden" name="sitesearch" value="log.heartoutside.com" />
+    <input type="hidden" name="q" value="site:log.heartoutside.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -67,6 +64,81 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/12/26/rogue-plugin-and-firefox/">流氓插件和Firefox</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-12-26T19:16:38+08:00" pubdate data-updated="true">Dec 26<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>为什么没有什么流氓插件傍上Firefox呢？<br /></p>
+
+<br />
+
+
+<p>Firefix和ie都支持plugin和extension，并且安装方式都有些类似：都是下载一个zip格式的包，执行安装脚本；启动时、打开某些网页时载入plugin。<br /></p>
+
+<br />
+
+
+<table border="1"><tbody><tr><td style="width: 100px; height: 23px;"><br />
+</td><td style="width: 100px; height: 23px;">安装包</td><td style="width: 100px; height: 23px;">安装脚本</td><td style="width: 100px; height: 23px;">载入机制</td><td style="width: 100px; height: 23px;">安装</td><td style="width: 100px; height: 23px;">卸载</td></tr><tr><td style="width: 100px;">firefox</td><td style="width: 100px;">xpi(zip format)</td><td style="width: 100px;">js + chrom + xpinstall</td><td style="width: 100px;">xpt</td><td style="width: 100px;">提示</td><td style="width: 100px;">extension 提供超级控制<br />
+plugin 似乎没有卸载支持</td></tr><tr><td style="width: 100px;">ie</td><td style="width: 100px;">cab(zip format)</td><td style="width: 100px;">inf</td><td style="width: 100px;">com</td><td style="width: 100px;">提示</td><td style="width: 100px;">一般，受安装方式限制，采用非一般安装ie根本卸载不了</td></tr></tbody></table>
+
+
+<br />
+
+
+<p>流氓时代(互联网泡沫时期)大量的插件都是extension的形式，通过非法手段导致ie卸载方式失效，ie7似乎也没有改进这种问题。firefox 的控制可谓非常严格：一般用户肯定能卸载、禁用一个extension。<br /></p>
+
+<br />
+
+
+<p>以前还写过一个ie插件：只要安装上了该插件，浏览一下某个页面会通过js控制下载安装包、执行安装(可以成为任何东西：extension，service&#8230;)。<br /></p>
+
+<br />
+
+
+<p>我最近在看如何写Firefox的Plugin，发现firefox远比我想象的脆弱，plugin方式和ie一样容易被植入流氓软件，甚至都没有卸载(能从界面上卸载flash插件吗？)。<br /></p>
+
+<br />
+
+
+<p>如果firefox的市场占有率上来了，结果可能会和ie一样？plugin能翻身成为extension吗？<br /></p>
+
+<br />
+
+
+<br />
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1237,80 +1309,6 @@ We’re consideringmoving Thrift into the Apache Incubator, which is basically t
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/12/19/34-d-34-a-comparison-of-online-photo-site/">&#34;四款&#34;在线图片网站效果对比</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-12-19T07:30:37+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2007</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 class="entry-title"><a target=_blank class="entry-title-link" target="_blank" href="http://item.feedsky.com/%7Efeedsky/gracecode/%7E6159402/37266520/1221433/1/item.html">三款在线图片网站效果对比<img src="http://www.google.com/reader/ui/2412528845-go-to.gif" class="entry-title-go-to" alt="" height="18" width="18"></a></h2>
-
-
-<div class="entry-author"><span class="entry-source-title-parent">from <a target=_blank href="http://www.google.com/reader/view/feed/http%3A%2F%2Frss.gracecode.com%2F" class="entry-source-title" target="_blank">Gracecode.com</a></span> by <span class="entry-author-name">手气不错</span></div>
-
-
-<div class="entry-body"><div id=""><ins class="item-body"><div><p>一直在使用几款在线图片网站存储<a target=_blank target="_blank" href="http://www.gracecode.com/" title="http://www.gracecode.com">本站</a>的图片。前几天有几个朋友说不同的网站所生成的图片效果有所区别，于是我做了一个简单的对比。</p>
-<p>根据目前的在线图片网站，我选取了其中我主要在用的几个在线图片网站，分别是 <a target=_blank target="_blank" href="http://www.yupoo.com/" title="http://www.yupoo.com">Yupoo</a>、<a target=_blank target="_blank" href="http://www.bababian.com/" title="http://www.bababian.com">巴巴变</a> 和 <a target=_blank target="_blank" href="http://www.flickr.com/" title="http://www.flickr.com">Flickr</a>，为了对比效果，我还用 Photoshop 改变图片大小作为对比。</p>
-<p>此次选取的图片是经典的“电视图”，原图可以在<a target=_blank target="_blank" href="http://www.gracecode.com/upload/2007_12_18/1197949318.zip" title="http://www.gracecode.com/upload/2007_12_18/1197949318.zip">这里下载（ZIP 格式）</a>，原图大小是 154 KB。</p>
-<p>由于效果的不同，三款在线图片存储网站所生成的中图大小也不一样。下面分别是生成 500 宽度像素的 JPG 图片的大小：</p>
-<p><img src="http://www.gracecode.com/upload/2007_12_18/1197949349.gif" alt="http://www.gracecode.com/upload/2007_12_18/1197949349.gif"></p>
-<h2>Flickr</h2><p><img src="http://www.gracecode.com/upload/2007_12_18/1197949335.jpg" alt="http://www.gracecode.com/upload/2007_12_18/1197949335.jpg"></p>
-<p>Flickr 生成的图片大小是最小的（仅 63 KB）。效果方面来说，是可以接受的。</p>
-<h2>Yupoo</h2><p><img src="http://www.gracecode.com/upload/2007_12_18/1197949362.jpg" alt="http://www.gracecode.com/upload/2007_12_18/1197949362.jpg"></p>
-<p>Yupoo 生成的图片稍大（77 KB），但是个人感觉锐化相对比较严重。看其效果图有部分的毛边等现象。</p>
-<h2>Bababian</h2><p><img src="http://www.gracecode.com/upload/2007_12_18/1197949374.jpg" alt="http://www.gracecode.com/upload/2007_12_18/1197949374.jpg"></p>
-<p>巴巴变 的效果也相对可以接受，但是图片的容量相对大一些（86 KB）。效果方面我认为和 Flickr 相差无几，但是稍微软化了些。</p>
-<h2>Photoshop</h2><p><img src="http://www.gracecode.com/upload/2007_12_18/1197949395.jpg" alt="http://www.gracecode.com/upload/2007_12_18/1197949395.jpg"></p>
-<p>Photoshop 方面我是按照最好图像效果存储的（12），效果方面几乎看不出有任何的差异，但是就其大小来说，仅次于巴巴变。</p>
-<h2>总结</h2><p>个人感觉 Flickr 给我的印象是最好的（心理作用？）。Yupoo 按照其现在的缩略图生成格式，我想仅适合存储线条比较明朗的图片。而巴巴变我个人认为也合适输出照片的缩略图。</p>
-<p>巴巴变的服务相对来说也非常的优秀，相信收费用户 120 一年的费用大部分用户也基本是可以接受。如需存储大量的照片并永久保存的，目前建议使用 Flickr 的收费服务（因为免费帐户有三个相册和显示 200 张图片的限制）。</p>
-<p>总之，图片的效果方面还是仁者见仁的问题。用户总是希望用最小的容量输出最好的效果的图片的。我本人一直在使用 Yupoo 的服务，一来是因为其是杭州的（和我同一个城市），二来它是一个高速发展的团队（相信用户提出的问题能很快的解决）。</p>
-<p>上述仅为个人观点。其他网友的对比言论，可以参考<a target=_blank target="_blank" href="http://pengjiayou.com/yupoo/28" title="http://pengjiayou.com/yupoo/28">这里</a>和<a target=_blank target="_blank" href="http://www.douban.com/group/topic/1676823/" title="http://www.douban.com/group/topic/1676823/">这里</a>。<br />
-</p>
-<p><br />
-&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;傻乎乎的分割线&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
-<br />
-俺们的上传结果是 <img src="http://fm291.img.xiaonei.com/pic001/20071218/23/25/large_3912n177.jpg" alt=""><br />
-<br />
-<br />
-</p>
-<p><img src="http://www.gracecode.com/upload/2007_12_18/1197949349.gif" alt="http://www.gracecode.com/upload/2007_12_18/1197949349.gif"><br />
-&nbsp;&nbsp; xiaonei.jpg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 59.82 KB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 600 x 450<br />
-&nbsp;&nbsp;&nbsp;&nbsp; 原图 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 154 KB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024 * 768<br />
-<br />
-<br />
-</p>
-</div></ins></div></div>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/18/">&larr; Older</a>
@@ -1326,6 +1324,10 @@ We’re consideringmoving Thrift into the Apache Incubator, which is basically t
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/30/os-x-font-trouble/">OS X Font Trouble</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/05/11/nexus-flash/">Nexus Update 4.0.4(IMM761)</a>
@@ -1349,10 +1351,6 @@ We’re consideringmoving Thrift into the Apache Incubator, which is basically t
     
       <li class="post">
         <a href="/blog/2011/12/23/csdn-password-leak-under/">密码泄漏事件下的冰山</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/12/19/question-to-a-startup-team/">Question to a Startup Team</a>
       </li>
     
   </ul>
