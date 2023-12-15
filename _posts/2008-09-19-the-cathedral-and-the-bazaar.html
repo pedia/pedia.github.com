@@ -1,0 +1,667 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>大教堂和市集 - pedia blog</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">2012</li><li class="chapter-item expanded "><a href="../_posts/2012-05-11-nexus-flash.html"><strong aria-hidden="true">1.</strong> Nexus Update 4.0.4(IMM761)</a></li><li class="chapter-item expanded "><a href="../_posts/2012-05-02-collaboration-in-corp.html"><strong aria-hidden="true">2.</strong> 公司内部代码协作</a></li><li class="chapter-item expanded "><a href="../_posts/2012-04-28-high-power-smartphone.html"><strong aria-hidden="true">3.</strong> high power smartphone</a></li><li class="chapter-item expanded "><a href="../_posts/2012-03-22-mawk-and-gawk.html"><strong aria-hidden="true">4.</strong> mawk and gawk</a></li><li class="chapter-item expanded affix "><li class="part-title">2011</li><li class="chapter-item expanded "><a href="../_posts/2011-12-31-trivial-detail-in-facebook-messenger.html"><strong aria-hidden="true">5.</strong> trivial detail in facebook messenger</a></li><li class="chapter-item expanded "><a href="../_posts/2011-12-23-csdn-password-leak-under.html"><strong aria-hidden="true">6.</strong> 密码泄漏事件下的冰山</a></li><li class="chapter-item expanded "><a href="../_posts/2011-12-19-question-to-a-startup-team.html"><strong aria-hidden="true">7.</strong> Question to a Startup Team</a></li><li class="chapter-item expanded "><a href="../_posts/2011-11-30-digest.html"><strong aria-hidden="true">8.</strong> Digest</a></li><li class="chapter-item expanded "><a href="../_posts/2011-11-08-nc-and-tar-play-nice-then.html"><strong aria-hidden="true">9.</strong> nc and tar play nice then</a></li><li class="chapter-item expanded "><a href="../_posts/2011-11-01-hao-xi-guan.html"><strong aria-hidden="true">10.</strong> 好习惯</a></li><li class="chapter-item expanded "><a href="../_posts/2011-08-18-beijing-bus-route.html"><strong aria-hidden="true">11.</strong> 北京一共有多少条公交线路?</a></li><li class="chapter-item expanded "><a href="../_posts/2011-07-13-recommended-reading-the-i-fair-network-for-two-months-full-version.html"><strong aria-hidden="true">12.</strong> 推荐阅读: 《我在赶集网的两个月（完整版）》</a></li><li class="chapter-item expanded "><a href="../_posts/2011-06-28-facebook-valuable-experience-in-the-research-and-development-culture-of-excellence-huang-yishan.html"><strong aria-hidden="true">13.</strong> Facebook卓越研发文化中的宝贵经验 - 黄易山</a></li><li class="chapter-item expanded "><a href="../_posts/2011-05-13-who-is-using-mongodb.html"><strong aria-hidden="true">14.</strong> 谁在用MongoDB</a></li><li class="chapter-item expanded "><a href="../_posts/2011-05-11-go-xia-junfeng-second-defence.html"><strong aria-hidden="true">15.</strong> 转: 夏俊峰案二审辩护词</a></li><li class="chapter-item expanded "><a href="../_posts/2011-05-10-mobile-phone-website-ultimate-optimization.html"><strong aria-hidden="true">16.</strong> 手机网站的终极优化</a></li><li class="chapter-item expanded "><a href="../_posts/2011-04-22-lbs-in-two.html"><strong aria-hidden="true">17.</strong> LBS的两种实现</a></li><li class="chapter-item expanded "><a href="../_posts/2011-04-08-patriotic-heart-often-to-express-patriotic-feelings.html"><strong aria-hidden="true">18.</strong> 常怀爱国之心，常抒爱国之情</a></li><li class="chapter-item expanded "><a href="../_posts/2011-03-28-why-myspace-will-fail.html"><strong aria-hidden="true">19.</strong> MySpace 为什么会失败？</a></li><li class="chapter-item expanded "><a href="../_posts/2011-02-22-crazy-groupon.html"><strong aria-hidden="true">20.</strong> 疯狂的Groupon</a></li><li class="chapter-item expanded "><a href="../_posts/2011-02-16-end-technology-architecture-debate.html"><strong aria-hidden="true">21.</strong> 终结技术架构争论</a></li><li class="chapter-item expanded "><a href="../_posts/2011-02-15-do-you-know-what-is-the-process-using-the-swap.html"><strong aria-hidden="true">22.</strong> 能知道究竟是那个进程使用了swap吗？</a></li><li class="chapter-item expanded "><a href="../_posts/2011-02-10-nokias-new-ceo-stephen-elop-we-are-standing-on-a-burning-platform.html"><strong aria-hidden="true">23.</strong> 诺基亚新上任的 CEO Stephen Elop: 我们正站在一个熊熊燃烧的平台上</a></li><li class="chapter-item expanded "><a href="../_posts/2011-02-10-my-work-mode.html"><strong aria-hidden="true">24.</strong> 我的工作模式</a></li><li class="chapter-item expanded "><a href="../_posts/2011-01-14-programmers-three-laws.html"><strong aria-hidden="true">25.</strong> 程序员三大法则</a></li><li class="chapter-item expanded "><a href="../_posts/2011-01-07-use-ocr-identify-verification-code.html"><strong aria-hidden="true">26.</strong> 使用 OCR 识别验证码</a></li><li class="chapter-item expanded affix "><li class="part-title">2010</li><li class="chapter-item expanded "><a href="../_posts/2010-12-29-google-employees-read-me-teaching-at-harvard-and-works-in-google-difference.html"><strong aria-hidden="true">27.</strong> Google员工自述: 在哈佛教书和在Google工作的差别</a></li><li class="chapter-item expanded "><a href="../_posts/2010-10-20-tencent-auditorium-internal-information-continued-3.html"><strong aria-hidden="true">28.</strong> 腾讯大讲堂内部资料 - 续3</a></li><li class="chapter-item expanded "><a href="../_posts/2010-10-15-tencent-auditorium-internal-information-continued-2.html"><strong aria-hidden="true">29.</strong> 腾讯大讲堂内部资料 - 续2</a></li><li class="chapter-item expanded "><a href="../_posts/2010-10-14-tencent-auditorium-internal-information-continued-1.html"><strong aria-hidden="true">30.</strong> 腾讯大讲堂内部资料 - 续1</a></li><li class="chapter-item expanded "><a href="../_posts/2010-10-14-tencent-auditorium-information.html"><strong aria-hidden="true">31.</strong> 腾讯大讲堂内部资料</a></li><li class="chapter-item expanded "><a href="../_posts/2010-09-16-a-google-engineer-who-accessed-user-data-being-fired.html"><strong aria-hidden="true">32.</strong> 又一名Google工程师因访问用户数据被开除</a></li><li class="chapter-item expanded "><a href="../_posts/2010-07-15-choose-a-distributed-file-system.html"><strong aria-hidden="true">33.</strong> Choose a Distributed File System</a></li><li class="chapter-item expanded "><a href="../_posts/2010-06-29-latest-public-facebook-information.html"><strong aria-hidden="true">34.</strong> Facebook最新公开信息</a></li><li class="chapter-item expanded "><a href="../_posts/2010-06-29-a-day-in-the-life-of-facebook-operations.html"><strong aria-hidden="true">35.</strong> A Day in the Life of Facebook Operations</a></li><li class="chapter-item expanded "><a href="../_posts/2010-06-12-distributed-file-system-glusterfs.html"><strong aria-hidden="true">36.</strong> 分布式文件系统 GlusterFS</a></li><li class="chapter-item expanded "><a href="../_posts/2010-06-11-distributed-file-system-ceph.html"><strong aria-hidden="true">37.</strong> 分布式文件系统 Ceph</a></li><li class="chapter-item expanded "><a href="../_posts/2010-06-10-system-monitoring-munin.html"><strong aria-hidden="true">38.</strong> 系统监控 Munin</a></li><li class="chapter-item expanded "><a href="../_posts/2010-06-09-sector-sphere-review.html"><strong aria-hidden="true">39.</strong> Sector/Sphere Review</a></li><li class="chapter-item expanded "><a href="../_posts/2010-06-09-ip-query.html"><strong aria-hidden="true">40.</strong> ip库查询</a></li><li class="chapter-item expanded "><a href="../_posts/2010-02-08-about-dsel.html"><strong aria-hidden="true">41.</strong> about DSEL</a></li><li class="chapter-item expanded "><a href="../_posts/2010-02-05-an-extract-of-the-software-were-recorded-in-the-caprice.html"><strong aria-hidden="true">42.</strong> 《软件随想录》 摘录</a></li><li class="chapter-item expanded "><a href="../_posts/2010-01-13-about-google.html"><strong aria-hidden="true">43.</strong> about google</a></li><li class="chapter-item expanded "><a href="../_posts/2010-01-05-an-extract-of-the-software-were-recorded-in-the-caprice.html"><strong aria-hidden="true">44.</strong> 《软件随想录》 摘录</a></li><li class="chapter-item expanded affix "><li class="part-title">2009</li><li class="chapter-item expanded "><a href="../_posts/2009-11-20-google-chrome-os.html"><strong aria-hidden="true">45.</strong> Google Chrome OS</a></li><li class="chapter-item expanded "><a href="../_posts/2009-10-17-not-to-do-client-side-software-development.html"><strong aria-hidden="true">46.</strong> 不要做客户端软件开发</a></li><li class="chapter-item expanded "><a href="../_posts/2009-08-28-see-how-facebook-design.html"><strong aria-hidden="true">47.</strong> 看Facebook如何做设计</a></li><li class="chapter-item expanded "><a href="../_posts/2009-08-19-powerful-google-network.html"><strong aria-hidden="true">48.</strong> 强大的Google的网络</a></li><li class="chapter-item expanded "><a href="../_posts/2009-08-18-how-many-rabbits.html"><strong aria-hidden="true">49.</strong> 几只兔子？</a></li><li class="chapter-item expanded "><a href="../_posts/2009-08-13-using-goolgereader-in-the-sendto-function-to-school-to-share.html"><strong aria-hidden="true">50.</strong> 使用 GoolgeReader Sendto 功能分享到校内</a></li><li class="chapter-item expanded "><a href="../_posts/2009-08-12-wireless-freedom.html"><strong aria-hidden="true">51.</strong> 无线的自由</a></li><li class="chapter-item expanded "><a href="../_posts/2009-07-29-poor-java.html"><strong aria-hidden="true">52.</strong> 可怜的Java</a></li><li class="chapter-item expanded "><a href="../_posts/2009-07-23-concept-and-cpp0x.html"><strong aria-hidden="true">53.</strong> Concept and C++0x</a></li><li class="chapter-item expanded "><a href="../_posts/2009-07-20-looking-back-ten-years-from-programmer-to-cto.html"><strong aria-hidden="true">54.</strong> 回首十年——从程序员到 CTO</a></li><li class="chapter-item expanded "><a href="../_posts/2009-06-17-mao-yushi-reform-30-years-of-reflection.html"><strong aria-hidden="true">55.</strong> 茅于轼  改革三十年的反思</a></li><li class="chapter-item expanded "><a href="../_posts/2009-06-09-browser-market-share.html"><strong aria-hidden="true">56.</strong> 浏览器市场份额</a></li><li class="chapter-item expanded "><a href="../_posts/2009-06-08-kaixins-big-surprise.html"><strong aria-hidden="true">57.</strong> 开心网的Big Surprise</a></li><li class="chapter-item expanded "><a href="../_posts/2009-06-02-zhejiang-university-hangzhou-70-codes-mitsubishi-sports-car-drag-racing.html"><strong aria-hidden="true">58.</strong> 浙江大学 杭州 70码 三菱跑车 飙车</a></li><li class="chapter-item expanded "><a href="../_posts/2009-05-27-lang-chinese-black-collar-is-the-worlds-most-shameless-group.html"><strong aria-hidden="true">59.</strong> 郎咸平:中国的黑领是世界上最无耻的群体</a></li><li class="chapter-item expanded "><a href="../_posts/2009-05-21-storm-video-neither-geeker.html"><strong aria-hidden="true">60.</strong> 用暴风影音的人都不是Geeker</a></li><li class="chapter-item expanded "><a href="../_posts/2009-05-07-training-and-indoctrination-reprint.html"><strong aria-hidden="true">61.</strong> 培养与灌输（转载）</a></li><li class="chapter-item expanded "><a href="../_posts/2009-05-07-i-am-illiterate.html"><strong aria-hidden="true">62.</strong> 本人系文盲</a></li><li class="chapter-item expanded "><a href="../_posts/2009-05-06-seven-kinds-of-unit-tests.html"><strong aria-hidden="true">63.</strong> 单元测试的七种境界</a></li><li class="chapter-item expanded "><a href="../_posts/2009-04-22-topics.html"><strong aria-hidden="true">64.</strong> 题目</a></li><li class="chapter-item expanded "><a href="../_posts/2009-04-20-to-google-music-past-and-present-code-name-m-plan.html"><strong aria-hidden="true">65.</strong> 转 谷歌音乐的前世今生 - 代号“M计划”</a></li><li class="chapter-item expanded "><a href="../_posts/2009-04-08-how-to-cope-with-its-four-attack.html"><strong aria-hidden="true">66.</strong> 如何应对腾讯的四面进攻</a></li><li class="chapter-item expanded "><a href="../_posts/2009-03-23-i-thought-i-had-using-twitter-what-i-do-not-understand.html"><strong aria-hidden="true">67.</strong> 我一直以为我“会”使用twitter，原来我啥也不懂</a></li><li class="chapter-item expanded "><a href="../_posts/2009-03-23-douglas-bowman-leaves-google.html"><strong aria-hidden="true">68.</strong> Douglas Bowman 离开Google</a></li><li class="chapter-item expanded "><a href="../_posts/2009-03-18-predicted-facebook-facelift.html"><strong aria-hidden="true">69.</strong> 预言facebook改版</a></li><li class="chapter-item expanded "><a href="../_posts/2009-02-24-twitter-vs-google.html"><strong aria-hidden="true">70.</strong> Twitter vs Google</a></li><li class="chapter-item expanded "><a href="../_posts/2009-02-23-to-how-to-identify-it-professionals.html"><strong aria-hidden="true">71.</strong> 转 如何识别IT从业者</a></li><li class="chapter-item expanded "><a href="../_posts/2009-01-11-google-design-guidelines.html"><strong aria-hidden="true">72.</strong> Google式设计方针</a></li><li class="chapter-item expanded "><a href="../_posts/2009-01-08-garbage-heap-tale-go.html"><strong aria-hidden="true">73.</strong> 垃圾堆的故事 转</a></li><li class="chapter-item expanded affix "><li class="part-title">2008</li><li class="chapter-item expanded "><a href="../_posts/2008-11-18-in-our-blog-dreams-and-future-goodbye.html"><strong aria-hidden="true">74.</strong> 让我们在博客、梦想和未来里再见！</a></li><li class="chapter-item expanded "><a href="../_posts/2008-11-17-obamas-victory-speech-classical-chinese-version.html"><strong aria-hidden="true">75.</strong> 奥巴马胜选演说·文言版</a></li><li class="chapter-item expanded "><a href="../_posts/2008-11-10-test.html"><strong aria-hidden="true">76.</strong> test</a></li><li class="chapter-item expanded "><a href="../_posts/2008-11-09-apple-and-his-design.html"><strong aria-hidden="true">77.</strong> Apple 和他的设计</a></li><li class="chapter-item expanded "><a href="../_posts/2008-11-01-packt-2008-cms-competition-results.html"><strong aria-hidden="true">78.</strong> Packt 2008 CMS 大赛结果</a></li><li class="chapter-item expanded "><a href="../_posts/2008-10-13-linus-torvalds-management-history-and-philosophy-of-science.html"><strong aria-hidden="true">79.</strong> Linus Torvalds 的管理哲學</a></li><li class="chapter-item expanded "><a href="../_posts/2008-09-22-style-of-the-three-realms.html"><strong aria-hidden="true">80.</strong> 代码风格的三种境界</a></li><li class="chapter-item expanded "><a href="../_posts/2008-09-19-the-cathedral-and-the-bazaar.html" class="active"><strong aria-hidden="true">81.</strong> 大教堂和市集</a></li><li class="chapter-item expanded "><a href="../_posts/2008-09-19-live-messenger-2009-beta.html"><strong aria-hidden="true">82.</strong> Live Messenger 2009 Beta</a></li><li class="chapter-item expanded "><a href="../_posts/2008-09-18-google-12-development-program-guidelines.html"><strong aria-hidden="true">83.</strong> Google 的12条开发程序的准则</a></li><li class="chapter-item expanded "><a href="../_posts/2008-09-10-how-to-become-a-professional-programmer.html"><strong aria-hidden="true">84.</strong> 如何成为专业程序员</a></li><li class="chapter-item expanded "><a href="../_posts/2008-09-09-interview-with-google-vice-president-of-beauty-looking-to-the-future-10-year-development.html"><strong aria-hidden="true">85.</strong> Google 美女副总裁专访:更看好未来10年发展</a></li><li class="chapter-item expanded "><a href="../_posts/2008-09-05-experience-of-picasa-for-face-recognition.html"><strong aria-hidden="true">86.</strong> 体验Picasa的人脸识别</a></li><li class="chapter-item expanded "><a href="../_posts/2008-09-04-the-story-behind-google-chrome.html"><strong aria-hidden="true">87.</strong> The story behind Google Chrome</a></li><li class="chapter-item expanded "><a href="../_posts/2008-09-04-chrome-code-has-been-available-for-download-but-it-must-be-with-tor-to-access.html"><strong aria-hidden="true">88.</strong> Chrome代码已经可以下载,但是必须带Tor才能访问</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-27-top-ten-reasons-to-choose-gmail.html"><strong aria-hidden="true">89.</strong> 十大理由选择Gmail</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-27-gold-country-sports-power.html"><strong aria-hidden="true">90.</strong> 金牌大国≠体育大国</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-27-cultural-differences.html"><strong aria-hidden="true">91.</strong> 文化差异</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-26-quot-gu-binglin-quot-admits-chinese-university-education-is-to-head-to-fight-the-shit.html"><strong aria-hidden="true">92.</strong> 顾秉林坦言中国大学教育就是往脑子里灌屎</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-26-china-rich-group-of-what-is-produced.html"><strong aria-hidden="true">93.</strong> 中国的暴富者群体是怎样产生的？</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-25-to-flameout-conjecture.html"><strong aria-hidden="true">94.</strong> 转熄火猜想</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-25-to-finally-did-i-orgasm.html"><strong aria-hidden="true">95.</strong> 转我到最后也没高潮</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-24-the-way-of-the-world.html"><strong aria-hidden="true">96.</strong> 世态</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-22-revision-modified-handsome.html"><strong aria-hidden="true">97.</strong> 改版改得帅</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-21-united-states-funding-for-sports-and-spending.html"><strong aria-hidden="true">98.</strong> 美国体育的资金投入和花费</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-21-to-10-worst-of-china-law.html"><strong aria-hidden="true">99.</strong> 转10条最糟糕的中国法律</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-19-to-i-looked-into-the-olympic-spirit.html"><strong aria-hidden="true">100.</strong> 转我朝奥运精神</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-18-legal-thinking-on-nude-chat-problems.html"><strong aria-hidden="true">101.</strong> 关于裸聊问题的法律思考</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-11-man-killed-in-chongqing-to-beijing.html"><strong aria-hidden="true">102.</strong> 重庆人杀到北京</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-11-games-how-to-united-states-television-network-costs.html"><strong aria-hidden="true">103.</strong> 奥运会如何让美国电视网赔本</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-06-lang-from-the-perspective-of-industrial-chain-division-of-college-students-employment-difficulty.html"><strong aria-hidden="true">104.</strong> 郎咸平: 从产业链分工看大学生就业困难</a></li><li class="chapter-item expanded "><a href="../_posts/2008-08-04-you-look-at-someone-elses-qamp-a.html"><strong aria-hidden="true">105.</strong> 你瞧瞧人家的Q&A</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-30-lighttpd-out.html"><strong aria-hidden="true">106.</strong> lighttpd 完了</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-25-to-democracy-is-a-universal-value.html"><strong aria-hidden="true">107.</strong> 转民主是一种普遍价值观</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-25-chinese-economists-quotes-li-yining.html"><strong aria-hidden="true">108.</strong> 中国的经济学家语录-厉以宁</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-24-how-much-did-we-pay-taxes.html"><strong aria-hidden="true">109.</strong> 我们到底交了多少税？</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-23-what-you-can-learn-from-the-facebook-redesign-40-zt41.html"><strong aria-hidden="true">110.</strong> What You Can Learn from the Facebook Redesign  ZT</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-23-storm-kiosk-truth-yue-feis-suicide.html"><strong aria-hidden="true">111.</strong> 风波亭事件真相: 岳飞系自杀死亡</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-23-go-someone-criticize-the-boss.html"><strong aria-hidden="true">112.</strong> 转: 某人批评老板</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-22-go-addressed-to-just-work-site-technician.html"><strong aria-hidden="true">113.</strong> 转:写给刚工作的网站技术人员</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-18-376-billion-dollars-dashuipiao.html"><strong aria-hidden="true">114.</strong> 3760亿美元打水漂</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-15-china-and-zimbabwe.html"><strong aria-hidden="true">115.</strong> 中国和津巴布韦</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-11-go-review-the-boss-will-do-in-school.html"><strong aria-hidden="true">116.</strong> 转: 评校内--老板会这么做么?</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-02-total-40-go-round-ma-41-classical-quotations.html"><strong aria-hidden="true">117.</strong> 转 马总 马云的经典语录</a></li><li class="chapter-item expanded "><a href="../_posts/2008-07-02-go-chen-yizhou-survivor.html"><strong aria-hidden="true">118.</strong> 转: 陈一舟: 幸存者</a></li><li class="chapter-item expanded "><a href="../_posts/2008-06-23-i-want-to-do-app.html"><strong aria-hidden="true">119.</strong> 我想做的app</a></li><li class="chapter-item expanded "><a href="../_posts/2008-06-19-survey-high-salary-of-60-chinese-class.html"><strong aria-hidden="true">120.</strong> 调查: 60年代中国的高薪阶层</a></li><li class="chapter-item expanded "><a href="../_posts/2008-06-19-in-shanghai-in-shenzhen-and-food-market.html"><strong aria-hidden="true">121.</strong> 沪市,深市和菜市</a></li><li class="chapter-item expanded "><a href="../_posts/2008-06-19-earthquake-documentary-first-glimpse.html"><strong aria-hidden="true">122.</strong> 地震纪录片先睹</a></li><li class="chapter-item expanded "><a href="../_posts/2008-06-17-js-in-what-environment.html"><strong aria-hidden="true">123.</strong> JS于什么环境下?</a></li><li class="chapter-item expanded "><a href="../_posts/2008-06-17-js-in-the-browser-it-must-be-single-threaded.html"><strong aria-hidden="true">124.</strong> JS在浏览器中一定是单线程的</a></li><li class="chapter-item expanded "><a href="../_posts/2008-06-12-to-your-mothers-olympics.html"><strong aria-hidden="true">125.</strong> 去你妈的奥运</a></li><li class="chapter-item expanded "><a href="../_posts/2008-06-09-why-china-earthquake-death-toll-up-to.html"><strong aria-hidden="true">126.</strong> 为什么中国地震死亡人数最多?</a></li><li class="chapter-item expanded "><a href="../_posts/2008-06-09-in-japan-earthquake-the-school-run.html"><strong aria-hidden="true">127.</strong> 在日本，地震来了，向学校跑</a></li><li class="chapter-item expanded "><a href="../_posts/2008-06-03-who-blame.html"><strong aria-hidden="true">128.</strong> 怪谁</a></li><li class="chapter-item expanded "><a href="../_posts/2008-05-31-gfw-completed-full-monitoring-of-the-windows-live-range-of-services-essential-to-upgrade.html"><strong aria-hidden="true">129.</strong> GFW 完成全程监控 Windows Live 系列服务的重要升级</a></li><li class="chapter-item expanded "><a href="../_posts/2008-05-29-whos-killing-our-children.html"><strong aria-hidden="true">130.</strong> 谁杀死了我们的孩子？</a></li><li class="chapter-item expanded "><a href="../_posts/2008-05-29-be-persecuted-to-death-the-children-in-peace.html"><strong aria-hidden="true">131.</strong> 冤死的孩子们何以瞑目？</a></li><li class="chapter-item expanded "><a href="../_posts/2008-05-21-test.html"><strong aria-hidden="true">132.</strong> test</a></li><li class="chapter-item expanded "><a href="../_posts/2008-05-19-to-despise-cctv.html"><strong aria-hidden="true">133.</strong> 转鄙视 CCTV</a></li><li class="chapter-item expanded "><a href="../_posts/2008-05-14-open-campus-open-campus-pass.html"><strong aria-hidden="true">134.</strong> 开放的校内，开放的校内通</a></li><li class="chapter-item expanded "><a href="../_posts/2008-04-25-system-time-causes-crash.html"><strong aria-hidden="true">135.</strong> 系统时间导致崩溃</a></li><li class="chapter-item expanded "><a href="../_posts/2008-04-16-godfather-of-php-language-gutmans-shelling-of-java-has-lost-the-battle-for-the-web-go.html"><strong aria-hidden="true">136.</strong> PHP语言教父Gutmans炮轰Java:已经输掉Web之战转</a></li><li class="chapter-item expanded "><a href="../_posts/2008-03-19-memory-allocation-problem.html"><strong aria-hidden="true">137.</strong> 内存分配问题</a></li><li class="chapter-item expanded "><a href="../_posts/2008-03-19-displays-the-memory-management.html"><strong aria-hidden="true">138.</strong> 显示内存管理</a></li><li class="chapter-item expanded "><a href="../_posts/2008-02-15-go-campus-and-residual-brain.html"><strong aria-hidden="true">139.</strong> 转: 校内和脑残</a></li><li class="chapter-item expanded "><a href="../_posts/2008-02-04-brezhnev-in-poland.html"><strong aria-hidden="true">140.</strong> 勃列日涅夫在波兰</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-29-writing-programs-and-economics.html"><strong aria-hidden="true">141.</strong> 写程序和经济学</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-29-from-the-perspective-of-economics-of-java-and-php.html"><strong aria-hidden="true">142.</strong> 从经济学的角度看Java和php</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-29-douban-registration.html"><strong aria-hidden="true">143.</strong> 豆瓣网注 册</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-26-2007-best-humorous-short-stories.html"><strong aria-hidden="true">144.</strong> 2007年度最佳幽默短篇</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-25-writing-poetry-as-assigned.html"><strong aria-hidden="true">145.</strong> 写诗作赋</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-25-members-of-the-non-economic-observation.html"><strong aria-hidden="true">146.</strong> 非经济人士观察</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-24-go-what-should-we-be-occupational-psychology.html"><strong aria-hidden="true">147.</strong> 转: 我们应该有怎样的职业心态</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-23-pheasant-color-wolf.html"><strong aria-hidden="true">148.</strong> 野鸡配色狼</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-23-cpi-rose-7%-wages-rose-do.html"><strong aria-hidden="true">149.</strong> CPI上涨了7%,工资能涨吗?</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-22-play-mahjong-in-four-students-in-the-dormitory-when-police-broke-in-and-took-five-people.html"><strong aria-hidden="true">150.</strong> 四个学生在宿舍里打麻将,突然警察破门而入,把五个人都带走了</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-16-5-million-dynamic-pv.html"><strong aria-hidden="true">151.</strong> 500万动态PV</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-11-finally-someone-said-java-does-not-fit-as-the-main-programming-language.html"><strong aria-hidden="true">152.</strong> 终于有人说出来了—Java不适合于作为主要编程教学语言</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-11-country-swing-stands.html"><strong aria-hidden="true">153.</strong> 在祖国摆个小摊</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-09-mars-on-antispam.html"><strong aria-hidden="true">154.</strong> 火星文对AntiSpam</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-09-goal-of-earning-billions-of-dollars.html"><strong aria-hidden="true">155.</strong> 年收入千亿美元的目标</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-09-abandoned-in-java.html"><strong aria-hidden="true">156.</strong> 遭到抛弃的Java</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-02-cpp.html"><strong aria-hidden="true">157.</strong> 会c++的进来</a></li><li class="chapter-item expanded "><a href="../_posts/2008-01-02-a-blog-answer-on-40cpp41.html"><strong aria-hidden="true">158.</strong> 上一篇日志答案 c++</a></li><li class="chapter-item expanded affix "><li class="part-title">2007</li><li class="chapter-item expanded "><a href="../_posts/2007-12-27-happy-hobbit-feet.html"><strong aria-hidden="true">159.</strong> Happy Hobbit Feet</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-26-rogue-plugin-and-firefox.html"><strong aria-hidden="true">160.</strong> 流氓插件和Firefox</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-24-southern-weekend-the-system.html"><strong aria-hidden="true">161.</strong> 南方周末: 《系统》</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-23-programmers-what-to-learn.html"><strong aria-hidden="true">162.</strong> 程序员该学习什么</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-22-go-speechless.html"><strong aria-hidden="true">163.</strong> 转: 无语</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-20-yifudangguan-in-school-three-catch-up-from-behind.html"><strong aria-hidden="true">164.</strong> 校内一夫当关？三每内后来居上？</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-20-posted-firefox-is-faster-than-ie-40-js41.html"><strong aria-hidden="true">165.</strong> 转贴:Firefox的确比IE快 JS</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-20-google-translation-robot-is-too-cool.html"><strong aria-hidden="true">166.</strong> google翻译机器人太酷了</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-20-extra-thrift-to-join-the-apache.html"><strong aria-hidden="true">167.</strong> 号外: thrift要加入Apache了</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-19-parenting-is-not-so-difficult-to-4010p41.html"><strong aria-hidden="true">168.</strong> 为人父母并没有那么难 10P</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-19-10-you-will-encounter-programmer.html"><strong aria-hidden="true">169.</strong> 10种你会碰到的程序员</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-18-mm-said-ten-ways-to-own-money-the-guy-the-article-is-too-cow-go.html"><strong aria-hidden="true">170.</strong> 对MM说自己有钱的十种方法 -- 这厮的文章太牛了，转</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-18-microsoftcom-what39s-the-story.html"><strong aria-hidden="true">171.</strong> Microsoft.com: What's the story?</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-18-34-d-34-a-comparison-of-online-photo-site.html"><strong aria-hidden="true">172.</strong> 四款在线图片网站效果对比</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-17-famous-in-the-history-of-the-top-ten-silly-events.html"><strong aria-hidden="true">173.</strong> 史上著名的十大超级愚蠢事件</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-15-public-opinion.html"><strong aria-hidden="true">174.</strong> 民意</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-12-the-economist-recommending-200700-book-business-class.html"><strong aria-hidden="true">175.</strong> 《经济学人》推荐的2007百本好书 商业经济类</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-11-2006-part-of-the-40-national-human-rights-report-includes-tibet-hong-kong-and-macau-41-select-and-translate.html"><strong aria-hidden="true">176.</strong> 2006年度各国人权报告 -- 中国部分 包括西藏、香港和澳门摘译</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-10-math-problem-to-ask-for-help.html"><strong aria-hidden="true">177.</strong> 数学题请求帮助</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-10-know-34-sitnation-34-translation.html"><strong aria-hidden="true">178.</strong> 知道真抓实干的翻译吗？</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-08-open-source-license-in-new-version-im.html"><strong aria-hidden="true">179.</strong> open source License in new version IM</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-05-elite-dictatorship-zt.html"><strong aria-hidden="true">180.</strong> 精英专政 zt</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-03-html-5.html"><strong aria-hidden="true">181.</strong> HTML 5</a></li><li class="chapter-item expanded "><a href="../_posts/2007-12-01-be-ruthless.html"><strong aria-hidden="true">182.</strong> 赶尽杀绝</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-30-water-dispenser-next-to-look-forward-to.html"><strong aria-hidden="true">183.</strong> 饮水机旁期待中</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-28-torvalds-on-linux-development-in-2008.html"><strong aria-hidden="true">184.</strong> Torvalds谈Linux在2008年的发展</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-28-three-of-each-number-registered-in.html"><strong aria-hidden="true">185.</strong> 三每内注册数</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-28-recommended.html"><strong aria-hidden="true">186.</strong> 建议</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-27-hundreds-of-people-will.html"><strong aria-hidden="true">187.</strong> 百人会</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-26-the-most-in-the-history-of-big-pants-was-going-to-slit-crotch.html"><strong aria-hidden="true">188.</strong> 史上最牛的大裤衩就要缝裆了</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-23-programmer-is-a-hard-business.html"><strong aria-hidden="true">189.</strong> 程序员是一个辛苦的行业</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-23-number-of-registered.html"><strong aria-hidden="true">190.</strong> 注册数</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-22-donation-of-10-grams-of-rice.html"><strong aria-hidden="true">191.</strong> 捐赠10克大米</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-20-zt-wei-xiaobao-is-a-good-leader.html"><strong aria-hidden="true">192.</strong> zt: 韦小宝是个好领导</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-20-recommended-large-services-schema-document.html"><strong aria-hidden="true">193.</strong> 推荐 大型服务架构文档</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-19-i-have-seen-the-most-nb-fable-sheep-lions-and-wolves.html"><strong aria-hidden="true">194.</strong> 我见过最nb的寓言: 羊、狮子和狼</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-17-enough-to-apply-for-north-back-award-for-invention.html"><strong aria-hidden="true">195.</strong> 足以申请诺背尔奖的发明</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-16-theories-of-group-behavior.html"><strong aria-hidden="true">196.</strong> 群体行为理论</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-08-gtalk-aim-joke-.html"><strong aria-hidden="true">197.</strong> Gtalk AIM, Joke ...</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-07-staff-of-the-depressed.html"><strong aria-hidden="true">198.</strong> 郁闷的职员</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-07-open-road-msn-and-gtalk-interoperability.html"><strong aria-hidden="true">199.</strong> 开放之路-MSN和Gtalk互通</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-05-kung-fu-panda.html"><strong aria-hidden="true">200.</strong> 《功夫熊猫》</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-04-ztwikipedia-technology-architecture-to-share.html"><strong aria-hidden="true">201.</strong> zt:WikiPedia 技术架构学习分享</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-04-ztusb-vacuum-cleaner.html"><strong aria-hidden="true">202.</strong> zt:USB吸尘器</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-04-ztelcipse-desk.html"><strong aria-hidden="true">203.</strong> zt:Elcipse Desk</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-04-zt-mouse-label-printers-gaotou-do.html"><strong aria-hidden="true">204.</strong> zt:鼠标+卷标打印机，有搞头吗？</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-03-powerful-tencent.html"><strong aria-hidden="true">205.</strong> 强大的腾讯</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-02-zt-lust-sketch.html"><strong aria-hidden="true">206.</strong> zt: 色戒 小品</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-02-people-yellow-pig-old-spoiled-child.html"><strong aria-hidden="true">207.</strong> 人黄猪老的撒娇帖</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-02-opensocial-gos.html"><strong aria-hidden="true">208.</strong> OpenSocial & GOS</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-02-opensocial-accessible.html"><strong aria-hidden="true">209.</strong> opensocial 可以访问了！！！</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-02-greedy-people-in-the-internet-cafe.html"><strong aria-hidden="true">210.</strong> 网吧里有贪婪的人</a></li><li class="chapter-item expanded "><a href="../_posts/2007-11-01-guess-what-is-this-site.html"><strong aria-hidden="true">211.</strong> 猜这是什么网站？</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-31-tomorrow-should-be-a-striking-day.html"><strong aria-hidden="true">212.</strong> 明天应该是令人震撼的一天</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-31-tencent-qq-people-are-shocked-and-afraid-of-bloodthirsty-jackals.html"><strong aria-hidden="true">213.</strong> 腾讯QQ: 让人又惊又怕的嗜血豺狼</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-31-extra-gmail-support-joined-msnyahooaim-instant-messaging-buddies.html"><strong aria-hidden="true">214.</strong> 号外: gmail支持加入msn,yahoo,aim即时通讯好友了</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-30-unlike-of-donews.html"><strong aria-hidden="true">215.</strong> 不一样的DoNews</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-29-love-like-gambling-and-bets-of-all-organs-of-the-red-eyes.html"><strong aria-hidden="true">216.</strong> 爱情和赌博一样，红了眼的都拿器官下注。</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-28-wikinomics-how-mass-collaboration-changes-everything.html"><strong aria-hidden="true">217.</strong> 维基经济学: 大规模协作如何改变一切</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-28-baby.html"><strong aria-hidden="true">218.</strong> baby</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-27-qq-picture-access-technology.html"><strong aria-hidden="true">219.</strong> QQ的图片访问的技术实现？</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-27-is-not-the-same-as.html"><strong aria-hidden="true">220.</strong> 就是不一样</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-25-recommendation-the-text-length-decision-algorithm.html"><strong aria-hidden="true">221.</strong> 建议: 文字长度判断算法</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-25-people-help-explain-the-chill.html"><strong aria-hidden="true">222.</strong> 高人，帮忙进来解释一下寒意</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-24-the-market-value-of.html"><strong aria-hidden="true">223.</strong> 市值</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-24-haha-today-found-enthusiasm.html"><strong aria-hidden="true">224.</strong> 哈哈，发现今天大家热情高涨啊</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-24-guess-the-system-used-to-do.html"><strong aria-hidden="true">225.</strong> 猜，这套系统用来干什么的</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-23-historys-produced-a-lot-of-bad-eggs.html"><strong aria-hidden="true">226.</strong> History's produced a lot of bad eggs</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-22-mozillas-open-source-im-project-instantbird.html"><strong aria-hidden="true">227.</strong> Mozilla的开源IM项目 -- InstantBird</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-22-mozilla-open-source-im-project--instantbird.html"><strong aria-hidden="true">228.</strong> Mozilla的开源IM项目 -- InstantBird</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-17-money.html"><strong aria-hidden="true">229.</strong> 钱</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-16-super-peripherals-keyboard-and-mouse.html"><strong aria-hidden="true">230.</strong> 超级外设: 键盘和鼠标</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-15-tm2008-replaces-do-qq.html"><strong aria-hidden="true">231.</strong> tm2008会取代qq吗？</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-15-guess-this-is-what-to-do.html"><strong aria-hidden="true">232.</strong> 猜，这是用什么做的？</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-13-saturday-night-live.html"><strong aria-hidden="true">233.</strong> Saturday Night Live</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-10-qq-campus-seems-to-have-heavy-use-of-cgi.html"><strong aria-hidden="true">234.</strong> qq校园似乎大量使用了CGI</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-09-google-social-networking-plans.html"><strong aria-hidden="true">235.</strong> Google’s Social Networking Plans</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-06-pokes-in-facebook.html"><strong aria-hidden="true">236.</strong> Pokes in FaceBook</a></li><li class="chapter-item expanded "><a href="../_posts/2007-10-02-pic-haha.html"><strong aria-hidden="true">237.</strong> pic haha</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-26-you-must-go-and-see.html"><strong aria-hidden="true">238.</strong> 你们一定要去看看</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-26-for-whom-the-bell-tolls-ming.html"><strong aria-hidden="true">239.</strong> 丧钟为谁而鸣</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-25-new-version-of-the-firefox-icon-and-is-worth-a-look.html"><strong aria-hidden="true">240.</strong> 新版FireFox图标，值得一看</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-23-zhuan-dont-understand-ask-your-parents.html"><strong aria-hidden="true">241.</strong> zhuan看不懂去问你爸妈</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-21-pic-fix.html"><strong aria-hidden="true">242.</strong> pic fix</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-20-pic-duck.html"><strong aria-hidden="true">243.</strong> pic duck</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-18-dont-cook-the-tailor-is-not-a-good-driver.html"><strong aria-hidden="true">244.</strong> 不想做厨师的裁缝不是好司机</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-17-to-ice-cream-machines-can-make-you-want-to-open.html"><strong aria-hidden="true">245.</strong> 转冰淇淋机可以让你想开点</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-15-zhuan-wang-jianshuo-take-a-look-at-the-cabinet.html"><strong aria-hidden="true">246.</strong> zhuan王建硕-看看这个机柜</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-15-zhuan-rsa-public-key-encryption-technology-is-about-to-quit-the-stage-of-history.html"><strong aria-hidden="true">247.</strong> zhuanRSA公开密钥加密技术即将退出历史舞台</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-13-zhuan-mosquito-mosquitoes-mosquito.html"><strong aria-hidden="true">248.</strong> zhuan 蚊子蚊子蚊子</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-13-issue-228-of-school-intercom-page.html"><strong aria-hidden="true">249.</strong> 校内通的问题反馈有228页</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-12-tu-untitled.html"><strong aria-hidden="true">250.</strong> tu Untitled</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-09-tu-who-needs-a-bluetooth-headset.html"><strong aria-hidden="true">251.</strong> tu谁还需要蓝牙耳机！</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-09-are-you.html"><strong aria-hidden="true">252.</strong> 你是？</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-06-google-java-cpp-rpc-.html"><strong aria-hidden="true">253.</strong> Google, Java, C++, RPC ...</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-04-yahoo-people-search-and-networking.html"><strong aria-hidden="true">254.</strong> Yahoo人物搜索和人际网络</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-04-xiaonei-xxx-collection.html"><strong aria-hidden="true">255.</strong> xiaonei xxx 集合</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-04-tu-don39t-play-with-your-food.html"><strong aria-hidden="true">256.</strong> tuDon't Play With Your Food</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-02-tuuntitled.html"><strong aria-hidden="true">257.</strong> tuuntitled</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-02-recommended-taobao-ued-team-blog.html"><strong aria-hidden="true">258.</strong> 推荐taobao UED设计团队blog</a></li><li class="chapter-item expanded "><a href="../_posts/2007-09-02-hi5.html"><strong aria-hidden="true">259.</strong> hi5</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-29-webpager-development-of-embarrassment.html"><strong aria-hidden="true">260.</strong> 尴尬的webpager开发</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-29-pickidsexchange.html"><strong aria-hidden="true">261.</strong> pickidsexchange</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-29-i-want-to-post-flash.html"><strong aria-hidden="true">262.</strong> 我要贴flash!!!!</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-28-weekly.html"><strong aria-hidden="true">263.</strong> 图】手纸</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-26-orkutcom-aspx-amp-linux.html"><strong aria-hidden="true">264.</strong> orkut.com aspx & Linux</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-25-beijing-peoples-lungs-are-natural-air-purifier.html"><strong aria-hidden="true">265.</strong> 北京人的肺都是天然的空气净化器</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-24-worldwide-high-resolution-computer-screen-hiperspace.html"><strong aria-hidden="true">266.</strong> 世界最高分辨率电脑用屏幕 -- HIPerSpace</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-24-spit.html"><strong aria-hidden="true">267.</strong> 吐.............</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-24-new-orkut-interface.html"><strong aria-hidden="true">268.</strong> orkut新界面</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-24-naked-ubuntu.html"><strong aria-hidden="true">269.</strong> 吐naked ubuntu</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-23-usb-lamp.html"><strong aria-hidden="true">270.</strong> USB灯泡</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-22-spit-master-kang.html"><strong aria-hidden="true">271.</strong> 【吐】康师傅</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-21-ran-40-hour-trip-home.html"><strong aria-hidden="true">272.</strong> 40个小时跑了一趟老家</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-21-im-home.html"><strong aria-hidden="true">273.</strong> 俺老家</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-21-googles-chinese-community-the-end.html"><strong aria-hidden="true">274.</strong> Google的中国社区-天涯</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-18-infoq-similar-to-the-google-hadoop-framework-open-source-project-is-a-community-concern.html"><strong aria-hidden="true">275.</strong> InfoQ: 类似Google构架的开源项目Hadoop近获社区关注</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-17-toyslowyahoo39s-problems-are-not-your-problems.html"><strong aria-hidden="true">276.</strong> 转 YSlow: Yahoo's Problems Are Not Your Problems</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-17-to-the-official-carol-is-higher-than-the-sky.html"><strong aria-hidden="true">277.</strong> 转官员颂歌比天高</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-17-tm2008-preview-edition.html"><strong aria-hidden="true">278.</strong> tm2008 preview 版</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-15-experience-in-school-issue-2.html"><strong aria-hidden="true">279.</strong> 校内使用体验问题版2</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-14-niu-tiancai-then-guess-what-machines-are-next.html"><strong aria-hidden="true">280.</strong> 牛天才们，再来猜，下面的机器是什么？</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-13-turn-of-the-day-seen-on-the-streets-of-miami.html"><strong aria-hidden="true">281.</strong> 每日一吐 转Seen On The Streets of Miami</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-13-geniuses-guess.html"><strong aria-hidden="true">282.</strong> 天才们，来猜吧</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-11-guess-what-is-it.html"><strong aria-hidden="true">283.</strong> 猜！这是什么？</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-11-case-sensitive.html"><strong aria-hidden="true">284.</strong> 大小写敏感</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-10-large-display.html"><strong aria-hidden="true">285.</strong> 大显示器</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-10-daily-spit.html"><strong aria-hidden="true">286.</strong> 每日一吐</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-08-all-deformations-of-the-transformers-40-41.html"><strong aria-hidden="true">287.</strong> 《变形金刚》一切皆可变形 图</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-07-firm-grip.html"><strong aria-hidden="true">288.</strong> firm grip</a></li><li class="chapter-item expanded "><a href="../_posts/2007-08-04-taipeis-robot.html"><strong aria-hidden="true">289.</strong> 台北的机器人</a></li><li class="chapter-item expanded "><a href="../_posts/2007-07-24-to-ten-apps-of-facebooks-greatest-work.html"><strong aria-hidden="true">290.</strong> 转Facebook上最伟大的十个Apps——工作篇</a></li><li class="chapter-item expanded "><a href="../_posts/2007-07-19-socialstream.html"><strong aria-hidden="true">291.</strong> SocialStream</a></li><li class="chapter-item expanded "><a href="../_posts/2007-07-13-xiaonei-experience-40-issue-41.html"><strong aria-hidden="true">292.</strong> xiaonei 使用体验 问题版</a></li><li class="chapter-item expanded "><a href="../_posts/2007-06-23-gtalk-support-for-multi-chat.html"><strong aria-hidden="true">293.</strong> gtalk 支持 multi-chat</a></li><li class="chapter-item expanded "><a href="../_posts/2007-06-22-google-ms-and-yahoo-in-alexa-top-100.html"><strong aria-hidden="true">294.</strong> Google, M$ and yahoo in Alexa top 100</a></li><li class="chapter-item expanded "><a href="../_posts/2007-06-20-wall-street-hopes-jerry-yang-is-offensive.html"><strong aria-hidden="true">295.</strong> 华尔街希望杨致远具有攻击性</a></li><li class="chapter-item expanded "><a href="../_posts/2007-06-01-why-com.html"><strong aria-hidden="true">296.</strong> WHY COM?</a></li><li class="chapter-item expanded "><a href="../_posts/2007-03-30-reprint-how-to-access-was-blocked-several-websites-how-to-visit-the-banned-websites.html"><strong aria-hidden="true">297.</strong> 转载怎样访问被封杀了的几个网站|How to Visit the Banned Websites</a></li><li class="chapter-item expanded "><a href="../_posts/2007-02-27-googler-use-cplusplus.html"><strong aria-hidden="true">298.</strong> Googler use c++?</a></li><li class="chapter-item expanded "><a href="../_posts/2007-02-17-microsoft-use-akamaighost-instead-of-iis.html"><strong aria-hidden="true">299.</strong> Microsoft use AkamaiGHost</a></li><li class="chapter-item expanded "><a href="../_posts/2007-02-14-the-long-tail-and-music.html"><strong aria-hidden="true">300.</strong> The Long Tail and Music</a></li><li class="chapter-item expanded "><a href="../_posts/2007-02-13-vc7-compile-optimization.html"><strong aria-hidden="true">301.</strong> vc7 compile optimization</a></li><li class="chapter-item expanded "><a href="../_posts/2007-02-13-how-suck-your-stl-implemented.html"><strong aria-hidden="true">302.</strong> How suck your STL implemented?</a></li><li class="chapter-item expanded "><a href="../_posts/2007-02-13-great-library-sigslot.html"><strong aria-hidden="true">303.</strong> Great library: sigslot</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">pedia blog</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h1 id="大教堂和市集"><a class="header" href="#大教堂和市集">大教堂和市集</a></h1>
+<p>2008-09-19 13:09:02</p>
+<hr />
+<p><span style="font-weight: bold;">2 大教堂和市集</span><br />
+<br />
+<span style="font-weight: bold;">2.1 大教堂和市集</span><br />
+Linux 的影响是非常巨大的。甚至在5 年以前，有谁能够想象一个世界级的操作系统能够仅仅用细细的<br />
+Internet 连接起来的散布在全球的几千个开发人员有以业余时间来创造呢？<br />
+我当然不会这么想。在1993 年早期我开始注意Linux 时，我已经参与Unix 和自由软件开发达十年之久了。<br />
+我是八十年代中期GNU 最早的几个参与者之一。我已经在网上发布了大量的自由软件，开发和协助开发了几个<br />
+至今仍在广泛使用的程序（Nethack, Emacs VC 和GND 模式，xlife 等等）。我想我知道该怎样做。<br />
+Linux 推翻了许多我认为自己明白的事情。我已经宣扬小工具、快速原型和演进式开发的Unix 福音多年了。<br />
+但是我也相信某些重要的复杂的事情需要更集中化的，严密的方法。我相信多数重要的软件（操作系统和象<br />
+Emacs 一样的真正大型的工具）需要向建造大教堂一样来开发，需要一群于世隔绝的奇才的细心工作，在成功<br />
+之前没有beta 版的发布。<br />
+Linus Torvalds 的开发风格（尽早尽多的发布，委托所有可以委托的事，对所有的改动和融合开放）令人惊<br />
+奇地降临了。这里没有安静的、虔诚的大教堂的建造工作—— 相反，Linux 团体看起来像一个巨大的有各种不<br />
+同议程和方法的乱哄哄的集市（Linux 归档站点接受任何人的建议和作品，并聪明的加以管理），一个一致而<br />
+稳定的系统就像奇迹一般从这个集市中产生了。<br />
+这种设计风格确实能工作，并且工作得很好，这个事实确实是一个冲击。在我的研究过程中，我不仅在单<br />
+个工程中努力工作，而且试图理解为什么Linux 世界不仅没有在一片混乱中分崩离析，反而以大教堂建造者们<br />
+不可想象的速度变得越来越强大。<br />
+到了1996 年中，我想我开始理解了。我有一个极好的测试我的理论的机会，以一个自由软件计划的形式，<br />
+我有意识地用了市集风格。我这样做了，并取得了很大的成功。<br />
+在本文的余下部分，我将讲述这个计划的故事，我用它来明确一些自由软件高效开发的格言。并不是所有<br />
+这些都是从Linux 世界中学到的，但我们将看到Linux 世界给予了它们一个什么样的位置。如果我是正确的，它<br />
+们将使你理解是什么使Linux 团体成为好软件的源泉，帮助你变得更加高效。<br />
+<br />
+<span style="font-weight: bold;">2.2 邮件必须得通过</span><br />
+1993 年以前我在一个小的免费访问的名为Chester County InterLink 的ISP 的做技术工作，它位于Pennsylvania<br />
+的West Chester。（我协助建立了CCIL，并写了我们独特的多用户BBS 系统—— 你可以telnet 到locke.ccil.org<br />
+来检测一下。今天它在十九条线上支持三千的用户）。这个工作使我可以一天二十四小时通过CCIL 的56K 专<br />
+线连在网上，实际上，它要求我怎么做！<br />
+所以，我对Internet email 很熟悉。因为复杂的原因，很难在我家里的机器（snark.thyrsus.com）和CCIL 之间<br />
+用SLIP 工作。最后我终于成功了，但我发现不得不时常telnet 到locke 来检查我的邮件，这真是太烦了。我所<br />
+需要的是我的邮件发送到snark，这样biff(1) 会在它到达时通知我。<br />
+简单地sendmail 的转送功能是不够的，因为snark 并不是总在网上而且没有一个静态地址。我需要一个程序<br />
+通过我的SLIP 连接把我的本地发送的邮件拉过来。我知道这种东西是存在的，它们大多使用一个简单的协议<br />
+POP（Post Office Protocol）。而且，locke 的BSD/OS 操作系统已经自带了一个POP3 服务器。<br />
+我需要一个POP3 客户。所以我到网上去找到了一个。实际上，我发现了三、四个。我用了一会pop-perl，<br />
+但它却少一个明显的特征：抽取收到的邮件的地址以便正确回复。<br />
+问题是这样的：假设locke 上一个叫“joe”的人向我发了一封邮件。如果我把它取到snark 上准备回复时,我<br />
+的邮件程序会很高兴地把它发送给一个不存在的snark 上的“joe”。手工的在地址上加上“@ccil.org”变成了一<br />
+个严酷的痛苦。<br />
+这显然应是计算机替我做的事。（实际上，依据RFC1123 的5.2.18 节，sendmail 应该做这件事）。但是没有<br />
+一个现存的POP 客户知道怎样做！于是这就给我们上了第一课：<br /></p>
+<ol>
+<li>每个好的软件工作都开始于搔到了开发者本人的痒处<br />
+也许这应该是显而易见的（“需要是发明之母”长久以来就被证明是正确的），但是软件开发人员常常把<br />
+他们的精力放在它们既不需要也不喜欢的程序，但在Linux 世界中却不是这样—— 这解释了为什么从Linux 团<br />
+体中产生的软件质量都如此之高。<br />
+那么，我是否立即投入疯狂的工作中，要编出一个新的POP3 客户与现存的那些竞争呢？才不是哪！我仔细<br />
+考察了手头上的POP 工具，问自己“那一个最接近我的需要？”因为：<br /></li>
+<li>好程序员知道该写什么，伟大的程序员知道该重写（和重用）什么。<br />
+我并没有声称自己是一个伟大的程序员，可是我试着效仿他们。伟大程序员的一个重要特点是建设性的懒<br />
+惰。他们知道你是因为成绩而不是努力得到奖赏，而且从一个好的实际的解决方案开始总是要比从头干起容<br />
+易。<br />
+例如，Linux 并不是从头开始写Linux 的。相反的它从重用Minix（一个386 机型上的类似Unix 的微型操作<br />
+系统）的代码和思想入手。最后所有的Minix 代码都消失或被彻底的重写了，但是当它们在的时候它为最终成<br />
+为Linux 的雏形做了铺垫。<br />
+秉承同样的精神，我去寻找良好编码的现成的POP 工具，用来作为基础。<br />
+Unix 世界中的代码共享传统一直对代码重用很友好（这正是为什么GNU 计划不管Unix 本身有多么保守而选<br />
+取它作为基础操作系统的原因）。Linux 世界把这个传统推向技术极限：它有几个T 字节的源代码可以用。所<br />
+以在Linux 世界中花时间寻找其他几乎足够好的东西，会比在别处带来更好的结果。<br />
+这也适合我。加上我先前发现的，第二次寻找找到了9 个候选者—— fetchPOP，PopTart，get- mail，gwpop，<br />
+pimp，pop-perl，popc，popmail 和upop。我首先选定的是“fetchpop”。我加入了头标重写功能，并且做了一些<br />
+被作者加入他的1.9 版中的改进。<br />
+但是几个星期之后，我偶然发现了Carl Harris 写的“popclient”的代码，然后发现有个问题，虽然fetchpop<br />
+有一些好的原始思想（比如它的守护进程模式），它只能处理pop3，而且编码的水平相当业余（Seung-Hong 是<br />
+个很聪明但是经验不足的程序员），Carl 的代码更好一些，相当专业和稳固，但他的程序缺少几个重要的相当<br />
+容易实现的fetchpop 的特征（包括我自己写的那些）。<br />
+继续呢还是换一个? 如果换一个的话，作为得到一个更好开发基础的代价，我就要扔掉我已经有的那些代<br />
+码。<br />
+换一个的一个实际的动机是支持多协议，POP3 是用的最广的邮局协议，但并非唯一一个，Fetchpop 和其余<br />
+几个没有实现POP2.RPOP，或者APOP，而且我还有一个为了兴趣加入IMAP（Internet Message Access Protocol，<br />
+最近设计的最强大的邮局协议）的模糊想法。<br />
+但是我有一个更加理论化的原因认为换一下会是一个好主意，这是我在Linux 很久以前学到的：<br /></li>
+<li>“计划好抛弃，无论如何，你会的”（Fred Brooks,《人月神话》第11 章）<br />
+或者换句话说，你常常在第一次实现一个解决方案之后才能理解问题所在，第二次你也许才足够清楚怎样<br />
+做好它，因此如果你想做好，准备好推翻重来至少一次。<br />
+好吧（我告诉自己），对fetchpop 的尝试是我第一次的尝试，因此我换了一下。<br />
+当我在1996 年6 月25 日把我第一套popclient 的补丁程序寄给Carl Harris 之后，我发现一段时间以前他已经<br />
+对popclient 基本上失去了兴趣，这些代码有些陈旧，有一些次要的错误，我有许多修改要做，我们很快达成一<br />
+致，我来接手这个程序。不知不觉的，这个计划扩大了，再也不是我原先打算的在已有的pop 客户上加几个次<br />
+要的补丁而已了，我得维护整个的工程，而且我脑袋里涌动着一些念头要引起一个大的变化。<br />
+在一个鼓励代码共享的软件文化里，这是一个工程进化的自然道路，我要指出：<br /></li>
+<li>如果你有正确的态度，有趣的问题会找上你的，但是Carl Harris 的态度甚至更加重要，他理解：<br /></li>
+<li>当你对一个程序失去兴趣时，你最后的责任就是把它传给一个能干的后继者。<br />
+甚至没有商量，我和Carl 知道我们有一个共同目标就是找到最好的解决方案，对我们来说唯一的问题是我<br />
+能否证明我有一双坚强的手，他优雅而快速的写出了程序，我希望轮到我时我也能做到。<br />
+<br />
+<span style="font-weight: bold;">2.3 拥有用户的重要性</span><br />
+于是我继承了popclient，同样重要的是，我继承了popclient 的用户基础，用户是你所拥有的极好的东西，<br />
+不仅仅是因为他们显示了你正在满足需要，你做了正确的事情，如果加以适当的培养，他们可以成为合作开发<br />
+者。<br />
+Unix 传统另一有力之处是许多用户都是黑客，因为源优码是公开的，他们可以成为高效的黑客，这一点在<br />
+Linux 世界中也被推向了令人高兴的极致，这对缩短调试时间是极端重要的，在一点鼓励之下，你的用户会诊<br />
+断问题，提出修订建议，帮你以远比你期望快得多的速度的改进代码。<br /></li>
+<li>把用户当做协作开发者是快速改进代码和高效调试的无可争辩的方式。<br />
+这种效果的力量很容易被低估，实际上，几乎所有我们自由软件世界中的人都强烈低估了用户可以多么有<br />
+效地对付系统复杂性，直到Linus 让我们看到了这一点。<br />
+实际上，我认为Linus 最聪明最了不起的工作不是创建了Linux 内核本身，而是发明了Linux 开发模式，当<br />
+我有一次当着他的面表达这种观点时，他微笑了一下，重复了一句他经常说的话：“我基本上是一个懒惰的<br />
+人，依靠他人的工作来获取成绩。”像狐狸一样懒惰，或者如Robert Heinlein 所说，太懒了而不会失败。<br />
+回顾起来，在GNU Emacs Lisp 库和Lisp 代码集中可以看到Linux 方法的成功，与Emacs 的C 内核和许多其<br />
+他FSF 的工具相比，Lisp 代码库的演化是流动性的和用户驱动的，思想和原型在达到最终的稳定形式之前往往<br />
+要重写三或四次，而且经常利用Internet 的松散合作。<br />
+实际上，我自己在fetchmail 之前最成功的作品要算Emacs VC 模式，它是三个其他的人通过电子邮件进行的<br />
+类似Linux 的合作，至今我只见过其中一个人（Richard Stallman），它是SCCS、RCS 和后来的CVS 的前端，为<br />
+Emacs 提供“one-touch”版本控制操作，它是从一个微型的、粗糙的别人写好的sccs.el 模式开始演化的，VC 开<br />
+发的成功不像Emacs 本身，而是因为Emacs Lisp 代码可以很快的通过发布/测试/改进的过程。<br />
+（FSF 的试图把代码放入GPL 之下的策略有一个未曾预料到的副作用，它让FSF 难以采取市集模式，因为<br />
+他们认为每个想贡献二十行以上代码的人都必须得到一个授权，以使受到GPL 的代码免受版权法的侵扰，具有<br />
+BSD 和MITX 协会的授权的用户不会有这个问题，因为他们并不试图保留那些会使人可能受到质询的权力）。<br />
+<br />
+<span style="font-weight: bold;">2.4 早发布、常发布</span><br />
+尽量早尽量频繁的发布是Linux 开发模式的一个重要部分，多数开发人员（包括我）过去都相信这对大型工<br />
+程来说是个不好的策略，因为早期版本都是些充满错误的版本，而你不想耗光用户的耐心。<br />
+这种信仰强化了建造大教堂开发方式的必要性，如果目标是让用户尽可能少的见到错误，那你怎能不会仅<br />
+仅每六个月发布一次（或更不经常），而且在发布之间象一只狗一样辛勤“捉虫”呢? Emacs C 内核就是以这种<br />
+方式开发的，Lisp 库，实际上却相反，因为有一些有FSF 控制之外的Lisp 库，在那里你可以独立于Emacs 发布<br />
+周期地找寻新的和开发代码版本。<br />
+这其中最重要的是Ohio 州的elisp 库，预示了今天的巨大的Linux 库的许多特征的精神，但是我们很少真正<br />
+仔细考虑我们在做什么，或者这个库的存在指出了FSF 建造教堂式开发模式的什么问题，1992 年我曾经做了一<br />
+次严肃的尝试，想把Ohio 的大量代码正式合并到Emacs 的官方Lisp 库中，结果我陷入了政治斗争中，彻底失<br />
+败了。<br />
+但是一年之后，在Linux 广泛应用之后，很清楚，一些不同的更加健康的东西诞生了，Linus 的开发模式正<br />
+好与建造教堂方式相反，Sunsite 和tsx-11 的库开始成长，推动了许多发布。所有这些都是闻所未闻的频繁的内<br />
+核系统的发布所推动的。<br />
+Linus 以所有实际可能的方式把它的用户作为协作开发人员。<br /></li>
+<li>早发布、常发布、听取客户的建议<br />
+Linus 的创新并不是这个（这在Unix 世界中是一个长期传统），而是把它扩展到和他所开发的东西的复杂程<br />
+度相匹配的地步，在早期一天一次发布对他来说都不是罕见的！而且因为他培育了他的协作开发者基础，比其<br />
+他任何人更努力地充分利用了Internet 进行合作，所以这确实能行。<br />
+但是它是怎样进行的呢？它是我能模仿的吗？还是这依赖于Linus 的独特天才？<br />
+我不这样想，我承认Linus 是一个极好的黑客（我们有多少人能够做出一个完整的高质量的操作系统内<br />
+核？），但是Linux 并不是一个令人敬畏的概念上的飞跃，Linus 不是（至少还不曾是）像Richard stallman 或<br />
+James Gosling 一样的创新天才，在我看来，Linus 更象一个工程天才，具有避免错误和开发失败的第六感觉，掌<br />
+握了发现从A 点到B 点代价最小的路径的决窍，确实，Linux 的整个设计受益于这个特质，并反映出Linus 的本<br />
+质上保守和简化设计的方法。<br />
+如果快速的发布和充分利用Internet 不是偶然而是Linus 的对代价最小的路径的洞察力的工程天才的内在部<br />
+分，那么他极大增强了什么？他创建了什么样的方法？<br />
+问题回答了它自己，Linus 保持他的黑客用户经常受到激励和奖赏：被行动的自我满足的希望所激励，而奖<br />
+赏则是经常(甚至每天）都看到工作在进步。<br />
+Linus 直接瞄准了争取最多的投入调试和开发的人时，甚至冒代码不稳定和一旦有非常棘手的错误而失去用<br />
+户基础的险，Linus 似乎相信下面这个：<br /></li>
+<li>如果有一个足够大的beta 测试人员和协作开发人员的基础，几乎所有的问题都可以被快速地<br />
+找出并被一些人纠正。<br />
+或者更不正式的讲：“如果有足够多的眼睛，所有的错误都是浅显的”（群众的眼睛是雪亮的），我把这<br />
+称为“Linus 定律”。<br />
+我最初的表述是每个问题“对某些人是透明的”，Linus 反对说，理解和修订问题的那个人不一定非是甚<br />
+至往往不是首先发现它的人，“某个人发现了问题”，他说，“另一个理解它，我认为发现它是个更大的挑<br />
+战”，但是要点是所有事都趋向于迅速发生。<br />
+我认为这是建造教堂和集市模式的核心区别，在建造教堂模式的编程模式看来，错误和编程问题是狡猾的、<br />
+阴险的、隐藏很深的现象，花费几个月的仔细检查，也不能给你多大确保把它们都挑出来的信心，因此很长的<br />
+发布周期，和在长期等待之后并没有得到完美的版本发布所引起的失望都是不可避免的。<br />
+以市集模式观点来看，在另一方面，我们认为错误是浅显的现象，或者至少当暴露给上千个热切的协作开发<br />
+人员，让他们来对每个新发布进行测试的时候，它们很快变得浅显了，所以我们经常发布来获得更多的更正，<br />
+作为一个有益的副作用，如果你偶尔做了一个笨拙的修改，也不会损失太多。也许我们本不应该这样的惊奇，<br />
+社会学家在几年前已经发现一群相同专业的（或相同无知的）观察者的平均观点比在其中随机挑选一个来得更<br />
+加可靠，他们称此为“Delhpi 效应”，Linus 所显示的证明在调试一个操作系统时它也适用—— Delphi 效应甚<br />
+至可以战胜操作系统内核一级的复杂度。<br />
+我受Jeff Dutky（dutky@wam.umd.edu）的启发指出Linus 定律可以重新表述为“调试可以并行”，Jeff 观察到<br />
+虽然调试工作需要调试人员和对应的开发人员相交流，但它不需要在调试人员之间进行大量的协调，于是它就<br />
+没有陷入开发时遇到的平方复杂度和管理开销。<br />
+在实际中，由于重复劳动而导致的理论上的丧失效率的现象在Linux 世界中并不是一个大问题，“早发布、<br />
+常发布策略”的一个效果就是利用快速的传播反馈修订来使重复劳动达到最小。<br />
+Brooks 甚至做了一个与Jeff 相关的更精确的观察：“维护一个广泛使用的程序的成本一般是其开发成本的<br />
+40%，奇怪的是这个成本受到用户个数的强烈影响，更多的用户发现更多的错误”（我的强调）。<br />
+更多的用户发现更多的错误是因为更多的用户提供了更多测试程序的方法，当用户是协作开发人员时这个<br />
+效果被放大了，每个找寻错误的人都有自己稍微不同的感觉和分析工具，从不同角度来看待问题。“Delphi 效<br />
+应”似乎因为这个变体工作变得更加精确，在调试的情况下，这个变体同时减小了重复劳动。<br />
+所以加入更多的beta 测试人员虽不能从开发人员的P.O.V 中减小“最深”的错误的复杂度，但是它增加了这<br />
+样一种可能性，即某个人的工具和问题正好匹配，而这个错误对这个人来说是浅显的。<br />
+Linus 也做了一些改进，如果有一些严重的错误，Linux 内核的版本在编号上做了些处理，让用户可以自己选<br />
+择是运行上一个“稳定”的版本，还是冒遇到错误的险而得到新特征，这个战略还没被大多数Linux 黑客所仿<br />
+效，但它应该被仿效，存在两个选择的事实让二者都很吸引人。<br />
+<br />
+<span style="font-weight: bold;">2.5 什么时候玫瑰不是玫瑰?</span><br />
+在研究了Linus 的行为和形成了为什么它成功的理论之后，我决定在我的工程（显然没有那么复杂和雄心勃<br />
+勃）里有意识的测试这个理论。<br />
+但我首先做的事是熟悉和简化Popclient。Carl Harris 的实现非常好，但是有一种对许多C 程序来说没有必要<br />
+的复杂性。他把代码当作核心而把数据结构当作对代码的支持，结果是代码非常漂亮但是数据结构设计得很特<br />
+别，相当丑陋（至少对以这个老LISP 黑客的标准来看），然而除了提高代码和数据结构设计之外，重写它还有<br />
+一个目的，就是要把它演化为我彻底理解的东西，对修改你不理解的程序中的错误负责可不是一件有趣的事。<br />
+第一个月我只是在领会Carl 的基本设计的含义，我所做的第一个重大修改是加入了IMAP 支持，我把协议机<br />
+重新组织为一个通用驱动程序和三个方法表（对应POP2、POP3 和IMAP），这个前面的修改指出一个需要程<br />
+序员（特别是象C 这种没有自然的动态类型支持的语言）记在脑中的一般原理：<br /></li>
+<li>聪明的数据结构和笨拙的代码要比相反的搭配工作的更好<br />
+Fred Brooks 也在他第11 章中讲道：“让我看你的‘代码’，把你的‘数据结构’隐藏起来，我还是会迷<br />
+惑；让我看看你的‘数据结构’，那我就不需要你的‘代码’了，它是显而易见的”。<br />
+实际上，他说的是“流程图”和“表”，但是在三十年的术语/文化演进之后，事情还是一样的。<br />
+此时（1996 年9 月初，在从零开始六个月后），我开始想接下来修改名字—— 毕竟，它已不仅仅是一个<br />
+POP 客户，但我犹豫了，因为还没有什么新的漂亮设计呢，我的popclient 版本需要有自己的特色。<br />
+当fetehmail 学会怎样把取到的邮件转送到SMTP 端口时，事情就完全改变了，但是首先：上面我说过我决定<br />
+使用这个工程来测试我关于Linus Torualds 所做的行为的理论，（你可能会问）我怎样做到这点呢? 以下面的方<br />
+式：<br /></li>
+<li>我尽早尽量频繁地发布（几乎从未少于每十天发布一次；在密集开发的时候是每天一次）。<br /></li>
+<li>我把每一个和我讨论fetchmail 的人加入一个beta 表中。<br /></li>
+<li>每当我发布我都向beta 表中的人发出通告，鼓励人们参与。<br /></li>
+<li>我听取beta 测试员的意见，向他们询问设计决策，对他们寄来的补丁和反馈表示感谢。<br />
+这些简单的手段立即收到的回报，在工程的开始，我收到了一些错误报告，其质量足以使开发者因此被杀<br />
+掉，而且经常还附有补丁、我得到了理智的批评，有趣的邮件，和聪明的特征建议，这导致了：<br /></li>
+<li>如果你象对待最宝贵的资源一样对待你的beta 测试员，他们就会成为你最宝贵的资源。<br />
+<br />
+<span style="font-weight: bold;">2.6 popclient 变成了Fetchmail</span><br />
+这个工程的真正转折点是Harry Hochleiser 寄给我他写的代码草稿，他把邮件转发到客户端机器的SMTP 端<br />
+口，我立即意识到这个特征的可靠实现将淘汰所有其他的递送模式。<br />
+几个星期以来我一直在修改而不是改进fetchmail，因为我觉得界面设计虽然有用但是太笨拙琐碎了，到处充<br />
+满了太多的粗陋的细小选项。<br />
+当我思考SMTP 转发时我发现popclient 试图做的事太多了，它被设计成既是一个邮件传输代理（MTA）也是<br />
+一个本地递送代理（MDA）。使用SMTP 转发，它就可以从MDA 的事务中解脱出来而成为一个纯MTA，而象<br />
+sendmail 一样把邮件交给本地递送程序来处理。<br />
+既然端口25 在所有支撑TCP/IP 的平台上早已被预留，为什么还要为一个邮件传输代理的配置或为一个邮箱<br />
+设置加锁的附加功能而操心呢？尤其是当这意味着抽取的邮件就像一个正常的发送者发出的SMTP 邮件一样，<br />
+而这就是我们需要的。<br />
+这里有几个教益：第一，SMTP 转发的想法是我有意识地模拟Linus 的方法以来的最大的单个回报，一个用<br />
+户告诉我这个非同寻常的想法—— 我所需做的只是理解它的含义。<br /></li>
+<li>想出好主意是好事，从你的用户那里发现好主意也是好事，有时候后者更好。<br />
+很有趣的是，你很快将发现，如果你完全承认你从其他人那里得到多少教益的话，整个世界将会认为所有的<br />
+发明都是你做出的，而你会对你的天才变得谦虚。我们可以看到这在Linus 身上体现得多明显！（当我在1997<br />
+年8 月的Perl 会议上发表这个论文时，Larry Wall 坐在前排，当我讲到上面的观点时，他激动的叫了出来：“对<br />
+了！说对了！哥们！”所有的听众都哄堂大笑起来，因为他们知道同样的事情也发生在Perl 的发明者身上）。<br />
+于是在同样精神指导下工程进行了几个星期，我开始不光从我的用户那儿也从听说我的系统的人那儿得到<br />
+类似的赞扬，我把一些这种邮件收藏起来，我将在我开始怀疑自己的生命是否有价值时重新读读这些信。:)<br />
+但是有两个更基本的，非政治性的对所有设计都有普遍意义的教益。<br /></li>
+<li>最重要和最有创新的解决方案常常来自于你认识到你对问题的概念是错误的。<br />
+一个衡量fetchmail 成功的有趣方式是工程的beta 测试人员表（fetchmail 的朋友们）的长度，在创立它的时<br />
+候已经有249 个成员了，而且每个星期增加两到三个。<br />
+实际上，当我在1997 年5 月校订它时，这张表开始因为一个有趣的原因而缩短了，有几个人请求我把他们<br />
+从表中去掉，因为fetchmail 已经工作的如此之好，他们不需要看到这些邮件了！也许这是一个成熟的市集风格<br />
+工程的生命周期的一部分。<br />
+我以前一直在解决错误的问题，把popclient 当作MTA 和具有许多本地递送模式的MDA 的结合物，Fetchmail<br />
+的设计需要从头考虑为一个纯的MTA，做为一个普通Internet 邮件路径的一部分。<br />
+当你在开发中碰了壁时（当你发现自己很难想通下一步时），那通常不是要问自己是否找到正确答案，而<br />
+是要问是否问了正确问题，也许需要重新构造问题。<br />
+于是，我重新构造了我的问题，很清楚，要做的正确的事是(1) 把SMTP 转发支持放在通用驱动程序中，(2)<br />
+把它做为缺省模式，(3) 最终分离所有其他的递送模式，尤其是递送到文件和标准输出的选项。<br />
+我在第三步上犹豫了一下，担心会让popclient 的长期用户对新的递送方法感到烦心，在理论上，他们可以<br />
+立即转而转发文件或者他们的非sendmail 等价物来得到同样的效果，在实际中这种转换可能会很麻烦。<br />
+但是当我这么做之后，证明好处是巨大的，驱动程序代码的冗余的部分消失了，配置完全变得简单了——<br />
+不用屈从于系统MDA 和用户的邮箱，也不用为下层OS 是否支持文件锁定而担心了。<br />
+而且，丢失邮件的唯一漏洞也被堵死了，如果你选择了递送到一个文件而磁盘已满，你的邮件就会丢失，<br />
+这在SMTP 转发中不会发生，因为SMTP 侦听器不会返回OK 的，除非邮件可以递送成功或至少被缓冲留待以后<br />
+递送。<br />
+还有，性能也改善了（虽然在单次执行中你不会注意到），这个修改的另一个不可忽视的好处是手册变得<br />
+大大简单了。<br />
+后来，为了允许处理一些罕见的情况，包括动态SLIP，我必须回到让用户定义本地MDA 递送上来，但是我<br />
+发现了一个更加简单的方法。<br />
+所有这些给了我们什么启发呢?如果可以不损失效率，就要毫不犹豫抛弃陈旧的特性，Antonine de SaintExupery（<br />
+在他成为经典儿童书籍作家之前是一个飞行员和飞机设计师）曾说过：<br /></li>
+<li>“最好的设计不是再也没有什么东西可以添加了，而是再也没有什么东西可以去掉。”<br />
+当你的代码变得更好和更简单时，这就是你知道它是正确的时候了，而且在这个过程中，fetchmail 的设计具<br />
+有了自己的特点，而区别于其前身popclient。<br />
+现在是改名的时候了，这个新的设计看起来比老popclient 更象一个sendmail 的复制品，它们都是MTA，但<br />
+是senmail 是推然后递送，而新的popclient 是拉然后递送。于是，在两个月之后，我把它重新命名为fetchmail。<br />
+<br />
+<span style="font-weight: bold;">2.7 Fetchmail 成长起来</span><br />
+现在我有了一个简洁和富有创意的设计，工作得很好的代码，因为我每天都用它，和一直在增长的beta 表，<br />
+它让我渐渐明白我已经不是在从事只能对少数其他人有用的工作中，我写了一个所有有一个Unix 邮箱和SLIP/<br />
+PPP 邮件连接的人都真正需要的程序。<br />
+通过SMTP 转发功能，它成为一个潜在的“目录杀手”，远远领先于它的竞争者，这个程序如此能干以至于<br />
+其他的程序不但被放弃简直被忘记了。<br />
+我知道你不可以真得瞄准或计划出这样的结果，你只能努力去设计这些强大的思想，以后这些结果就好象<br />
+是不可避免的、自然的、注定了的，得到这种思想的唯一办法是获取许多思想，或者用工程化地思考其他人的<br />
+好主意而超过原来想到它的人的设想。<br />
+Andrew Tanenbanm 原来设想建造一个适合386 的简单的Unix 用做教学，Linus Torvalels 把Andrew 的可能想<br />
+到的Minix 可以做什么的概念推进了一步，成长为一个极好的东西，同样的（虽然规模较小），我接受了Card<br />
+Harris 和Harry Hochheiser 的想法，把它们变得更强大，我们都不是人们所浪漫幻想的天才的创始人，但是大多<br />
+数科学、工程和软件开发不是被天才的创始人完成的，这和流传的神话恰恰相反。<br />
+结果总是执着的原因—— 实际上，它是每个黑客为之生存的成功！而且它们意味着我必须把自己的标准定<br />
+高一点，为了把fetchmail 变得和我所能设想的那样好，我必须不仅为我自己的需要写代码，而且也要包括对在<br />
+我生活圈外的人们的需求的支持，而且同时也要保证程序的简单和健壮。<br />
+在实现它之后我首先写的最重要的特征是支持多投—— 从集中一组用户的邮件的邮箱中取出邮件，然后把<br />
+它路由到每个人手中。<br />
+我之所以加上多投功能部分是因为有些用户一直在闹着要它，更是因为我想它可以从单投的代码中揭露出<br />
+错误来，让我完全一般地处理寻址，而且这被证明了。正确解释RFC822 花了我相当长的时间，不仅因为它的<br />
+每个单独部分都很难，而且因为它有一大堆相互依赖的苛刻的细节。<br />
+但是多投寻址也成为一个极好的设计决策，由此我知道：<br /></li>
+<li>任何工具都应该能以预想的方式使用，但是一个伟大的工具提供你没料到的功能。<br />
+Fetchmail 多投功能的一个没有料到的用途是在SLIP/PPP 的客户端提供邮件列表、别名扩展。这意味着一个<br />
+使用个人机器的人不必持续访问ISP 的别名文件就能通过一个ISP 帐户管理一个邮件列表。我的beta 测试员提<br />
+出的另一个重要的改变是支持8 位MIME 操作，这很容易做，因为我已经仔细的保证了8 位代码的清晰，不仅<br />
+因为我预见到了这个特性的需求，而且因为我忠实于另一准则：<br /></li>
+<li>当写任何种类的网关型程序时，多费点力，尽量少干扰数据流，永远不要抛弃信息，<br />
+除非接收方强迫这么做！<br />
+如果我不遵从这个准则，那么8 位MIME 支持将会变得困难和笨拙，现在我所需要做的，是只读一下RFC<br />
+1652，在产生信头的逻辑加上一点而已。<br />
+一些欧洲用户要求我加上一个选项来限制每次会话取得消息数（这样他们就可以从昂贵的电话网中控制花<br />
+费了），我很长一段时间拒绝这样做，而且我仍然对它不很高兴，但是如果你是为了世界而写代码，你必须听<br />
+取顾客的意见—— 这并不随他们不付给你钱而改变。<br />
+<br />
+<span style="font-weight: bold;">2.8 从Fetchmail 得来的另一些教益</span><br />
+在他们回到一般的软件工程问题以前，还有几个从fetchmail 得到的教益需要思考。<br />
+rc 文件语法包括可选的“noise”关键字，它被扫描器完全忽略了，当你把它们全抽取出的时候，关键字/值<br />
+对更具可读性。<br />
+当我注意到rc 文件的声明在多大程度上开始象一个微型命令语言时，这是一个Late-night 的体验（这也是我<br />
+为什么把popclient 原来的“server”关键字改成了“poll”）。<br />
+对我来说似乎把这个微型命令语言变得更象英语可能会使它更容易使用。现在，虽然我对经过Emacs 和<br />
+HTML 及许多数据库引擎所证实的“把它做成一个语言”的设计方式确信不疑，但是我并不是一个通常的“类<br />
+英语”语法的狂热拥护者。<br />
+传统程序员容易控制语法使它尽量精确和紧凑，完全没有冗余，这是计算机资源还很昂贵时遗留下的一种<br />
+文化传统，所以扫描策略需要尽可能的廉价和简单，而具有50% 冗余度的英语，看来好象是一个非常不合适的<br />
+模型。<br />
+这并不是我不用类英语语法的原因，我提到这一点是为了推翻它，在更廉价的时钟周期与核心的时代，简<br />
+洁并没有走到尽头，今天对一个语言来说，对人更方便比对机器更廉价来的更加重要。<br />
+然而，有几个原因提醒我们小心一点，一个是扫描策略的复杂度开销—— 你并不想把它变成一个巨大的错<br />
+误来源和让用户困惑，另一个是试图使语言表面上的类似可以和传统语言一样令人困惑（你可以在许多4GL 和<br />
+商业数据库查询语言上看到这一点）。<br />
+它很简单地描述的东西并不复杂，所以很少可能在英语的一个小子集与实际的控制语言之间发生混淆，我想这<br />
+有一个更广泛的教益：<br /></li>
+<li>如果你的语言一点也不像是图灵完备的，严格的语法会有好处。<br />
+另一个教益是关于安全的，一些fetchmail 用户要求我修改软件把口令加密存贮在rc 文件里，这样觑探者就<br />
+不能看到它们了。<br />
+我没有这样做，因为这实际上起不到任何保护作用，任何有权读取你的rc 文件的人都可以以你的名义运行<br />
+fetchmail —— 如果他们要破你的口令，它们可以从fetchmail 的代码中找到制作解码器的方法。<br />
+所以fetchmail 口令的加密都会给那些不慎重思考的人一种安全的错觉，这里一般性的准则是：<br /></li>
+<li>一个安全系统只能和它的秘密一样安全，当心伪安全。<br />
+<br />
+<span style="font-weight: bold;">2.9 集市风格的必要的先决条件</span><br />
+本文的早期评审人员和测试人员坚持提出成功的市集模式开发的先决条件，包括工程领导人的资格问题和<br />
+在把项目公开和开始建造一个协作开发人员的社团的时候代码的状态。<br />
+相当清楚，不能以一个市集模式从头开发一个软件，我们可以以市集模式、测试、调试和改进，但是以市<br />
+集模式从头开始一个项目将是非常困难的，Linus 没有这样做，我也没有，初期的开发人员的社团应该有一此可<br />
+以运行和测试的东西来玩。<br />
+当你开始创建社团时，你需要演示的是一个诺言，你的程序不需要工作的很好，它可以很粗糙、很笨拙、<br />
+不完整和缺少文档、它不能忽略的东西是要吸引哪些人卷入一个整洁的项目。<br />
+Linux 和fetchmail 都是以一个吸引人的基本设计进入公共领域的，许多和我一样在思考市集模式的人已经正<br />
+确的认为这是非常关键的，然后得出了一个结论，工程领导者的高度的设计直觉和聪颖是必不可少的。<br />
+但是Linus 是从Unix 得到他的设计的，我最初是从先前的popmail 得到启发的（虽然相对Linux 而言，它最<br />
+后改变巨大），所以市集风格的领导人/协调人需要有出众的设计才能，或者他可以利用别人的设计才能?<br />
+我认为能够提出卓越的原始设计思想对协调人来说不是最关键的，但是对他/她来说绝对关键的是要能把从<br />
+他人那里得到的好的设计重新组织起来。<br />
+Linux 和fetchmail 项目都显示了这些证据，Linus（如同前面所说）并不是惊人的原始设计者，但他显示了发<br />
+现好的设计并把它集成到Linux 内核中的强大决窍。还有我也描述了怎样从别人那里得到了fetchmail 中最强大<br />
+的设计思想（SMTP 转发）。<br />
+本文的早期读者称赞我，说因为我做了许多关于原始设计的事，所以倾向于低估原始设计在市集项目中的<br />
+价值，也许有些是对的吧，但是设计（而不是编码或调试）本来就是我最强的能力。<br />
+变得聪明和软件设计的原始创作的问题是它会变成一个习惯，当需要保持事物健壮和简洁的时候，你却开<br />
+始把事情变得漂亮但却复杂。我曾经犯过错误，使得一些项目因我而崩溃了，但我努力不让它发生在fetchmail<br />
+身上。<br />
+所以我相信fetchmail 项目的成功部分是因为我抑制自己不要变得太聪明，这说明（至少）对市集模式而言<br />
+原始设计并不是本质的，请考察一下Linux 假设Linus Torvalds 在开发时试图彻底革新操作系统设计，它还会象<br />
+今天我们所拥有的内核那样稳定和成功吗?<br />
+当然基本的设计和编码技巧还是必需的，但我希望每个严肃考虑发起一个市集计划的人都已至少具备这些<br />
+能力，自由软件社团的内部市场对人们有某些微妙的压力，让他们不要发起自由不能搞定的开发，目前为止，<br />
+这工作得仍然相当好。<br />
+对市集项目来说，我认为还有另一种通常与软件开发无关的技能和设计能力同样重要── 或者更加重要，<br />
+市集项目的协调人或领导人必须有良好的人际和交流能力。<br />
+这是很显然的，为了建造一个开发社团，你需要吸引人，你所做的东西要让他们感到有趣，而且要保持他<br />
+们对他们正在做的工作感到有趣，而且要保持他们对他们正在做的工作感到高兴，技术方面对达成这些目标有<br />
+一定帮助，但这远远不是全部，你的个人素质也有关系。<br />
+并不是说Linus 是一个好小伙子，让人们喜爱并乐于帮助他，也并不是说我是个积极外向的，喜欢扎堆儿工<br />
+作，有出众的幽默感的人，对市集模式的工作而言，至少有一点吸引人的技巧是非常有帮助的。<br />
+<br />
+<span style="font-weight: bold;">2.10 自由软件的社会学语境</span><br />
+下述如实：最好的开发是从作者解决每天工作中的个人问题开始的，因为它对一大类用户来说是一个典型<br />
+问题，所以它就推广开来了，这把我们带回到准则1，也许是用一个更有用的方式来描述：<br /></li>
+<li>要解决一个有趣的问题，请从发现让你感兴趣的问题开始。<br />
+这是Carl Harris 和原先的popclient 的情形，也是我和fetchmail 的情形，但这已在很长一段时间被大家知晓<br />
+了，Linux 和fetchmail 的历史要求我们注意的有趣之处是下一个阶段── 软件在一个庞大的活跃的用户和协作<br />
+开发人员的社团中的进化。<br />
+在《人月神话》一书中，Fred Brooks 观察到程序员的工作时间是不可替代的：在一个误了工期的软件项目<br />
+中增加开发人员只会让它拖得更久，他声称项目的复杂度和通讯开销以开发人员的平方增长，而工作成绩只是<br />
+以线性增长，这个说法被称为“Brooks 定律”，被普遍当作真理，但如果Brooks 定律就是全部，那Linux 就不<br />
+可能成功。<br />
+几年之后，Gerald Weinbeng 的经典之作“The Psychology Of Computer Progromming”为我们更正了Brooks 的看<br />
+法，在他的“忘我（egoless）的编程”中，Weinberg 观察到在开发人员不顽固保守自己的代码，鼓励其他人寻<br />
+找错误和发展潜力的地方，软件的改进的速度会比其他地方有戏剧性的提高。<br />
+Weinberg 的用词可阻止了他的分析得到应有的接受，人们对把Internet 黑客称为“忘我”的想法微笑，但是<br />
+我想今天他的想法比以往任何时候都要引人注目。<br />
+Unix 的历史已经为我们准备好了我们正在从Linux 学到的（和我在更小规模上模仿Linus 的方法所验证的）<br />
+东西，这就是，虽然编码仍是一个人干的活，真正伟大的工作来自于利用整个社团的注意和脑力，在一个封闭<br />
+的项目中只利用他自己的脑力的人会落在知道怎样创建一个开放的、进化的，成百上千的人在其中查找错误和<br />
+进行修改的环境的开发人员之后。<br />
+但是Unix 的传统中有几个因素阻止把这种方法推到极致。一个是各种授权的法律约束、商业机密和商业利<br />
+益，另一个（事后来看）是Internet 还不够好。<br />
+在Internet 变得便宜之前，有一些在地理上紧密的社团，它们的文化鼓励Weingberg 的“忘我”编程，一个<br />
+开发人员很容易吸引许多熟练的人和协作开发人员，贝尔实验室，MIT A1 实验室，UC Berkeley，都成为传统<br />
+的、今天仍然是革新的源泉。<br />
+Linux 是第一个有意识的成功地利用整个世界做为它的头脑库的项目，我不认为Linux 的孕育和万维网的诞<br />
+生相一致是一个巧合，而且Linux 在1993-1994 的一段ISP 工业大发展和对Internet 的兴趣爆炸式增长的时期中<br />
+成长起来，Linus 是第一个学会怎样利用Internet 的新规的人。<br />
+廉价的Internet 对Linux 模式的演化来说是一个必要条件，但它并不充分，另一个关键因素是领导风格的开<br />
+发和一套协作的氛围使开发人员可以吸引协作开发人员和最大限度地利用媒体。<br />
+但是这种领导风格与氛围到底是什么呢？它不能建立在权力关系之上── 甚至如果它们可以，高压的领<br />
+导权力也不能产生我们所看到的结果，Weinberg 引用了19 世纪俄国的无政府主义者Kropotkin 的“Memoris of a<br />
+Revolutionist”来证明这个观点：<br />
+“我从小生活在一个农奴主的家庭中，我有一个活跃的生活，象我们时代的所有年轻人一样，我深信命令、<br />
+强制、责骂、惩罚等等的必要性。但是当我（在早期）必须管理一个企业，和（自由）人打交道时，当每一个<br />
+错误都会产生严重后果时，我开始接受以命令和纪律为准则来行动和以普通理解为准则来行动的区别。前者在<br />
+军事阅兵中工作的很好，但是它在现实生活中一文不值，目标达成只是靠许多愿望的聚合的简单后果。”“许<br />
+多聚合在一起的愿望的直接后果”精确地指出了象Linux 的项目所需要的东西。“命令的准则”在Internet 这种<br />
+无政府主义的天堂中一群自愿者之中是没有市场的，为了更有效的操作和竞争，想领导协作项目的黑客们必须<br />
+学会怎样以Kropotkins 含糊指出的“理解的准则”模式来恢复和激活社团的力量，他们必须学会使用Linus 定<br />
+律。<br />
+前面我引用“Delhpi 效应”来作为Linus 定律的一个可能的解释，但是来自生物学和经济学的自适应系统的<br />
+更强大的分析也提出了自己的解释，Linus 世界的行为更象一个自由市场或生态系统，由一大群自私的个体组<br />
+成，它们试图取得（自己）最大的实效，在这个过程中产生了比任何一种中央计划都细致和高效的自发的改进<br />
+的结果，所以，这里就是寻找“理解的准则”的地方。<br />
+Linux 黑客取得的最大化的“实际利益”不是经典的经济利益，而是无形的他们的自我满足和在其他黑客中<br />
+的声望，（有人会说他们的动机是“利他的”，但这忽略了这样的事实：利他主义本身是利他主义者的一种自<br />
+我满足的形式），自愿的文化以这种方式工作的实际上并非不寻常，我已参与一个科幻迷团体很长时间了，它<br />
+不象黑客团体一样，显式地识别出“egoboo”（一个人在其他爱好者之中的声望的增长）作为自愿者活动背后<br />
+的基础驱动力）。<br />
+Linus 成功地把自己置于项目的守门人的位置，在项目中开发大部分是别人做的，他只是在项目中培养兴趣<br />
+直到它可以自己发展下去，这为我们展示了对Kropokin 的“共同理解原则”的敏锐把握，对Linux 这种类似经<br />
+济学的观点让我们看到这种理解是怎样应用的。<br />
+我们可以把Linus 的方法视为创建一个高效的关于“egoboo”（而不是钱）的市场，来把自私的黑客个体尽<br />
+可能紧密的联系起来，达成只能通过高度协作才能得到的困难的结果，在fetchmail 项目中我展示了（在较小规<br />
+模上）这种模式可以复制，得到良好的结果，也许我比他更有意识一点、更加系统一点。<br />
+许多人（尤其是哪些由于政治原因不信任自由市场的人）会盼望自我导向的自我主义者的文化破碎、报废、<br />
+秘密和敌对，但这种盼望很明显地被Linux 的文档的多样性、质量和深度打破了，程序员讨厌写文档似乎已是圣训，但Linux 的黑客们怎么产生了这么多？显然Linux 的egoboo 自由市场比有大量资金的商业软件产品的文<br />
+档部在产生有品德的、他人导向的行为方面工作的更好。<br />
+Fetchmail 和Linux 内核项目都表明，通过恰当的表彰许多其他黑客，一个强大的开发者/协调者可以用<br />
+Internet 得到许多协同开发人员而不是让项目分崩离析为一片混乱，所以关于Brooks 定律我得到了下面的想法：<br /></li>
+<li>如果开发协调人员有至少和Internet 一样好的媒介，而且知道怎样不通过强迫来领导，<br />
+许多头脑将不可避免地比一个好。<br />
+我认为自由软件的将来将属于那些知道怎样玩Linux 的游戏的人，把大教堂抛之脑后拥抱市集的人，这并不<br />
+是说个人的观点与才气不再重要，而是，我认为自由软件的前沿将属于从个人观点和才气出发的人，然后通过<br />
+共同兴趣自愿社团的高效建造来扩展。<br />
+可能不只是自由软件的将来，在解决问题方面，没有任何商业性开发者可以与Linux 社团的头脑库相匹敌，<br />
+很少有人能负担起雇佣200 多个为fetchmail 出过力的人！<br />
+也许最终自由软件文化将胜利，不是因为协作在道德上是正确的或软件“囤积居奇”在道德上是错的（假<br />
+设你相信后者，Linus 和我都不），而仅仅是因为商业世界在进化的军备竞赛中不能战胜自由软件社团，因为后<br />
+者可以把更大更好的开发资源放在解决问题上。<br />
+<br />
+<span style="font-weight: bold;">2.11 网友写给作者的感想</span><br />
+你好，Eric： 我刚读了你的大教堂/市集的文章，因为你的主页指出你还要继续关于这个问题的思考，我提<br />
+供一些个人的观察。首先介绍一些背景：当1990 年出现BSD Net/2 的时候，Brad Grantham 和我把它移植到了<br />
+Mac 平台上，它在几个月之后以Mac BSD 发布（当然是以市集风格），后来成为Net BSD/Mac。我作为一个市<br />
+集协调人学到了一些东西：<br /></li>
+<li>人们很快地自愿提供帮助，但是常常很慢，我们收到上百封信说：“我很想帮助，请告诉我需要什么?”<br />
+这些人没提供什么帮助，不管他们有多么积极，真正有帮助的人那些给我们的第一封信便说：“嘿，我修<br />
+改了这个，这儿有一个补丁。”最后我们忽略了所有第一种类型的邮件（只是把他们引向工作列表），<br />
+培养与第二种人的关系，这种情况所有协调人都应知道，来克服看到这么多“志愿者”时的盲目高兴。<br />
+（注意：他们的动机是好的，他们只是没有认识到他们正在志愿做什么）。<br /></li>
+<li>你已经提到了这一点，但我认为它是极端重要的：甚至在你宣布产品以前你必须有一个可工作的系统：<br />
+例如，我们一直等到有了一个可引导的内核和一个单用户根shell 之后才把它贴到Usenet，曾有过（据我<br />
+所知）四个不同的Mac Linux 项目，每一个都在Linux 新闻组中有一大批拥护者，都创建了邮件列表，每<br />
+个人都很热情，写了FAQ，还有许多诸如MacOS 的图标应是什么样的讨论。所有这些项目没有发布一行<br />
+代码或者一个内核、我挑选了MkLinux（Apple 开发的）作为一个可工作的Mac 版Linux（在一个项目中，<br />
+MacLinux 假设运转在68K Mac 上，而邮件列表中所有的讨论都是关于怎样把它移植到Power Mac 上。68K<br />
+版本甚至不能远程工作！），这些项目吸引了上述的第一种“帮助者”，热情高涨但是实际上却没做什<br />
+么事，杀掉一个项目最快的方法是在你什么都还没有之前就宣布它，我已经见的太多了，尤其是在Linux<br />
+世界里。<br />
+我知道这两点看起来相当悲观，但我知道当我们想到“啊，我们做了这么多事了，肯定搞定了不少问题了<br />
+吧！”的时候，我们太容易失去理智。而那实际上只不过是一些善良的动机罢了（谁说过：“不要把动机和行<br />
+动混淆在一起？” 本·弗兰克林？）协调人需要解散所有那些诸如图标应该是什么样的、FAQ 用HTML 格式还<br />
+是SGML 模式的热情讨论，而把注意力放在取得产品的一个可工作的版本，一旦得到了，人们就真正开始帮助<br />
+了。<br />
+（从正面来看，MacBSD 极大地得益于从它的开发风格，我们得到了代码、设备驱动程序、钱和一些捐赠和<br />
+借到的测试和开发的硬件设备）。我期望看到对我上述观点的任何评论和你关于这个主题写的任何东西。<br />
+<br />
+原文下载<a target=_blank href="http://master-zhdoc.googlecode.com/files/eric_raymond_five-0.8.0.pdf">地址</a><br /></li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../_posts/2008-09-22-style-of-the-three-realms.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../_posts/2008-09-19-live-messenger-2009-beta.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../_posts/2008-09-22-style-of-the-three-realms.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../_posts/2008-09-19-live-messenger-2009-beta.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
