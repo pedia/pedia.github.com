@@ -1,0 +1,6 @@
+[book]
+authors = ["pedia"]
+language = "zh"
+multilingual = false
+src = "src"
+title = "pedia blog"
